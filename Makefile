@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := industry
+.DEFAULT_GOAL := final
 # MiniCPS makefile
 
 # VARIABLES {{{1
@@ -24,25 +24,11 @@ TESTER_OPTS_COV_HTML = $(TESTER_OPTS) --with-coverage --cover-html
 # http://stackoverflow.com/questions/3931741/why-does-make-think-the-target-is-up-to-date
 .PHONY: tests tests-travis clean
 
-# TOY {{{1
-
 paper:
 	cd paper-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
-dynamic:
-	cd dynamic-reconf/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
-
-flowfence:
-	cd flowfence-cps/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
-
-simple:
-	cd simple-cps/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
-
 final:
 	cd final-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
-
-industry:
-	cd industry-based/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
 clean-simulation:
 	sudo pkill  -f -u root "python -m cpppo.server.enip"
