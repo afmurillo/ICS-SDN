@@ -22,7 +22,7 @@ LIT101 = ('LIT101', 1)
 class Ids101(PLC):
 
 	def switch_sensor(self, controller_ip, controller_port):
-		print "Connecting to ONOS"
+		print "Connecting to SDN Controller"
 	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	        sock.connect((controller_ip, int(controller_port)))
 	        msg_dict = dict.fromkeys(['Type', 'Variable'])
@@ -40,97 +40,97 @@ class Ids101(PLC):
 	        sock.close()
 
 	def calculate_controls(self, variable):
- 	    print "calculate action control"
-            if variable >= LIT_101_M['HH'] :
-		self.estimated_p101 = 1
-		self.estimated_mv101 = 0
 
-            elif variable >= LIT_101_M['H']:
-		self.estimated_p101 = 1
-		self.estimated_mv101 = 0
+	    if lit101 >= LIT_101_M['HH'] :
+               mv = 0
 
-            elif variable <= LIT_101_M['L']:
-		self.estimated_p101 = 0
-		self.estimated_mv101 = 1
+            elif lit101 >= LIT_101_M['H']:
+               mv = 0
 
-            elif variable <= LIT_101_M['LL']:
-		self.estimated_p101 = 0
-		self.estimated_mv101 = 1
+            elif lit101 <= LIT_101_M['L']:
+               mv = 1
+
+            elif lit101 <= LIT_101_M['LL']:
+               mv = 1
+
+            return mv
 
 	def pre_loop(self, sleep=0.1):
 
-		# Estimated values
-		self.section = TANK_SECTION
-		print "DEBUG: in pre_loop"
-		time.sleep(sleep)
+ 	    # Estimated values
+	    self.section = TANK_SECTION
+	    print "DEBUG: in pre_loop"
+	    time.sleep(sleep)
 
 	def main_loop(self):
-		print "main loop"
-		count = 0
-		self.received_level = 0.0
-		self.estimated_level = 0.0
+	    print "main loop"
+	    count = 0
+	    self.received_level = 0.0
+	    self.estimated_level = 0.0
 
-		# The values are for a 0.2 period, we calculate every 1.0 period
-		inflow = float( (PUMP_FLOWRATE_IN * PP_PERIOD_HOURS * 2 )  / self.section )
-		outflow = float( (PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS * 2  ) / self.section )
+	    # The values are for a 0.2 period, we calculate every 1.0 period
+	    inflow = float( (PUMP_FLOWRATE_IN * PP_PERIOD_HOURS * 2 )  / self.section )
+	    outflow = float( (PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS * 2  ) / self.section )
 
-		self.controller_port = PORTS['controller_ids_port']
-		self.controller_ip = IP['controller']
-		self.threshold = 0.1
-		self.intrusion = False		
-		self.wait_time = PLC_PERIOD_SEC
+	    self.controller_port = PORTS['controller_ids_port']
+	    self.controller_ip = IP['controller']
+	    self.threshold = 0.1
+	    self.intrusion_sensor = False		
+	    self.intrusion_plc = False		
+	    self.wait_time = PLC_PERIOD_SEC
 
-		#print "Connecting to controller"		
+	    #print "Connecting to controller"		
+ 	    print "Entering while"
+	    #self.send_message(IP['plc101'], 4234, 0)
 
-		print "Entering while"
-		#self.send_message(IP['plc101'], 4234, 0)
-
-		while(count <= PP_SAMPLES):	
+	    while(count <= PP_SAMPLES):	
 
 
-	                mv101 = int(self.get(MV101))
-   	                p101 = int(self.get(P101))
-                	if self.intrusion == False:
+	        mv101 = int(self.get(MV101))
+	        estimated_mv101 = self.calculate_controls()
+	        if (mv101 != estimated_mv101):
+	      	    self.intrusion_plc == True
 
-			    print "No attack detected"
-		
-			    try:
-				    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
-			    except:
-				    continue
+   	        p101 = int(self.get(P101))
+                if self.intrusion_sensor == False:
 
-			    #  x(t+1)                =        x(t)          +              u(t)            +  L (      y(t)           -     x(t)            )   
-			    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101  + 1.0*(self.received_level - self.estimated_level)
+		    print "No attack detected"		
+		    try:
+  		            self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
+		    except:
+			    continue
 
-		            print "DEBUG estimated : %.5f" % (self.estimated_level)
-		            print "DEBUG received : %.5f" % (self.received_level)
+		    #  x(t+1)                =        x(t)          +              u(t)            +  L (      y(t)           -     x(t)            )   
+		    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101  + 1.0*(self.received_level - self.estimated_level)
 
-	                    delta =  abs(self.estimated_level - self.received_level)
-		            print "DEBUG delta : %.5f" % (delta)
+		    print "DEBUG estimated : %.5f" % (self.estimated_level)
+		    print "DEBUG received : %.5f" % (self.received_level)
 
-	                    if (delta > self.threshold) and (count>2):
-	                        self.switch_sensor(self.controller_ip, self.controller_port)
-	                        self.intrusion = True
-	                        print "Intrusion detected!"
-				continue
+	            delta =  abs(self.estimated_level - self.received_level)
+		    print "DEBUG delta : %.5f" % (delta)
 
-			    #x(t) = x(t+1)
-			    self.estimated_level = self.new_estimated_level
+	            if (delta > self.threshold) and (count>2):
+	                self.switch_sensor(self.controller_ip, self.controller_port)
+	                self.intrusion_sensor = True
+	                print "Intrusion detected!"
+			continue
 
-		        else:
-			    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
+			#x(t) = x(t+1)
+			self.estimated_level = self.new_estimated_level
 
-                            print "DEBUG estimated : %.5f" % (self.estimated_level)
-                            print "DEBUG received : %.5f" % (self.received_level)
+		    else:
+		        self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
+                        print "DEBUG estimated : %.5f" % (self.estimated_level)
+                        print "DEBUG received : %.5f" % (self.received_level)
 
-			    self.send_message(IP['plc101'], 4234, self.new_estimated_level)
-			    self.estimated_level = self.new_estimated_level
-		            #self.received_level = float(self.receive(LIT301, LIT301_ADDR))
-			    self.wait_time = PLC_PERIOD_SEC
+			self.send_message(IP['plc101'], 4234, self.new_estimated_level)
+			self.estimated_level = self.new_estimated_level
+		        #self.received_level = float(self.receive(LIT301, LIT301_ADDR))
+			self.wait_time = PLC_PERIOD_SEC
 
-	                #self.switch_sensor(self.controller_ip, self.controller_port)
-	                count += 1		
-	                time.sleep(self.wait_time)			
+	            #self.switch_sensor(self.controller_ip, self.controller_port)
+	            count += 1		
+	            time.sleep(self.wait_time)			
 
     	def send_message(self, ipaddr, port, message):
 	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
