@@ -8941,3 +8941,12 @@ ValueError: filedescriptor out of range in select()
 07-18 19:36:20.670 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-18 19:36:20.714 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-18 19:36:20.725 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.493 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.506 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.539 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.549 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.559 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.559 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.603 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.604 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.604 MainThread root     WARNING  logrotate_ Rotating log files due to signal
