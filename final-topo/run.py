@@ -54,28 +54,28 @@ class SimpleCPS(MiniCPS):
 	plc201.cmd('route add default gw 192.168.2.254 plc201-eth0  ')
 	plc301.cmd('route add default gw 192.168.3.254 plc301-eth0  ')	
 
-	#ph201.cmd(sys.executable + ' ph201.py &')
-	#time.sleep(0.05)
+	ph201.cmd(sys.executable + ' ph201.py &')
+	time.sleep(0.03)
 
-	#plc201.cmd(sys.executable + ' plc201.py &')
-	#time.sleep(0.05)	
-	#p201.cmd(sys.executable + ' p201.py &')
+	plc201.cmd(sys.executable + ' plc201.py &')
+	time.sleep(0.03)	
+	p201.cmd(sys.executable + ' p201.py &')
 
-	#lit301.cmd(sys.executable + ' lit301.py &')
-	#lit101.cmd(sys.executable + ' lit101.py &')
-	#time.sleep(0.05)
+	lit301.cmd(sys.executable + ' lit301.py &')
+	lit101.cmd(sys.executable + ' lit101.py &')
+	time.sleep(0.03)
 
-	#plc101.cmd(sys.executable + ' plc101.py &')
-	#time.sleep(0.03)
+	plc101.cmd(sys.executable + ' plc101.py &')
+	time.sleep(0.03)
 
-	#plc301.cmd(sys.executable + ' plc301.py &')
-	#time.sleep(0.03)
+	plc301.cmd(sys.executable + ' plc301.py &')
+	time.sleep(0.03)
 
-	#p101.cmd(sys.executable + ' p101.py &')
-	#mv101.cmd(sys.executable + ' mv101.py &')
-	#p301.cmd(sys.executable + ' p301.py &')
+	p101.cmd(sys.executable + ' p101.py &')
+	mv101.cmd(sys.executable + ' mv101.py &')
+	p301.cmd(sys.executable + ' p301.py &')
 
-	#plant101.cmd(sys.executable + ' physical_process.py > test_2.txt &')		
+	plant101.cmd(sys.executable + ' physical_process.py > test_2.txt &')		
 
         # start devices
         CLI(self.net)
