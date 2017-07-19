@@ -23,3 +23,22 @@
 07-18 22:35:22.403 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-18 22:35:22.472 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-18 22:35:22.473 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.131 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.170 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.189 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.196 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.203 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.218 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.219 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.238 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 10:35:13.249 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 11:46:54.368 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+07-19 11:46:54.569 MainThread network  WARNING  join       enip_srv server TID [24903/47113946617600] hanging on None
+07-19 12:48:25.792 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 12:48:25.792 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 12:48:25.840 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 12:48:25.856 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 12:48:25.865 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 12:48:25.877 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 12:48:25.883 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-19 12:48:25.947 MainThread root     WARNING  logrotate_ Rotating log files due to signal

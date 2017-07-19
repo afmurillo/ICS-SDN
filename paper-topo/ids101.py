@@ -87,11 +87,8 @@ class Ids101(PLC):
 
 
 	        mv101 = int(self.get(MV101))
-	        estimated_mv101 = self.calculate_controls()
-	        if (mv101 != estimated_mv101):
-	      	    self.intrusion_plc == True
-
    	        p101 = int(self.get(P101))
+
                 if self.intrusion_sensor == False:
 
 		    print "No attack detected"		
@@ -128,9 +125,16 @@ class Ids101(PLC):
 		        #self.received_level = float(self.receive(LIT301, LIT301_ADDR))
 			self.wait_time = PLC_PERIOD_SEC
 
-	            #self.switch_sensor(self.controller_ip, self.controller_port)
-	            count += 1		
-	            time.sleep(self.wait_time)			
+                    #estimated_mv101 = self.calculate_controls(mv101)
+                    #if (mv101 != estimated_mv101):
+                    #    self.intrusion_plc == True
+
+                    #estimated_p101 = self.calculate_controls(p101)
+                    #if (p101 != estimated_p101):
+                    #   self.intrusion_plc == True
+
+	        count += 1		
+	        time.sleep(self.wait_time)			
 
     	def send_message(self, ipaddr, port, message):
 	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
