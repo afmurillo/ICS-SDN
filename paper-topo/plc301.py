@@ -3,10 +3,10 @@ PLC 3
 """
 
 from minicps.devices import PLC
+from threading import Thread
 from utils import *
 
 import time
-
 import sys
 import socket
 import json
