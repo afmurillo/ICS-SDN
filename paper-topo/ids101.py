@@ -115,15 +115,15 @@ class Ids101(PLC):
 			#x(t) = x(t+1)
 			self.estimated_level = self.new_estimated_level
 
-		    else:
-		        self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
-                        print "DEBUG estimated : %.5f" % (self.estimated_level)
-                        print "DEBUG received : %.5f" % (self.received_level)
+		else:
+		    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
+                    print "DEBUG estimated : %.5f" % (self.estimated_level)
+                    print "DEBUG received : %.5f" % (self.received_level)
 
-			self.send_message(IP['plc101'], 4234, self.new_estimated_level)
-			self.estimated_level = self.new_estimated_level
-		        #self.received_level = float(self.receive(LIT301, LIT301_ADDR))
-			self.wait_time = PLC_PERIOD_SEC
+		    self.send_message(IP['plc101'], 4234, self.new_estimated_level)
+		    self.estimated_level = self.new_estimated_level
+		    #self.received_level = float(self.receive(LIT301, LIT301_ADDR))
+		    self.wait_time = PLC_PERIOD_SEC
 
                     #estimated_mv101 = self.calculate_controls(mv101)
                     #if (mv101 != estimated_mv101):
@@ -133,7 +133,7 @@ class Ids101(PLC):
                     #if (p101 != estimated_p101):
                     #   self.intrusion_plc == True
 
-	        count += 1		
+  	        count += 1		
 	        time.sleep(self.wait_time)			
 
     	def send_message(self, ipaddr, port, message):
