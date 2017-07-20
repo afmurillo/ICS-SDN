@@ -15,7 +15,17 @@ tank_2= fscanf(fileID_2,formatSpec);
 fileID_1 = fopen('experiment_no_attack/ph.txt','r');
 ph = fscanf(fileID_1,formatSpec);
 fsz = 6;
- 
+
+fileID_4 = fopen('defense_experiment_compromised_sensor/tank_1.txt','r');
+defense_tank_1= fscanf(fileID_4,formatSpec);
+
+fileID_5 = fopen('defense_experiment_compromised_sensor/tank_2.txt','r');
+defense_tank_2= fscanf(fileID_5,formatSpec);
+
+fileID_6 = fopen('defense_experiment_compromised_sensor/ph.txt','r');
+defense_ph = fscanf(fileID_6,formatSpec);
+
+
 
 %%%%%%%%%%%%%%%%%%%%% Experiment 1 no atacck %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
