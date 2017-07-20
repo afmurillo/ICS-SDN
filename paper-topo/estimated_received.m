@@ -4,111 +4,173 @@ clc
 
 formatSpec = '%f';
 
-%%% Experiment 1
-
-fileID_3 = fopen('no_attack_experiment/tank_1.txt','r');
+fileID_3 = fopen('experiment_no_attack/tank_1.txt','r');
 tank_1= fscanf(fileID_3,formatSpec);
 
-fileID_2 = fopen('no_attack_experiment/tank_2.txt','r');
+fileID_2 = fopen('experiment_no_attack/tank_2.txt','r');
 tank_2= fscanf(fileID_2,formatSpec);
 
-fileID_1 = fopen('no_attack_experiment/ph.txt','r');
+fileID_1 = fopen('experiment_no_attack/ph.txt','r');
 ph = fscanf(fileID_1,formatSpec);
 
-%%% IDS
+% fileID_4 = fopen('received.txt','r');
+% received = fscanf(fileID_4,formatSpec);
+% 
+% fileID_5 = fopen('estimated.txt','r');
+% estimated = fscanf(fileID_5,formatSpec);
 
-fileID_4 = fopen('no_attack_experiment/received.txt','r');
-received = fscanf(fileID_4,formatSpec);
+% fileID_6 = fopen('attack_tank_1.txt','r');
+% attack_tank_1 = fscanf(fileID_6,formatSpec);
 
-fileID_5 = fopen('no_attack_experiment/estimated.txt','r');
-estimated = fscanf(fileID_5,formatSpec);
+% for i=1:length(attack_tank_1)
+%     if (attack_tank_1(i)) > 1.2
+%         attack_tank_1(i) = 1.2;
+%     end
+% end
 
-%%% Experiment 2
+% fileID_7 = fopen('attack_tank_2.txt','r');
+% attack_tank_2= fscanf(fileID_7,formatSpec);
 
-fileID_6 = fopen('attack_experiment/attack_tank_1.txt','r');
-attack_tank_1 = fscanf(fileID_6,formatSpec);
+fileID_8 = fopen('defense_experiment_compromised_sensor/defense_tank_1.txt','r');
+defense_tank_1 = fscanf(fileID_8,formatSpec);
 
-fileID_7 = fopen('attack_experiment/attack_tank_2.txt','r');
-attack_tank_2= fscanf(fileID_7,formatSpec);
-
-fileID_8 = fopen('attack_experiment/defense_tank_1.txt','r');
-defense_tank_1= fscanf(fileID_8,formatSpec);
-
-for i=1:length(defense_tank_1)
-    defense_tank_1(i) = defense_tank_1(i) - 0.4;
-end
-
-fileID_9 = fopen('attack_experiment/defense_tank_2.txt','r');
+fileID_9 = fopen('defense_experiment_compromised_sensor/defense_tank_2.txt','r');
 defense_tank_2= fscanf(fileID_9,formatSpec);
 
+plant_time = ([1:4001]*0.2/360)*60;
+ids_time = (([1:2264]*0.113171707/360)*60)*3;
+
 fsz = 6;
- 
 
-%%%%%%%%%%%%%%%%%%%%% Experiment 1 no atacck %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% NORMAL OPERATION %%%%%%%%%%%%%%%%%%%%%%%%
 
-h1=figure(1);
-set(gca, 'FontSize', fsz, 'LineWidth', 2.0 ); 
+% h1=figure(1);
+% set(gca, 'FontSize', fsz, 'LineWidth', 2.0 ); 
+% 
+% subplot(2,1,1)
+% plot(plant_time,tank_1)
+% axis([0 120 0 1.25])
+% grid on;
+% 
+% xlabel('Time (min)')
+% ylabel('Tank 1 Level')
+% 
+% 
+% subplot(2,1,2)
+% plot(plant_time,tank_2)
+% axis([0 120 0 1.25])
+% grid on;
+% 
+% xlabel('Time (min)');
+% ylabel('Tank 2 Level');
+% 
+% suptitle('Water Tank Level');
+% 
+% matlab2tikz('tank_levels.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
-subplot(2,1,1)
-plot(tank_1(1:4000))
+
+%%%%%%%%%%%%%%%%%%%%%%%%% ATTACK NO DEFENSE %%%%%%%%%%%%%%%%%%%%%%%%
+
+% h3=figure(3)
+% set(gca, 'FontSize', fsz, 'LineWidth', 2.0 ); 
+% 
+% subplot(2,1,1)
+% plot(plant_time,attack_tank_1)
+% axis([0 120 0 1.25])
+% grid on;
+% 
+% xlabel('Time (min)')
+% ylabel('Tank 2 Level')
+% 
+% 
+% subplot(2,1,2)
+% plot(plant_time,attack_tank_2)
+% axis([0 120 0 1.25])
+% grid on;
+% 
+% xlabel('Time (min)')
+% ylabel('Level')
+% 
+% suptitle('Water Tank 2 Level');
+% 
+% matlab2tikz('attack_no_defense.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% IDS DEFENSE %%%%%%%%%%%%%%%%%%%%%%%%
+
+h4=figure(4)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+
+hold on;
+%plot(plant_time,attack_tank_1, '--r', 'linewidth', 1.5);
+plot(plant_time,defense_tank_1, '-b', 'linewidth', 1.5)
+lg = legend('Normal Operation', 'Attack Without Defense', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+
+axis([0 120 0 1.25])
 grid on;
 
-xlabel('Time (s)')
-ylabel('Water Tank Level')
+plot([42 42],[0 1.25], '--k')
+axis([0 120 0 1.25])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Water Tank 1 Level Behavior With Attack and IDS');
+
+matlab2tikz('defense_1.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+% h5=figure(5)
+% 
+% 
+% %subplot(2,1,2)
+% plot(plant_time,defense_tank_2)
+% axis([0 120 0 1.25])
+% grid on;
+% 
+% xlabel('Time (min)')
+% ylabel('Tank 2 Level (m)')
+% 
+% title('Water Tank 2 Level Behavior With Attack and IDS');
+% 
+% 
+% 
+% matlab2tikz('defense_2.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
 
-subplot(2,1,2)
-plot(tank_2(1:4000))
-grid on;
 
 
-suptitle('Water Tank Level Behavior Without Attack');
-xlabel('Time (s)')
-ylabel('Water Tank Level')
-
-matlab2tikz('tank_levels.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
 
-%%%%%%%%%%%%%%%%%%%%% IDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-h2=figure(2)
-plot(received(1:1000),'k')
-hold on
-plot(estimated(1:1000),'r')
-grid on;
+%%%%%%%%%%%%%%%%%%%%%%%%% IDS DATA %%%%%%%%%%%%%%%%%%%%%%%%
 
-xlabel('Time (s)')
-ylabel('Water Tank Level')
-
-suptitle('Luerenberg Observer');
-
-matlab2tikz('ids_observer.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-
-
-%%%%%%%%%%%%%%%%%%%%% Experiment 3 Attack and Defense %%%%%%%%%%%%%%%%%%%%%
-
-h3=figure(3)
-set(gca, 'FontSize', fsz, 'LineWidth', 2.0 ); 
-
-subplot(2,1,1)
-plot(attack_tank_1(1:4000), '-r')
-hold on
-plot(defense_tank_1(1:4000), '-b')
-grid on;
-
-xlabel('Time (s)')
-ylabel('Water Tank Level')
-
-
-subplot(2,1,2)
-plot(attack_tank_2(1:4000), '-r')
-hold on
-plot(defense_tank_2(1:4000), '-b')
-grid on;
-
-xlabel('Time (s)')
-ylabel('Water Tank Level')
-
-suptitle('Water Tanks Level Behavior With Attack and IDS');
-
-matlab2tikz('attack_experiment.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+%  h5=figure(5)
+%  set(gca, 'FontSize', fsz, 'LineWidth', 2.0 ); 
+%  
+%  %ids_time
+%  
+% subplot(2,1,1)
+% plot(ids_time,estimated, 'k')
+% axis([0 120 0 1.25])
+% grid on;
+% xlabel('Time (min)')
+% ylabel('Tank 1 Level')
+% 
+% 
+% subplot(2,1,2)
+% plot(ids_time,received, 'r')
+% axis([0 120 0 1.25])
+% grid on;
+% 
+% 
+% xlabel('Time (min)')
+% ylabel('Tank 2 Level')
+% 
+% suptitle('Water Tanks Level Behavior With Attack and IDS');
+% 
+% matlab2tikz('ids_data.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
