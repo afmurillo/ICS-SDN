@@ -65,10 +65,10 @@ class Ids101(PLC):
 	def main_loop(self):
 	    print "main loop"
 	    count = 0
-	    self.received_level = 0.0
-	    self.estimated_level = 0.0
+	    self.received_level = 0.4
+	    self.estimated_level = 0.4
 
-	    # The values are for a 0.2 period, we calculate every 1.0 period
+	    # Physical process evaluates every 0.2 seconds, IDS evaluates every 0.4 seconds
 	    inflow = float( (PUMP_FLOWRATE_IN * PP_PERIOD_HOURS * 2 )  / self.section )
 	    outflow = float( (PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS * 2  ) / self.section )
 

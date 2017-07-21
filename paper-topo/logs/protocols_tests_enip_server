@@ -78,3 +78,47 @@
 07-19 21:06:08.649 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-19 21:06:08.649 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-19 21:06:08.662 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:26:11.553 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+07-21 10:26:11.765 MainThread network  WARNING  join       enip_srv server TID [ 4607/46936276436736] hanging on None
+07-21 10:29:48.235 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:29:48.240 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:29:48.246 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:29:48.250 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:29:48.295 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:29:48.313 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:29:48.314 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:29:48.316 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:37:20.922 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+07-21 10:37:21.122 MainThread network  WARNING  join       enip_srv server TID [ 9820/47876632680192] hanging on None
+07-21 10:40:31.516 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:40:31.518 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:40:31.525 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:40:31.546 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:40:31.551 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:40:31.624 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 10:40:31.620 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.412 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.424 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.445 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.471 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.475 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.476 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.476 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.472 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.491 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:00:56.533 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:20:40.246 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:20:40.260 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:20:40.269 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:20:40.289 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:20:40.294 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:20:40.299 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:20:40.307 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 11:20:40.337 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 12:23:48.852 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 12:23:48.857 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 12:23:48.857 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 12:23:48.868 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 12:23:48.919 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 12:23:48.922 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-21 12:23:48.947 MainThread root     WARNING  logrotate_ Rotating log files due to signal
