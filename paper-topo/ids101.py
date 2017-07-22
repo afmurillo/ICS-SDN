@@ -65,8 +65,8 @@ class Ids101(PLC):
 	def main_loop(self):
 	    print "main loop"
 	    count = 0
-	    self.received_level = 0.4
-	    self.estimated_level = 0.4
+	    self.received_level = 0.0
+	    self.estimated_level = 0.0
 
 	    # Physical process evaluates every 0.2 seconds, IDS evaluates every 0.4 seconds
 	    inflow = float( (PUMP_FLOWRATE_IN * PP_PERIOD_HOURS * 2 )  / self.section )
@@ -112,8 +112,8 @@ class Ids101(PLC):
 	                print "Intrusion detected!"
 			continue
 
-			#x(t) = x(t+1)
-			self.estimated_level = self.new_estimated_level
+		    #x(t) = x(t+1)
+		    self.estimated_level = self.new_estimated_level
 
 		else:
 		    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
