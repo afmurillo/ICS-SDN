@@ -43,6 +43,9 @@ class SimpleCPS(MiniCPS):
 	plc2.cmd('route add default gw 192.168.2.254 plc201-eth0  ')
 	plc3.cmd('route add default gw 192.168.3.254 plc301-eth0  ')	
 
+	plc1.cmd('route add -net 192.168.3.0 netmask 255.255.255.0 dev plc101-eth2')
+	plc3.cmd('route add -net 192.168.1.0 netmask 255.255.255.0 dev plc301-eth2')
+
         # start devices
         CLI(self.net)
 
