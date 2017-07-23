@@ -20,13 +20,13 @@ LIT101 = ('LIT101', 1)
 
 class Ids101(PLC):
 
-	def switch_sensor(self, controller_ip, controller_port):
+	def switch_component(self, controller_ip, controller_port, component):
 		print "Connecting to ONOS"
 	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	        sock.connect((controller_ip, int(controller_port)))
 	        msg_dict = dict.fromkeys(['Type', 'Variable'])
-	        msg_dict['Type'] = "Command"
-	        msg_dict['Variable'] = "Switch_flow"
+	        msg_dict['Type'] = "Command"		
+	        msg_dict['Variable'] = component
 	        message = json.dumps(str(msg_dict))
 	        try:
 	            ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
@@ -81,6 +81,7 @@ class Ids101(PLC):
 		self.threshold = 0.1
 		self.sensor_intrusion = False		
 		self.plc_intrusion = False	
+		self.plc_count = 0
 		self.filling = False
 		self.wait_time = PLC_PERIOD_SEC
 
@@ -113,7 +114,7 @@ class Ids101(PLC):
 		            print "DEBUG delta : %.5f" % (delta)
 
 	                    if (delta > self.threshold) and (count>2):
-	                        self.switch_sensor(self.controller_ip, self.controller_port)
+	                        self.switch_component(self.controller_ip, self.controller_port, "Switch_flow")
 	                        self.sensor_intrusion = True
 	                        print "Intrusion detected!"
 				continue
@@ -124,13 +125,19 @@ class Ids101(PLC):
 				self.filling = False
 
 			    self.estimated_mv101 = self.calculate_controls(self.received_level)
-
-			    if mv101 != self.estimated_mv101 and count>5:
-			        self.plc_intrusion = True
-			        print "Received MV ", mv101
-				print "Estimated MV ", self.estimated_mv101
-				print "Filling ", self.filling
-				print "@@@ PLC INTRUSION!!! @@@@"
+			   
+			    if mv101 != self.estimated_mv101:
+				if count > 5:
+					self.plc_count += 1		    
+					if self.plc_count >= 3:
+					        self.plc_intrusion = True
+					        print "Received MV ", mv101
+						print "Estimated MV ", self.estimated_mv101
+						print "Filling ", self.filling
+						print "@@@ PLC INTRUSION!!! @@@@"
+						self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
+			    else:
+				self.plc_count = 0 
 			    
 
 			    #x(t) = x(t+1)
@@ -149,7 +156,7 @@ class Ids101(PLC):
 
 	                #self.switch_sensor(self.controller_ip, self.controller_port)
 	                count += 1		
-	                time.sleep(self.wait_time)			
+	                time.sleep(self.wait_time)					
 
     	def send_message(self, ipaddr, port, message):
 	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

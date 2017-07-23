@@ -94,6 +94,8 @@ class DynamicController(object):
         self.controller_socket = ControllerSocket(self)
         self.controller_socket.start()
         self.attack_detected = False
+	self.compromised_sensor = True
+	self.compromised_plc = True
 
     def add_connection_object(self, connection):
 	self.connections.append(connection)
@@ -116,9 +118,12 @@ class DynamicController(object):
         if message['Variable'] == 'Switch_flow':
             #self.switch_flow('lit101','ids101',10,of.OFP_FLOW_PERMANENT, True)
             self.simple_switch_flow()
+	    self.compromised_sensor = True
 
         if message['Variable'] == 'Switch_plc':
-            self.switch_flow('plc1','plc2',10,of.OFP_FLOW_PERMANENT, True)
+            self.simple_switch_flow()
+	    self.compromised_plc = True
+		
 
     def simple_switch_flow(self):
         # Simple switch just deletes all flow entries, triggering packet_in events.
@@ -172,7 +177,7 @@ class DynamicController(object):
 		nw_src = a_msg.match.nw_src
 		print "Nw src: ", nw_src
 
-	        if (in_port == 4) and (nw_src == "192.168.1.10"):
+	        if (in_port == 4) and (nw_src == "192.168.1.10") and (self.compromised_sensor):
 		    log.debug("Dropping packets from malicious sensor!")
 	            return
 
