@@ -231,5 +231,3 @@ class PLC101(PLC):
 if __name__ == "__main__":
 
     plc101 = PLC101(name='plc101',state=STATE,protocol=PLC101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
-    #plc1.pre_loop()
-    #plc1.main_loop()
