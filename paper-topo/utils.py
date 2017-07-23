@@ -90,6 +90,7 @@ PORTS = {
 	'mvport' : '9587',
 	'pport' : '7842',
 	'hmi_poll_port': '5000'
+	'p301_port' : '6568'
 }
 
 DPCTL_PORTS={ 
