@@ -14,9 +14,8 @@ PLC101_ADDR = IP['plc101']
 IDS_ADDR = IP['ids101']
 LIT301_ADDR = IP['lit301']
 
-MV101 = ('MV101', 1)
-P101 = ('P301', 1)
-LIT101 = ('LIT301', 3)
+P301 = ('P301', 3)
+LIT301 = ('LIT301', 3)
 
 class Ids101(PLC):
 
@@ -73,7 +72,7 @@ class Ids101(PLC):
 		self.previous_level = 0.0
 
 		# The values are for a 0.2 period, we calculate every 1.0 period
-		inflow = float( (PUMP_FLOWRATE_IN_2 * PP_PERIOD_HOURS * 2 )  / self.section )
+		inflow = float( (PUMP_FLOWRATE_IN * PP_PERIOD_HOURS * 2 )  / self.section )
 		outflow = float( (PUMP_FLOWRATE_OUT_2 * PP_PERIOD_HOURS * 2  ) / self.section )
 
 		self.controller_port = PORTS['controller_ids_port']
@@ -91,64 +90,58 @@ class Ids101(PLC):
 
 		while(count <= PP_SAMPLES):	
 
+		    # IDS needs to:
+		    # Detect compromised PLC
+		    # If plc is compromised needs to:
+		    #  1. Keep sendind data to the PLC101
+		    #  2. Calculate and send control action to P301
 
-			# IDS needs to:
-			# Detect compromised PLC
-			# If plc is compromised needs to:
-			#  1. Keep sendind data to the PLC101
-			#  2. Calculate and send control action to P301
-
-            p301 = int(self.get(P301))
+            	    p301 = int(self.get(P301))
 		    try:
-			    self.received_level = float(self.receive(LIT301, SENSOR_ADDR))
+			self.received_level = float(self.receive(LIT301, SENSOR_ADDR))
+			print "Received LIT301", self.received_level
 		    except:
-			    continue
+			continue
 
-			if self.plc_intrusion == False:
+		    if self.plc_intrusion == False:
+			if self.received_level > self.previous_level:
+			    self.filling = True
+		        else:
+			    self.filling = False
 
-			    if self.received_level > self.previous_level:
-					self.filling = True
-				    else:
-					self.filling = False
-
-			    self.estimated_p301 = self.calculate_controls(self.received_level)
+			self.estimated_p301 = self.calculate_controls(self.received_level)
 			   
-			    if p301 != self.estimated_p301:
-					if count > 5:
-						self.plc_count += 1		    
-						if self.plc_count >= 3:
-					        self.plc_intrusion = True
-					        print "Received MV ", p301
-							print "Estimated MV ", self.estimated_p301
-							print "Filling ", self.filling
-							print "@@@ PLC INTRUSION!!! @@@@"
-							self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
+			if p301 != self.estimated_p301:
+			    if count > 5:
+			        self.plc_count += 1		    
+				if self.plc_count >= 3:
+				    self.plc_intrusion = True
+				    print "Received MV ", p301
+				    print "Estimated MV ", self.estimated_p301
+				    print "Filling ", self.filling
+				    print "@@@ PLC INTRUSION!!! @@@@"
+				    self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
 			    else:
-					self.plc_count = 0 
+				self.plc_count = 0 
 			    
-			    #x(t) = x(t+1)
-			    self.previous_level = self.received_level
+			#x(t) = x(t+1)
+			self.previous_level = self.received_level
 
-			else:
+		    else:
+			self.send_message(PLC101_ADDR, 8754, self.received_level)
+	            	if self.received_level >= LIT_301_M['HH'] :	            
+	                    p301 = 1
+	                elif self.received_level >= LIT_301_M['H']:
+	                    p301 = 1
+	                elif self.received_level <= LIT_301_M['LL']:
+	                    p301 = 0
+	            	elif self.received_level <= LIT_301_M['L']:
+	            	    p301 = 0	                	            
 
-				self.send_message(PLC101_ADDR, 8754, self.received_level)
+	            	self.send_message(IP['p301'], 6568, p301)
 
-	            if self.received_level >= LIT_301_M['HH'] :	            
-	                p301 = 1
-
-	            elif self.received_level >= LIT_301_M['H']:
-	                p301 = 1
-
-	            elif self.received_level <= LIT_301_M['LL']:
-	                p301 = 0
-
-	            elif self.received_level <= LIT_301_M['L']:
-	            	p301 = 0	                	            
-
-	            self.send_message(IP['p301'], 6568, p301)
-
-            count += 1		
-            time.sleep(self.wait_time)					
+	        count += 1		
+        	ime.sleep(self.wait_time)					
 
     	def send_message(self, ipaddr, port, message):
 	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -89,7 +89,7 @@ PORTS = {
 	'plc101_lit301' : '8754',
 	'mvport' : '9587',
 	'pport' : '7842',
-	'hmi_poll_port': '5000'
+	'hmi_poll_port': '5000',
 	'p301_port' : '6568'
 }
 

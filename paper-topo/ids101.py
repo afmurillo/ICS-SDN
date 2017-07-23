@@ -21,22 +21,22 @@ LIT101 = ('LIT101', 1)
 class Ids101(PLC):
 
 	def switch_component(self, controller_ip, controller_port, component):
-		print "Connecting to ONOS"
-	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	        sock.connect((controller_ip, int(controller_port)))
-	        msg_dict = dict.fromkeys(['Type', 'Variable'])
-	        msg_dict['Type'] = "Command"		
-	        msg_dict['Variable'] = component
-	        message = json.dumps(str(msg_dict))
-	        try:
-	            ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
-	        except socket.error, exc:
-	            print "Socket error"
-		    print exc
-	            return
-	        if(ready_to_write > 0):
-	            sock.send(message)
-	        sock.close()
+	    print "Connecting to ONOS"
+	    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	    sock.connect((controller_ip, int(controller_port)))
+	    msg_dict = dict.fromkeys(['Type', 'Variable'])
+	    msg_dict['Type'] = "Command"		
+	    msg_dict['Variable'] = component
+	    message = json.dumps(str(msg_dict))
+	    try:
+	        ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
+	    except socket.error, exc:
+	        print "Socket error"
+	        print exc
+	        return
+            if(ready_to_write > 0):
+	        sock.send(message)
+	    sock.close()
 
 	def calculate_controls(self, variable):
  	    print "calculate action control"

@@ -34,9 +34,16 @@ class SimpleCPS(MiniCPS):
 	plc2 = self.net.get('plc201')
 	plc3 = self.net.get('plc301')
 
-        ids = self.net.get('ids101')
-        _intf = Intf( 'eth2', node=ids )
-        ids.cmd('ifconfig eth2 192.168.56.101')
+        ids101 = self.net.get('ids101')
+        _intf = Intf( 'eth2', node=ids101 )
+        ids101.cmd('ifconfig eth2 192.168.56.101')
+
+	ids301 = self.net.get('ids301')
+	ids301.cmd('route add -net 192.168.1.0 netmask 255.255.255.0 dev ids301-eth3')
+
+	_intf = Intf( 'eth3', node=ids301 )
+        ids301.cmd('ifconfig eth3 192.168.56.103')
+
 
 
 	plc1.cmd('route add default gw 192.168.1.254 plc101-eth0  ')
