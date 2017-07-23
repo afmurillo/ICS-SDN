@@ -2,6 +2,13 @@ from minicps.devices import PLC
 from utils import *
 
 import time
+from threading import Thread
+
+
+import socket
+import json
+import select
+
 
 PLC301_ADDR = IP['plc301']
 
@@ -45,8 +52,8 @@ class PP301(PLC):
 	def main_loop(self):
 		print 'DEBUG: p301 enters main_loop'
 		count = 0
-        mvsocket = MVSocket(self)
-        mvsocket.start()
+	        psocket = PSocket(self)
+	        psocket.start()
 
 		while count<=PLC_SAMPLES:
 			p301 = int(self.receive(P301, PLC301_ADDR))

@@ -181,6 +181,11 @@ class DynamicController(object):
 		    log.debug("Dropping packets from malicious sensor!")
 	            return
 
+	        if (in_port == 4) and (nw_src == "192.168.3.30") and (self.compromised_plc):
+                    log.debug("Dropping packets from malicious PLC!")
+                    return
+
+
         def flood(message=None):
             """
             create a packet_out with flood rule
