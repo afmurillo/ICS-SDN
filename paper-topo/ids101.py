@@ -18,7 +18,6 @@ MV101 = ('MV101', 1)
 P101 = ('P101', 1)
 LIT101 = ('LIT101', 1)
 
-
 class Ids101(PLC):
 
 	def switch_sensor(self, controller_ip, controller_port):
@@ -41,21 +40,24 @@ class Ids101(PLC):
 
 	def calculate_controls(self, variable):
  	    print "calculate action control"
+	    estimated = 1
+
             if variable >= LIT_101_M['HH'] :
-		self.estimated_p101 = 1
-		self.estimated_mv101 = 0
-
-            elif variable >= LIT_101_M['H']:
-		self.estimated_p101 = 1
-		self.estimated_mv101 = 0
-
+	        estimated = 0
+            elif variable >= LIT_101_M['H'] :
+		estimated = 0
             elif variable <= LIT_101_M['L']:
-		self.estimated_p101 = 0
-		self.estimated_mv101 = 1
-
+		estimated = 1
             elif variable <= LIT_101_M['LL']:
-		self.estimated_p101 = 0
-		self.estimated_mv101 = 1
+		estimated = 1
+
+	    if variable > LIT_101_M['L'] and variable < LIT_101_M['H']:
+		if self.filling:
+			estimated = 1
+		else:
+			estimated = 0
+	
+ 	    return estimated
 
 	def pre_loop(self, sleep=0.1):
 
@@ -77,7 +79,9 @@ class Ids101(PLC):
 		self.controller_port = PORTS['controller_ids_port']
 		self.controller_ip = IP['controller']
 		self.threshold = 0.1
-		self.intrusion = False		
+		self.sensor_intrusion = False		
+		self.plc_intrusion = False	
+		self.filling = False
 		self.wait_time = PLC_PERIOD_SEC
 
 		#print "Connecting to controller"		
@@ -87,11 +91,10 @@ class Ids101(PLC):
 
 		while(count <= PP_SAMPLES):	
 
-
 	                mv101 = int(self.get(MV101))
    	                p101 = int(self.get(P101))
 
-                	if self.intrusion == False:
+                	if self.sensor_intrusion == False:
 
 			    print "No attack detected"
 		
@@ -111,12 +114,27 @@ class Ids101(PLC):
 
 	                    if (delta > self.threshold) and (count>2):
 	                        self.switch_sensor(self.controller_ip, self.controller_port)
-	                        self.intrusion = True
+	                        self.sensor_intrusion = True
 	                        print "Intrusion detected!"
 				continue
 
+			    if self.new_estimated_level > self.estimated_level:
+				self.filling = True
+			    else:
+				self.filling = False
+
+			    self.estimated_mv101 = self.calculate_controls(self.received_level)
+
+			    if mv101 != self.estimated_mv101 and count>5:
+			        self.plc_intrusion = True
+			        print "Received MV ", mv101
+				print "Estimated MV ", self.estimated_mv101
+				print "Filling ", self.filling
+				print "@@@ PLC INTRUSION!!! @@@@"
+			    
+
 			    #x(t) = x(t+1)
-			    self.estimated_level = self.new_estimated_level
+			    self.estimated_level = self.new_estimated_level			   
 
 		        else:
 			    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
