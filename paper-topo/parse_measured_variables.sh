@@ -17,3 +17,8 @@ cat defense_plc.txt | grep 'PH Level'| awk '{print $4}' > plc_defense_ph.txt
 cat defense_plc.txt | grep 'Tank 1'| awk '{print $6}' > plc_defense_tank_1.txt
 cat defense_plc.txt | grep 'Tank 2'| awk '{print $6}' > plc_defense_tank_2.txt
 
+cat plc_attack.txt | grep 'PH Level'| awk '{print $4}' > plc_attack_ph.txt
+cat plc_attack.txt | grep 'Tank 1'| awk '{print $6}' > plc_attack_tank_1.txt
+cat plc_attack.txt | grep 'Tank 2'| awk '{print $6}' > plc_attack__tank_2.txt
+
+
