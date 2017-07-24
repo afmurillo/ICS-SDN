@@ -10,7 +10,8 @@ import json
 import select
 
 SENSOR_ADDR = IP['lit301']
-PLC101_ADDR = IP['plc101']
+#PLC101_ADDR = IP['plc101']
+PLC101_ADDR = IP['plc101-HMI']
 IDS_ADDR = IP['ids101']
 LIT301_ADDR = IP['lit301']
 
@@ -140,8 +141,8 @@ class Ids101(PLC):
 
 	            	self.send_message(IP['p301'], 6568, p301)
 
-	        count += 1		
-        	ime.sleep(self.wait_time)					
+	            count += 1		
+        	    time.sleep(self.wait_time)					
 
     	def send_message(self, ipaddr, port, message):
 	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
