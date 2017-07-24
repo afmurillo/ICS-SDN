@@ -177,9 +177,9 @@ class DynamicController(object):
 		nw_src = a_msg.match.nw_src
 		print "Nw src: ", nw_src
 
-	        if (in_port == 4) and (nw_src == "192.168.1.10") and (self.compromised_sensor):
-		    log.debug("Dropping packets from malicious sensor!")
-	            return
+	        #if (in_port == 4) and (nw_src == "192.168.1.10") and (self.compromised_sensor):
+		#log.debug("Dropping packets from malicious sensor!")
+	        #return
 
 	        if (in_port == 4) and (nw_src == "192.168.3.30") and (self.compromised_plc):
                     log.debug("Dropping packets from malicious PLC!")

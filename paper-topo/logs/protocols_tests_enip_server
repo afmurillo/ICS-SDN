@@ -348,3 +348,31 @@
 07-23 22:42:37.234 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-23 22:42:37.275 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-23 22:42:37.292 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:02:04.877 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:02:04.892 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:02:04.907 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:02:04.924 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:14:05.782 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:14:05.793 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:14:05.801 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:14:05.850 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:37:37.451 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+07-23 23:37:37.652 MainThread network  WARNING  join       enip_srv server TID [ 5851/47274755315456] hanging on None
+07-23 23:37:42.868 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:37:42.888 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:37:42.897 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:37:42.922 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:37:42.951 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:52:19.071 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:52:19.073 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:52:19.131 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:52:19.145 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:52:19.156 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:52:19.174 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-23 23:52:19.123 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-24 00:12:09.157 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-24 00:12:09.164 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-24 00:12:09.172 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-24 00:12:09.179 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-24 00:12:09.230 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-24 00:12:09.247 MainThread root     WARNING  logrotate_ Rotating log files due to signal

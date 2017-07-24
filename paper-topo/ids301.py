@@ -97,7 +97,6 @@ class Ids101(PLC):
 		    #  1. Keep sendind data to the PLC101
 		    #  2. Calculate and send control action to P301
 
-            	    p301 = int(self.get(P301))
 		    try:
 			self.received_level = float(self.receive(LIT301, SENSOR_ADDR))
 			print "Received LIT301", self.received_level
@@ -105,6 +104,7 @@ class Ids101(PLC):
 			continue
 
 		    if self.plc_intrusion == False:
+			p301 = int(self.get(P301))
 			if self.received_level > self.previous_level:
 			    self.filling = True
 		        else:
@@ -125,11 +125,12 @@ class Ids101(PLC):
 			    else:
 				self.plc_count = 0 
 			    
-			#x(t) = x(t+1)
-			self.previous_level = self.received_level
+		    	#x(t) = x(t+1)
+		    	self.previous_level = self.received_level
 
 		    else:
 			self.send_message(PLC101_ADDR, 8754, self.received_level)
+			print "Sending level to PLC101", self.received_level
 	            	if self.received_level >= LIT_301_M['HH'] :	            
 	                    p301 = 1
 	                elif self.received_level >= LIT_301_M['H']:
@@ -137,8 +138,9 @@ class Ids101(PLC):
 	                elif self.received_level <= LIT_301_M['LL']:
 	                    p301 = 0
 	            	elif self.received_level <= LIT_301_M['L']:
-	            	    p301 = 0	                	            
-
+	            	    p301 = 0
+	                	            
+			print "Sending to P301", p301
 	            	self.send_message(IP['p301'], 6568, p301)
 
 	            count += 1		
