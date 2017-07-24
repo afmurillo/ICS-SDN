@@ -116,8 +116,8 @@ class Ids101(PLC):
 			        self.plc_count += 1		    
 				if self.plc_count >= 3:
 				    self.plc_intrusion = True
-				    print "Received MV ", p301
-				    print "Estimated MV ", self.estimated_p301
+				    print "Received P301 ", p301
+				    print "Estimated P301 ", self.estimated_p301
 				    print "Filling ", self.filling
 				    print "@@@ PLC INTRUSION!!! @@@@"
 				    self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
