@@ -1,0 +1,17 @@
+Control Time:  1.35396504402
+Control Time:  2.34243106842
+Control Time:  3.33603191376
+Control Time:  4.31409502029
+Control Time:  6.31589794159
+Control Time:  10.3258378506
+Control Time:  18.350730896
+Control Time:  34.3408889771
+Control Time:  39.3498079777
+Control Time:  40.3230600357
+Control Time:  41.3555450439
+Control Time:  192.303634882
+Control Time:  193.286752939
+Control Time:  194.315633059
+Control Time:  218.305490017
+Control Time:  219.301800013
+Control Time:  220.345172882
