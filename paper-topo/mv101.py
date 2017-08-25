@@ -37,6 +37,7 @@ class MVSocket(Thread):
 	        print "received from PLC101!", mv101
 		self.plc.set(MV101, mv101)          
 		self.command_time = time.time() - self.command_time
+		print "Command time:", self.command_time
  
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
