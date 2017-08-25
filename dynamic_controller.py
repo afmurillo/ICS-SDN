@@ -139,6 +139,10 @@ class DynamicController(object):
         for connection in self.connections:
                 connection.send(msg)                
 
+	self.stop_control_time = time.time()
+	self.control_time = self.stop_control_time - self.start_control_time
+
+
     def switch_flow(self, old_host, new_host, idle_timeout, hard_timeout, drop):
 
         log.debug("Switching flows")
@@ -183,8 +187,6 @@ class DynamicController(object):
 
 	        if (in_port == 4) and (nw_src == "192.168.1.10") and (self.compromised_sensor):
 			log.debug("Dropping packets from malicious sensor!")
-			self.stop_control_time = time.time()
-			self.control_time = self.stop_control_time - self.start_control_time
 			print "Control Time: ", self.control_time
 		        return
 
