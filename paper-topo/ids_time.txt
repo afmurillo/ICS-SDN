@@ -1,0 +1,286 @@
+DEBUG get_query: SELECT value FROM industry WHERE name = ? AND pid = ?
+DEBUG set_query: UPDATE industry SET value = ? WHERE name = ? AND pid = ?
+DEBUG EnipProtocol server addr:  192.168.1.15
+DEBUG: concatenating server address with default port.
+DEBUG enip server tags_string:  MV101:1=INT LIT101:1=REAL P101:1=INT 
+DEBUG enip _start_server cmd:  ['/usr/bin/python', '-m', 'cpppo.server.enip', '--print', '--log', 'logs/protocols_tests_enip_server', '--address', '192.168.1.15:44818', 'MV101:1=INT', 'LIT101:1=REAL', 'P101:1=INT']
+DEBUG: in pre_loop
+main loop
+Entering while
+No attack detected
+DEBUG estimated : 0.00000
+DEBUG received : 0.40094
+DEBUG delta : 0.40094
+No attack detected
+DEBUG estimated : 0.40283
+DEBUG received : 0.40944
+DEBUG delta : 0.00661
+No attack detected
+DEBUG estimated : 0.41133
+DEBUG received : 0.41159
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.41167
+DEBUG received : 0.41189
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41196
+DEBUG received : 0.41222
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.41230
+DEBUG received : 0.41256
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.41263
+DEBUG received : 0.41285
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41293
+DEBUG received : 0.41285
+DEBUG delta : 0.00007
+No attack detected
+DEBUG estimated : 0.41293
+DEBUG received : 0.41315
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41322
+DEBUG received : 0.41344
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41352
+DEBUG received : 0.41404
+DEBUG delta : 0.00052
+No attack detected
+DEBUG estimated : 0.41411
+DEBUG received : 0.41404
+DEBUG delta : 0.00007
+No attack detected
+DEBUG estimated : 0.41411
+DEBUG received : 0.41437
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.41444
+DEBUG received : 0.41467
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41474
+DEBUG received : 0.41496
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41504
+DEBUG received : 0.41556
+DEBUG delta : 0.00052
+No attack detected
+DEBUG estimated : 0.41563
+DEBUG received : 0.41556
+DEBUG delta : 0.00007
+No attack detected
+DEBUG estimated : 0.41563
+DEBUG received : 0.41585
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41593
+DEBUG received : 0.41641
+DEBUG delta : 0.00048
+No attack detected
+DEBUG estimated : 0.41648
+DEBUG received : 0.41670
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41678
+DEBUG received : 0.41670
+DEBUG delta : 0.00007
+No attack detected
+DEBUG estimated : 0.41678
+DEBUG received : 0.41704
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.41711
+DEBUG received : 0.41733
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41741
+DEBUG received : 0.41763
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41770
+DEBUG received : 0.41793
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41800
+DEBUG received : 0.41822
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41830
+DEBUG received : 0.41852
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41859
+DEBUG received : 0.41885
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.41893
+DEBUG received : 0.41915
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41922
+DEBUG received : 0.41944
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41952
+DEBUG received : 0.41974
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.41981
+DEBUG received : 0.42004
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42011
+DEBUG received : 0.42033
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42041
+DEBUG received : 0.42067
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.42074
+DEBUG received : 0.42096
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42104
+DEBUG received : 0.42126
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42133
+DEBUG received : 0.42156
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42163
+DEBUG received : 0.42185
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42193
+DEBUG received : 0.42215
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42222
+DEBUG received : 0.42244
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42252
+DEBUG received : 0.42274
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42281
+DEBUG received : 0.42304
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42311
+DEBUG received : 0.42337
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.42344
+DEBUG received : 0.42367
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42374
+DEBUG received : 0.42396
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42404
+DEBUG received : 0.42426
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42433
+DEBUG received : 0.42456
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42463
+DEBUG received : 0.42485
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42493
+DEBUG received : 0.42515
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42522
+DEBUG received : 0.42544
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42552
+DEBUG received : 0.42574
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42581
+DEBUG received : 0.42604
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42611
+DEBUG received : 0.42633
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42641
+DEBUG received : 0.42663
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42670
+DEBUG received : 0.42693
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42700
+DEBUG received : 0.42726
+DEBUG delta : 0.00026
+No attack detected
+DEBUG estimated : 0.42733
+DEBUG received : 0.42756
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42763
+DEBUG received : 0.42785
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42793
+DEBUG received : 0.42815
+DEBUG delta : 0.00022
+No attack detected
+DEBUG estimated : 0.42822
+DEBUG received : 0.43570
+DEBUG delta : 0.00748
+No attack detected
+DEBUG estimated : 0.43759
+DEBUG received : 0.44326
+DEBUG delta : 0.00567
+No attack detected
+DEBUG estimated : 0.44515
+DEBUG received : 0.45081
+DEBUG delta : 0.00567
+No attack detected
+DEBUG estimated : 0.45270
+DEBUG received : 0.45837
+DEBUG delta : 0.00567
+No attack detected
+DEBUG estimated : 0.46026
+DEBUG received : 0.46593
+DEBUG delta : 0.00567
+No attack detected
+DEBUG estimated : 0.46781
+DEBUG received : 0.47348
+DEBUG delta : 0.00567
+No attack detected
+DEBUG estimated : 0.47537
+DEBUG received : 0.48198
+DEBUG delta : 0.00661
+No attack detected
+DEBUG estimated : 0.48387
+DEBUG received : 0.48859
+DEBUG delta : 0.00472
+No attack detected
+DEBUG estimated : 0.49048
+DEBUG received : 0.49615
+DEBUG delta : 0.00567
+No attack detected
+DEBUG estimated : 0.49804
+DEBUG received : 0.10465
+DEBUG delta : 0.39339
+Connecting to ONOS

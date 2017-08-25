@@ -1,0 +1,3770 @@
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+DEBUG get_query: SELECT value FROM industry WHERE name = ? AND pid = ?
+DEBUG set_query: UPDATE industry SET value = ? WHERE name = ? AND pid = ?
+DEBUG EnipProtocol server addr:  192.168.1.14
+DEBUG: concatenating server address with default port.
+DEBUG enip server tags_string:  MV101:1=INT LIT101:1=REAL P101:1=INT 
+DEBUG enip _start_server cmd:  ['/usr/bin/python', '-m', 'cpppo.server.enip', '--print', '--log', 'logs/protocols_tests_enip_server', '--address', '192.168.1.14:44818', 'MV101:1=INT', 'LIT101:1=REAL', 'P101:1=INT']
+DEBUG: swat-s1 plc1 enters pre_loop
+DEBUG: swat-s1 plc1 enters main_loop.
+DEBUG entering socket thread run
+DEBUG entering socket thread run
+DEBUG entering socket thread run
+plc1 lit101 0.411000013351
+plc1 lit101 0.411000013351
+received from LIT301! 0.709296286106
+received from LIT301! 0.709296286106
+plc1 lit101 0.411000013351
+received from LIT301! 0.709296286106
+received from LIT301! 0.399074077606
+plc1 lit101 0.409444451332
+received from LIT301! 0.395370364189
+plc1 lit101 0.41159260273
+received from LIT301! 0.408981472254
+plc1 lit101 0.411888897419
+received from LIT301! 0.417148143053
+plc1 lit101 0.412555545568
+received from LIT301! 0.43166667223
+plc1 lit101 0.412851840258
+received from LIT301! 0.438925921917
+plc1 lit101 0.413148134947
+received from LIT301! 0.453444451094
+plc1 lit101 0.413777768612
+received from LIT301! 0.459796309471
+plc1 lit101 0.414037048817
+received from LIT301! 0.473407417536
+plc1 lit101 0.414666652679
+received from LIT301! 0.480666667223
+plc1 lit101 0.414962977171
+received from LIT301! 0.4870185256
+plc1 lit101 0.41525927186
+received from LIT301! 0.501537024975
+plc1 lit101 0.415851861238
+received from LIT301! 0.507888913155
+plc1 lit101 0.416148155928
+received from LIT301! 0.515148162842
+received from LIT301! 0.522407412529
+plc1 lit101 0.416703701019
+received from LIT301! 0.522407412529
+received from LIT301! 0.529666662216
+plc1 lit101 0.417037039995
+received from LIT301! 0.536925911903
+received from LIT301! 0.543277800083
+plc1 lit101 0.417333334684
+received from LIT301! 0.543277800083
+received from LIT301! 0.55053704977
+plc1 lit101 0.417925924063
+received from LIT301! 0.557796299458
+received from LIT301! 0.557796299458
+plc1 lit101 0.418222218752
+received from LIT301! 0.565055549145
+received from LIT301! 0.572314798832
+plc1 lit101 0.418518513441
+received from LIT301! 0.572314798832
+received from LIT301! 0.579574048519
+plc1 lit101 0.419148147106
+received from LIT301! 0.586833357811
+received from LIT301! 0.594092607498
+plc1 lit101 0.419444441795
+received from LIT301! 0.594092607498
+received from LIT301! 0.601351857185
+plc1 lit101 0.419740736485
+received from LIT301! 0.609518527985
+received from LIT301! 0.609518527985
+plc1 lit101 0.420333325863
+received from LIT301! 0.616777777672
+received from LIT301! 0.624037027359
+plc1 lit101 0.420666664839
+received from LIT301! 0.624037027359
+received from LIT301! 0.631296277046
+plc1 lit101 0.420962959528
+received from LIT301! 0.638555526733
+received from LIT301! 0.638555526733
+plc1 lit101 0.421555548906
+received from LIT301! 0.645814836025
+received from LIT301! 0.653074085712
+plc1 lit101 0.421851843596
+received from LIT301! 0.653074085712
+received from LIT301! 0.6603333354
+plc1 lit101 0.422444432974
+received from LIT301! 0.668500006199
+received from LIT301! 0.675759255886
+plc1 lit101 0.422740727663
+received from LIT301! 0.675759255886
+received from LIT301! 0.683018505573
+plc1 lit101 0.423370361328
+received from LIT301! 0.69027775526
+received from LIT301! 0.69027775526
+plc1 lit101 0.423666656017
+received from LIT301! 0.697537064552
+received from LIT301! 0.70479631424
+plc1 lit101 0.423962950706
+received from LIT301! 0.70479631424
+received from LIT301! 0.712055563927
+plc1 lit101 0.424555569887
+received from LIT301! 0.718407392502
+received from LIT301! 0.726574063301
+plc1 lit101 0.424851864576
+received from LIT301! 0.726574063301
+received from LIT301! 0.733833312988
+plc1 lit101 0.425444453955
+received from LIT301! 0.74109262228
+received from LIT301! 0.74109262228
+plc1 lit101 0.425740748644
+received from LIT301! 0.748351871967
+received from LIT301!              MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+0.755611121655
+plc1 lit101 0.426037043333
+received from LIT301! 0.755611121655
+received from LIT301! 0.762870371342
+plc1 lit101 0.426629632711
+received from LIT301! 0.770129621029
+received from LIT301! 0.777388870716
+plc1 lit101 0.426925927401
+received from LIT301! 0.777388870716
+received from LIT301! 0.784648120403
+plc1 lit101 0.427259266376
+received from LIT301! 0.791907429695
+received from LIT301! 0.791907429695
+plc1 lit101 0.427851855755
+received from LIT301! 0.800074100494
+plc1 lit101 0.428148150444
+received from LIT301! 0.807333350182
+plc1 lit101 0.43570369482
+received from LIT301! 0.803629636765
+plc1 lit101 0.450814813375
+received from LIT301! 0.79622220993
+received from LIT301! 0.788814842701
+plc1 lit101 0.458370357752
+received from LIT301! 0.782333314419
+received from LIT301! 0.782333314419
+plc1 lit101 0.473481476307
+received from LIT301! 0.774925947189
+received from LIT301! 0.767518520355
+plc1 lit101 0.481981486082
+received from LIT301! 0.761037051678
+received from LIT301! 0.761037051678
+plc1 lit101 0.496148139238
+received from LIT301! 0.753629624844
+received from LIT301! 0.747148156166
+plc1 lit101 0.104648150504
+received from LIT301! 0.739740729332
+received from LIT301! 0.739740729332
+received from LIT301! 0.732333362103
+plc1 lit101 0.112203702331
+received from LIT301! 0.72585183382
+received from LIT301! 0.72585183382
+plc1 lit101 0.12542591989
+received from LIT301! 0.719370365143
+plc1 lit101 0.132037043571
+received from LIT301! 0.712888896465
+received from LIT301! 0.712888896465
+plc1 lit101 0.145259261131
+received from LIT301! 0.70733332634
+received from LIT301! 0.699925899506
+plc1 lit101 0.151870369911
+received from LIT301! 0.693444430828
+received from LIT301! 0.693444430828
+received from LIT301! 0.686962962151
+plc1 lit101 0.158481478691
+received from LIT301! 0.680481493473
+received from LIT301! 0.680481493473
+plc1 lit101 0.171703711152
+received from LIT301! 0.674000024796
+plc1 lit101 0.178314819932
+received from LIT301! 0.667518496513
+received from LIT301! 0.667518496513
+received from LIT301! 0.661037027836
+plc1 lit101 0.192481487989
+received from LIT301! 0.654555559158
+received from LIT301! 0.648074090481
+plc1 lit101 0.199092596769
+received from LIT301! 0.648074090481
+plc1 lit101 0.205703705549
+received from LIT301! 0.641592621803
+received from LIT301! 0.635111093521
+plc1 lit101 0.218925923109
+received from LIT301! 0.635111093521
+received from LIT301! 0.628629624844
+plc1 lit101 0.225537031889
+received from LIT301! 0.621222198009
+received from LIT301! 0.621222198009
+plc1 lit101 0.23214815557
+received from LIT301! 0.614740729332
+received from LIT301! 0.608259260654
+plc1 lit101 0.24537037313
+received from LIT301! 0.608259260654
+received from LIT301! 0.601777791977
+received from LIT301! 0.595296323299
+plc1 lit101 0.251981467009
+received from LIT301! 0.588814795017
+received from LIT301! 0.588814795017
+plc1 lit101 0.265203714371
+received from LIT301! 0.58233332634
+plc1 lit101 0.271814823151
+received from LIT301! 0.575851857662
+received from LIT301! 0.575851857662
+plc1 lit101 0.278425931931
+received from LIT301! 0.569370388985
+received from LIT301! 0.562888860703
+plc1 lit101 0.292592585087
+received from LIT301! 0.562888860703
+received from LIT301! 0.556407392025
+received from LIT301! 0.549000024796
+plc1 lit101 0.299203693867
+received from LIT301! 0.54344445467
+received from LIT301! 0.54344445467
+plc1 lit101 0.312425911427
+received from LIT301! 0.536962985992
+plc1 lit101 0.319037050009
+received from LIT301! 0.53048145771
+received from LIT301! 0.53048145771
+received from LIT301! 0.523074090481
+plc1 lit101 0.325648158789
+received from LIT301! 0.517518520355
+received from LIT301! 0.517518520355
+plc1 lit101 0.338870376348
+received from LIT301! 0.511037051678
+plc1 lit101 0.345481485128
+received from LIT301! 0.503629624844
+received from LIT301! 0.49807408452
+plc1 lit101 0.358703702688
+received from LIT301! 0.492500007153
+plc1 lit101 0.359870374203
+received from LIT301! 0.496055543423
+plc1 lit101 0.360129624605
+received from LIT301! 0.508759260178
+received from LIT301! 0.508759260178
+plc1 lit101 0.360648155212
+received fr             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+om LIT301! 0.515111088753
+received from LIT301! 0.521462976933
+plc1 lit101 0.360907405615
+received from LIT301! 0.521462976933
+received from LIT301! 0.527814805508
+plc1 lit101 0.361425936222
+received from LIT301! 0.533259272575
+plc1 lit101 0.361685186625
+received from LIT301! 0.540518522263
+received from LIT301! 0.540518522263
+plc1 lit101 0.361944437027
+received from LIT301! 0.546870350838
+received from LIT301! 0.553222239017
+plc1 lit101 0.362462967634
+received from LIT301! 0.559574067593
+received from LIT301! 0.559574067593
+received from LIT301! 0.565925896168
+plc1 lit101 0.362759262323
+received from LIT301! 0.572277784348
+received from LIT301! 0.572277784348
+plc1 lit101 0.363240748644
+received from LIT301! 0.578629612923
+received from LIT301! 0.584981501102
+plc1 lit101 0.363499999046
+received from LIT301! 0.584981501102
+received from LIT301! 0.591333329678
+plc1 lit101 0.363759249449
+received from LIT301! 0.598592579365
+received from LIT301! 0.598592579365
+plc1 lit101 0.364314824343
+received from LIT301! 0.604944467545
+received from LIT301! 0.612203717232
+plc1 lit101 0.364574074745
+received from LIT301! 0.618555545807
+received from LIT301! 0.618555545807
+plc1 lit101 0.365129619837
+received from LIT301! 0.625814795494
+received from LIT301! 0.632166683674
+plc1 lit101 0.365425914526
+received from LIT301! 0.632166683674
+received from LIT301! 0.639425933361
+plc1 lit101 0.36598148942
+received from LIT301! 0.645777761936
+received from LIT301! 0.653037011623
+plc1 lit101 0.366277784109
+received from LIT301! 0.653037011623
+received from LIT301! 0.659388899803
+plc1 lit101 0.366537034512
+received from LIT301! 0.664833307266
+received from LIT301! 0.664833307266
+plc1 lit101 0.367055565119
+received from LIT301! 0.672092616558
+received from LIT301! 0.678444445133
+plc1 lit101 0.367314815521
+received from LIT301! 0.684796273708
+received from LIT301! 0.684796273708
+plc1 lit101 0.367833346128
+received from LIT301! 0.691148161888
+received from LIT301! 0.697499990463
+plc1 lit101 0.368129640818
+received from LIT301! 0.697499990463
+received from LIT301! 0.703851878643
+plc1 lit101 0.36838889122
+received from LIT301! 0.710203707218
+plc1 lit101 0.368907421827
+received from LIT301! 0.710203707218
+received from LIT301! 0.716555535793
+plc1 lit101 0.36916667223
+received from LIT301! 0.722907423973
+received from LIT301! 0.722907423973
+received from LIT301! 0.729259252548
+plc1 lit101 0.369685173035
+received from LIT301! 0.735611140728
+plc1 lit101 0.369907408953
+received from LIT301! 0.741962969303
+received from LIT301! 0.741962969303
+plc1 lit101 0.370166659355
+received from LIT301! 0.748314797878
+received from LIT301! 0.754666686058
+plc1 lit101 0.370722234249
+received from LIT301! 0.754666686058
+received from LIT301! 0.761018514633
+received from LIT301! 0.767370343208
+plc1 lit101 0.370981484652
+received from LIT301! 0.767370343208
+plc1 lit101 0.371203690767
+received from LIT301! 0.773722231388
+received from LIT301! 0.780074059963
+plc1 lit101 0.371722221375
+received from LIT301! 0.786425948143
+received from LIT301! 0.786425948143
+plc1 lit101 0.371981471777
+received from LIT301! 0.792777776718
+received from LIT301! 0.799129605293
+plc1 lit101 0.372500002384
+received from LIT301! 0.799129605293
+received from LIT301! 0.805481493473
+plc1 lit101 0.372796297073
+received from LIT301! 0.811833322048
+plc1 lit101 0.38238888979
+received from LIT301! 0.808092594147
+plc1 lit101 0.388999998569
+received from LIT301! 0.801611125469
+plc1 lit101 0.395611107349
+received from LIT301! 0.787722229958
+received from LIT301! 0.787722229958
+plc1 lit101 0.409777790308
+received from LIT301! 0.78124076128
+received from LIT301! 0.774759232998
+plc1 lit101 0.416388899088
+received from LIT301! 0.774759232998
+received from LIT301! 0.76827776432
+plc1 lit101 0.429611116648
+received from LIT301! 0.761796295643
+received from LIT301! 0.761796295643
+plc1 lit101 0.436222225428
+received from LIT301! 0.755314826965
+received from LIT301! 0.748833358288
+plc1 lit101 0.442833334208
+received from LIT301! 0.742351830006
+received from LIT301! 0.742351830006
+plc1 lit101 0.456055551767
+received from LIT30             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+1! 0.735870361328
+received from LIT301! 0.729388892651
+plc1 lit101 0.462666660547
+received from LIT301! 0.729388892651
+received from LIT301! 0.722907423973
+plc1 lit101 0.475888878107
+received from LIT301! 0.716425955296
+received from LIT301! 0.709944427013
+plc1 lit101 0.482499986887
+received from LIT301! 0.709944427013
+plc1 lit101 0.489111125469
+received from LIT301! 0.703462958336
+received from LIT301! 0.696981489658
+plc1 lit101 0.502333343029
+received from LIT301! 0.696981489658
+plc1 lit101 0.502333343029
+received from LIT301! 0.690500020981
+plc1 lit101 0.508944451809
+received from LIT301! 0.684018492699
+plc1 lit101 0.515555560589
+received from LIT301! 0.684018492699
+plc1 lit101 0.522166669369
+received from LIT301! 0.676611125469
+plc1 lit101 0.522166669369
+received from LIT301! 0.671055555344
+plc1 lit101 0.528777778149
+received from LIT301! 0.664574086666
+plc1 lit101 0.535388886929
+received from LIT301! 0.664574086666
+plc1 lit101 0.535388886929
+received from LIT301! 0.657166659832
+plc1 lit101 0.542944431305
+received from LIT301! 0.650685191154
+plc1 lit101 0.548611104488
+received from LIT301! 0.650685191154
+received from LIT301! 0.644203722477
+plc1 lit101 0.555222213268
+received from LIT301! 0.637722194195
+plc1 lit101 0.555222213268
+received from LIT301! 0.637722194195
+plc1 lit101 0.561833322048
+received from LIT301! 0.631240725517
+plc1 lit101 0.568444430828
+received from LIT301! 0.62475925684
+plc1 lit101 0.568444430828
+received from LIT301! 0.618277788162
+plc1 lit101 0.575999975204
+received from LIT301! 0.618277788162
+plc1 lit101 0.582611083984
+plc1 lit101 0.582611083984
+received from LIT301! 0.611796319485
+plc1 lit101 0.589222192764
+received from LIT301! 0.605314791203
+plc1 lit101 0.595833361149
+received from LIT301! 0.605314791203
+plc1 lit101 0.595833361149
+received from LIT301! 0.598833322525
+plc1 lit101 0.602444469929
+received from LIT301! 0.592351853848
+plc1 lit101 0.609055578709
+received from LIT301! 0.592351853848
+plc1 lit101 0.615666687489
+received from LIT301! 0.58587038517
+plc1 lit101 0.615666687489
+received from LIT301! 0.579388916492
+plc1 lit101 0.622277796268
+received from LIT301! 0.57290738821
+plc1 lit101 0.629833340645
+received from LIT301! 0.57290738821
+plc1 lit101 0.629833340645
+received from LIT301! 0.566425919533
+plc1 lit101 0.636444449425
+received from LIT301! 0.559944450855
+plc1 lit101 0.642111122608
+received from LIT301! 0.559944450855
+plc1 lit101 0.649666666985
+received from LIT301! 0.553462982178
+plc1 lit101 0.649666666985
+received from LIT301! 0.546981453896
+plc1 lit101 0.656277775764
+received from LIT301! 0.539574086666
+plc1 lit101 0.662888884544
+received from LIT301! 0.539574086666
+plc1 lit101 0.662888884544
+received from LIT301! 0.533092617989
+plc1 lit101 0.669499993324
+received from LIT301! 0.526611089706
+plc1 lit101 0.676111102104
+received from LIT301! 0.526611089706
+plc1 lit101 0.676111102104
+received from LIT301! 0.520129621029
+plc1 lit101 0.682722210884
+received from LIT301! 0.513648152351
+plc1 lit101 0.689333319664
+received from LIT301! 0.513648152351
+plc1 lit101 0.695944428444
+received from LIT301! 0.507166683674
+received from LIT301! 0.500685155392
+plc1 lit101 0.695944428444
+plc1 lit101 0.702555537224
+received from LIT301! 0.494203716516
+plc1 lit101 0.709166646004
+plc1 lit101 0.709166646004
+received from LIT301! 0.489537030458
+plc1 lit101 0.710370361805
+plc1 lit101 0.710592567921
+received from LIT301! 0.492185175419
+plc1 lit101 0.710592567921
+plc1 lit101 0.710851848125
+received from LIT301! 0.504888892174
+plc1 lit101 0.71111112833
+received from LIT301! 0.504888892174
+received from LIT301! 0.511240720749
+plc1 lit101 0.71137034893
+plc1 lit101 0.71137034893
+received from LIT301! 0.517592608929
+plc1 lit101 0.711629629135
+received from LIT301! 0.523944437504
+plc1 lit101 0.71188890934
+received from LIT301! 0.523944437504
+plc1 lit101 0.71188890934
+received from LIT301! 0.529388904572
+plc1 lit101 0.712185204029
+received from LIT301! 0.536648154259
+plc1 lit101 0.712407410145
+received from LIT301! 0.536648154259
+plc1 lit101 0.712407410145
+received from LIT301! 0.542999982834
+plc1 lit101 0.71266669035
+received from LIT301! 0.549351871014
+plc1 lit101 0.71292591095
+received from LIT301! 0.549351871014
+plc1 lit101 0.713185191154
+received from LIT301! 0.555703699589
+plc1 lit101 0.713185191154
+received from LIT301! 0.562055528164
+received from LIT301! 0.568407416344
+plc1 lit101 0.713481485844
+plc1 lit101 0.713703691959
+received from LIT301! 0.568407416344
+plc1 lit101 0.713703691959
+received from LIT301! 0.575666666031
+received from LIT301! 0.582018494606
+plc1 lit101 0.713999986649
+received from LIT301! 0.582018494606
+plc1 lit101 0.714222192764
+received from LIT301! 0.587462961674
+plc1 lit101 0.714222192764
+received from LIT301! 0.594722211361
+plc1 lit101 0.714518547058
+received from LIT301! 0.594722211361
+plc1 lit101 0.714777767658
+received from LIT301! 0.601074099541
+plc1 lit101 0.715074062347
+received from LIT301! 0.608333349228
+plc1 lit101 0.715074062347
+received from LIT301! 0.614685177803
+plc1 lit101 0.715333342552
+received from LIT301! 0.614685177803
+plc1 lit101 0.715629637241
+received from LIT301! 0.62194442749
+plc1 lit101 0.715888917446
+received from LIT301! 0.62829631567
+plc1 lit101 0.715888917446
+received from LIT301! 0.635555565357
+plc1 lit101 0.716185212135
+received from LIT301! 0.635555565357
+plc1 lit101 0.716444432735
+received from LIT301! 0.641907393932
+plc1 lit101 0.716444432735
+received from LIT301! 0.648259282112
+plc1 lit101 0.71670371294
+received from LIT301! 0.648259282112
+plc1 lit101 0.71696293354
+received from LIT301! 0.654611110687
+plc1 lit101 0.717222213745
+received from LIT301! 0.660962939262
+plc1 lit101 0.717222213745
+received from LIT301! 0.660962939262
+plc1 lit101 0.71748149395
+received from LIT301! 0.667314827442
+plc1 lit101 0.71774071455
+received from LIT301! 0.673666656017
+plc1 lit101 0.71774071455
+received from LIT301! 0.673666656017
+plc1 lit101 0.717999994755
+received from LIT301! 0.680018544197
+plc1 lit101 0.71825927496
+received from LIT301! 0.686370372772
+plc1 lit101 0.71825927496
+received from LIT301! 0.692722201347
+plc1 lit101 0.71851849556
+received from LIT301! 0.692722201347
+plc1 lit101 0.718777775764
+received from LIT301! 0.699074089527
+plc1 lit101 0.719037055969
+received from LIT301! 0.705425918102
+plc1 lit101 0.719037055969
+received from LIT301! 0.712685167789
+plc1 lit101 0.719333350658
+received from LIT301! 0.712685167789
+plc1 lit101 0.719592571259
+received from LIT301! 0.719037055969
+plc1 lit101 0.719592571259
+received from LIT301! 0.725388884544
+plc1 lit101 0.719888865948
+received from LIT301! 0.725388884544
+plc1 lit101 0.720148146152
+received from LIT301! 0.732648134232
+plc1 lit101 0.720407426357
+received from LIT301! 0.739000022411
+plc1 lit101 0.720407426357
+received from LIT301! 0.746259272099
+plc1 lit101 0.720703721046
+received from LIT301! 0.746259272099
+plc1 lit101 0.720962941647
+received from LIT301! 0.753518521786
+plc1 lit101 0.720962941647
+received from LIT301! 0.758962988853
+plc1 lit101 0.721222221851
+received from LIT301! 0.758962988853
+plc1 lit101 0.721481502056
+received from LIT301! 0.765314817429
+plc1 lit101 0.721740722656
+received from LIT301! 0.771666646004
+plc1 lit101 0.721740722656
+received from LIT301! 0.771666646004
+plc1 lit101 0.722000002861
+received from LIT301! 0.778018534184
+plc1 lit101 0.722259283066
+received from LIT301! 0.784370362759
+plc1 lit101 0.722259283066
+received from LIT301! 0.790722250938
+plc1 lit101 0.722518503666
+received from LIT301! 0.790722250938
+plc1 lit101 0.722777783871
+received from LIT301! 0.797074079514
+plc1 lit101 0.722777783871
+received from LIT301! 0.803425908089
+plc1 lit101 0.723037064075
+plc1 lit101 0.723296284676
+received from LIT301! 0.808870375156
+plc1 lit101 0.728092610836
+plc1 lit101 0.728092610836
+plc1 lit101 0.735648155212
+received from LIT301! 0.80053704977
+plc1 lit101 0.742259263992
+plc1 lit101 0.749814808369
+received from LIT301! 0.793129622936
+plc1 lit101 0.749814808369
+received from LIT301! 0.785722196102
+plc1 lit101 0.756425917149
+received from LIT301! 0.779240727425
+plc1 lit101 0.763037025928
+received from LIT301! 0.779240727425
+plc1 lit101 0.763037025928
+received from LIT301! 0.772759258747
+plc1 lit101 0.             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+770592570305
+received from LIT301! 0.765351831913
+received from LIT301! 0.765351831913
+plc1 lit101 0.777203679085
+received from LIT301! 0.758870363235
+plc1 lit101 0.777203679085
+received from LIT301! 0.752388894558
+plc1 lit101 0.783814787865
+received from LIT301! 0.752388894558
+plc1 lit101 0.790425896645
+received from LIT301! 0.74590742588
+plc1 lit101 0.797037065029
+received from LIT301! 0.739425897598
+plc1 lit101 0.797037065029
+received from LIT301! 0.732944428921
+plc1 lit101 0.803648173809
+received from LIT301! 0.732944428921
+received from LIT301! 0.726462960243
+plc1 lit101 0.810259282589
+received from LIT301! 0.719981491566
+received from LIT301! 0.719981491566
+plc1 lit101 0.816870391369
+received from LIT301! 0.713500022888
+received from LIT301! 0.707018494606
+plc1 lit101 0.816870391369
+received from LIT301! 0.707018494606
+received from LIT301! 0.700537025928
+plc1 lit101 0.816870391369
+received from LIT301! 0.694055557251
+received from LIT301! 0.694055557251
+plc1 lit101 0.816870391369
+received from LIT301! 0.687574088573
+received from LIT301! 0.681092619896
+plc1 lit101 0.816870391369
+received from LIT301! 0.674611091614
+received from LIT301! 0.674611091614
+plc1 lit101 0.816870391369
+received from LIT301! 0.668129622936
+received from LIT301! 0.662574052811
+plc1 lit101 0.816870391369
+received from LIT301! 0.655166685581
+received from LIT301! 0.655166685581
+plc1 lit101 0.816870391369
+received from LIT301! 0.648685157299
+plc1 lit101 0.816870391369
+received from LIT301! 0.642203688622
+received from LIT301! 0.642203688622
+received from LIT301! 0.635722219944
+plc1 lit101 0.816870391369
+received from LIT301! 0.629240751266
+received from LIT301! 0.629240751266
+plc1 lit101 0.816870391369
+received from LIT301! 0.622759282589
+received from LIT301! 0.616277754307
+plc1 lit101 0.816870391369
+received from LIT301! 0.616277754307
+received from LIT301! 0.609796285629
+plc1 lit101 0.816870391369
+received from LIT301! 0.603314816952
+received from LIT301! 0.596833348274
+plc1 lit101 0.816870391369
+received from LIT301! 0.596833348274
+received from LIT301! 0.590351879597
+plc1 lit101 0.816870391369
+received from LIT301! 0.583870351315
+received from LIT301! 0.583870351315
+plc1 lit101 0.816870391369
+received from LIT301! 0.577388882637
+received from LIT301! 0.57090741396
+plc1 lit101 0.816870391369
+received from LIT301! 0.57090741396
+received from LIT301! 0.564425945282
+plc1 lit101 0.816870391369
+received from LIT301! 0.557944417
+plc1 lit101 0.816870391369
+received from LIT301! 0.551462948322
+received from LIT301! 0.551462948322
+plc1 lit101 0.816870391369
+received from LIT301! 0.544981479645
+received from LIT301! 0.538500010967
+plc1 lit101 0.816870391369
+received from LIT301! 0.538500010967
+received from LIT301! 0.532944440842
+plc1 lit101 0.816870391369
+received from LIT301! 0.525537014008
+received from LIT301! 0.51905554533
+plc1 lit101 0.816870391369
+received from LIT301! 0.51905554533
+received from LIT301! 0.512574076653
+plc1 lit101 0.816870391369
+received from LIT301! 0.506092607975
+received from LIT301! 0.506092607975
+plc1 lit101 0.816870391369
+received from LIT301! 0.498685181141
+plc1 lit101 0.815055549145
+received from LIT301! 0.489333331585
+plc1 lit101 0.807796299458
+received from LIT301! 0.490129619837
+received from LIT301! 0.497388899326
+plc1 lit101 0.795092582703
+plc1 lit101 0.795092582703
+plc1 lit101 0.787833333015
+received from LIT301! 0.510092616081
+plc1 lit101 0.782388865948
+received from LIT301! 0.510092616081
+plc1 lit101 0.775129616261
+received from LIT301! 0.516444444656
+received from LIT301! 0.523703694344
+plc1 lit101 0.775129616261
+plc1 lit101 0.767870366573
+received from LIT301! 0.530962944031
+received from LIT301! 0.530962944031
+plc1 lit101 0.761518537998
+plc1 lit101 0.761518537998
+received from LIT301! 0.537314832211
+plc1 lit101 0.754259288311
+received from LIT301! 0.544574081898
+plc1 lit101 0.747907400131
+received from LIT301! 0.550925910473
+plc1 lit101 0.740648150444
+received from LIT301! 0.550925910473
+plc1 lit101 0.740648150444
+received from LIT301! 0.557277798653
+received from LIT301! 0.563629627228
+plc1 lit101 0.734296             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+321869
+plc1 lit101 0.727944433689
+received from LIT301! 0.563629627228
+plc1 lit101 0.727944433689
+received from LIT301! 0.569981455803
+plc1 lit101 0.721592605114
+received from LIT301! 0.577240765095
+plc1 lit101 0.715240716934
+received from LIT301! 0.577240765095
+plc1 lit101 0.708888888359
+received from LIT301! 0.582685172558
+plc1 lit101 0.708888888359
+received from LIT301! 0.589037060738
+received from LIT301! 0.596296310425
+plc1 lit101 0.702537059784
+plc1 lit101 0.696185171604
+received from LIT301! 0.596296310425
+plc1 lit101 0.696185171604
+received from LIT301! 0.601740717888
+plc1 lit101 0.689833343029
+received from LIT301! 0.60900002718
+received from LIT301! 0.60900002718
+plc1 lit101 0.683481454849
+received from LIT301! 0.615351855755
+plc1 lit101 0.683481454849
+received from LIT301! 0.62170368433
+plc1 lit101 0.677129626274
+received from LIT301! 0.62170368433
+plc1 lit101 0.670777797699
+received from LIT301! 0.62805557251
+plc1 lit101 0.663518548012
+received from LIT301! 0.634407401085
+plc1 lit101 0.663518548012
+received from LIT301! 0.641666650772
+plc1 lit101 0.657166659832
+received from LIT301! 0.641666650772
+plc1 lit101 0.649907410145
+received from LIT301! 0.648018538952
+plc1 lit101 0.649907410145
+received from LIT301! 0.654370367527
+plc1 lit101 0.64355558157
+plc1 lit101 0.636296272278
+received from LIT301! 0.661629617214
+received from LIT301! 0.661629617214
+plc1 lit101 0.629944443703
+received from LIT301! 0.668888866901
+plc1 lit101 0.629944443703
+received from LIT301! 0.675240755081
+plc1 lit101 0.622685194016
+received from LIT301! 0.675240755081
+plc1 lit101 0.616333305836
+received from LIT301! 0.681592583656
+plc1 lit101 0.616333305836
+received from LIT301! 0.687944471836
+plc1 lit101 0.609981477261
+received from LIT301! 0.694296300411
+plc1 lit101 0.603629648685
+received from LIT301! 0.694296300411
+plc1 lit101 0.597277760506
+received from LIT301! 0.701555550098
+plc1 lit101 0.597277760506
+received from LIT301! 0.707000017166
+plc1 lit101 0.590925931931
+received from LIT301! 0.707000017166
+plc1 lit101 0.584574103355
+received from LIT301! 0.713351845741
+plc1 lit101 0.584574103355
+received from LIT301! 0.720611095428
+plc1 lit101 0.578222215176
+received from LIT301! 0.720611095428
+plc1 lit101 0.5718703866
+received from LIT301! 0.726962983608
+plc1 lit101 0.564611136913
+received from LIT301! 0.733314812183
+plc1 lit101 0.564611136913
+received from LIT301! 0.739666640759
+plc1 lit101 0.558259248734
+received from LIT301! 0.739666640759
+plc1 lit101 0.551907420158
+received from LIT301! 0.74692595005
+plc1 lit101 0.544648170471
+received from LIT301! 0.753277778625
+plc1 lit101 0.544648170471
+received from LIT301! 0.759629607201
+plc1 lit101 0.538296282291
+received from LIT301! 0.759629607201
+plc1 lit101 0.531944453716
+received from LIT301! 0.766888916492
+plc1 lit101 0.531944453716
+received from LIT301! 0.77414816618
+plc1 lit101 0.524685204029
+received from LIT301! 0.77414816618
+plc1 lit101 0.517425954342
+received from LIT301! 0.780499994755
+plc1 lit101 0.511074066162
+received from LIT301! 0.787759244442
+plc1 lit101 0.511074066162
+received from LIT301! 0.794111132622
+plc1 lit101 0.503814816475
+received from LIT301! 0.794111132622
+plc1 lit101 0.497462958097
+received from LIT301! 0.801370382309
+plc1 lit101 0.49020370841
+received from LIT301! 0.808629631996
+plc1 lit101 0.49416667223
+received from LIT301! 0.803037047386
+plc1 lit101 0.50077778101
+received from LIT301! 0.796555578709
+plc1 lit101 0.50738888979
+received from LIT301! 0.787296295166
+plc1 lit101 0.514944434166
+received from LIT301! 0.780814826488
+plc1 lit101 0.514944434166
+received from LIT301! 0.780814826488
+plc1 lit101 0.522499978542
+received from LIT301! 0.774333357811
+plc1 lit101 0.529111087322
+received from LIT301! 0.767851829529
+plc1 lit101 0.529111087322
+received from LIT301! 0.767851829529
+plc1 lit101 0.535722196102
+received from LIT301! 0.761370360851
+plc1 lit101 0.542333304882
+received from LIT301! 0.754888892174
+plc1 lit101 0.548944473267
+received from LIT301! 0.748407423496
+plc1 lit101 0.548944473267
+received from LIT301! 0.748407423496
+plc1 lit101 0.555555582047
+received             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+ from LIT301! 0.741925954819
+plc1 lit101 0.562166690826
+received from LIT301! 0.735444426537
+plc1 lit101 0.562166690826
+received from LIT301! 0.735444426537
+plc1 lit101 0.568777799606
+received from LIT301! 0.728962957859
+plc1 lit101 0.575388908386
+received from LIT301! 0.722481489182
+plc1 lit101 0.575388908386
+received from LIT301! 0.716000020504
+plc1 lit101 0.582000017166
+received from LIT301! 0.716000020504
+plc1 lit101 0.588611125946
+received from LIT301! 0.709518492222
+plc1 lit101 0.595222234726
+received from LIT301! 0.703037023544
+plc1 lit101 0.595222234726
+received from LIT301! 0.703037023544
+plc1 lit101 0.601833343506
+received from LIT301! 0.696555554867
+plc1 lit101 0.608444452286
+received from LIT301! 0.690074086189
+plc1 lit101 0.608444452286
+received from LIT301! 0.690074086189
+plc1 lit101 0.615055561066
+received from LIT301! 0.683592617512
+plc1 lit101 0.621666669846
+received from LIT301! 0.67711108923
+plc1 lit101 0.621666669846
+received from LIT301! 0.67711108923
+plc1 lit101 0.628277778625
+received from LIT301! 0.670629620552
+plc1 lit101 0.634888887405
+received from LIT301! 0.664148151875
+plc1 lit101 0.641499996185
+received from LIT301! 0.65674072504
+plc1 lit101 0.641499996185
+received from LIT301! 0.65674072504
+plc1 lit101 0.649055540562
+received from LIT301! 0.649333357811
+plc1 lit101 0.655666649342
+received from LIT301! 0.642851829529
+plc1 lit101 0.655666649342
+received from LIT301! 0.635444462299
+plc1 lit101 0.663222193718
+received from LIT301! 0.635444462299
+plc1 lit101 0.670777797699
+received from LIT301! 0.628962934017
+plc1 lit101 0.677388906479
+received from LIT301! 0.62248146534
+plc1 lit101 0.677388906479
+received from LIT301! 0.62248146534
+plc1 lit101 0.684944450855
+received from LIT301! 0.61507409811
+plc1 lit101 0.691555559635
+received from LIT301! 0.608592569828
+plc1 lit101 0.691555559635
+received from LIT301! 0.602111101151
+plc1 lit101 0.698166668415
+received from LIT301! 0.602111101151
+plc1 lit101 0.704777777195
+received from LIT301! 0.595629632473
+plc1 lit101 0.711388885975
+received from LIT301! 0.589148163795
+plc1 lit101 0.711388885975
+received from LIT301! 0.589148163795
+plc1 lit101 0.717999994755
+received from LIT301! 0.589148163795
+plc1 lit101 0.723666667938
+received from LIT301! 0.589148163795
+plc1 lit101 0.730277776718
+received from LIT301! 0.589148163795
+plc1 lit101 0.730277776718
+received from LIT301! 0.582666695118
+plc1 lit101 0.735944449902
+received from LIT301! 0.582666695118
+plc1 lit101 0.742555558681
+received from LIT301! 0.561370372772
+plc1 lit101 0.742555558681
+received from LIT301! 0.554888904095
+plc1 lit101 0.749166667461
+received from LIT301! 0.554888904095
+plc1 lit101 0.755777776241
+received from LIT301! 0.548407435417
+plc1 lit101 0.755777776241
+received from LIT301! 0.541925907135
+plc1 lit101 0.762388885021
+received from LIT301! 0.541925907135
+plc1 lit101 0.769944429398
+received from LIT301! 0.534518539906
+plc1 lit101 0.769944429398
+received from LIT301! 0.528037011623
+plc1 lit101 0.776555538177
+received from LIT301! 0.528037011623
+plc1 lit101 0.783166646957
+received from LIT301! 0.521555542946
+plc1 lit101 0.783166646957
+plc1 lit101 0.789777755737
+received from LIT301! 0.515074074268
+received from LIT301! 0.508592605591
+plc1 lit101 0.796388864517
+received from LIT301! 0.508592605591
+plc1 lit101 0.796388864517
+plc1 lit101 0.802999973297
+received from LIT301! 0.501185178757
+received from LIT301! 0.494703710079
+plc1 lit101 0.818111121655
+received from LIT301! 0.488203704357
+plc1 lit101 0.813648164272
+received from LIT301! 0.488055557013
+plc1 lit101 0.806388914585
+received from LIT301! 0.500740766525
+received from LIT301! 0.5070925951
+plc1 lit101 0.792777776718
+received from LIT301! 0.5070925951
+plc1 lit101 0.792777776718
+received from LIT301! 0.514351844788
+plc1 lit101 0.785518527031
+received from LIT301! 0.520703732967
+plc1 lit101 0.779166638851
+plc1 lit101 0.771907389164
+received from LIT301! 0.520703732967
+plc1 lit101 0.771907389164
+received from LIT301! 0.527962982655
+plc1 lit101 0.764648139477
+received from LIT301! 0.535222232342
+plc1 lit101 0.758296310902
+received from LIT30             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+1! 0.541574060917
+received from LIT301! 0.541574060917
+plc1 lit101 0.758296310902
+received from LIT301! 0.548833310604
+plc1 lit101 0.751037061214
+received from LIT301! 0.555185198784
+plc1 lit101 0.744685173035
+received from LIT301! 0.555185198784
+plc1 lit101 0.73833334446
+received from LIT301! 0.562444448471
+plc1 lit101 0.73833334446
+received from LIT301! 0.568796277046
+plc1 lit101 0.73198145628
+received from LIT301! 0.568796277046
+plc1 lit101 0.725629627705
+received from LIT301! 0.575148165226
+plc1 lit101 0.725629627705
+received from LIT301! 0.581499993801
+plc1 lit101 0.719277799129
+received from LIT301! 0.581499993801
+plc1 lit101 0.71292591095
+received from LIT301! 0.587851822376
+plc1 lit101 0.71292591095
+received from LIT301! 0.594203710556
+plc1 lit101 0.706574082375
+received from LIT301! 0.600555539131
+plc1 lit101 0.700222194195
+received from LIT301! 0.600555539131
+plc1 lit101 0.69387036562
+received from LIT301! 0.606907427311
+plc1 lit101 0.69387036562
+received from LIT301! 0.613259255886
+plc1 lit101 0.687518537045
+plc1 lit101 0.681166648865
+received from LIT301! 0.613259255886
+received from LIT301! 0.619611084461
+plc1 lit101 0.681166648865
+received from LIT301! 0.625962972641
+plc1 lit101 0.67481482029
+received from LIT301! 0.625962972641
+plc1 lit101 0.668462991714
+received from LIT301! 0.632314801216
+plc1 lit101 0.668462991714
+received from LIT301! 0.638666689396
+plc1 lit101 0.662111103535
+received from LIT301! 0.638666689396
+plc1 lit101 0.65575927496
+received from LIT301! 0.645018517971
+plc1 lit101 0.64940738678
+received from LIT301! 0.651370346546
+plc1 lit101 0.64940738678
+received from LIT301! 0.657722234726
+plc1 lit101 0.643055558205
+received from LIT301! 0.657722234726
+plc1 lit101 0.63670372963
+received from LIT301! 0.664074063301
+plc1 lit101 0.63670372963
+received from LIT301! 0.670425951481
+plc1 lit101 0.63035184145
+received from LIT301! 0.670425951481
+plc1 lit101 0.624000012875
+received from LIT301! 0.677685201168
+plc1 lit101 0.624000012875
+received from LIT301! 0.684037029743
+plc1 lit101 0.617648124695
+received from LIT301! 0.684037029743
+plc1 lit101 0.61129629612
+received from LIT301! 0.690388917923
+plc1 lit101 0.604944467545
+received from LIT301! 0.696740746498
+plc1 lit101 0.604944467545
+received from LIT301! 0.696740746498
+plc1 lit101 0.598592579365
+received from LIT301! 0.703092575073
+plc1 lit101 0.59224075079
+received from LIT301! 0.708537042141
+plc1 lit101 0.59224075079
+received from LIT301! 0.714888870716
+plc1 lit101 0.58588886261
+received from LIT301! 0.714888870716
+plc1 lit101 0.579537034035
+received from LIT301! 0.721240758896
+plc1 lit101 0.57318520546
+received from LIT301! 0.728500008583
+plc1 lit101 0.57318520546
+received from LIT301! 0.734851837158
+plc1 lit101 0.56683331728
+received from LIT301! 0.734851837158
+plc1 lit101 0.560481488705
+received from LIT301! 0.741203725338
+plc1 lit101 0.560481488705
+received from LIT301! 0.747555553913
+plc1 lit101 0.554129600525
+received from LIT301! 0.747555553913
+plc1 lit101 0.54777777195
+received from LIT301! 0.753907382488
+plc1 lit101 0.541425943375
+received from LIT301! 0.760259270668
+plc1 lit101 0.541425943375
+received from LIT301! 0.760259270668
+plc1 lit101 0.534166693687
+received from LIT301! 0.767518520355
+plc1 lit101 0.527814805508
+received from LIT301! 0.77387034893
+plc1 lit101 0.527814805508
+received from LIT301! 0.781129658222
+plc1 lit101 0.52055555582
+received from LIT301! 0.781129658222
+plc1 lit101 0.514203727245
+received from LIT301! 0.787481486797
+plc1 lit101 0.506944417953
+received from LIT301! 0.794740736485
+plc1 lit101 0.506944417953
+received from LIT301! 0.80109256506
+plc1 lit101 0.499685198069
+received from LIT301! 0.806537032127
+plc1 lit101 0.493333339691
+received from LIT301! 0.803759276867
+plc1 lit101 0.497148156166
+received from LIT301! 0.790796279907
+plc1 lit101 0.503759264946
+received from LIT301! 0.790796279907
+plc1 lit101 0.510370373726
+received from LIT301! 0.78431481123
+plc1 lit101 0.516981482506
+received from LIT301! 0.777833342552
+plc1 lit101 0.516981482506
+received from LIT301! 0.771351873875
+plc1 lit101 0.523592591286
+received             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+ from LIT301! 0.771351873875
+plc1 lit101 0.530203700066
+received from LIT301! 0.764870345592
+plc1 lit101 0.530203700066
+received from LIT301! 0.758388876915
+plc1 lit101 0.536814808846
+received from LIT301! 0.758388876915
+plc1 lit101 0.543425917625
+received from LIT301! 0.750981509686
+plc1 lit101 0.550037026405
+received from LIT301! 0.744499981403
+plc1 lit101 0.550037026405
+received from LIT301! 0.738018512726
+plc1 lit101 0.556648135185
+received from LIT301! 0.738018512726
+plc1 lit101 0.563259243965
+received from LIT301! 0.731537044048
+plc1 lit101 0.563259243965
+received from LIT301! 0.725055575371
+plc1 lit101 0.569870352745
+received from LIT301! 0.725055575371
+plc1 lit101 0.576481461525
+received from LIT301! 0.718574047089
+plc1 lit101 0.576481461525
+received from LIT301! 0.712092578411
+plc1 lit101 0.584037065506
+received from LIT301! 0.712092578411
+plc1 lit101 0.590648174286
+received from LIT301! 0.705611109734
+plc1 lit101 0.597259283066
+received from LIT301! 0.699129641056
+plc1 lit101 0.597259283066
+received from LIT301! 0.692648172379
+plc1 lit101 0.603870391846
+received from LIT301! 0.692648172379
+plc1 lit101 0.610481500626
+received from LIT301! 0.685240745544
+plc1 lit101 0.610481500626
+received from LIT301! 0.678759276867
+plc1 lit101 0.617092609406
+received from LIT301! 0.678759276867
+plc1 lit101 0.623703718185
+received from LIT301! 0.673203706741
+plc1 lit101 0.630314826965
+received from LIT301! 0.665796279907
+plc1 lit101 0.630314826965
+received from LIT301! 0.665796279907
+plc1 lit101 0.636925935745
+received from LIT301! 0.65931481123
+plc1 lit101 0.643537044525
+received from LIT301! 0.652833342552
+plc1 lit101 0.643537044525
+received from LIT301! 0.646351873875
+plc1 lit101 0.650148153305
+received from LIT301! 0.646351873875
+plc1 lit101 0.656759262085
+received from LIT301! 0.639870345592
+plc1 lit101 0.656759262085
+received from LIT301! 0.633388876915
+plc1 lit101 0.663370370865
+received from LIT301! 0.633388876915
+plc1 lit101 0.669981479645
+received from LIT301! 0.626907408237
+plc1 lit101 0.677537024021
+received from LIT301! 0.62042593956
+plc1 lit101 0.677537024021
+received from LIT301! 0.62042593956
+plc1 lit101 0.684148132801
+received from LIT301! 0.613944470882
+plc1 lit101 0.690759241581
+received from LIT301! 0.6074629426
+plc1 lit101 0.697370350361
+received from LIT301! 0.600981473923
+plc1 lit101 0.697370350361
+received from LIT301! 0.600981473923
+plc1 lit101 0.703981459141
+received from LIT301! 0.594500005245
+plc1 lit101 0.710592567921
+received from LIT301! 0.588018536568
+plc1 lit101 0.710592567921
+received from LIT301! 0.588018536568
+plc1 lit101 0.717203676701
+received from LIT301! 0.581537008286
+plc1 lit101 0.72381478548
+received from LIT301! 0.575055539608
+plc1 lit101 0.72381478548
+received from LIT301! 0.56857407093
+plc1 lit101 0.730425953865
+received from LIT301! 0.56857407093
+plc1 lit101 0.737037062645
+received from LIT301! 0.562092602253
+plc1 lit101 0.743648171425
+received from LIT301! 0.555611133575
+plc1 lit101 0.743648171425
+received from LIT301! 0.555611133575
+plc1 lit101 0.750259280205
+received from LIT301! 0.549129605293
+plc1 lit101 0.756870388985
+received from LIT301! 0.542648136616
+plc1 lit101 0.756870388985
+received from LIT301! 0.542648136616
+plc1 lit101 0.763481497765
+received from LIT301! 0.536166667938
+plc1 lit101 0.770092606544
+received from LIT301! 0.528759241104
+plc1 lit101 0.776703715324
+received from LIT301! 0.528759241104
+plc1 lit101 0.776703715324
+received from LIT301! 0.522277772427
+plc1 lit101 0.783314824104
+received from LIT301! 0.515796303749
+plc1 lit101 0.789925932884
+received from LIT301! 0.509314835072
+plc1 lit101 0.789925932884
+received from LIT301! 0.509314835072
+plc1 lit101 0.796537041664
+received from LIT301! 0.502833306789
+plc1 lit101 0.803148150444
+received from LIT301! 0.496351838112
+plc1 lit101 0.809759259224
+received from LIT301! 0.490777790546
+plc1 lit101 0.804537057877
+received from LIT301! 0.497925937176
+plc1 lit101 0.798185169697
+received from LIT301! 0.504277765751
+plc1 lit101 0.791833341122
+received from LIT301! 0.510629653931
+plc1 lit101 0.791833341122
+received from LIT301! 0.510629653931
+plc1 lit101 0.785481452942
+received from LIT301! 0.516981482506
+plc1 lit101 0.779129624367
+received from LIT301! 0.523333311081
+plc1 lit101 0.779129624367
+received from LIT301! 0.523333311081
+plc1 lit101 0.772777795792
+received from LIT301! 0.530592620373
+plc1 lit101 0.766425907612
+received from LIT301! 0.536037027836
+plc1 lit101 0.766425907612
+received from LIT301! 0.542388916016
+plc1 lit101 0.760074079037
+received from LIT301! 0.542388916016
+plc1 lit101 0.753722250462
+received from LIT301! 0.549648165703
+plc1 lit101 0.747370362282
+received from LIT301! 0.555999994278
+plc1 lit101 0.747370362282
+received from LIT301! 0.555999994278
+plc1 lit101 0.740111112595
+received from LIT301! 0.562351822853
+plc1 lit101 0.733759284019
+received from LIT301! 0.569611132145
+plc1 lit101 0.726499974728
+received from LIT301! 0.576870381832
+plc1 lit101 0.726499974728
+received from LIT301! 0.576870381832
+plc1 lit101 0.720148146152
+received from LIT301! 0.583222210407
+plc1 lit101 0.712888896465
+received from LIT301! 0.590481460094
+plc1 lit101 0.712888896465
+received from LIT301! 0.596833348274
+plc1 lit101 0.705629646778
+received from LIT301! 0.596833348274
+plc1 lit101 0.699277758598
+received from LIT301! 0.604092597961
+plc1 lit101 0.692018508911
+received from LIT301! 0.610444426537
+plc1 lit101 0.692018508911
+received from LIT301! 0.610444426537
+plc1 lit101 0.684759259224
+received from LIT301! 0.617703676224
+plc1 lit101 0.678407430649
+received from LIT301! 0.624055564404
+plc1 lit101 0.678407430649
+received from LIT301! 0.630407392979
+plc1 lit101 0.671148121357
+plc1 lit101 0.664796292782
+received from LIT301! 0.630407392979
+received from LIT301! 0.637666642666
+plc1 lit101 0.658444464207
+plc1 lit101 0.658444464207
+received from LIT301! 0.644018530846
+plc1 lit101 0.652092576027
+received from LIT301! 0.650370359421
+plc1 lit101 0.645740747452
+received from LIT301! 0.650370359421
+plc1 lit101 0.645740747452
+received from LIT301! 0.656722247601
+plc1 lit101 0.639388859272
+received from LIT301! 0.663074076176
+plc1 lit101 0.633037030697
+received from LIT301! 0.663074076176
+plc1 lit101 0.633037030697
+received from LIT301! 0.669425904751
+plc1 lit101 0.626685202122
+received from LIT301! 0.675777792931
+plc1 lit101 0.620333313942
+received from LIT301! 0.675777792931
+plc1 lit101 0.613981485367
+received from LIT301! 0.682129621506
+plc1 lit101 0.613981485367
+received from LIT301! 0.688481509686
+plc1 lit101 0.607629656792
+received from LIT301! 0.694833338261
+plc1 lit101 0.601277768612
+received from LIT301! 0.694833338261
+plc1 lit101 0.601277768612
+received from LIT301! 0.701185166836
+plc1 lit101 0.594925940037
+received from LIT301! 0.707537055016
+received from LIT301! 0.707537055016
+plc1 lit101 0.588574051857
+received from LIT301! 0.713888883591
+plc1 lit101 0.588574051857
+received from LIT301! 0.720240712166
+plc1 lit101 0.582222223282
+received from LIT301! 0.720240712166
+plc1 lit101 0.575870394707
+received from LIT301! 0.726592600346
+plc1 lit101 0.569518506527
+received from LIT301! 0.732944428921
+plc1 lit101 0.569518506527
+received from LIT301! 0.739296317101
+plc1 lit101 0.563166677952
+received from LIT301! 0.739296317101
+plc1 lit101 0.556814789772
+received from LIT301! 0.745648145676
+plc1 lit101 0.556814789772
+received from LIT301! 0.751999974251
+plc1 lit101 0.550462961197
+received from LIT301! 0.751999974251
+plc1 lit101 0.544111132622
+received from LIT301! 0.758351862431
+plc1 lit101 0.537759244442
+plc1 lit101 0.537759244442
+received from LIT301! 0.764703691006
+plc1 lit101 0.530499994755
+received from LIT301! 0.771962940693
+plc1 lit101 0.52414816618
+received from LIT301! 0.771962940693
+received from LIT301! 0.779222249985
+plc1 lit101 0.52414816618
+received from LIT301! 0.78557407856
+plc1 lit101 0.516888916492
+plc1 lit101 0.512351870537
+received from LIT301! 0.78557407856
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301! 0.787388861179
+plc1 lit101 0.512351870537
+received from LIT301!

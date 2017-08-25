@@ -390,3 +390,20 @@
 07-24 00:56:35.827 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-24 00:56:35.862 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 07-24 00:56:35.893 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-24 13:55:14.131 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+08-24 13:55:14.331 MainThread network  WARNING  join       enip_srv server TID [ 7556/47209692665600] hanging on None
+08-24 14:25:11.921 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-24 14:28:40.600 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-24 14:28:40.643 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-24 14:28:40.662 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-24 14:28:40.667 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-24 14:28:40.684 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-24 14:28:40.691 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-24 15:03:16.506 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+08-24 15:03:16.842 MainThread network  WARNING  join       enip_srv server TID [17697/47212826248960] hanging on None
+08-24 15:03:17.539 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+08-24 15:03:17.740 MainThread network  WARNING  join       enip_srv server TID [17718/47158408210176] hanging on None
+08-24 15:03:21.395 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+08-24 15:03:21.596 MainThread network  WARNING  join       enip_srv server TID [17740/47377383790336] hanging on None
+08-24 15:03:33.179 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+08-24 15:03:33.380 MainThread network  WARNING  join       enip_srv server TID [17287/47922183251712] hanging on None

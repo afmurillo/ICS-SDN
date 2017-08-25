@@ -30,6 +30,9 @@ class Ids101(PLC):
 	    message = json.dumps(str(msg_dict))
 	    try:
 	        ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
+		self.stop_defense_time = time.time()
+		self.defense_time = self.stop_defense_time - self.start_defense_stime
+		print "Defense time: ", self.defense_time
 	    except socket.error, exc:
 	        print "Socket error"
 	        print exc
@@ -84,6 +87,9 @@ class Ids101(PLC):
 		self.plc_count = 0
 		self.filling = False
 		self.wait_time = PLC_PERIOD_SEC
+		self.start_defense_time = 0
+		self.stop_defense_time = 0
+		self.defense_time = 0
 
 		#print "Connecting to controller"		
 
@@ -101,6 +107,7 @@ class Ids101(PLC):
 		
 			    try:
 				    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
+				    self.start_defense_time = time.time()
 			    except:
 				    continue
 
@@ -116,7 +123,7 @@ class Ids101(PLC):
 	                    if (delta > self.threshold) and (count>2):
 	                        self.switch_component(self.controller_ip, self.controller_port, "Switch_flow")
 	                        self.sensor_intrusion = True
-	                        print "Intrusion detected!"
+	                        print "Intrusion detected!"		
 				continue
 
 			    if self.new_estimated_level > self.estimated_level:
@@ -124,21 +131,20 @@ class Ids101(PLC):
 			    else:
 				self.filling = False
 
-			    self.estimated_mv101 = self.calculate_controls(self.received_level)
+			    #self.estimated_mv101 = self.calculate_controls(self.received_level)
 			   
-			    if mv101 != self.estimated_mv101:
-				if count > 5:
-					self.plc_count += 1		    
-					if self.plc_count >= 3:
-					        self.plc_intrusion = True
-					        print "Received MV ", mv101
-						print "Estimated MV ", self.estimated_mv101
-						print "Filling ", self.filling
-						print "@@@ PLC INTRUSION!!! @@@@"
-						self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
-			    else:
-				self.plc_count = 0 
-			    
+			    #if mv101 != self.estimated_mv101:
+			    #if count > 5:
+			    #self.plc_count += 1		    
+			    #if self.plc_count >= 3:
+			    ##self.plc_intrusion = True
+			    #print "Received MV ", mv101
+			    #print "Estimated MV ", self.estimated_mv101
+			    #print "Filling ", self.filling
+			    #print "@@@ PLC INTRUSION!!! @@@@"
+			    #self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
+			    #else:
+			    #self.plc_count = 0 			   
 
 			    #x(t) = x(t+1)
 			    self.estimated_level = self.new_estimated_level			   
