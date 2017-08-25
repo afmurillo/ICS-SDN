@@ -42,5 +42,3 @@ for i=2:1:length(control)-1
    dif_control(j) = control(i+1) - control(i);
    j=j+1;
 end
-
-
