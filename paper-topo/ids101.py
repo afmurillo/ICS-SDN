@@ -126,10 +126,10 @@ class Ids101(PLC):
 	                        print "Intrusion detected!"		
 				continue
 
-			    if self.new_estimated_level > self.estimated_level:
-				self.filling = True
-			    else:
-				self.filling = False
+			    #if self.new_estimated_level > self.estimated_level:
+			    #self.filling = True
+			    #else:
+			    #self.filling = False
 
 			    #self.estimated_mv101 = self.calculate_controls(self.received_level)
 			   
