@@ -126,7 +126,7 @@ class DynamicController(object):
 
         if message['Variable'] == 'Switch_plc':
             self.simple_switch_flow()
-	    self.compromised_plc = True
+	    #self.compromised_plc = True
 		
 
     def simple_switch_flow(self):
@@ -185,7 +185,7 @@ class DynamicController(object):
 			log.debug("Dropping packets from malicious sensor!")
 			self.stop_control_time = time.time()
 			self.control_time = self.stop_control_time - self.start_control_time
-	        return
+		        return
 
 	        #if (in_port == 4) and (nw_src == "192.168.3.30") and (self.compromised_plc):
                 #log.debug("Dropping packets from malicious PLC!")
