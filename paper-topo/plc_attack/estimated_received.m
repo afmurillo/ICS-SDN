@@ -19,23 +19,24 @@ ph = fscanf(fileID_1,formatSpec);
 % fileID_5 = fopen('estimated.txt','r');
 % estimated = fscanf(fileID_5,formatSpec);
 
-% fileID_6 = fopen('attack_no_defense_sensor/attack_tank_1.txt','r');
-% attack_tank_1 = fscanf(fileID_6,formatSpec);
+fileID_6 = fopen('attack/plc_attack_tank_1.txt','r');
+attack_tank_1 = fscanf(fileID_6,formatSpec);
+fileID_7 = fopen('attack/plc_attack_tank_2.txt','r');
+attack_tank_2 = fscanf(fileID_7,formatSpec);
+
 % 
-%  for i=1:length(attack_tank_1)
-%      if (attack_tank_1(i)) > 1.0
-%          attack_tank_1(i) = 1.0;
-%      end
-%  end
+  for i=1:length(attack_tank_2)
+      if (attack_tank_2(i)) > 1.0
+          attack_tank_2(i) = 1.0;
+      end
+  end
 % 
-% fileID_7 = fopen('attack_no_defense_sensor/attack_tank_2.txt','r');
-% attack_tank_2= fscanf(fileID_7,formatSpec);
-% 
-% fileID_8 = fopen('defense_experiment_compromised_sensor/defense_tank_1.txt','r');
-% defense_tank_1 = fscanf(fileID_8,formatSpec);
-% 
-% fileID_9 = fopen('defense_experiment_compromised_sensor/defense_tank_2.txt','r');
-% defense_tank_2= fscanf(fileID_9,formatSpec);
+
+fileID_8 = fopen('defense/plc_defense_tank_1.txt','r');
+defense_tank_1 = fscanf(fileID_8,formatSpec);
+
+fileID_9 = fopen('defense/plc_defense_tank_2.txt','r');
+defense_tank_2= fscanf(fileID_9,formatSpec);
 
 plant_time = ([1:4001]*0.2/360)*60; % Rescaling 10
 %defense_time= ([1:8001]*0.39995001249687578105473631592102/360)*15; % Rescaling 5
@@ -106,26 +107,26 @@ set(gca, 'FontSize', fsz, 'LineWidth', 1.5 );
 
 %subplot(2,1,1)
 %plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
-plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+plot(plant_time,tank_2, '-.k', 'linewidth', 1.5);
 
 hold on;
-% plot(plant_time,attack_tank_1, '--r', 'linewidth', 1.5);
-% plot(plant_time,defense_tank_1, '-b', 'linewidth', 1.5)
+plot(plant_time,attack_tank_2, '--r', 'linewidth', 1.5);
+plot(plant_time,defense_tank_2, '-b', 'linewidth', 1.5)
 lg = legend('Normal Operation','Attack and No Defense ', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
 
 axis([0 120 0 1.2])
 grid on;
 
-plot([42 42],[0 1.2], '--k')
+plot([16 16],[0 1.2], '--k')
 axis([0 120 0 1.2])
 
 %annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
 
 xlabel('Time (min)')
-ylabel('Tank 1 Level (m)')
-title('Water Tank 1 Level Behavior With Attack and IDS');
+ylabel('Tank 301 Level (m)')
+title('Water Tank 301 Level Behavior With Attack and IDS');
 
-matlab2tikz('defense_1.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('defense_plc.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
 % h5=figure(5)
 % 
