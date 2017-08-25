@@ -31,7 +31,7 @@ class Ids101(PLC):
 	    try:
 	        ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
 		self.stop_defense_time = time.time()
-		self.defense_time = self.stop_defense_time - self.start_defense_stime
+		self.defense_time = self.stop_defense_time - self.start_defense_time
 		print "Defense time: ", self.defense_time
 	    except socket.error, exc:
 	        print "Socket error"
