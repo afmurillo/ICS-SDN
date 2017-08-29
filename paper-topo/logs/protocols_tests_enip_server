@@ -453,3 +453,7 @@
 08-25 17:13:24.316 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 08-25 17:13:24.345 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 08-25 17:13:24.417 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-29 15:02:57.899 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-29 15:02:57.952 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-29 15:02:57.960 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-29 15:02:57.996 MainThread root     WARNING  logrotate_ Rotating log files due to signal
