@@ -5,6 +5,7 @@ PLC 1
 from minicps.devices import PLC
 from threading import Thread
 from utils import *
+from random import *
 
 import json
 import select
@@ -182,7 +183,7 @@ class PLC101(PLC):
 
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
-        time.sleep(sleep)
+        time.sleep(sleep)        
 
     def main_loop(self):
         """plc1 main loop.
@@ -201,6 +202,17 @@ class PLC101(PLC):
 	backup.start()
         hmi = HMISocket(self)
         hmi.start()
+
+        # Only for random control experiment!
+        random_control_experiment = 0
+        random_control_active = 1
+        random_counter = 0
+        control_file = 'control_actions.txt'
+
+        preloaded_random_control = 0
+
+
+
         while(self.count <= PLC_SAMPLES):
 
             # lit101 [meters]
@@ -209,19 +221,46 @@ class PLC101(PLC):
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
 		print "plc1 lit101", lit101
 
-	        if lit101 >= LIT_101_M['HH'] :
-                   self.send(MV101, 0, IP['plc101'])
+            if random_control_experiment == 0:
+
+    	        if lit101 >= LIT_101_M['HH'] :
+                    self.send(MV101, 0, IP['plc101'])
 
                 elif lit101 >= LIT_101_M['H']:
-                   self.send(MV101, 0, IP['plc101'])
+                    self.send(MV101, 0, IP['plc101'])
 
                 elif lit101 <= LIT_101_M['LL']:
-                   self.send(MV101, 1, IP['plc101'])
+                    self.send(MV101, 1, IP['plc101'])
 
                 elif lit101 <= LIT_101_M['L']:
-                   self.send(MV101, 1, IP['plc101'])
+                    self.send(MV101, 1, IP['plc101'])
 
                 hmi.setLit101(lit101)
+
+            else:    
+
+                if lit101 >= 0.6:
+                    random_control_active = 1
+
+                if random_control_active == 1 and random_counter < 10:                    
+                    random_counter = random_counter + 1
+
+                elif random_counter >= 10:
+                    random_counter=0
+                    out_file = open(control_file, 'w')
+                    if (random() > 0.5):
+                        self.send(MV101, 1, IP['plc101'])
+                        out_file.write(1)
+                    else:
+                        self.send(MV101, 0, IP['plc101'])
+                        out_file.write(0)
+
+
+                    # random action control
+
+
+
+
 	    except Exception as e:
                    print e
 		   print "Switching to backup"
