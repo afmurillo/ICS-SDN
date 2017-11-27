@@ -1,5 +1,6 @@
 from minicps.devices import PLC
 from utils import *
+from random import *
 
 import time
 
@@ -15,8 +16,12 @@ class Lit101(PLC):
 	def main_loop(self):
 		print 'DEBUG: sensor enters main_loop'
 		count = 0
+		gaussian_noise_experiment = 1
+		noise_level = 0.5
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT101))
+			if gaussian_noise_experiment ==1:
+				self.level = self.level + random.gauss(0, noise_level)
 			self.send(LIT101, self.level, SENSOR_ADDR)
 			time.sleep(PLC_PERIOD_SEC)
 
