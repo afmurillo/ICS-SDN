@@ -21,4 +21,7 @@ cat plc_attack.txt | grep 'PH Level'| awk '{print $4}' > plc_attack_ph.txt
 cat plc_attack.txt | grep 'Tank 1'| awk '{print $6}' > plc_attack_tank_1.txt
 cat plc_attack.txt | grep 'Tank 2'| awk '{print $6}' > plc_attack_tank_2.txt
 
+cat random_control.txt | grep 'PH Level'| awk '{print $4}' > random_no_def_ph.txt
+cat random_control.txt | grep 'Tank 1'| awk '{print $6}' > random_no_def_tank_1.txt
+cat random_control.txt | grep 'Tank 2'| awk '{print $6}' > random_no_def_tank_2.txt
 
