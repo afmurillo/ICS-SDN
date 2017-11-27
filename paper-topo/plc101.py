@@ -200,15 +200,15 @@ class PLC101(PLC):
         self.count = 0
         backup = IdsSocket(self)
 	backup.start()
-        hmi = HMISocket(self)
-        hmi.start()
+        #hmi = HMISocket(self)
+        #hmi.start()
 
         # Only for random control experiment!
-        random_control_experiment = 0
+        random_control_experiment = 1
         random_control_active = 1
         random_counter = 0
-        control_file = 'control_actions.txt'
-
+        control_file = '/home/mininet/ICS-SDN/paper-topo/control_actions.txt'
+        out_file = open(control_file, 'w')
         preloaded_random_control = 0
 
 
@@ -220,46 +220,43 @@ class PLC101(PLC):
 	    	lit101 = float(self.receive(LIT101, SENSOR_ADDR))
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
 		print "plc1 lit101", lit101
+                #hmi.setLit101(lit101)
 
-            if random_control_experiment == 0:
 
-    	        if lit101 >= LIT_101_M['HH'] :
-                    self.send(MV101, 0, IP['plc101'])
+                if random_control_experiment == 0:
 
-                elif lit101 >= LIT_101_M['H']:
-                    self.send(MV101, 0, IP['plc101'])
+    	            if lit101 >= LIT_101_M['HH']:
+                        self.send(MV101, 0, IP['plc101'])
 
-                elif lit101 <= LIT_101_M['LL']:
-                    self.send(MV101, 1, IP['plc101'])
+                    elif lit101 >= LIT_101_M['H']:
+                        self.send(MV101, 0, IP['plc101'])
 
-                elif lit101 <= LIT_101_M['L']:
-                    self.send(MV101, 1, IP['plc101'])
+                    elif lit101 <= LIT_101_M['LL']:
+                        self.send(MV101, 1, IP['plc101'])
 
-                hmi.setLit101(lit101)
+                    elif lit101 <= LIT_101_M['L']:
+                        self.send(MV101, 1, IP['plc101'])
 
-            else:    
 
-                if lit101 >= 0.6:
-                    random_control_active = 1
+                else:    
 
-                if random_control_active == 1 and random_counter < 10:                    
-                    random_counter = random_counter + 1
+                    if lit101 >= 0.6:
+                        random_control_active = 1
+		        "Activating random control"
 
-                elif random_counter >= 10:
-                    random_counter=0
-                    out_file = open(control_file, 'w')
+                    if random_control_active == 1 and random_counter < 10:                    
+                        random_counter = random_counter + 1
+		        "Keeping last control action"
+
+                    elif random_counter >= 10:
+                        random_counter=0
+		        "Updating control action"		    
                     if (random() > 0.5):
                         self.send(MV101, 1, IP['plc101'])
-                        out_file.write(1)
+                        print "Action on MV101: 1"
                     else:
                         self.send(MV101, 0, IP['plc101'])
-                        out_file.write(0)
-
-
-                    # random action control
-
-
-
+                        print "Action on MV101: 0"
 
 	    except Exception as e:
                    print e
