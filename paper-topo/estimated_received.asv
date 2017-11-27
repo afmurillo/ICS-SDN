@@ -250,9 +250,9 @@ grid on;
 
 xlabel('Time (min)')
 ylabel('Tank 1 Level (m)')
-title('Water Tank 1 Level Behavior With Gausian Noise');
+%title('Water Tank 1 Level Behavior With Random Control Actions');
 
-matlab2tikz('noise_0_5.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('noise_no_def_0_5.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
 % h6=figure(6)
 % set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
