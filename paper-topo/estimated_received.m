@@ -43,6 +43,9 @@ random_no_def_tank_1= fscanf(fileID_10,formatSpec);
 fileID_11 = fopen('random_def_tank_1.txt','r');
 random_def_tank_1= fscanf(fileID_11,formatSpec);
 
+fileID_12 = fopen('gaussian_noise_experiments/no_def_0_5.txt','r');
+noise_no_def_0_5= fscanf(fileID_12,formatSpec);
+
 
 plant_time = ([1:4001]*0.2/360)*60; % Rescaling 10
 %defense_time= ([1:8001]*0.39995001249687578105473631592102/360)*15; % Rescaling 5
@@ -176,18 +179,62 @@ matlab2tikz('defense_1.tikz', 'showInfo', false, 'parseStrings', false, 'standal
 
 %%%%%%%%%%%%%%%%%%%%%%%%% RANDOM CONTROL %%%%%%%%%%%%%%%%%%%%%%%%
 
-h5=figure(5)
+% h5=figure(5)
+% set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+% %set(h(4),'linewidth',2.0);
+% 
+% %subplot(2,1,1)
+% %plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+% plot(plant_time,random_no_def_tank_1, '-.k', 'linewidth', 1.5);
+% 
+% hold on;
+% plot(plant_time,random_def_tank_1, '--b', 'linewidth', 1.5);
+% 
+% lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+% 
+% axis([0 120 0 1.2])
+% grid on;
+% 
+% %plot([42 42],[0 1.2], '--k')
+% %axis([0 120 0 1.2])
+% 
+% %annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+% 
+% xlabel('Time (min)')
+% ylabel('Tank 1 Level (m)')
+% title('Water Tank 1 Level Behavior With Random Control Actions');
+% 
+% matlab2tikz('random.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+% 
+% h6=figure(6)
+% set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+% delta_random = abs(random_no_def_tank_1 - random_def_tank_1);
+% plot(plant_time,delta_random, '-b', 'linewidth', 1.5)
+% 
+% axis([0 120 0 0.5])
+% grid on;
+% 
+% xlabel('Time (min)')
+% ylabel('Tank 1 Level (m)')
+% title('Difference between Water Tank Level with and without the Defense');
+% 
+% matlab2tikz('random_delta.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 %%%%%%%%%%%%%%%%%%%%%%%%
+
+h6=figure(6)
 set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
 %set(h(4),'linewidth',2.0);
 
 %subplot(2,1,1)
 %plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
-plot(plant_time,random_no_def_tank_1, '-.k', 'linewidth', 1.5);
+plot(plant_time,noise_no_def_0_5, '-.k', 'linewidth', 1.5);
 
 hold on;
-plot(plant_time,random_def_tank_1, '--b', 'linewidth', 1.5);
+%plot(plant_time,random_def_tank_1, '--b', 'linewidth', 1.5);
 
-lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+%lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
 
 axis([0 120 0 1.2])
 grid on;
@@ -199,21 +246,21 @@ grid on;
 
 xlabel('Time (min)')
 ylabel('Tank 1 Level (m)')
-title('Water Tank 1 Level Behavior With Random Control Actions');
+%title('Water Tank 1 Level Behavior With Random Control Actions');
 
-matlab2tikz('random.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('noise_no_def_0_5.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
-h6=figure(6)
-set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
-delta_random = abs(random_no_def_tank_1 - random_def_tank_1);
-plot(plant_time,delta_random, '-b', 'linewidth', 1.5)
-
-axis([0 120 0 0.5])
-grid on;
-
-xlabel('Time (min)')
-ylabel('Tank 1 Level (m)')
-title('Difference between Water Tank Level with and without the Defense');
-
-matlab2tikz('random_delta.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+% h6=figure(6)
+% set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+% delta_random = abs(random_no_def_tank_1 - random_def_tank_1);
+% plot(plant_time,delta_random, '-b', 'linewidth', 1.5)
+% 
+% axis([0 120 0 0.5])
+% grid on;
+% 
+% xlabel('Time (min)')
+% ylabel('Tank 1 Level (m)')
+% title('Difference between Water Tank Level with and without the Defense');
+% 
+% matlab2tikz('random_delta.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
