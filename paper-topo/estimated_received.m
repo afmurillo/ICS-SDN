@@ -37,6 +37,13 @@ defense_tank_1 = fscanf(fileID_8,formatSpec);
 fileID_9 = fopen('defense_experiment_compromised_sensor/defense_tank_2.txt','r');
 defense_tank_2= fscanf(fileID_9,formatSpec);
 
+fileID_10 = fopen('random_no_def_tank_1.txt','r');
+random_no_def_tank_1= fscanf(fileID_10,formatSpec);
+
+fileID_11 = fopen('random_def_tank_1.txt','r');
+random_def_tank_1= fscanf(fileID_11,formatSpec);
+
+
 plant_time = ([1:4001]*0.2/360)*60; % Rescaling 10
 %defense_time= ([1:8001]*0.39995001249687578105473631592102/360)*15; % Rescaling 5
 
@@ -165,3 +172,50 @@ matlab2tikz('defense_1.tikz', 'showInfo', false, 'parseStrings', false, 'standal
 % suptitle('Water Tanks Level Behavior With Attack and IDS');
 % 
 % matlab2tikz('ids_data.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% RANDOM CONTROL %%%%%%%%%%%%%%%%%%%%%%%%
+
+h5=figure(5)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+%plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+plot(plant_time,random_no_def_tank_1, '-.k', 'linewidth', 1.5);
+
+hold on;
+plot(plant_time,random_def_tank_1, '--b', 'linewidth', 1.5);
+%plot(plant_time,defense_tank_1, '-b', 'linewidth', 1.5)
+lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+
+%axis([0 120 0 1.2])
+grid on;
+
+%plot([42 42],[0 1.2], '--k')
+%axis([0 120 0 1.2])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Water Tank 1 Level Behavior With Random Control Actions');
+
+matlab2tikz('random.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+% h5=figure(5)
+% 
+% 
+% %subplot(2,1,2)
+% plot(plant_time,defense_tank_2)
+% axis([0 120 0 1.25])
+% grid on;
+% 
+% xlabel('Time (min)')
+% ylabel('Tank 2 Level (m)')
+% 
+% title('Water Tank 2 Level Behavior With Attack and IDS');
+% 
+% 
+% 
+% matlab2tikz('defense_2.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
