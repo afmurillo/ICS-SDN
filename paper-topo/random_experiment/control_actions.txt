@@ -1,0 +1,2447 @@
+plc1 lit101 0.00444444455206
+received from LIT301! 0.779851853848
+Action read on MV101:   0
+
+received from LIT301! 0.779851853848
+plc1 lit101 0.00444444455206
+received from LIT301! 0.399074077606
+Action read on MV101:   0
+
+plc1 lit101 0.400944441557
+received from LIT301! 0.394444435835
+Action read on MV101:   1
+
+plc1 lit101 0.394592583179
+received from LIT301! 0.408962965012
+Action read on MV101:   0
+
+plc1 lit101 0.387629628181
+received from LIT301! 0.416222214699
+Action read on MV101:   1
+
+plc1 lit101 0.384148150682
+received from LIT301! 0.431648135185
+Action read on MV101:   1
+
+plc1 lit101 0.376277774572
+received from LIT301! 0.439814805984
+Action read on MV101:   0
+
+plc1 lit101 0.376537024975
+received from LIT301! 0.447074085474
+Action read on MV101:   0
+
+plc1 lit101 0.370481491089
+received from LIT301! 0.461592584848
+Action read on MV101:   1
+
+plc1 lit101 0.363222211599
+received from LIT301! 0.467944443226
+Action read on MV101:   0
+
+plc1 lit101 0.356259256601
+received from LIT301! 0.483370363712
+Action read on MV101:   1
+
+plc1 lit101 0.35187035799
+received from LIT301! 0.490629643202
+Action read on MV101:   0
+
+plc1 lit101 0.345851838589
+received from LIT301! 0.506055533886
+Action read on MV101:   1
+
+received from LIT301! 0.515129625797
+plc1 lit101 0.34237036109
+received from LIT301! 0.515129625797
+Action read on MV101:   1
+
+received from LIT301! 0.523296296597
+plc1 lit101 0.333629637957
+received from LIT301! 0.530555546284
+Action read on MV101:   1
+
+received from LIT301! 0.537814795971
+plc1 lit101 0.334259271622
+received from LIT301! 0.546888887882
+Action read on MV101:   1
+
+received from LIT301! 0.546888887882
+plc1 lit101 0.334629625082
+received from LIT301! 0.554148137569
+Action read on MV101:   0
+
+received from LIT301! 0.563222229481
+plc1 lit101 0.335000008345
+received from LIT301! 0.563222229481
+Action read on MV101:   0
+
+received from LIT301! 0.570481479168
+plc1 lit101 0.32800000906
+received from LIT301! 0.577740728855
+Action read on MV101:   1
+
+received from LIT301! 0.584999978542
+plc1 lit101 0.321648150682
+received from LIT301! 0.584999978542
+Action read on MV101:   1
+
+received from LIT301! 0.593166649342
+plc1 lit101 0.314685195684
+received from LIT301! 0.600425899029
+Action read on MV101:   0
+
+received from LIT301! 0.607685208321
+plc1 lit101 0.314981490374
+received from LIT301! 0.607685208321
+Action read on MV101:   1
+
+received from LIT301! 0.614944458008
+plc1 lit101 0.30805554986
+received from LIT301! 0.624018490314
+Action read on MV101:   0
+
+received from LIT301! 0.631277799606
+plc1 lit101 0.304037034512
+received from LIT301! 0.640351831913
+Action read on MV101:   1
+
+received from LIT301! 0.640351831913
+plc1 lit101 0.297722220421
+received from LIT301! 0.6476110816
+Action read on MV101:   0
+
+received from LIT301! 0.654870390892
+plc1 lit101 0.292685180902
+received from LIT301! 0.663037061691
+Action read on MV101:   1
+
+received from LIT301! 0.663037061691
+plc1 lit101 0.286370366812
+received from LIT301! 0.670296311378
+Action read on MV101:   0
+
+received from LIT301! 0.677555561066
+plc1 lit101 0.28227776289
+received from LIT301! 0.685722231865
+Action read on MV101:   0
+
+received from LIT301! 0.685722231865
+plc1 lit101 0.273203700781
+received from LIT301! 0.693888902664
+Action read on MV101:   1
+
+received from LIT301! 0.701148152351
+plc1 lit101 0.265944451094
+received from LIT301! 0.701148152351
+Action read on MV101:   0
+
+received from LIT301! 0.70840740             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+2039
+plc1 lit101 0.259888887405
+received from LIT301! 0.715666651726
+Action read on MV101:   1
+
+received from LIT301! 0.723833322525
+plc1 lit101 0.248240739107
+received from LIT301! 0.723833322525
+Action read on MV101:   0
+
+received from LIT301! 0.731999993324
+plc1 lit101 0.241999998689
+received from LIT301! 0.740166664124
+Action read on MV101:   0
+
+received from LIT301! 0.748333334923
+plc1 lit101 0.236925929785
+received from LIT301! 0.748333334923
+Action read on MV101:   0
+
+received from LIT301! 0.756500005722
+plc1 lit101 0.228759258986
+received from LIT301! 0.763759255409
+Action read on MV101:   1
+
+received from LIT301! 0.763759255409
+plc1 lit101 0.21424074471
+received from LIT301! 0.771018505096
+Action read on MV101:   0
+
+received from LIT301! 0.778277754784
+plc1 lit101 0.214537039399
+received from LIT301! 0.785537064075
+Action read on MV101:   0
+
+received from LIT301! 0.785537064075
+plc1 lit101 0.2110555619
+received from LIT301! 0.792796313763
+Action read on MV101:   0
+
+received from LIT301! 0.80005556345
+plc1 lit101 0.196537032723
+Action read on MV101:   0
+
+received from LIT301! 0.807314813137
+plc1 lit101 0.190185189247
+Action read on MV101:   0
+
+received from LIT301! 0.797129631042
+plc1 lit101 0.190185189247
+received from LIT301! 0.797129631042
+Action read on MV101:   0
+
+received from LIT301! 0.790648162365
+plc1 lit101 0.190185189247
+received from LIT301! 0.783240735531
+Action read on MV101:   0
+
+received from LIT301! 0.783240735531
+plc1 lit101 0.190185189247
+received from LIT301! 0.775833308697
+Action read on MV101:   0
+
+received from LIT301! 0.768425941467
+plc1 lit101 0.190185189247
+received from LIT301! 0.76194447279
+Action read on MV101:   1
+
+received from LIT301! 0.76194447279
+plc1 lit101 0.190185189247
+received from LIT301! 0.752685189247
+Action read on MV101:   1
+
+received from LIT301! 0.743425905704
+plc1 lit101 0.200574070215
+received from LIT301! 0.735092580318
+Action read on MV101:   0
+
+received from LIT301! 0.735092580318
+plc1 lit101 0.20907407999
+received from LIT301! 0.727685213089
+Action read on MV101:   1
+
+received from LIT301! 0.720277786255
+plc1 lit101 0.220407411456
+received from LIT301! 0.720277786255
+Action read on MV101:   0
+
+received from LIT301! 0.713796317577
+plc1 lit101 0.220407411456
+received from LIT301! 0.706388890743
+Action read on MV101:   0
+
+received from LIT301! 0.698055565357
+plc1 lit101 0.230796292424
+received from LIT301! 0.698055565357
+Action read on MV101:   0
+
+received from LIT301! 0.690648138523
+plc1 lit101 0.230796292424
+received from LIT301! 0.683240711689
+Action read on MV101:   1
+
+received from LIT301! 0.683240711689
+plc1 lit101 0.230796292424
+received from LIT301! 0.67583334446
+Action read on MV101:   0
+
+received from LIT301! 0.668425917625
+plc1 lit101 0.234574079514
+received from LIT301! 0.668425917625
+Action read on MV101:   1
+
+received from LIT301! 0.661018490791
+plc1 lit101 0.241185188293
+received from LIT301! 0.653611123562
+Action read on MV101:   0
+
+received from LIT301! 0.653611123562
+plc1 lit101 0.241185188293
+received from LIT301! 0.646203696728
+Action read on MV101:   1
+
+received from LIT301! 0.638796269894
+plc1 lit101 0.246851846576
+received from LIT301! 0.638796269894
+Action read on MV101:   1
+
+plc1 lit101 0.252518504858
+received from LIT301! 0.631388902664
+Action read on MV101:   0
+
+received from LIT301! 0.623055577278
+plc1 lit101 0.26196295023
+received from LIT301! 0.614722251892
+Action read on MV101:   1
+
+received from LIT301! 0.614722251892
+plc1 lit101 0.270462960005
+received from LIT301! 0.607314825058
+Action read on MV101:   1
+
+received from LIT301! 0.599907398224
+plc1 lit101 0.276129633188
+received from LIT301! 0.599907398224
+Action read on MV101:   1
+
+received from LIT301! 0.589722216129
+plc1 lit101 0.295018523932
+received from LIT301! 0.581388890743
+Action read on MV101:   0
+
+received from LIT301! 0.572129607201
+plc1 lit101 0.304462969303
+received from LIT301! 0.572129607201
+Action read on MV101:   0
+
+received from LIT301! 0.562870383263
+plc1 lit101 0.312962949276
+received from LIT301! 0.554537057877
+Action read on MV101:   0
+
+received from LIT301! 0.             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+546203732491
+plc1 lit101 0.312962949276
+received from LIT301! 0.538796305656
+Action read on MV101:   0
+
+received from LIT301! 0.538796305656
+plc1 lit101 0.312962949276
+received from LIT301! 0.531388878822
+Action read on MV101:   0
+
+received from LIT301! 0.524907410145
+plc1 lit101 0.312962949276
+received from LIT301! 0.524907410145
+Action read on MV101:   1
+
+received from LIT301! 0.517499983311
+plc1 lit101 0.312962949276
+received from LIT301! 0.510092616081
+Action read on MV101:   1
+
+received from LIT301! 0.501759231091
+plc1 lit101 0.321462959051
+received from LIT301! 0.493425935507
+Action read on MV101:   1
+
+plc1 lit101 0.32901853323
+received from LIT301! 0.48690739274
+Action read on MV101:   1
+
+plc1 lit101 0.332407414913
+received from LIT301! 0.493999987841
+Action read on MV101:   0
+
+plc1 lit101 0.332703709602
+received from LIT301! 0.50125926733
+Action read on MV101:   0
+
+received from LIT301! 0.507611095905
+plc1 lit101 0.325740754604
+received from LIT301! 0.507611095905
+Action read on MV101:   1
+
+received from LIT301! 0.516685187817
+plc1 lit101 0.317574083805
+received from LIT301! 0.523037016392
+Action read on MV101:   1
+
+received from LIT301! 0.531203687191
+plc1 lit101 0.310648143291
+received from LIT301! 0.531203687191
+Action read on MV101:   0
+
+received from LIT301! 0.537555575371
+plc1 lit101 0.310944437981
+received from LIT301! 0.544814825058
+Action read on MV101:   1
+
+received from LIT301! 0.552074074745
+plc1 lit101 0.309351861477
+received from LIT301! 0.552074074745
+received from LIT301! 0.55842590332
+Action read on MV101:   1
+
+received from LIT301! 0.565685212612
+plc1 lit101 0.30144444108
+Action read on MV101:   0
+
+received from LIT301! 0.573851823807
+received from LIT301! 0.573851823807
+plc1 lit101 0.302111119032
+received from LIT301! 0.582925915718
+Action read on MV101:   0
+
+received from LIT301! 0.590185165405
+plc1 lit101 0.296740740538
+received from LIT301! 0.597444415092
+Action read on MV101:   0
+
+received from LIT301! 0.597444415092
+plc1 lit101 0.288574069738
+Action read on MV101:   1
+
+received from LIT301! 0.604703724384
+plc1 lit101 0.273148149252
+received from LIT301! 0.613777756691
+received from LIT301! 0.613777756691
+Action read on MV101:   0
+
+plc1 lit101 0.267777770758
+received from LIT301! 0.621037065983
+received from LIT301! 0.62829631567
+Action read on MV101:   1
+
+plc1 lit101 0.261759251356
+received from LIT301! 0.635555565357
+Action read on MV101:   1
+
+received from LIT301! 0.635555565357
+plc1 lit101 0.256759256124
+received from LIT301! 0.644629657269
+Action read on MV101:   1
+
+received from LIT301! 0.652796268463
+plc1 lit101 0.257055550814
+received from LIT301! 0.660055577755
+Action read on MV101:   0
+
+received from LIT301! 0.66640740633
+plc1 lit101 0.257648140192
+received from LIT301! 0.66640740633
+Action read on MV101:   0
+
+received from LIT301! 0.674574077129
+plc1 lit101 0.2522777915
+received from LIT301! 0.680925905704
+Action read on MV101:   1
+
+received from LIT301! 0.689092576504
+plc1 lit101 0.236851856112
+received from LIT301! 0.689092576504
+Action read on MV101:   1
+
+received from LIT301! 0.696351826191
+plc1 lit101 0.235222220421
+received from LIT301! 0.703611135483
+Action read on MV101:   0
+
+received from LIT301! 0.71087038517
+plc1 lit101 0.235814809799
+received from LIT301! 0.71087038517
+Action read on MV101:   0
+
+received from LIT301! 0.718129634857
+plc1 lit101 0.230444446206
+received from LIT301! 0.725388884544
+Action read on MV101:   0
+
+received from LIT301! 0.725388884544
+plc1 lit101 0.216833338141
+received from LIT301! 0.73174071312
+Action read on MV101:   0
+
+received from LIT301! 0.739907383919
+plc1 lit101 0.209574073553
+received from LIT301! 0.748074054718
+Action read on MV101:   0
+
+received from LIT301! 0.748074054718
+plc1 lit101 0.194148153067
+received from LIT301! 0.755333304405
+Action read on MV101:   1
+
+received from LIT301! 0.763499975204
+plc1 lit101 0.186888888478
+received from LIT301! 0.770759284496
+Action read on MV101:   1
+
+received from LIT301! 0.770759284496
+plc1 lit101 0.180000007153
+received from LIT301! 0.778018534184
+Action read on MV101:   0
+
+received from LIT301             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+! 0.786185204983
+plc1 lit101 0.180296301842
+received from LIT301! 0.79344445467
+Action read on MV101:   0
+
+received from LIT301! 0.79344445467
+plc1 lit101 0.169629633427
+received from LIT301! 0.801611125469
+Action read on MV101:   1
+
+plc1 lit101 0.162370368838
+received from LIT301! 0.813407421112
+Action read on MV101:   1
+
+plc1 lit101 0.170870363712
+received from LIT301! 0.810629606247
+Action read on MV101:   0
+
+plc1 lit101 0.17842592299
+received from LIT301! 0.802296280861
+Action read on MV101:   0
+
+plc1 lit101 0.18503703177
+received from LIT301! 0.787481486797
+Action read on MV101:   0
+
+received from LIT301! 0.780074059963
+plc1 lit101 0.18503703177
+received from LIT301! 0.780074059963
+Action read on MV101:   1
+
+received from LIT301! 0.773592591286
+plc1 lit101 0.18503703177
+received from LIT301! 0.7652592659
+Action read on MV101:   1
+
+received from LIT301! 0.7652592659
+plc1 lit101 0.190703704953
+received from LIT301! 0.758777797222
+Action read on MV101:   0
+
+received from LIT301! 0.751370370388
+plc1 lit101 0.198259264231
+received from LIT301! 0.743962943554
+Action read on MV101:   0
+
+received from LIT301! 0.743962943554
+plc1 lit101 0.205814808607
+received from LIT301! 0.736555576324
+Action read on MV101:   1
+
+received from LIT301! 0.730074048042
+plc1 lit101 0.205814808607
+received from LIT301! 0.721740722656
+Action read on MV101:   0
+
+received from LIT301! 0.721740722656
+plc1 lit101 0.214314818382
+received from LIT301! 0.714333355427
+Action read on MV101:   0
+
+received from LIT301! 0.706925928593
+plc1 lit101 0.21809259057
+received from LIT301! 0.706925928593
+Action read on MV101:   1
+
+received from LIT301! 0.699518501759
+plc1 lit101 0.21809259057
+received from LIT301! 0.692111134529
+Action read on MV101:   1
+
+received from LIT301! 0.684703707695
+plc1 lit101 0.222814813256
+received from LIT301! 0.677296280861
+Action read on MV101:   0
+
+received from LIT301! 0.677296280861
+plc1 lit101 0.23131480813
+received from LIT301! 0.669888913631
+received from LIT301! 0.663407385349
+Action read on MV101:   0
+
+plc1 lit101 0.239814817905
+received from LIT301! 0.663407385349
+received from LIT301! 0.65600001812
+Action read on MV101:   0
+
+received from LIT301! 0.649518489838
+plc1 lit101 0.239814817905
+Action read on MV101:   1
+
+received from LIT301! 0.642111122608
+received from LIT301! 0.642111122608
+plc1 lit101 0.239814817905
+Action read on MV101:   0
+
+received from LIT301! 0.634703695774
+received from LIT301! 0.628222227097
+plc1 lit101 0.242648154497
+Action read on MV101:   1
+
+received from LIT301! 0.620814800262
+plc1 lit101 0.250203698874
+received from LIT301! 0.620814800262
+received from LIT301! 0.614333331585
+Action read on MV101:   1
+
+received from LIT301! 0.606925904751
+plc1 lit101 0.253981471062
+received from LIT301! 0.600444436073
+Action read on MV101:   1
+
+plc1 lit101 0.26814815402
+received from LIT301! 0.600444436073
+Action read on MV101:   1
+
+received from LIT301! 0.593037009239
+plc1 lit101 0.275703698397
+received from LIT301! 0.58562964201
+Action read on MV101:   1
+
+received from LIT301! 0.578222215176
+plc1 lit101 0.290814816952
+received from LIT301! 0.578222215176
+Action read on MV101:   1
+
+received from LIT301! 0.571740746498
+plc1 lit101 0.298370361328
+received from LIT301! 0.564333319664
+Action read on MV101:   0
+
+received from LIT301! 0.557851850986
+plc1 lit101 0.312537044287
+received from LIT301! 0.557851850986
+Action read on MV101:   0
+
+received from LIT301! 0.550444424152
+plc1 lit101 0.315370380878
+received from LIT301! 0.543962955475
+Action read on MV101:   1
+
+received from LIT301! 0.536555528641
+plc1 lit101 0.315370380878
+received from LIT301! 0.536555528641
+Action read on MV101:   1
+
+received from LIT301! 0.530074059963
+plc1 lit101 0.320092588663
+received from LIT301! 0.522666692734
+Action read on MV101:   1
+
+received from LIT301! 0.5152592659
+plc1 lit101 0.327648162842
+received from LIT301! 0.5152592659
+Action read on MV101:   1
+
+received from LIT301! 0.508777797222
+plc1 lit101 0.342759251595
+received from LIT301! 0.500444471836
+Action read on MV101:   1
+
+received from LIT301! 0.491185188293
+plc1 lit101 0.359759271             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+145
+Action read on MV101:   1
+
+received from LIT301! 0.484703689814
+plc1 lit101 0.361000001431
+Action read on MV101:   1
+
+received from LIT301! 0.49175927043
+plc1 lit101 0.361629635096
+Action read on MV101:   1
+
+received from LIT301! 0.499018520117
+plc1 lit101 0.361925929785
+Action read on MV101:   1
+
+received from LIT301! 0.513537049294
+plc1 lit101 0.362222224474
+received from LIT301! 0.513537049294
+Action read on MV101:   0
+
+received from LIT301! 0.519888877869
+plc1 lit101 0.362814813852
+received from LIT301! 0.528055548668
+Action read on MV101:   1
+
+received from LIT301! 0.534407436848
+plc1 lit101 0.355814814568
+received from LIT301! 0.534407436848
+Action read on MV101:   1
+
+received from LIT301! 0.541666686535
+plc1 lit101 0.353277772665
+received from LIT301! 0.548925936222
+Action read on MV101:   1
+
+received from LIT301! 0.556185185909
+plc1 lit101 0.353833347559
+received from LIT301! 0.556185185909
+Action read on MV101:   0
+
+received from LIT301! 0.562537014484
+received from LIT301! 0.569796323776
+plc1 lit101 0.354129642248
+Action read on MV101:   0
+
+received from LIT301! 0.569796323776
+plc1 lit101 0.353481471539
+received from LIT301! 0.576148152351
+Action read on MV101:   1
+
+received from LIT301! 0.583407402039
+received from LIT301! 0.590666651726
+plc1 lit101 0.339870363474
+received from LIT301! 0.590666651726
+Action read on MV101:   1
+
+received from LIT301! 0.597018539906
+plc1 lit101 0.334462970495
+received from LIT301! 0.604277789593
+Action read on MV101:   1
+
+received from LIT301! 0.61153703928
+plc1 lit101 0.335055559874
+received from LIT301! 0.61153703928
+Action read on MV101:   1
+
+received from LIT301! 0.617888867855
+plc1 lit101 0.335314810276
+received from LIT301! 0.626962959766
+Action read on MV101:   1
+
+received from LIT301! 0.635129630566
+plc1 lit101 0.336018532515
+received from LIT301! 0.635129630566
+Action read on MV101:   1
+
+received from LIT301! 0.642388880253
+plc1 lit101 0.336611121893
+Action read on MV101:   0
+
+received from LIT301! 0.64964812994
+plc1 lit101 0.336907416582
+received from LIT301! 0.656907379627
+Action read on MV101:   0
+
+received from LIT301! 0.665074050426
+plc1 lit101 0.329944431782
+received from LIT301! 0.665074050426
+Action read on MV101:   1
+
+received from LIT301! 0.672333359718
+plc1 lit101 0.320870369673
+received from LIT301! 0.680499970913
+Action read on MV101:   0
+
+received from LIT301! 0.688666641712
+plc1 lit101 0.31111112237
+received from LIT301! 0.695925951004
+Action read on MV101:   1
+
+received from LIT301! 0.695925951004
+plc1 lit101 0.30955556035
+received from LIT301! 0.704092621803
+Action read on MV101:   0
+
+received from LIT301! 0.712259232998
+plc1 lit101 0.298925936222
+received from LIT301! 0.721333324909
+Action read on MV101:   1
+
+received from LIT301! 0.721333324909
+plc1 lit101 0.298277765512
+received from LIT301! 0.728592574596
+Action read on MV101:   0
+
+received from LIT301! 0.735851824284
+plc1 lit101 0.288481473923
+received from LIT301! 0.743111133575
+Action read on MV101:   0
+
+received from LIT301! 0.743111133575
+plc1 lit101 0.287833333015
+received from LIT301! 0.750370383263
+Action read on MV101:   0
+
+received from LIT301! 0.756722211838
+plc1 lit101 0.274222224951
+received from LIT301! 0.763981461525
+Action read on MV101:   1
+
+received from LIT301! 0.763981461525
+plc1 lit101 0.266962975264
+received from LIT301! 0.771240711212
+Action read on MV101:   1
+
+received from LIT301! 0.777592599392
+plc1 lit101 0.25901851058
+received from LIT301! 0.784851849079
+Action read on MV101:   1
+
+received from LIT301! 0.784851849079
+plc1 lit101 0.259314805269
+received from LIT301! 0.791203677654
+Action read on MV101:   0
+
+received from LIT301! 0.798462986946
+plc1 lit101 0.259870380163
+received from LIT301! 0.798462986946
+Action read on MV101:   0
+
+received from LIT301! 0.805722236633
+plc1 lit101 0.257333338261
+Action read on MV101:   1
+
+received from LIT301! 0.815703690052
+plc1 lit101 0.252796292305
+Action read on MV101:   1
+
+received from LIT301! 0.813851833344
+plc1 lit101 0.2546851933
+Action read on MV101:   1
+
+received from LIT301! 0.799962937832
+plc1 lit101 0.268851846457
+received             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+ from LIT301! 0.799962937832
+Action read on MV101:   0
+
+received from LIT301! 0.792555570602
+plc1 lit101 0.276407420635
+received from LIT301! 0.785148143768
+Action read on MV101:   0
+
+received from LIT301! 0.778666675091
+plc1 lit101 0.283018529415
+received from LIT301! 0.778666675091
+Action read on MV101:   1
+
+received from LIT301! 0.771259248257
+plc1 lit101 0.283962965012
+received from LIT301! 0.764777779579
+Action read on MV101:   0
+
+received from LIT301! 0.764777779579
+plc1 lit101 0.283962965012
+received from LIT301! 0.757370352745
+Action read on MV101:   0
+
+received from LIT301! 0.750888884068
+plc1 lit101 0.29435184598
+received from LIT301! 0.743481457233
+Action read on MV101:   1
+
+received from LIT301! 0.743481457233
+plc1 lit101 0.29435184598
+received from LIT301! 0.736074090004
+Action read on MV101:   1
+
+received from LIT301! 0.72866666317
+plc1 lit101 0.299074083567
+received from LIT301! 0.721259236336
+Action read on MV101:   0
+
+received from LIT301! 0.721259236336
+plc1 lit101 0.306629627943
+received from LIT301! 0.71292591095
+Action read on MV101:   0
+
+received from LIT301! 0.70551854372
+plc1 lit101 0.31796297431
+received from LIT301! 0.698111116886
+Action read on MV101:   1
+
+received from LIT301! 0.698111116886
+plc1 lit101 0.31796297431
+received from LIT301! 0.690703690052
+Action read on MV101:   1
+
+received from LIT301! 0.683296322823
+plc1 lit101 0.321740746498
+received from LIT301! 0.675888895988
+Action read on MV101:   0
+
+received from LIT301! 0.675888895988
+plc1 lit101 0.329296290874
+received from LIT301! 0.669407427311
+Action read on MV101:   1
+
+received from LIT301! 0.662000000477
+plc1 lit101 0.339685171843
+received from LIT301! 0.654592573643
+Action read on MV101:   1
+
+received from LIT301! 0.654592573643
+plc1 lit101 0.340629637241
+received from LIT301! 0.648111104965
+Action read on MV101:   0
+
+received from LIT301! 0.640703678131
+plc1 lit101 0.354796290398
+received from LIT301! 0.633296310902
+Action read on MV101:   1
+
+received from LIT301! 0.633296310902
+plc1 lit101 0.360462963581
+received from LIT301! 0.626814842224
+Action read on MV101:   1
+
+received from LIT301! 0.61940741539
+plc1 lit101 0.366129636765
+received from LIT301! 0.61940741539
+Action read on MV101:   1
+
+received from LIT301! 0.611999988556
+plc1 lit101 0.373685181141
+received from LIT301! 0.605518519878
+Action read on MV101:   1
+
+received from LIT301! 0.598111093044
+plc1 lit101 0.380296289921
+received from LIT301! 0.598111093044
+Action read on MV101:   0
+
+received from LIT301! 0.591629624367
+plc1 lit101 0.394462972879
+received from LIT301! 0.584222197533
+Action read on MV101:   0
+
+received from LIT301! 0.576814830303
+plc1 lit101 0.398240745068
+received from LIT301! 0.576814830303
+Action read on MV101:   0
+
+received from LIT301! 0.570333361626
+plc1 lit101 0.398240745068
+received from LIT301! 0.562925934792
+Action read on MV101:   1
+
+received from LIT301! 0.555518507957
+plc1 lit101 0.398240745068
+received from LIT301! 0.555518507957
+Action read on MV101:   0
+
+received from LIT301! 0.54903703928
+plc1 lit101 0.405796289444
+received from LIT301! 0.541629612446
+Action read on MV101:   0
+
+received from LIT301! 0.541629612446
+plc1 lit101 0.408629626036
+received from LIT301! 0.535148143768
+Action read on MV101:   1
+
+received from LIT301! 0.527740716934
+plc1 lit101 0.408629626036
+received from LIT301! 0.520333349705
+Action read on MV101:   0
+
+received from LIT301! 0.520333349705
+plc1 lit101 0.412407398224
+received from LIT301! 0.513851881027
+Action read on MV101:   0
+
+received from LIT301! 0.506444454193
+plc1 lit101 0.418074071407
+received from LIT301! 0.499962955713
+Action read on MV101:   0
+
+plc1 lit101 0.418074071407
+received from LIT301! 0.493462949991
+Action read on MV101:   1
+
+plc1 lit101 0.405370384455
+received from LIT301! 0.499648153782
+Action read on MV101:   1
+
+plc1 lit101 0.402833342552
+received from LIT301! 0.506907403469
+Action read on MV101:   1
+
+received from LIT301! 0.514166653156
+plc1 lit101 0.403462976217
+received from LIT301! 0.522333323956
+Action read on MV101:   1
+
+received from LIT301! 0.522333323956
+plc1 lit101 0.403759270906
+r             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+eceived from LIT301! 0.529592573643
+Action read on MV101:   1
+
+received from LIT301! 0.53685182333
+plc1 lit101 0.404388874769
+received from LIT301! 0.545018494129
+Action read on MV101:   1
+
+received from LIT301! 0.545018494129
+plc1 lit101 0.404685199261
+received from LIT301! 0.552277803421
+Action read on MV101:   1
+
+received from LIT301! 0.56044447422
+plc1 lit101 0.405314803123
+received from LIT301! 0.56044447422
+Action read on MV101:   1
+
+received from LIT301! 0.568611085415
+plc1 lit101 0.405574083328
+received from LIT301! 0.575870394707
+Action read on MV101:   0
+
+received from LIT301! 0.583129644394
+plc1 lit101 0.406166672707
+received from LIT301! 0.583129644394
+Action read on MV101:   1
+
+received from LIT301! 0.589481472969
+plc1 lit101 0.401703715324
+received from LIT301! 0.596740722656
+Action read on MV101:   0
+
+received from LIT301! 0.596740722656
+plc1 lit101 0.396592587233
+received from LIT301! 0.603999972343
+Action read on MV101:   0
+
+received from LIT301! 0.611259281635
+plc1 lit101 0.39212962985
+received from LIT301! 0.611259281635
+Action read on MV101:   0
+
+received from LIT301! 0.61761111021
+plc1 lit101 0.378518521786
+received from LIT301! 0.624870359898
+Action read on MV101:   1
+
+received from LIT301! 0.632129609585
+plc1 lit101 0.371259272099
+received from LIT301! 0.632129609585
+Action read on MV101:   0
+
+received from LIT301! 0.639388859272
+plc1 lit101 0.367777764797
+received from LIT301! 0.646648168564
+Action read on MV101:   1
+
+received from LIT301! 0.646648168564
+plc1 lit101 0.360777765512
+received from LIT301! 0.652999997139
+Action read on MV101:   0
+
+received from LIT301! 0.660259246826
+plc1 lit101 0.357296288013
+received from LIT301! 0.660259246826
+Action read on MV101:   1
+
+received from LIT301! 0.667518496513
+plc1 lit101 0.34844443202
+received from LIT301! 0.674777805805
+Action read on MV101:   1
+
+received from LIT301! 0.68112963438
+plc1 lit101 0.347759246826
+received from LIT301! 0.68112963438
+Action read on MV101:   0
+
+received from LIT301! 0.688388884068
+plc1 lit101 0.348055541515
+received from LIT301! 0.695648133755
+Action read on MV101:   0
+
+received from LIT301! 0.695648133755
+plc1 lit101 0.341092586517
+received from LIT301! 0.702907383442
+Action read on MV101:   1
+
+received from LIT301! 0.709259271622
+plc1 lit101 0.33474072814
+received from LIT301! 0.716518521309
+Action read on MV101:   0
+
+received from LIT301! 0.716518521309
+plc1 lit101 0.328722208738
+received from LIT301! 0.722870349884
+Action read on MV101:   0
+
+received from LIT301! 0.730129659176
+plc1 lit101 0.324259251356
+received from LIT301! 0.737388908863
+Action read on MV101:   1
+
+received from LIT301! 0.737388908863
+plc1 lit101 0.30883333087
+received from LIT301! 0.74464815855
+Action read on MV101:   0
+
+received from LIT301! 0.751907408237
+plc1 lit101 0.307240754366
+received from LIT301! 0.759166657925
+Action read on MV101:   1
+
+received from LIT301! 0.759166657925
+plc1 lit101 0.298388898373
+received from LIT301! 0.766425907612
+Action read on MV101:   1
+
+received from LIT301! 0.773685157299
+plc1 lit101 0.296796292067
+received from LIT301! 0.781851828098
+Action read on MV101:   1
+
+received from LIT301! 0.781851828098
+plc1 lit101 0.297388881445
+received from LIT301! 0.788203716278
+Action read on MV101:   1
+
+received from LIT301! 0.795462965965
+plc1 lit101 0.29764816165
+received from LIT301! 0.795462965965
+Action read on MV101:   0
+
+received from LIT301! 0.802722215652
+plc1 lit101 0.298203706741
+Action read on MV101:   1
+
+received from LIT301! 0.810888886452
+plc1 lit101 0.298240751028
+Action read on MV101:   0
+
+received from LIT301! 0.808111131191
+plc1 lit101 0.30107408762
+Action read on MV101:   1
+
+received from LIT301! 0.800703704357
+plc1 lit101 0.308629631996
+Action read on MV101:   1
+
+received from LIT301! 0.786814808846
+plc1 lit101 0.312407404184
+received from LIT301! 0.786814808846
+Action read on MV101:   1
+
+received from LIT301! 0.779407382011
+plc1 lit101 0.327518522739
+received from LIT301! 0.772925913334
+Action read on MV101:   0
+
+received from LIT301! 0.765518546104
+plc1 lit101 0.334129631519
+received from LIT301! 0.7655185461             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+04
+Action read on MV101:   0
+
+received from LIT301! 0.759037017822
+plc1 lit101 0.339796304703
+received from LIT301! 0.752555549145
+Action read on MV101:   0
+
+received from LIT301! 0.745148122311
+plc1 lit101 0.339796304703
+received from LIT301! 0.745148122311
+Action read on MV101:   0
+
+received from LIT301! 0.738666653633
+plc1 lit101 0.339796304703
+received from LIT301! 0.731259286404
+Action read on MV101:   0
+
+received from LIT301! 0.724777758121
+plc1 lit101 0.339796304703
+received from LIT301! 0.724777758121
+Action read on MV101:   1
+
+received from LIT301! 0.717370390892
+plc1 lit101 0.339796304703
+received from LIT301! 0.71088886261
+Action read on MV101:   1
+
+received from LIT301! 0.70348149538
+plc1 lit101 0.346407413483
+received from LIT301! 0.70348149538
+Action read on MV101:   0
+
+received from LIT301! 0.697000026703
+plc1 lit101 0.353962957859
+received from LIT301! 0.689592599869
+Action read on MV101:   1
+
+received from LIT301! 0.689592599869
+plc1 lit101 0.359629631042
+received from LIT301! 0.683111131191
+Action read on MV101:   0
+
+received from LIT301! 0.675703704357
+plc1 lit101 0.363407403231
+received from LIT301! 0.66922223568
+Action read on MV101:   0
+
+received from LIT301! 0.66922223568
+plc1 lit101 0.370018512011
+received from LIT301! 0.661814808846
+Action read on MV101:   1
+
+received from LIT301! 0.655333340168
+plc1 lit101 0.370018512011
+received from LIT301! 0.647925913334
+Action read on MV101:   1
+
+received from LIT301! 0.647925913334
+plc1 lit101 0.379462957382
+received from LIT301! 0.641444444656
+Action read on MV101:   1
+
+received from LIT301! 0.634037017822
+plc1 lit101 0.386074066162
+received from LIT301! 0.627555549145
+Action read on MV101:   1
+
+received from LIT301! 0.627555549145
+plc1 lit101 0.400240749121
+received from LIT301! 0.620148122311
+Action read on MV101:   0
+
+received from LIT301! 0.613666653633
+plc1 lit101 0.407796293497
+received from LIT301! 0.613666653633
+Action read on MV101:   0
+
+received from LIT301! 0.606259286404
+plc1 lit101 0.412518531084
+received from LIT301! 0.599777758121
+Action read on MV101:   0
+
+received from LIT301! 0.592370390892
+plc1 lit101 0.412518531084
+received from LIT301! 0.592370390892
+Action read on MV101:   1
+
+received from LIT301! 0.58588886261
+plc1 lit101 0.412518531084
+received from LIT301! 0.57848149538
+Action read on MV101:   1
+
+received from LIT301! 0.571074068546
+plc1 lit101 0.419129639864
+received from LIT301! 0.571074068546
+Action read on MV101:   1
+
+received from LIT301! 0.564592599869
+plc1 lit101 0.42668518424
+received from LIT301! 0.557185173035
+Action read on MV101:   0
+
+received from LIT301! 0.549777805805
+plc1 lit101 0.441796302795
+received from LIT301! 0.549777805805
+Action read on MV101:   1
+
+received from LIT301! 0.542370378971
+plc1 lit101 0.445574074984
+received from LIT301! 0.534962952137
+Action read on MV101:   0
+
+received from LIT301! 0.534962952137
+plc1 lit101 0.45312961936
+received from LIT301! 0.528481483459
+Action read on MV101:   1
+
+received from LIT301! 0.521074056625
+plc1 lit101 0.455962955952
+received from LIT301! 0.513666689396
+Action read on MV101:   1
+
+received from LIT301! 0.513666689396
+plc1 lit101 0.464462965727
+received from LIT301! 0.507185161114
+received from LIT301! 0.499777764082
+Action read on MV101:   1
+
+plc1 lit101 0.472018510103
+received from LIT301! 0.493296295404
+Action read on MV101:   1
+
+plc1 lit101 0.477111101151
+received from LIT301! 0.500425934792
+Action read on MV101:   0
+
+plc1 lit101 0.47740739584
+received from LIT301! 0.507685184479
+Action read on MV101:   0
+
+received from LIT301! 0.507685184479
+plc1 lit101 0.473240733147
+received from LIT301! 0.514037013054
+Action read on MV101:   1
+
+received from LIT301! 0.521296322346
+plc1 lit101 0.465981483459
+received from LIT301! 0.528555572033
+Action read on MV101:   1
+
+received from LIT301! 0.528555572033
+plc1 lit101 0.458722233772
+received from LIT301! 0.53581482172
+Action read on MV101:   1
+
+received from LIT301! 0.542166650295
+received from LIT301! 0.542166650295
+plc1 lit101 0.457388877869
+received from LIT301! 0.549425899982
+Action read on MV101:   1
+
+received from LIT3             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+01! 0.555777788162
+plc1 lit101 0.457944452763
+received from LIT301! 0.563037037849
+Action read on MV101:   1
+
+received from LIT301! 0.563037037849
+plc1 lit101 0.458240747452
+received from LIT301! 0.570296287537
+Action read on MV101:   0
+
+received from LIT301! 0.577555537224
+plc1 lit101 0.458537042141
+received from LIT301! 0.583907425404
+Action read on MV101:   1
+
+received from LIT301! 0.583907425404
+plc1 lit101 0.451537042856
+received from LIT301! 0.591166675091
+Action read on MV101:   0
+
+received from LIT301! 0.598425924778
+plc1 lit101 0.44831481576
+received from LIT301! 0.598425924778
+Action read on MV101:   1
+
+received from LIT301! 0.605685174465
+plc1 lit101 0.442000001669
+received from LIT301! 0.612944424152
+Action read on MV101:   1
+
+received from LIT301! 0.620203733444
+plc1 lit101 0.437574088573
+received from LIT301! 0.620203733444
+Action read on MV101:   1
+
+received from LIT301! 0.627462983131
+plc1 lit101 0.438166677952
+received from LIT301! 0.633814811707
+Action read on MV101:   0
+
+received from LIT301! 0.641074061394
+plc1 lit101 0.438462972641
+received from LIT301! 0.641074061394
+Action read on MV101:   0
+
+received from LIT301! 0.648333311081
+plc1 lit101 0.431462973356
+received from LIT301! 0.654685199261
+Action read on MV101:   0
+
+received from LIT301! 0.661944448948
+plc1 lit101 0.425111114979
+received from LIT301! 0.661944448948
+Action read on MV101:   0
+
+received from LIT301! 0.669203698635
+plc1 lit101 0.410592585802
+received from LIT301! 0.676462948322
+Action read on MV101:   1
+
+received from LIT301! 0.682814836502
+plc1 lit101 0.403333336115
+received from LIT301! 0.682814836502
+Action read on MV101:   0
+
+received from LIT301! 0.690074086189
+plc1 lit101 0.397277772427
+received from LIT301! 0.696425914764
+Action read on MV101:   1
+
+received from LIT301! 0.703685164452
+plc1 lit101 0.393796294928
+Action read on MV101:   0
+
+received from LIT301! 0.703685164452
+plc1 lit101 0.387740731239
+received from LIT301! 0.710944473743
+Action read on MV101:   1
+
+received from LIT301! 0.718203723431
+plc1 lit101 0.383314818144
+received from LIT301! 0.725462973118
+Action read on MV101:   0
+
+received from LIT301! 0.725462973118
+plc1 lit101 0.377259254456
+received from LIT301! 0.731814801693
+Action read on MV101:   0
+
+received from LIT301! 0.73907405138
+plc1 lit101 0.37283334136
+received from LIT301! 0.73907405138
+received from LIT301! 0.746333360672
+Action read on MV101:   0
+
+received from LIT301! 0.753592610359
+plc1 lit101 0.358314812183
+Action read on MV101:   0
+
+received from LIT301! 0.760851860046
+plc1 lit101 0.351055562496
+received from LIT301! 0.760851860046
+Action read on MV101:   0
+
+received from LIT301! 0.767203688622
+plc1 lit101 0.337444454432
+received from LIT301! 0.775370359421
+Action read on MV101:   0
+
+received from LIT301! 0.782629609108
+plc1 lit101 0.330185174942
+received from LIT301! 0.782629609108
+Action read on MV101:   1
+
+received from LIT301! 0.7898889184
+plc1 lit101 0.314759254456
+received from LIT301! 0.798055529594
+Action read on MV101:   0
+
+received from LIT301! 0.805314838886
+plc1 lit101 0.312222212553
+Action read on MV101:   1
+
+received from LIT301! 0.812574088573
+plc1 lit101 0.313425928354
+received from LIT301! 0.807018518448
+Action read on MV101:   1
+
+plc1 lit101 0.318148136139
+received from LIT301! 0.799611091614
+Action read on MV101:   0
+
+received from LIT301! 0.792203724384
+plc1 lit101 0.333259254694
+received from LIT301! 0.792203724384
+Action read on MV101:   0
+
+received from LIT301! 0.783870398998
+plc1 lit101 0.336092591286
+received from LIT301! 0.776462972164
+Action read on MV101:   1
+
+received from LIT301! 0.76905554533
+plc1 lit101 0.336092591286
+received from LIT301! 0.76905554533
+Action read on MV101:   1
+
+received from LIT301! 0.760722219944
+plc1 lit101 0.341759264469
+received from LIT301! 0.75331479311
+Action read on MV101:   1
+
+received from LIT301! 0.74590742588
+plc1 lit101 0.349314808846
+received from LIT301! 0.74590742588
+Action read on MV101:   1
+
+received from LIT301! 0.738499999046
+plc1 lit101 0.365370362997
+received from LIT301! 0.731092572212
+Action read on MV101:   0
+
+received fro             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+m LIT301! 0.723685204983
+plc1 lit101 0.373870372772
+received from LIT301! 0.723685204983
+Action read on MV101:   1
+
+received from LIT301! 0.716277778149
+plc1 lit101 0.381425917149
+received from LIT301! 0.708870351315
+Action read on MV101:   1
+
+received from LIT301! 0.701462984085
+plc1 lit101 0.386148154736
+Action read on MV101:   0
+
+received from LIT301! 0.701462984085
+plc1 lit101 0.401259273291
+received from LIT301! 0.694055557251
+Action read on MV101:   1
+
+received from LIT301! 0.686648130417
+plc1 lit101 0.403148144484
+received from LIT301! 0.679240763187
+Action read on MV101:   0
+
+received from LIT301! 0.679240763187
+plc1 lit101 0.405037045479
+received from LIT301! 0.671833336353
+Action read on MV101:   1
+
+received from LIT301! 0.664425909519
+plc1 lit101 0.413537025452
+received from LIT301! 0.65701854229
+Action read on MV101:   0
+
+received from LIT301! 0.650537014008
+plc1 lit101 0.418259263039
+received from LIT301! 0.650537014008
+Action read on MV101:   0
+
+received from LIT301! 0.64127779007
+plc1 lit101 0.426759272814
+received from LIT301! 0.633870363235
+Action read on MV101:   0
+
+received from LIT301! 0.633870363235
+plc1 lit101 0.426759272814
+received from LIT301! 0.626462936401
+Action read on MV101:   1
+
+received from LIT301! 0.618129611015
+plc1 lit101 0.426759272814
+received from LIT301! 0.618129611015
+received from LIT301! 0.610722243786
+Action read on MV101:   1
+
+received from LIT301! 0.6023889184
+plc1 lit101 0.43431481719
+received from LIT301! 0.594981491566
+Action read on MV101:   1
+
+plc1 lit101 0.441870361567
+received from LIT301! 0.594981491566
+Action read on MV101:   1
+
+received from LIT301! 0.587574064732
+plc1 lit101 0.457925915718
+received from LIT301! 0.579240739346
+Action read on MV101:   1
+
+received from LIT301! 0.57090741396
+plc1 lit101 0.466425925493
+received from LIT301! 0.57090741396
+Action read on MV101:   1
+
+received from LIT301! 0.562574088573
+plc1 lit101 0.482481479645
+received from LIT301! 0.555166661739
+Action read on MV101:   1
+
+received from LIT301! 0.555166661739
+plc1 lit101 0.490037024021
+received from LIT301! 0.547759234905
+Action read on MV101:   1
+
+received from LIT301! 0.540351867676
+received from LIT301! 0.532944440842
+plc1 lit101 0.506092607975
+received from LIT301! 0.532944440842
+Action read on MV101:   1
+
+received from LIT301! 0.525537014008
+plc1 lit101 0.512703716755
+received from LIT301! 0.518129646778
+Action read on MV101:   1
+
+received from LIT301! 0.518129646778
+plc1 lit101 0.520259261131
+received from LIT301! 0.510722219944
+Action read on MV101:   0
+
+received from LIT301! 0.504240751266
+plc1 lit101 0.535370349884
+received from LIT301! 0.504240751266
+Action read on MV101:   1
+
+plc1 lit101 0.538203716278
+received from LIT301! 0.496833324432
+Action read on MV101:   1
+
+received from LIT301! 0.487462967634
+plc1 lit101 0.540092587471
+Action read on MV101:   0
+
+plc1 lit101 0.542500019073
+received from LIT301! 0.489166676998
+Action read on MV101:   1
+
+received from LIT301! 0.496425926685
+plc1 lit101 0.539018511772
+Action read on MV101:   1
+
+received from LIT301! 0.510037064552
+plc1 lit101 0.532999992371
+received from LIT301! 0.510037064552
+Action read on MV101:   0
+
+received from LIT301! 0.51729631424
+plc1 lit101 0.53329628706
+received from LIT301! 0.524555563927
+Action read on MV101:   1
+
+plc1 lit101 0.529814839363
+received from LIT301! 0.530907392502
+Action read on MV101:   1
+
+received from LIT301! 0.530907392502
+plc1 lit101 0.523796319962
+received from LIT301! 0.537259280682
+Action read on MV101:   0
+
+received from LIT301! 0.544518530369
+received from LIT301! 0.550870358944
+plc1 lit101 0.524092614651
+received from LIT301! 0.550870358944
+Action read on MV101:   0
+
+received from LIT301! 0.557222247124
+plc1 lit101 0.521555542946
+received from LIT301! 0.564481496811
+Action read on MV101:   1
+
+received from LIT301! 0.564481496811
+plc1 lit101 0.507944464684
+received from LIT301! 0.570833325386
+Action read on MV101:   0
+
+received from LIT301! 0.578092575073
+plc1 lit101 0.504462957382
+received from LIT301! 0.584444463253
+Action read on MV101:   0
+
+received from LIT301! 0.584444463253
+plc1             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+ lit101 0.496555566788
+received from LIT301! 0.59170371294
+Action read on MV101:   0
+
+received from LIT301! 0.598055541515
+plc1 lit101 0.489296287298
+received from LIT301! 0.605314791203
+Action read on MV101:   1
+
+received from LIT301! 0.605314791203
+plc1 lit101 0.475685179234
+received from LIT301! 0.611666679382
+Action read on MV101:   1
+
+received from LIT301! 0.61892592907
+plc1 lit101 0.475037038326
+received from LIT301! 0.626185178757
+Action read on MV101:   1
+
+received from LIT301! 0.626185178757
+plc1 lit101 0.475296288729
+received from LIT301! 0.632537007332
+Action read on MV101:   1
+
+received from LIT301! 0.639796316624
+plc1 lit101 0.475888878107
+received from LIT301! 0.639796316624
+Action read on MV101:   1
+
+plc1 lit101 0.476148158312
+received from LIT301! 0.646148145199
+Action read on MV101:   0
+
+received from LIT301! 0.653407394886
+received from LIT301! 0.660666644573
+plc1 lit101 0.476703703403
+received from LIT301! 0.660666644573
+Action read on MV101:   1
+
+received from LIT301! 0.667925953865
+plc1 lit101 0.473222225904
+received from LIT301! 0.675185203552
+Action read on MV101:   1
+
+received from LIT301! 0.675185203552
+plc1 lit101 0.467166662216
+received from LIT301! 0.681537032127
+Action read on MV101:   1
+
+received from LIT301! 0.688796281815
+plc1 lit101 0.467462956905
+received from LIT301! 0.695148169994
+Action read on MV101:   0
+
+received from LIT301! 0.695148169994
+plc1 lit101 0.468018531799
+received from LIT301! 0.702407419682
+Action read on MV101:   1
+
+received from LIT301! 0.709666669369
+plc1 lit101 0.462648153305
+received from LIT301! 0.716018497944
+Action read on MV101:   1
+
+received from LIT301! 0.716018497944
+plc1 lit101 0.457537025213
+received from LIT301! 0.722370386124
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457796305418
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   1
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 lit101 0.457870364189
+received from LIT301! 0.729629635811
+Action read on MV101:   0
+
+received from LIT301! 0.729629635811
+plc1 l             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1[    0-0    ] <= [1]
+             MV101:1              <= [1]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'
+             MV101:1[    0-0    ] <= [0]
+             MV101:1              <= [0]: 'OK'

@@ -186,10 +186,10 @@ plot(plant_time,random_no_def_tank_1, '-.k', 'linewidth', 1.5);
 
 hold on;
 plot(plant_time,random_def_tank_1, '--b', 'linewidth', 1.5);
-%plot(plant_time,defense_tank_1, '-b', 'linewidth', 1.5)
+
 lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
 
-%axis([0 120 0 1.2])
+axis([0 120 0 1.2])
 grid on;
 
 %plot([42 42],[0 1.2], '--k')
@@ -203,19 +203,17 @@ title('Water Tank 1 Level Behavior With Random Control Actions');
 
 matlab2tikz('random.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
-% h5=figure(5)
-% 
-% 
-% %subplot(2,1,2)
-% plot(plant_time,defense_tank_2)
-% axis([0 120 0 1.25])
-% grid on;
-% 
-% xlabel('Time (min)')
-% ylabel('Tank 2 Level (m)')
-% 
-% title('Water Tank 2 Level Behavior With Attack and IDS');
-% 
-% 
-% 
-% matlab2tikz('defense_2.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+h6=figure(6)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+delta_random = abs(random_no_def_tank_1 - random_def_tank_1);
+plot(plant_time,delta_random, '-b', 'linewidth', 1.5)
+
+axis([0 120 0 0.5])
+grid on;
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Difference between Water Tank Level with and without the Defense');
+
+matlab2tikz('random_delta.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
