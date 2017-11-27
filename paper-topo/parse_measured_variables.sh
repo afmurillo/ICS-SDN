@@ -34,3 +34,7 @@ cat gaussian_noise_experiments/no_def_0_5.txt | grep 'PH Level'| awk '{print $4}
 cat gaussian_noise_experiments/no_def_0_5.txt | grep 'Tank 1'| awk '{print $6}' > gaussian_noise_experiments/tank_1_no_def_0_5.txt
 cat gaussian_noise_experiments/no_def_0_5.txt | grep 'Tank 2'| awk '{print $6}' > gaussian_noise_experiments/tank_2_no_def_0_5.txt
 
+cat gaussian_noise_experiments/def_0_5.txt | grep 'PH Level'| awk '{print $4}' > gaussian_noise_experiments/ph_def_0_5.txt
+cat gaussian_noise_experiments/def_0_5.txt | grep 'Tank 1'| awk '{print $6}' > gaussian_noise_experiments/tank_1_def_0_5.txt
+cat gaussian_noise_experiments/def_0_5.txt | grep 'Tank 2'| awk '{print $6}' > gaussian_noise_experiments/tank_2_def_0_5.txt
+
