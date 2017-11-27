@@ -208,8 +208,10 @@ class PLC101(PLC):
         random_control_active = 1
         random_counter = 0
         control_file = '/home/mininet/ICS-SDN/paper-topo/control_actions.txt'
+        input_file = "/home/mininet/ICS-SDN/paper-topo/control_list.txt"
+
         out_file = open(control_file, 'w')
-        preloaded_random_control = 0
+	in_file = open(input_file, 'r')
 
 
 
@@ -238,7 +240,7 @@ class PLC101(PLC):
                         self.send(MV101, 1, IP['plc101'])
 
 
-                else:    
+                elif random_control_experiment == 1:    
 
                     if lit101 >= 0.6:
                         random_control_active = 1
@@ -257,6 +259,9 @@ class PLC101(PLC):
                     else:
                         self.send(MV101, 0, IP['plc101'])
                         print "Action on MV101: 0"
+
+		elif random_control_experiment ==2:
+			action = in_file.readline().split(':')[1]
 
 	    except Exception as e:
                    print e
