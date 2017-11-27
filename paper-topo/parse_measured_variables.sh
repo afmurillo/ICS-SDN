@@ -25,3 +25,8 @@ cat random_control.txt | grep 'PH Level'| awk '{print $4}' > random_no_def_ph.tx
 cat random_control.txt | grep 'Tank 1'| awk '{print $6}' > random_no_def_tank_1.txt
 cat random_control.txt | grep 'Tank 2'| awk '{print $6}' > random_no_def_tank_2.txt
 
+
+cat random_control_def.txt | grep 'PH Level'| awk '{print $4}' > random_def_ph.txt
+cat random_control_def.txt | grep 'Tank 1'| awk '{print $6}' > random_def_tank_1.txt
+cat random_control_def.txt | grep 'Tank 2'| awk '{print $6}' > random_def_tank_2.txt
+

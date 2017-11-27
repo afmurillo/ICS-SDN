@@ -204,7 +204,7 @@ class PLC101(PLC):
         #hmi.start()
 
         # Only for random control experiment!
-        random_control_experiment = 1
+        random_control_experiment = 2
         random_control_active = 1
         random_counter = 0
         control_file = '/home/mininet/ICS-SDN/paper-topo/control_actions.txt'
@@ -262,6 +262,8 @@ class PLC101(PLC):
 
 		elif random_control_experiment ==2:
 			action = in_file.readline().split(':')[1]
+			self.send(MV101, 0, IP['plc101'])
+			print "Action on MV101: ", action
 
 	    except Exception as e:
                    print e
