@@ -263,7 +263,7 @@ class PLC101(PLC):
 		elif random_control_experiment ==2:
 			action = in_file.readline().split(':')[1]
 			self.send(MV101, 0, IP['plc101'])
-			print "Action on MV101: ", action
+			print "Action read on MV101: ", action
 
 	    except Exception as e:
                    print e

@@ -564,3 +564,14 @@
 11-26 19:14:04.480 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 11-26 19:14:04.484 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 11-26 19:14:04.485 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:23:07.689 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:23:07.705 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:23:07.734 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:23:07.743 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:43:00.151 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:43:00.163 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:43:00.175 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:43:00.182 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:43:00.212 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:43:00.221 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 19:43:00.237 MainThread root     WARNING  logrotate_ Rotating log files due to signal
