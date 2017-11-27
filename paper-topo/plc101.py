@@ -213,8 +213,6 @@ class PLC101(PLC):
         out_file = open(control_file, 'w')
 	in_file = open(input_file, 'r')
 
-
-
         while(self.count <= PLC_SAMPLES):
 
             # lit101 [meters]
@@ -262,7 +260,7 @@ class PLC101(PLC):
 
 		elif random_control_experiment ==2:
 			action = in_file.readline().split(':')[1]
-			self.send(MV101, 0, IP['plc101'])
+			self.send(MV101, int(action), IP['plc101'])
 			print "Action read on MV101: ", action
 
 	    except Exception as e:

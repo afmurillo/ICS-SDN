@@ -575,3 +575,24 @@
 11-26 19:43:00.212 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 11-26 19:43:00.221 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 11-26 19:43:00.237 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:09:19.672 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+11-26 20:09:19.872 MainThread network  WARNING  join       enip_srv server TID [17119/47876710676224] hanging on None
+11-26 20:11:18.530 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:11:18.533 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:11:18.536 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:11:18.579 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:11:18.611 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:12:54.732 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+11-26 20:12:54.932 MainThread network  WARNING  join       enip_srv server TID [19984/47164022798080] hanging on None
+11-26 20:14:13.049 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:14:13.077 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:14:13.112 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:14:13.133 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:14:13.137 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:32:52.277 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:32:52.299 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:32:52.307 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:32:52.308 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:32:52.347 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:32:52.356 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+11-26 20:32:52.361 MainThread root     WARNING  logrotate_ Rotating log files due to signal
