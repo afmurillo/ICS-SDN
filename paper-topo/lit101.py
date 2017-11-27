@@ -1,6 +1,6 @@
 from minicps.devices import PLC
 from utils import *
-from random import *
+import random
 
 import time
 
@@ -22,6 +22,10 @@ class Lit101(PLC):
 			self.level = float(self.get(LIT101))
 			if gaussian_noise_experiment ==1:
 				self.level = self.level + random.gauss(0, noise_level)
+				if self.level > 1.0:
+					self.level = 1.0
+				if self.level < 0:
+					self.level = 0.0
 			self.send(LIT101, self.level, SENSOR_ADDR)
 			time.sleep(PLC_PERIOD_SEC)
 

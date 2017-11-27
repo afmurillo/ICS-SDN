@@ -204,8 +204,8 @@ class PLC101(PLC):
         #hmi.start()
 
         # Only for random control experiment!
-        random_control_experiment = 2
-        random_control_active = 1
+        random_control_experiment = 0
+        random_control_active = 0
         random_counter = 0
         control_file = '/home/mininet/ICS-SDN/paper-topo/control_actions.txt'
         input_file = "/home/mininet/ICS-SDN/paper-topo/control_list.txt"
