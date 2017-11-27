@@ -31,6 +31,6 @@ cat random_control_def.txt | grep 'Tank 1'| awk '{print $6}' > random_def_tank_1
 cat random_control_def.txt | grep 'Tank 2'| awk '{print $6}' > random_def_tank_2.txt
 
 cat gaussian_noise_experiments/no_def_0_5.txt | grep 'PH Level'| awk '{print $4}' > gaussian_noise_experiments/ph_no_def_0_5.txt
-cat gaussian_noise_experiments/no_def_0_5.txt | grep 'Tank 1'| awk '{print $6}' > gaussian_noise_experiments/tank_2_no_def_0_5.txt
+cat gaussian_noise_experiments/no_def_0_5.txt | grep 'Tank 1'| awk '{print $6}' > gaussian_noise_experiments/tank_1_no_def_0_5.txt
 cat gaussian_noise_experiments/no_def_0_5.txt | grep 'Tank 2'| awk '{print $6}' > gaussian_noise_experiments/tank_2_no_def_0_5.txt
 
