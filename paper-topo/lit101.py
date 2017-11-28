@@ -17,7 +17,7 @@ class Lit101(PLC):
 		print 'DEBUG: sensor enters main_loop'
 		count = 0
 		gaussian_noise_experiment = 1
-		noise_level = 1.0
+		noise_level = 0.7
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT101))
 			if gaussian_noise_experiment ==1:
