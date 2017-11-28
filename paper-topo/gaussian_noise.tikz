@@ -1,0 +1,33 @@
+% This file was created by matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.951\figurewidth,
+height=\figureheight,
+at={(0\figurewidth,0\figureheight)},
+scale only axis,
+xmin=0.3,
+xmax=1,
+xlabel={Time (min)},
+xmajorgrids,
+ymin=0.05,
+ymax=0.45,
+ylabel={Tank 1 Level (m)},
+ymajorgrids,
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={FINAL Water Tank 1 Level Behavior With Gausian Noise}
+]
+\addplot [color=black,dashdotted,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0.3	0.0862338090477384\\
+0.4	0.0855125743564109\\
+0.5	0.0619925293676579\\
+0.6	0.428572059485123\\
+0.8	0.333825398650337\\
+0.9	0.360889825043743\\
+1	0.322579372656835\\
+};
+\end{axis}
+\end{tikzpicture}%
