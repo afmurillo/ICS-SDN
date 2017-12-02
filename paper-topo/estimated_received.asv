@@ -50,11 +50,11 @@ noise_no_def_0_0_2= fscanf(fileID_12,formatSpec);
 fileID_13 = fopen('second_gaussian/tank_1_def_0_0_2.txt','r');
 noise_def_0_0_2= fscanf(fileID_13,formatSpec);
  
-fileID_14 = fopen('second_gaussian/tank_1_no_def_0_0_4.txt','r');
-noise_no_def_0_0_4= fscanf(fileID_14,formatSpec);
+fileID_14 = fopen('gaussian_noise_experiments/tank_1_no_def_0_0_4.txt','r');
+noise_no_def_0__0= fscanf(fileID_14,formatSpec);
 
-fileID_15 = fopen('second_gaussian/tank_1_def_0_0_4.txt','r');
-noise_def_0_0_4= fscanf(fileID_15,formatSpec);
+fileID_15 = fopen('gaussian_noise_experiments/tank_1_def_0_0_4.txt','r');
+noise_def_1_0= fscanf(fileID_15,formatSpec);
 % 
 % fileID_16 = fopen('gaussian_noise_experiments/tank_1_no_def_0_9.txt','r');
 % noise_no_def_0_9= fscanf(fileID_16,formatSpec);
