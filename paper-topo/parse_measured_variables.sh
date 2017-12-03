@@ -147,4 +147,11 @@ cat second_gaussian/def_0_0_8.txt | grep 'PH Level'| awk '{print $4}' > second_g
 cat second_gaussian/def_0_0_8.txt | grep 'Tank 1'| awk '{print $6}' > second_gaussian/tank_1_def_0_0_8.txt
 cat second_gaussian/def_0_0_8.txt | grep 'Tank 2'| awk '{print $6}' > second_gaussian/tank_2_def_0_0_8.txt
 
+cat second_gaussian/no_def_0_1_2.txt | grep 'PH Level'| awk '{print $4}' > second_gaussian/ph_no_def_0_1_2.txt
+cat second_gaussian/no_def_0_1_2.txt | grep 'Tank 1'| awk '{print $6}' > second_gaussian/tank_1_no_def_0_1_2.txt
+cat second_gaussian/no_def_0_1_2.txt | grep 'Tank 2'| awk '{print $6}' > second_gaussian/tank_2_no_def_0_1_2.txt
+
+cat second_gaussian/def_0_1_2.txt | grep 'PH Level'| awk '{print $4}' > second_gaussian/ph_def_0_1_2.txt
+cat second_gaussian/def_0_1_2.txt | grep 'Tank 1'| awk '{print $6}' > second_gaussian/tank_1_def_0_1_2.txt
+cat second_gaussian/def_0_1_2.txt | grep 'Tank 2'| awk '{print $6}' > second_gaussian/tank_2_def_0_1_2.txt
 

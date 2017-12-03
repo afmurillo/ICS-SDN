@@ -806,3 +806,14 @@
 12-02 17:16:40.267 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 12-02 17:16:40.272 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 12-02 17:16:40.272 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 17:49:00.071 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 17:49:00.073 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 17:49:00.077 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 17:49:00.121 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 17:49:00.132 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 17:49:00.141 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 18:07:11.995 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 18:07:12.014 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 18:07:12.045 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 18:07:12.045 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+12-02 18:07:12.081 MainThread root     WARNING  logrotate_ Rotating log files due to signal
