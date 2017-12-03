@@ -86,23 +86,23 @@ noise_no_def_0_1_6 = fscanf(fileID_24,formatSpec);
 fileID_25 = fopen('second_gaussian/tank_1_def_0_1_6.txt','r');
 noise_def_0_1_6= fscanf(fileID_25,formatSpec);
 
-% fileID_26 = fopen('gaussian_noise_experiments/tank_1_no_def_0_3.txt','r');
-% noise_no_def_0_3= fscanf(fileID_26,formatSpec);
-% 
-% fileID_27 = fopen('gaussian_noise_experiments/tank_1_def_0_3.txt','r');
-% noise_def_0_3= fscanf(fileID_27,formatSpec);
-% 
-% fileID_28 = fopen('gaussian_noise_experiments/tank_1_no_def_0_2.txt','r');
-% noise_no_def_0_2= fscanf(fileID_28,formatSpec);
-% 
-% fileID_29 = fopen('gaussian_noise_experiments/tank_1_def_0_2.txt','r');
-% noise_def_0_2= fscanf(fileID_29,formatSpec);
-% 
-% fileID_30 = fopen('gaussian_noise_experiments/tank_1_no_def_0_1.txt','r');
-% noise_no_def_0_1= fscanf(fileID_30,formatSpec);
-% 
-% fileID_31 = fopen('gaussian_noise_experiments/tank_1_def_0_1.txt','r');
-% noise_def_0_1= fscanf(fileID_31,formatSpec);
+fileID_26 = fopen('second_gaussian/tank_1_no_def_0_1_8.txt','r');
+noise_no_def_0_1_8= fscanf(fileID_26,formatSpec);
+
+fileID_27 = fopen('second_gaussian/tank_1_def_0_1_8.txt','r');
+noise_def_0_1_8= fscanf(fileID_27,formatSpec);
+
+fileID_28 = fopen('second_gaussian/tank_1_no_def_0_1.txt','r');
+noise_no_def_0_1= fscanf(fileID_28,formatSpec);
+
+fileID_29 = fopen('second_gaussian/tank_1_def_0_1.txt','r');
+noise_def_0_1= fscanf(fileID_29,formatSpec);
+
+fileID_30 = fopen('gaussian_noise_experiments/tank_1_no_def_0_2.txt','r');
+noise_no_def_0_2= fscanf(fileID_30,formatSpec);
+
+fileID_31 = fopen('gaussian_noise_experiments/tank_1_def_0_2.txt','r');
+noise_def_0_2= fscanf(fileID_31,formatSpec);
 % 
 % fileID_32 = fopen('random_control_commands.txt','r');
 % random_control_commands= fscanf(fileID_32,formatSpec);
@@ -300,35 +300,35 @@ title('Water Tank 1 Level Behavior With Gausian Noise 0.12');
 
 matlab2tikz('noise_0_1_2.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
-%%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 1.0 %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.1 %%%%%%%%%%%%%%%%%%%%%%%%
 
-% h7=figure(7)
-% set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
-% %set(h(4),'linewidth',2.0);
-% 
-% %subplot(2,1,1)
-% %plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
-% plot(plant_time,noise_no_def_1_0, '-.k', 'linewidth', 1.5);
-% 
-% hold on;
-% plot(plant_time,noise_def_1_0, '--b', 'linewidth', 1.5);
-% 
-% lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
-% 
-% axis([0 120 0 1.2])
-% grid on;
-% 
-% %plot([42 42],[0 1.2], '--k')
-% %axis([0 120 0 1.2])
-% 
-% %annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
-% 
-% xlabel('Time (min)')
-% ylabel('Tank 1 Level (m)')
-% title('Water Tank 1 Level Behavior With Gausian Noise 1.0');
-% 
-% matlab2tikz('noise_1_0.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-% 
+h7=figure(7)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+%plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+plot(plant_time,noise_no_def_0_1, '-.k', 'linewidth', 1.5);
+
+hold on;
+plot(plant_time,noise_def_0_1, '--b', 'linewidth', 1.5);
+
+lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+
+axis([0 120 0 1.2])
+grid on;
+
+%plot([42 42],[0 1.2], '--k')
+%axis([0 120 0 1.2])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Water Tank 1 Level Behavior With Gausian Noise 0.1');
+
+matlab2tikz('noise_0_1.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
 % %%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.9 %%%%%%%%%%%%%%%%%%%%%%%%
 % 
 h8=figure(8)
@@ -388,7 +388,7 @@ title('Water Tank 1 Level Behavior With Gausian Noise 0.08');
 matlab2tikz('noise_0_0_8.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
 % 
-% %%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.7 %%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.14 %%%%%%%%%%%%%%%%%%%%%%%%
 % 
 h10=figure(10)
 set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
@@ -475,35 +475,35 @@ title('Water Tank 1 Level Behavior With Gausian Noise 0.04');
 
 matlab2tikz('second_gaussian/noise_0_0_4.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
-% %%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.3 %%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.18 %%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% h13=figure(13)
-% set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
-% %set(h(4),'linewidth',2.0);
-% 
-% %subplot(2,1,1)
-% %plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
-% plot(plant_time,noise_no_def_0_3, '-.k', 'linewidth', 1.5);
-% 
-% hold on;
-% plot(plant_time,noise_def_0_3, '--b', 'linewidth', 1.5);
-% 
-% lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
-% 
-% axis([0 120 0 1.2])
-% grid on;
-% 
-% %plot([42 42],[0 1.2], '--k')
-% %axis([0 120 0 1.2])
-% 
-% %annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
-% 
-% xlabel('Time (min)')
-% ylabel('Tank 1 Level (m)')
-% title('Water Tank 1 Level Behavior With Gausian Noise 0.3');
-% 
-% matlab2tikz('noise_0_3.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-% 
+h13=figure(13)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+%plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+plot(plant_time,noise_no_def_0_1_8, '-.k', 'linewidth', 1.5);
+
+hold on;
+plot(plant_time,noise_def_0_1_8, '--b', 'linewidth', 1.5);
+
+lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+
+axis([0 120 0 1.2])
+grid on;
+
+%plot([42 42],[0 1.2], '--k')
+%axis([0 120 0 1.2])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Water Tank 1 Level Behavior With Gausian Noise 0.18');
+
+matlab2tikz('noise_0_1_8.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
 %%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.02 %%%%%%%%%%%%%%%%%%%%%%%%
 
 h14=figure(14)
@@ -533,73 +533,73 @@ title('Water Tank 1 Level Behavior With Gausian Noise 0.02');
 
 matlab2tikz('second_gaussian/noise_0_0_2.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 % 
-% %%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.1 %%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%% GAUSIAN NOISE ON THE LIT101 0.2 %%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% h15=figure(15)
-% set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
-% %set(h(4),'linewidth',2.0);
-% 
-% %subplot(2,1,1)
-% %plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
-% plot(plant_time,noise_no_def_0_1, '-.k', 'linewidth', 1.5);
-% 
-% hold on;
-% plot(plant_time,noise_def_0_1, '--b', 'linewidth', 1.5);
-% 
-% lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
-% 
-% axis([0 120 0 1.2])
-% grid on;
-% 
-% %plot([42 42],[0 1.2], '--k')
-% %axis([0 120 0 1.2])
-% 
-% %annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
-% 
-% xlabel('Time (min)')
-% ylabel('Tank 1 Level (m)')
-% title('Water Tank 1 Level Behavior With Gausian Noise 0.1');
-% 
-% matlab2tikz('noise_0_1.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-% 
-% 
+h15=figure(15)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+%plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+plot(plant_time,noise_no_def_0_2, '-.k', 'linewidth', 1.5);
+
+hold on;
+plot(plant_time,noise_def_0_2, '--b', 'linewidth', 1.5);
+
+lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+
+axis([0 120 0 1.2])
+grid on;
+
+%plot([42 42],[0 1.2], '--k')
+%axis([0 120 0 1.2])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Water Tank 1 Level Behavior With Gausian Noise 0.2');
+
+matlab2tikz('noise_0_2.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+
 % %%%%%%%%%%%%%%%%%%%%%%%%% FINAL GAUSSIAN NOISE FIGURE %%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% delta=zeros(10,1)
-% 
-% delta(1) = mean(abs(noise_no_def_0_1 - noise_def_0_1));
-% delta(2) = mean(abs(noise_no_def_0_2 - noise_def_0_2));
-% delta(3) = mean(abs(noise_no_def_0_3 - noise_def_0_3));
-% delta(4) = mean(abs(noise_no_def_0_4 - noise_def_0_4));
-% delta(5) = mean(abs(noise_no_def_0_5 - noise_def_0_5));
-% delta(6) = mean(abs(noise_no_def_0_6 - noise_def_0_6));
-% delta(7) = mean(abs(noise_no_def_0_7 - noise_def_0_7));
-% delta(8) = mean(abs(noise_no_def_0_8 - noise_def_0_8));
-% delta(9) = mean(abs(noise_no_def_0_9 - noise_def_0_9));
-% delta(10) = mean(abs(noise_no_def_1_0 - noise_def_1_0));
-% 
-% sigma = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
-% 
-% h16=figure(16)
-% set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
-% %set(h(4),'linewidth',2.0);
-% 
-% %subplot(2,1,1)
-% %plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
-% plot(sigma,delta, '-.k', 'linewidth', 1.5);
-% 
-% %lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
-% grid on;
-% 
-% %plot([42 42],[0 1.2], '--k')
-% %axis([0 120 0 1.2])
-% 
-% %annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
-% 
-% xlabel('Standard Deviation')
-% ylabel('Delta / t')
-% title('System without Defense VS System with Defense');
-% 
-% matlab2tikz('gaussian_noise.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-% 
-% 
+delta=zeros(10,1)
+
+delta(1) = mean(abs(noise_no_def_0_0_2 - noise_def_0_0_2 ));
+delta(2) = mean(abs(noise_no_def_0_0_4 - noise_def_0_0_4 ));
+delta(3) = mean(abs(noise_no_def_0_0_6 - noise_def_0_0_6 ));
+delta(4) = mean(abs(noise_no_def_0_0_8 - noise_def_0_0_8 ));
+delta(5) = mean(abs(noise_no_def_0_1 - noise_def_0_1 ));
+delta(6) = mean(abs(noise_no_def_0_1_2- noise_def_0_1_2 ));
+delta(7) = mean(abs(noise_no_def_0_1_4 - noise_def_0_1_4 ));
+delta(8) = mean(abs(noise_no_def_0_1_6 - noise_def_0_1_6 ));
+delta(9) = mean(abs(noise_no_def_0_1_8 - noise_def_0_1_8 ));
+delta(10) = mean(abs(noise_no_def_0_2 - noise_def_0_2));
+
+sigma = [0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2]
+
+h16=figure(16)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+%plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+plot(sigma,delta, '-.k', 'linewidth', 1.5);
+
+%lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+grid on;
+
+%plot([42 42],[0 1.2], '--k')
+%axis([0 120 0 1.2])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Standard Deviation')
+ylabel('Delta / t')
+title('System without Defense VS System with Defense');
+
+matlab2tikz('gaussian_noise.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+
