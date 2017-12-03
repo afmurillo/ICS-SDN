@@ -4323,4 +4323,16 @@ DEBUG received : 0.68333
 DEBUG estimated : 0.55000
 DEBUG received : 0.68333
 DEBUG estimated : 0.55189
-DEBUG receive
+DEBUG received : 0.68333
+DEBUG estimated : 0.55378
+DEBUG received : 0.68333
+DEBUG estimated : 0.55567
+DEBUG received : 0.68333
+DEBUG estimated : 0.55756
+DEBUG received : 0.68333
+DEBUG estimated : 0.55945
+DEBUG received : 0.68333
+DEBUG estimated : 0.56134
+DEBUG received : 0.68333
+DEBUG estimated : 0.56323
+DEBUG received : 0.68333
