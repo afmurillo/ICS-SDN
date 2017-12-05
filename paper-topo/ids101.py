@@ -156,7 +156,7 @@ class Ids101(PLC):
 
 			    if self.new_estimated_level > 1.0:
 				self.new_estimated_level = 1.0
-			    if sel.new_estimated_level < 0.0:
+			    if self.new_estimated_level < 0.0:
 			        self.new_estimated_level = 0.0
 			
                             print "DEBUG estimated : %.5f" % (self.estimated_level)
