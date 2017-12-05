@@ -1,0 +1,28 @@
+DEBUG get_query: SELECT value FROM industry WHERE name = ? AND pid = ?
+DEBUG set_query: UPDATE industry SET value = ? WHERE name = ? AND pid = ?
+DEBUG EnipProtocol server addr:  192.168.1.15
+DEBUG: concatenating server address with default port.
+DEBUG enip server tags_string:  MV101:1=INT LIT101:1=REAL P101:1=INT 
+DEBUG enip _start_server cmd:  ['/usr/bin/python', '-m', 'cpppo.server.enip', '--print', '--log', 'logs/protocols_tests_enip_server', '--address', '192.168.1.15:44818', 'MV101:1=INT', 'LIT101:1=REAL', 'P101:1=INT']
+DEBUG: in pre_loop
+main loop
+Entering while
+No attack detected
+DEBUG estimated : 0.00000
+DEBUG received : 0.40900
+DEBUG delta : 0.40900
+No attack detected
+DEBUG estimated : 0.41108
+DEBUG received : 0.45036
+DEBUG delta : 0.03928
+No attack detected
+DEBUG estimated : 0.45036
+DEBUG received : 0.48763
+DEBUG delta : 0.03728
+No attack detected
+DEBUG estimated : 0.48789
+DEBUG received : 0.07215
+DEBUG delta : 0.41574
+Connecting to ONOS
+Defense time:  0.000787973403931
+Intrusion detected!

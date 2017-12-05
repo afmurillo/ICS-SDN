@@ -1,0 +1,903 @@
+DEBUG get_query: SELECT value FROM industry WHERE name = ? AND pid = ?
+DEBUG set_query: UPDATE industry SET value = ? WHERE name = ? AND pid = ?
+DEBUG: rwt has no networking capabilities.
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69990 
+DEBUG  Water Tank 2 Level 0.39907 
+DEBUG  Water Tank 1 Level 0.40189 
+DEBUG  PH Level 0.69981 
+DEBUG  Water Tank 2 Level 0.39815 
+DEBUG  Water Tank 1 Level 0.40283 
+DEBUG  PH Level 0.69971 
+DEBUG  Water Tank 2 Level 0.39722 
+DEBUG  Water Tank 1 Level 0.40378 
+DEBUG  PH Level 0.69961 
+DEBUG  Water Tank 2 Level 0.39630 
+DEBUG  Water Tank 1 Level 0.40472 
+DEBUG  PH Level 0.69951 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40567 
+DEBUG  PH Level 0.69942 
+DEBUG  Water Tank 2 Level 0.39444 
+DEBUG  Water Tank 1 Level 0.40567 
+DEBUG  PH Level 0.69932 
+DEBUG  Water Tank 2 Level 0.39352 
+DEBUG  Water Tank 1 Level 0.40567 
+DEBUG  PH Level 0.69922 
+DEBUG  Water Tank 2 Level 0.39259 
+DEBUG  Water Tank 1 Level 0.40567 
+DEBUG  PH Level 0.69913 
+DEBUG  Water Tank 2 Level 0.39167 
+DEBUG  Water Tank 1 Level 0.40567 
+DEBUG  PH Level 0.69903 
+DEBUG  Water Tank 2 Level 0.39074 
+DEBUG  Water Tank 1 Level 0.40567 
+DEBUG  PH Level 0.69893 
+DEBUG  Water Tank 2 Level 0.38981 
+DEBUG  Water Tank 1 Level 0.40567 
+DEBUG  PH Level 0.69883 
+DEBUG  Water Tank 2 Level 0.38981 
+DEBUG  Water Tank 1 Level 0.40661 
+DEBUG  PH Level 0.69874 
+DEBUG  Water Tank 2 Level 0.38981 
+DEBUG  Water Tank 1 Level 0.40756 
+DEBUG  PH Level 0.69864 
+DEBUG  Water Tank 2 Level 0.38981 
+DEBUG  Water Tank 1 Level 0.40759 
+DEBUG  PH Level 0.69854 
+DEBUG  Water Tank 2 Level 0.39072 
+DEBUG  Water Tank 1 Level 0.40763 
+DEBUG  PH Level 0.69844 
+DEBUG  Water Tank 2 Level 0.39163 
+DEBUG  Water Tank 1 Level 0.40767 
+DEBUG  PH Level 0.69835 
+DEBUG  Water Tank 2 Level 0.39254 
+DEBUG  Water Tank 1 Level 0.40770 
+DEBUG  PH Level 0.69825 
+DEBUG  Water Tank 2 Level 0.39344 
+DEBUG  Water Tank 1 Level 0.40774 
+DEBUG  PH Level 0.69815 
+DEBUG  Water Tank 2 Level 0.39435 
+DEBUG  Water Tank 1 Level 0.40778 
+DEBUG  PH Level 0.69806 
+DEBUG  Water Tank 2 Level 0.39526 
+DEBUG  Water Tank 1 Level 0.40781 
+DEBUG  PH Level 0.69796 
+DEBUG  Water Tank 2 Level 0.39617 
+DEBUG  Water Tank 1 Level 0.40785 
+DEBUG  PH Level 0.69786 
+DEBUG  Water Tank 2 Level 0.39707 
+DEBUG  Water Tank 1 Level 0.40789 
+DEBUG  PH Level 0.69776 
+DEBUG  Water Tank 2 Level 0.39798 
+DEBUG  Water Tank 1 Level 0.40793 
+DEBUG  PH Level 0.69767 
+DEBUG  Water Tank 2 Level 0.39889 
+DEBUG  Water Tank 1 Level 0.40796 
+DEBUG  PH Level 0.69757 
+DEBUG  Water Tank 2 Level 0.39980 
+DEBUG  Water Tank 1 Level 0.40800 
+DEBUG  PH Level 0.69747 
+DEBUG  Water Tank 2 Level 0.40070 
+DEBUG  Water Tank 1 Level 0.40804 
+DEBUG  PH Level 0.69738 
+DEBUG  Water Tank 2 Level 0.40161 
+DEBUG  Water Tank 1 Level 0.40807 
+DEBUG  PH Level 0.69728 
+DEBUG  Water Tank 2 Level 0.40252 
+DEBUG  Water Tank 1 Level 0.40811 
+DEBUG  PH Level 0.69718 
+DEBUG  Water Tank 2 Level 0.40343 
+DEBUG  Water Tank 1 Level 0.40815 
+DEBUG  PH Level 0.69708 
+DEBUG  Water Tank 2 Level 0.40433 
+DEBUG  Water Tank 1 Level 0.40819 
+DEBUG  PH Level 0.69699 
+DEBUG  Water Tank 2 Level 0.40524 
+DEBUG  Water Tank 1 Level 0.40822 
+DEBUG  PH Level 0.69689 
+DEBUG  Water Tank 2 Level 0.40615 
+DEBUG  Water Tank 1 Level 0.40826 
+DEBUG  PH Level 0.69679 
+DEBUG  Water Tank 2 Level 0.40706 
+DEBUG  Water Tank 1 Level 0.40830 
+DEBUG  PH Level 0.69669 
+DEBUG  Water Tank 2 Level 0.40796 
+DEBUG  Water Tank 1 Level 0.40833 
+DEBUG  PH Level 0.69660 
+DEBUG  Water Tank 2 Level 0.40887 
+DEBUG  Water Tank 1 Level 0.40837 
+DEBUG  PH Level 0.69650 
+DEBUG  Water Tank 2 Level 0.40978 
+DEBUG  Water Tank 1 Level 0.40841 
+DEBUG  PH Level 0.69640 
+DEBUG  Water Tank 2 Level 0.41069 
+DEBUG  Water Tank 1 Level 0.40844 
+DEBUG  PH Level 0.69631 
+DEBUG  Water Tank 2 Level 0.41159 
+DEBUG  Water Tank 1 Level 0.40848 
+DEBUG  PH Level 0.69621 
+DEBUG  Water Tank 2 Level 0.41250 
+DEBUG  Water Tank 1 Level 0.40852 
+DEBUG  PH Level 0.69611 
+DEBUG  Water Tank 2 Level 0.41341 
+DEBUG  Water Tank 1 Level 0.40856 
+DEBUG  PH Level 0.69601 
+DEBUG  Water Tank 2 Level 0.41431 
+DEBUG  Water Tank 1 Level 0.40859 
+DEBUG  PH Level 0.69592 
+DEBUG  Water Tank 2 Level 0.41522 
+DEBUG  Water Tank 1 Level 0.40863 
+DEBUG  PH Level 0.69582 
+DEBUG  Water Tank 2 Level 0.41613 
+DEBUG  Water Tank 1 Level 0.40867 
+DEBUG  PH Level 0.69572 
+DEBUG  Water Tank 2 Level 0.41704 
+DEBUG  Water Tank 1 Level 0.40870 
+DEBUG  PH Level 0.69563 
+DEBUG  Water Tank 2 Level 0.41794 
+DEBUG  Water Tank 1 Level 0.40874 
+DEBUG  PH Level 0.69553 
+DEBUG  Water Tank 2 Level 0.41885 
+DEBUG  Water Tank 1 Level 0.40878 
+DEBUG  PH Level 0.69543 
+DEBUG  Water Tank 2 Level 0.41976 
+DEBUG  Water Tank 1 Level 0.40881 
+DEBUG  PH Level 0.69533 
+DEBUG  Water Tank 2 Level 0.42067 
+DEBUG  Water Tank 1 Level 0.40885 
+DEBUG  PH Level 0.69524 
+DEBUG  Water Tank 2 Level 0.42157 
+DEBUG  Water Tank 1 Level 0.40889 
+DEBUG  PH Level 0.69514 
+DEBUG  Water Tank 2 Level 0.42248 
+DEBUG  Water Tank 1 Level 0.40893 
+DEBUG  PH Level 0.69504 
+DEBUG  Water Tank 2 Level 0.42339 
+DEBUG  Water Tank 1 Level 0.40896 
+DEBUG  PH Level 0.69494 
+DEBUG  Water Tank 2 Level 0.42430 
+DEBUG  Water Tank 1 Level 0.40900 
+DEBUG  PH Level 0.69485 
+DEBUG  Water Tank 2 Level 0.42520 
+DEBUG  Water Tank 1 Level 0.40904 
+DEBUG  PH Level 0.69475 
+DEBUG  Water Tank 2 Level 0.42611 
+DEBUG  Water Tank 1 Level 0.40907 
+DEBUG  PH Level 0.69465 
+DEBUG  Water Tank 2 Level 0.42702 
+DEBUG  Water Tank 1 Level 0.40911 
+DEBUG  PH Level 0.69456 
+DEBUG  Water Tank 2 Level 0.42793 
+DEBUG  Water Tank 1 Level 0.40915 
+DEBUG  PH Level 0.69446 
+DEBUG  Water Tank 2 Level 0.42883 
+DEBUG  Water Tank 1 Level 0.40919 
+DEBUG  PH Level 0.69436 
+DEBUG  Water Tank 2 Level 0.42974 
+DEBUG  Water Tank 1 Level 0.40922 
+DEBUG  PH Level 0.69426 
+DEBUG  Water Tank 2 Level 0.43065 
+DEBUG  Water Tank 1 Level 0.40926 
+DEBUG  PH Level 0.69417 
+DEBUG  Water Tank 2 Level 0.43156 
+DEBUG  Water Tank 1 Level 0.40930 
+DEBUG  PH Level 0.69407 
+DEBUG  Water Tank 2 Level 0.43246 
+DEBUG  Water Tank 1 Level 0.40933 
+DEBUG  PH Level 0.69397 
+DEBUG  Water Tank 2 Level 0.43337 
+DEBUG  Water Tank 1 Level 0.40937 
+DEBUG  PH Level 0.69388 
+DEBUG  Water Tank 2 Level 0.43428 
+DEBUG  Water Tank 1 Level 0.40941 
+DEBUG  PH Level 0.69378 
+DEBUG  Water Tank 2 Level 0.43519 
+DEBUG  Water Tank 1 Level 0.40944 
+DEBUG  PH Level 0.69368 
+DEBUG  Water Tank 2 Level 0.43609 
+DEBUG  Water Tank 1 Level 0.40948 
+DEBUG  PH Level 0.69358 
+DEBUG  Water Tank 2 Level 0.43700 
+DEBUG  Water Tank 1 Level 0.40952 
+DEBUG  PH Level 0.69349 
+DEBUG  Water Tank 2 Level 0.43791 
+DEBUG  Water Tank 1 Level 0.40956 
+DEBUG  PH Level 0.69339 
+DEBUG  Water Tank 2 Level 0.43881 
+DEBUG  Water Tank 1 Level 0.40959 
+DEBUG  PH Level 0.69329 
+DEBUG  Water Tank 2 Level 0.43972 
+DEBUG  Water Tank 1 Level 0.40963 
+DEBUG  PH Level 0.69319 
+DEBUG  Water Tank 2 Level 0.44063 
+DEBUG  Water Tank 1 Level 0.40967 
+DEBUG  PH Level 0.69310 
+DEBUG  Water Tank 2 Level 0.44154 
+DEBUG  Water Tank 1 Level 0.40970 
+DEBUG  PH Level 0.69300 
+DEBUG  Water Tank 2 Level 0.44244 
+DEBUG  Water Tank 1 Level 0.40974 
+DEBUG  PH Level 0.69290 
+DEBUG  Water Tank 2 Level 0.44335 
+DEBUG  Water Tank 1 Level 0.40978 
+DEBUG  PH Level 0.69281 
+DEBUG  Water Tank 2 Level 0.44426 
+DEBUG  Water Tank 1 Level 0.40981 
+DEBUG  PH Level 0.69271 
+DEBUG  Water Tank 2 Level 0.44517 
+DEBUG  Water Tank 1 Level 0.40985 
+DEBUG  PH Level 0.69261 
+DEBUG  Water Tank 2 Level 0.44607 
+DEBUG  Water Tank 1 Level 0.40989 
+DEBUG  PH Level 0.69251 
+DEBUG  Water Tank 2 Level 0.44698 
+DEBUG  Water Tank 1 Level 0.40993 
+DEBUG  PH Level 0.69242 
+DEBUG  Water Tank 2 Level 0.44789 
+DEBUG  Water Tank 1 Level 0.40996 
+DEBUG  PH Level 0.69232 
+DEBUG  Water Tank 2 Level 0.44880 
+DEBUG  Water Tank 1 Level 0.41000 
+DEBUG  PH Level 0.69222 
+DEBUG  Water Tank 2 Level 0.44970 
+DEBUG  Water Tank 1 Level 0.41004 
+DEBUG  PH Level 0.69213 
+DEBUG  Water Tank 2 Level 0.45061 
+DEBUG  Water Tank 1 Level 0.41007 
+DEBUG  PH Level 0.69203 
+DEBUG  Water Tank 2 Level 0.45152 
+DEBUG  Water Tank 1 Level 0.41011 
+DEBUG  PH Level 0.69193 
+DEBUG  Water Tank 2 Level 0.45243 
+DEBUG  Water Tank 1 Level 0.41015 
+DEBUG  PH Level 0.69183 
+DEBUG  Water Tank 2 Level 0.45333 
+DEBUG  Water Tank 1 Level 0.41019 
+DEBUG  PH Level 0.69174 
+DEBUG  Water Tank 2 Level 0.45424 
+DEBUG  Water Tank 1 Level 0.41022 
+DEBUG  PH Level 0.69164 
+DEBUG  Water Tank 2 Level 0.45515 
+DEBUG  Water Tank 1 Level 0.41026 
+DEBUG  PH Level 0.69154 
+DEBUG  Water Tank 2 Level 0.45606 
+DEBUG  Water Tank 1 Level 0.41030 
+DEBUG  PH Level 0.69144 
+DEBUG  Water Tank 2 Level 0.45696 
+DEBUG  Water Tank 1 Level 0.41033 
+DEBUG  PH Level 0.69135 
+DEBUG  Water Tank 2 Level 0.45787 
+DEBUG  Water Tank 1 Level 0.41037 
+DEBUG  PH Level 0.69125 
+DEBUG  Water Tank 2 Level 0.45878 
+DEBUG  Water Tank 1 Level 0.41041 
+DEBUG  PH Level 0.69115 
+DEBUG  Water Tank 2 Level 0.45969 
+DEBUG  Water Tank 1 Level 0.41044 
+DEBUG  PH Level 0.69106 
+DEBUG  Water Tank 2 Level 0.46059 
+DEBUG  Water Tank 1 Level 0.41048 
+DEBUG  PH Level 0.69096 
+DEBUG  Water Tank 2 Level 0.46150 
+DEBUG  Water Tank 1 Level 0.41052 
+DEBUG  PH Level 0.69086 
+DEBUG  Water Tank 2 Level 0.46241 
+DEBUG  Water Tank 1 Level 0.41056 
+DEBUG  PH Level 0.69076 
+DEBUG  Water Tank 2 Level 0.46331 
+DEBUG  Water Tank 1 Level 0.41059 
+DEBUG  PH Level 0.69067 
+DEBUG  Water Tank 2 Level 0.46422 
+DEBUG  Water Tank 1 Level 0.41063 
+DEBUG  PH Level 0.69057 
+DEBUG  Water Tank 2 Level 0.46513 
+DEBUG  Water Tank 1 Level 0.41067 
+DEBUG  PH Level 0.69047 
+DEBUG  Water Tank 2 Level 0.46604 
+DEBUG  Water Tank 1 Level 0.41070 
+DEBUG  PH Level 0.69038 
+DEBUG  Water Tank 2 Level 0.46694 
+DEBUG  Water Tank 1 Level 0.41074 
+DEBUG  PH Level 0.69028 
+DEBUG  Water Tank 2 Level 0.46785 
+DEBUG  Water Tank 1 Level 0.41078 
+DEBUG  PH Level 0.69018 
+DEBUG  Water Tank 2 Level 0.46876 
+DEBUG  Water Tank 1 Level 0.41081 
+DEBUG  PH Level 0.69008 
+DEBUG  Water Tank 2 Level 0.46967 
+DEBUG  Water Tank 1 Level 0.41085 
+DEBUG  PH Level 0.68999 
+DEBUG  Water Tank 2 Level 0.47057 
+DEBUG  Water Tank 1 Level 0.41089 
+DEBUG  PH Level 0.68989 
+DEBUG  Water Tank 2 Level 0.47148 
+DEBUG  Water Tank 1 Level 0.41093 
+DEBUG  PH Level 0.68979 
+DEBUG  Water Tank 2 Level 0.47239 
+DEBUG  Water Tank 1 Level 0.41096 
+DEBUG  PH Level 0.68969 
+DEBUG  Water Tank 2 Level 0.47330 
+DEBUG  Water Tank 1 Level 0.41100 
+DEBUG  PH Level 0.68960 
+DEBUG  Water Tank 2 Level 0.47420 
+DEBUG  Water Tank 1 Level 0.41104 
+DEBUG  PH Level 0.68950 
+DEBUG  Water Tank 2 Level 0.47511 
+DEBUG  Water Tank 1 Level 0.41107 
+DEBUG  PH Level 0.68940 
+DEBUG  Water Tank 2 Level 0.47602 
+DEBUG  Water Tank 1 Level 0.41111 
+DEBUG  PH Level 0.68931 
+DEBUG  Water Tank 2 Level 0.47693 
+DEBUG  Water Tank 1 Level 0.41115 
+DEBUG  PH Level 0.68921 
+DEBUG  Water Tank 2 Level 0.47783 
+DEBUG  Water Tank 1 Level 0.41119 
+DEBUG  PH Level 0.68911 
+DEBUG  Water Tank 2 Level 0.47874 
+DEBUG  Water Tank 1 Level 0.41122 
+DEBUG  PH Level 0.68901 
+DEBUG  Water Tank 2 Level 0.47965 
+DEBUG  Water Tank 1 Level 0.41126 
+DEBUG  PH Level 0.68892 
+DEBUG  Water Tank 2 Level 0.48056 
+DEBUG  Water Tank 1 Level 0.41130 
+DEBUG  PH Level 0.68882 
+DEBUG  Water Tank 2 Level 0.48146 
+DEBUG  Water Tank 1 Level 0.41133 
+DEBUG  PH Level 0.68872 
+DEBUG  Water Tank 2 Level 0.48237 
+DEBUG  Water Tank 1 Level 0.41137 
+DEBUG  PH Level 0.68863 
+DEBUG  Water Tank 2 Level 0.48328 
+DEBUG  Water Tank 1 Level 0.41141 
+DEBUG  PH Level 0.68853 
+DEBUG  Water Tank 2 Level 0.48419 
+DEBUG  Water Tank 1 Level 0.41144 
+DEBUG  PH Level 0.68843 
+DEBUG  Water Tank 2 Level 0.48509 
+DEBUG  Water Tank 1 Level 0.41148 
+DEBUG  PH Level 0.68833 
+DEBUG  Water Tank 2 Level 0.48600 
+DEBUG  Water Tank 1 Level 0.41152 
+DEBUG  PH Level 0.68824 
+DEBUG  Water Tank 2 Level 0.48691 
+DEBUG  Water Tank 1 Level 0.41156 
+DEBUG  PH Level 0.68814 
+DEBUG  Water Tank 2 Level 0.48781 
+DEBUG  Water Tank 1 Level 0.41159 
+DEBUG  PH Level 0.68804 
+DEBUG  Water Tank 2 Level 0.48872 
+DEBUG  Water Tank 1 Level 0.41163 
+DEBUG  PH Level 0.68794 
+DEBUG  Water Tank 2 Level 0.48963 
+DEBUG  Water Tank 1 Level 0.41167 
+DEBUG  PH Level 0.68785 
+DEBUG  Water Tank 2 Level 0.49054 
+DEBUG  Water Tank 1 Level 0.41170 
+DEBUG  PH Level 0.68775 
+DEBUG  Water Tank 2 Level 0.49144 
+DEBUG  Water Tank 1 Level 0.41174 
+DEBUG  PH Level 0.68765 
+DEBUG  Water Tank 2 Level 0.49235 
+DEBUG  Water Tank 1 Level 0.41178 
+DEBUG  PH Level 0.68756 
+DEBUG  Water Tank 2 Level 0.49326 
+DEBUG  Water Tank 1 Level 0.41181 
+DEBUG  PH Level 0.68746 
+DEBUG  Water Tank 2 Level 0.49417 
+DEBUG  Water Tank 1 Level 0.41185 
+DEBUG  PH Level 0.68736 
+DEBUG  Water Tank 2 Level 0.49507 
+DEBUG  Water Tank 1 Level 0.41189 
+DEBUG  PH Level 0.68726 
+DEBUG  Water Tank 2 Level 0.49598 
+DEBUG  Water Tank 1 Level 0.41193 
+DEBUG  PH Level 0.68717 
+DEBUG  Water Tank 2 Level 0.49689 
+DEBUG  Water Tank 1 Level 0.41196 
+DEBUG  PH Level 0.68707 
+DEBUG  Water Tank 2 Level 0.49780 
+DEBUG  Water Tank 1 Level 0.41200 
+DEBUG  PH Level 0.68697 
+DEBUG  Water Tank 2 Level 0.49870 
+DEBUG  Water Tank 1 Level 0.41204 
+DEBUG  PH Level 0.68688 
+DEBUG  Water Tank 2 Level 0.49961 
+DEBUG  Water Tank 1 Level 0.41207 
+DEBUG  PH Level 0.68678 
+DEBUG  Water Tank 2 Level 0.50052 
+DEBUG  Water Tank 1 Level 0.41211 
+DEBUG  PH Level 0.68668 
+DEBUG  Water Tank 2 Level 0.50143 
+DEBUG  Water Tank 1 Level 0.41215 
+DEBUG  PH Level 0.68658 
+DEBUG  Water Tank 2 Level 0.50233 
+DEBUG  Water Tank 1 Level 0.41219 
+DEBUG  PH Level 0.68649 
+DEBUG  Water Tank 2 Level 0.50324 
+DEBUG  Water Tank 1 Level 0.41222 
+DEBUG  PH Level 0.68639 
+DEBUG  Water Tank 2 Level 0.50415 
+DEBUG  Water Tank 1 Level 0.41226 
+DEBUG  PH Level 0.68629 
+DEBUG  Water Tank 2 Level 0.50506 
+DEBUG  Water Tank 1 Level 0.41230 
+DEBUG  PH Level 0.68619 
+DEBUG  Water Tank 2 Level 0.50596 
+DEBUG  Water Tank 1 Level 0.41233 
+DEBUG  PH Level 0.68610 
+DEBUG  Water Tank 2 Level 0.50687 
+DEBUG  Water Tank 1 Level 0.41237 
+DEBUG  PH Level 0.68600 
+DEBUG  Water Tank 2 Level 0.50778 
+DEBUG  Water Tank 1 Level 0.41241 
+DEBUG  PH Level 0.68590 
+DEBUG  Water Tank 2 Level 0.50869 
+DEBUG  Water Tank 1 Level 0.41244 
+DEBUG  PH Level 0.68581 
+DEBUG  Water Tank 2 Level 0.50959 
+DEBUG  Water Tank 1 Level 0.41248 
+DEBUG  PH Level 0.68571 
+DEBUG  Water Tank 2 Level 0.51050 
+DEBUG  Water Tank 1 Level 0.41252 
+DEBUG  PH Level 0.68561 
+DEBUG  Water Tank 2 Level 0.51141 
+DEBUG  Water Tank 1 Level 0.41256 
+DEBUG  PH Level 0.68551 
+DEBUG  Water Tank 2 Level 0.51231 
+DEBUG  Water Tank 1 Level 0.41259 
+DEBUG  PH Level 0.68542 
+DEBUG  Water Tank 2 Level 0.51322 
+DEBUG  Water Tank 1 Level 0.41263 
+DEBUG  PH Level 0.68532 
+DEBUG  Water Tank 2 Level 0.51413 
+DEBUG  Water Tank 1 Level 0.41267 
+DEBUG  PH Level 0.68522 
+DEBUG  Water Tank 2 Level 0.51504 
+DEBUG  Water Tank 1 Level 0.41270 
+DEBUG  PH Level 0.68513 
+DEBUG  Water Tank 2 Level 0.51594 
+DEBUG  Water Tank 1 Level 0.41274 
+DEBUG  PH Level 0.68503 
+DEBUG  Water Tank 2 Level 0.51685 
+DEBUG  Water Tank 1 Level 0.41278 
+DEBUG  PH Level 0.68493 
+DEBUG  Water Tank 2 Level 0.51776 
+DEBUG  Water Tank 1 Level 0.41281 
+DEBUG  PH Level 0.68483 
+DEBUG  Water Tank 2 Level 0.51867 
+DEBUG  Water Tank 1 Level 0.41285 
+DEBUG  PH Level 0.68474 
+DEBUG  Water Tank 2 Level 0.51957 
+DEBUG  Water Tank 1 Level 0.41289 
+DEBUG  PH Level 0.68464 
+DEBUG  Water Tank 2 Level 0.52048 
+DEBUG  Water Tank 1 Level 0.41293 
+DEBUG  PH Level 0.68454 
+DEBUG  Water Tank 2 Level 0.52139 
+DEBUG  Water Tank 1 Level 0.41296 
+DEBUG  PH Level 0.68444 
+DEBUG  Water Tank 2 Level 0.52230 
+DEBUG  Water Tank 1 Level 0.41300 
+DEBUG  PH Level 0.68435 
+DEBUG  Water Tank 2 Level 0.52320 
+DEBUG  Water Tank 1 Level 0.41304 
+DEBUG  PH Level 0.68425 
+DEBUG  Water Tank 2 Level 0.52411 
+DEBUG  Water Tank 1 Level 0.41307 
+DEBUG  PH Level 0.68415 
+DEBUG  Water Tank 2 Level 0.52502 
+DEBUG  Water Tank 1 Level 0.41311 
+DEBUG  PH Level 0.68406 
+DEBUG  Water Tank 2 Level 0.52593 
+DEBUG  Water Tank 1 Level 0.41315 
+DEBUG  PH Level 0.68396 
+DEBUG  Water Tank 2 Level 0.52683 
+DEBUG  Water Tank 1 Level 0.41319 
+DEBUG  PH Level 0.68386 
+DEBUG  Water Tank 2 Level 0.52774 
+DEBUG  Water Tank 1 Level 0.41322 
+DEBUG  PH Level 0.68376 
+DEBUG  Water Tank 2 Level 0.52865 
+DEBUG  Water Tank 1 Level 0.41326 
+DEBUG  PH Level 0.68367 
+DEBUG  Water Tank 2 Level 0.52956 
+DEBUG  Water Tank 1 Level 0.41330 
+DEBUG  PH Level 0.68357 
+DEBUG  Water Tank 2 Level 0.53046 
+DEBUG  Water Tank 1 Level 0.41333 
+DEBUG  PH Level 0.68347 
+DEBUG  Water Tank 2 Level 0.53137 
+DEBUG  Water Tank 1 Level 0.41337 
+DEBUG  PH Level 0.68338 
+DEBUG  Water Tank 2 Level 0.53228 
+DEBUG  Water Tank 1 Level 0.41341 
+DEBUG  PH Level 0.68328 
+DEBUG  Water Tank 2 Level 0.53319 
+DEBUG  Water Tank 1 Level 0.41344 
+DEBUG  PH Level 0.68318 
+DEBUG  Water Tank 2 Level 0.53409 
+DEBUG  Water Tank 1 Level 0.41348 
+DEBUG  PH Level 0.68308 
+DEBUG  Water Tank 2 Level 0.53500 
+DEBUG  Water Tank 1 Level 0.41352 
+DEBUG  PH Level 0.68299 
+DEBUG  Water Tank 2 Level 0.53591 
+DEBUG  Water Tank 1 Level 0.41356 
+DEBUG  PH Level 0.68289 
+DEBUG  Water Tank 2 Level 0.53681 
+DEBUG  Water Tank 1 Level 0.41359 
+DEBUG  PH Level 0.68279 
+DEBUG  Water Tank 2 Level 0.53772 
+DEBUG  Water Tank 1 Level 0.41363 
+DEBUG  PH Level 0.68269 
+DEBUG  Water Tank 2 Level 0.53863 
+DEBUG  Water Tank 1 Level 0.41367 
+DEBUG  PH Level 0.68260 
+DEBUG  Water Tank 2 Level 0.53954 
+DEBUG  Water Tank 1 Level 0.41370 
+DEBUG  PH Level 0.68250 
+DEBUG  Water Tank 2 Level 0.54044 
+DEBUG  Water Tank 1 Level 0.41374 
+DEBUG  PH Level 0.68240 
+DEBUG  Water Tank 2 Level 0.54135 
+DEBUG  Water Tank 1 Level 0.41378 
+DEBUG  PH Level 0.68231 
+DEBUG  Water Tank 2 Level 0.54226 
+DEBUG  Water Tank 1 Level 0.41381 
+DEBUG  PH Level 0.68221 
+DEBUG  Water Tank 2 Level 0.54317 
+DEBUG  Water Tank 1 Level 0.41385 
+DEBUG  PH Level 0.68211 
+DEBUG  Water Tank 2 Level 0.54407 
+DEBUG  Water Tank 1 Level 0.41389 
+DEBUG  PH Level 0.68201 
+DEBUG  Water Tank 2 Level 0.54498 
+DEBUG  Water Tank 1 Level 0.41393 
+DEBUG  PH Level 0.68192 
+DEBUG  Water Tank 2 Level 0.54589 
+DEBUG  Water Tank 1 Level 0.41396 
+DEBUG  PH Level 0.68182 
+DEBUG  Water Tank 2 Level 0.54680 
+DEBUG  Water Tank 1 Level 0.41400 
+DEBUG  PH Level 0.68172 
+DEBUG  Water Tank 2 Level 0.54770 
+DEBUG  Water Tank 1 Level 0.41404 
+DEBUG  PH Level 0.68163 
+DEBUG  Water Tank 2 Level 0.54861 
+DEBUG  Water Tank 1 Level 0.41407 
+DEBUG  PH Level 0.68153 
+DEBUG  Water Tank 2 Level 0.54952 
+DEBUG  Water Tank 1 Level 0.41411 
+DEBUG  PH Level 0.68143 
+DEBUG  Water Tank 2 Level 0.55043 
+DEBUG  Water Tank 1 Level 0.41415 
+DEBUG  PH Level 0.68133 
+DEBUG  Water Tank 2 Level 0.55133 
+DEBUG  Water Tank 1 Level 0.41419 
+DEBUG  PH Level 0.68124 
+DEBUG  Water Tank 2 Level 0.55224 
+DEBUG  Water Tank 1 Level 0.41422 
+DEBUG  PH Level 0.68114 
+DEBUG  Water Tank 2 Level 0.55315 
+DEBUG  Water Tank 1 Level 0.41426 
+DEBUG  PH Level 0.68104 
+DEBUG  Water Tank 2 Level 0.55406 
+DEBUG  Water Tank 1 Level 0.41430 
+DEBUG  PH Level 0.68094 
+DEBUG  Water Tank 2 Level 0.55496 
+DEBUG  Water Tank 1 Level 0.41433 
+DEBUG  PH Level 0.68085 
+DEBUG  Water Tank 2 Level 0.55587 
+DEBUG  Water Tank 1 Level 0.41437 
+DEBUG  PH Level 0.68075 
+DEBUG  Water Tank 2 Level 0.55678 
+DEBUG  Water Tank 1 Level 0.41441 
+DEBUG  PH Level 0.68065 
+DEBUG  Water Tank 2 Level 0.55769 
+DEBUG  Water Tank 1 Level 0.41444 
+DEBUG  PH Level 0.68056 
+DEBUG  Water Tank 2 Level 0.55859 
+DEBUG  Water Tank 1 Level 0.41448 
+DEBUG  PH Level 0.68046 
+DEBUG  Water Tank 2 Level 0.55950 
+DEBUG  Water Tank 1 Level 0.41452 
+DEBUG  PH Level 0.68036 
+DEBUG  Water Tank 2 Level 0.56041 
+DEBUG  Water Tank 1 Level 0.41456 
+DEBUG  PH Level 0.68026 
+DEBUG  Water Tank 2 Level 0.56131 
+DEBUG  Water Tank 1 Level 0.41459 
+DEBUG  PH Level 0.68017 
+DEBUG  Water Tank 2 Level 0.56222 
+DEBUG  Water Tank 1 Level 0.41463 
+DEBUG  PH Level 0.68007 
+DEBUG  Water Tank 2 Level 0.56313 
+DEBUG  Water Tank 1 Level 0.41467 
+DEBUG  PH Level 0.67997 
+DEBUG  Water Tank 2 Level 0.56404 
+DEBUG  Water Tank 1 Level 0.41470 
+DEBUG  PH Level 0.67988 
+DEBUG  Water Tank 2 Level 0.56494 
+DEBUG  Water Tank 1 Level 0.41474 
+DEBUG  PH Level 0.67978 
+DEBUG  Water Tank 2 Level 0.56585 
+DEBUG  Water Tank 1 Level 0.41478 
+DEBUG  PH Level 0.67968 
+DEBUG  Water Tank 2 Level 0.56676 
+DEBUG  Water Tank 1 Level 0.41481 
+DEBUG  PH Level 0.67958 
+DEBUG  Water Tank 2 Level 0.56767 
+DEBUG  Water Tank 1 Level 0.41485 
+DEBUG  PH Level 0.67949 
+DEBUG  Water Tank 2 Level 0.56857 
+DEBUG  Water Tank 1 Level 0.41489 
+DEBUG  PH Level 0.67939 
+DEBUG  Water Tank 2 Level 0.56948 
+DEBUG  Water Tank 1 Level 0.41493 
+DEBUG  PH Level 0.67929 
+DEBUG  Water Tank 2 Level 0.57039 
+DEBUG  Water Tank 1 Level 0.41496 
+DEBUG  PH Level 0.67919 
+DEBUG  Water Tank 2 Level 0.57130 
+DEBUG  Water Tank 1 Level 0.41500 
+DEBUG  PH Level 0.67910 
+DEBUG  Water Tank 2 Level 0.57220 
+DEBUG  Water Tank 1 Level 0.41504 
+DEBUG  PH Level 0.67900 
+DEBUG  Water Tank 2 Level 0.57311 
+DEBUG  Water Tank 1 Level 0.41507 
+DEBUG  PH Level 0.67890 
+DEBUG  Water Tank 2 Level 0.57402 
+DEBUG  Water Tank 1 Level 0.41511 
+DEBUG  PH Level 0.67881 
+DEBUG  Water Tank 2 Level 0.57493 
+DEBUG  Water Tank 1 Level 0.41515 
+DEBUG  PH Level 0.67871 
+DEBUG  Water Tank 2 Level 0.57583 
+DEBUG  Water Tank 1 Level 0.41519 
+DEBUG  PH Level 0.67861 
+DEBUG  Water Tank 2 Level 0.57674 
+DEBUG  Water Tank 1 Level 0.41522 
+DEBUG  PH Level 0.67851 
+DEBUG  Water Tank 2 Level 0.57765 
+DEBUG  Water Tank 1 Level 0.41526 
+DEBUG  PH Level 0.67842 
+DEBUG  Water Tank 2 Level 0.57856 
+DEBUG  Water Tank 1 Level 0.41530 
+DEBUG  PH Level 0.67832 
+DEBUG  Water Tank 2 Level 0.57946 
+DEBUG  Water Tank 1 Level 0.41533 
+DEBUG  PH Level 0.67822 
+DEBUG  Water Tank 2 Level 0.58037 
+DEBUG  Water Tank 1 Level 0.41537 
+DEBUG  PH Level 0.67813 
+DEBUG  Water Tank 2 Level 0.58128 
+DEBUG  Water Tank 1 Level 0.41541 
+DEBUG  PH Level 0.67803 
+DEBUG  Water Tank 2 Level 0.58219 
+DEBUG  Water Tank 1 Level 0.41544 
+DEBUG  PH Level 0.67793 
+DEBUG  Water Tank 2 Level 0.58309 
+DEBUG  Water Tank 1 Level 0.41548 
+DEBUG  PH Level 0.67783 
+DEBUG  Water Tank 2 Level 0.58400 
+DEBUG  Water Tank 1 Level 0.41552 
+DEBUG  PH Level 0.67774 
+DEBUG  Water Tank 2 Level 0.58491 
+DEBUG  Water Tank 1 Level 0.41556 
+DEBUG  PH Level 0.67764 
+DEBUG  Water Tank 2 Level 0.58581 
+DEBUG  Water Tank 1 Level 0.41559 
+DEBUG  PH Level 0.67754 
+DEBUG  Water Tank 2 Level 0.58672 
+DEBUG  Water Tank 1 Level 0.41563 
+DEBUG  PH Level 0.67744 
+DEBUG  Water Tank 2 Level 0.58763 
+DEBUG  Water Tank 1 Level 0.41567 
+DEBUG  PH Level 0.67735 
+DEBUG  Water Tank 2 Level 0.58854 
+DEBUG  Water Tank 1 Level 0.41570 
+DEBUG  PH Level 0.67725 
+DEBUG  Water Tank 2 Level 0.58944 
+DEBUG  Water Tank 1 Level 0.41574 
+DEBUG  PH Level 0.67715 
+DEBUG  Water Tank 2 Level 0.59035 
+DEBUG  Water Tank 1 Level 0.41578 
+DEBUG  PH Level 0.67706 
+DEBUG  Water Tank 2 Level 0.59126 
+DEBUG  Water Tank 1 Level 0.41581 
+DEBUG  PH Level 0.67696 
+DEBUG  Water Tank 2 Level 0.59217 
+DEBUG  Water Tank 1 Level 0.41585 
+DEBUG  PH Level 0.67686 
+DEBUG  Water Tank 2 Level 0.59307 
+DEBUG  Water Tank 1 Level 0.41589 
+DEBUG  PH Level 0.67676 
+DEBUG  Water Tank 2 Level 0.59398 
+DEBUG  Water Tank 1 Level 0.41593 
+DEBUG  PH Level 0.67667 
+DEBUG  Water Tank 2 Level 0.59489 
+DEBUG  Water Tank 1 Level 0.41596 
+DEBUG  PH Level 0.67657 
+DEBUG  Water Tank 2 Level 0.59580 
+DEBUG  Water Tank 1 Level 0.41600 
+DEBUG  PH Level 0.67647 
+DEBUG  Water Tank 2 Level 0.59670 
+DEBUG  Water Tank 1 Level 0.41604 
+DEBUG  PH Level 0.67638 
+DEBUG  Water Tank 2 Level 0.59761 
+DEBUG  Water Tank 1 Level 0.41607 
+DEBUG  PH Level 0.67628 
+DEBUG  Water Tank 2 Level 0.59852 
+DEBUG  Water Tank 1 Level 0.41611 
+DEBUG  PH Level 0.67618 
+DEBUG  Water Tank 2 Level 0.59943 
+DEBUG  Water Tank 1 Level 0.41615 
+DEBUG  PH Level 0.67608 
+DEBUG  Water Tank 2 Level 0.60033 
+DEBUG  Water Tank 1 Level 0.41619 
+DEBUG  PH Level 0.67599 
+DEBUG  Water Tank 2 Level 0.60124 
+DEBUG  Water Tank 1 Level 0.41622 
+DEBUG  PH Level 0.67589 
+DEBUG  Water Tank 2 Level 0.60215 
+DEBUG  Water Tank 1 Level 0.41626 
+DEBUG  PH Level 0.67579 
+DEBUG  Water Tank 2 Level 0.60306 
+DEBUG  Water Tank 1 Level 0.41630 
+DEBUG  PH Level 0.67569 
+DEBUG  Water Tank 2 Level 0.60396 
+DEBUG  Water Tank 1 Level 0.41633 
+DEBUG  PH Level 0.67560 
+DEBUG  Water Tank 2 Level 0.60487 
+DEBUG  Water Tank 1 Level 0.41637 
+DEBUG  PH Level 0.67550 
+DEBUG  Water Tank 2 Level 0.60578 
+DEBUG  Water Tank 1 Level 0.41641 
+DEBUG  PH Level 0.67540 
+DEBUG  Water Tank 2 Level 0.60669 
+DEBUG  Water Tank 1 Level 0.41644 
+DEBUG  PH Level 0.67531 
+DEBUG  Water Tank 2 Level 0.60759 
+DEBUG  Water Tank 1 Level 0.41648 
+DEBUG  PH Level 0.67521 
+DEBUG  Water Tank 2 Level 0.60850 
+DEBUG  Water Tank 1 Level 0.41652 
+DEBUG  PH Level 0.67511 
+DEBUG  Water Tank 2 Level 0.60941 
+DEBUG  Water Tank 1 Level 0.41656 
+DEBUG  PH Level 0.67501 
+DEBUG  Water Tank 2 Level 0.61031 
+DEBUG  Water Tank 1 Level 0.41659 
+DEBUG  PH Level 0.67492 
+DEBUG  Water Tank 2 Level 0.61122 
+DEBUG  Water Tank 1 Level 0.41663 
+DEBUG  PH Level 0.67482 
+DEBUG  Water Tank 2 Level 0.61213 
+DEBUG  Water Tank 1 Level 0.41667 
+DEBUG  PH Level 0.67472 
+DEBUG  Water Tank 2 Level 0.61304 
+DEBUG  Water Tank 1 Level 0.41670 
+DEBUG  PH Level 0.67463 
+DEBUG  Water Tank 2 Level 0.61394 
+DEBUG  Water Tank 1 Level 0.41674 
+DEBUG  PH Level 0.67453 
+DEBUG  Water Tank 2 Level 0.61485 
+DEBUG  Water Tank 1 Level 0.41678 
+DEBUG  PH Level 0.67443 
+DEBUG  Water Tank 2 Level 0.61576 
+DEBUG  Water Tank 1 Level 0.41681 
+DEBUG  PH Level 0.67433 
+DEBUG  Water Tank 2 Level 0.61667 
+DEBUG  Water Tank 1 Level 0.41685 
+DEBUG  PH Level 0.67424 
+DEBUG  Water Tank 2 Level 0.61757 
+DEBUG  Water Tank 1 Level 0.41689 
+DEBUG  PH Level 0.67414 
+DEBUG  Water Tank 2 Level 0.61848 
+DEBUG  Water Tank 1 Level 0.41693 
+DEBUG  PH Level 0.67404 
+DEBUG  Water Tank 2 Level 0.61939 
+DEBUG  Water Tank 1 Level 0.41696 
+DEBUG  PH Level 0.67394 
+DEBUG  Water Tank 2 Level 0.62030 
+DEBUG  Water Tank 1 Level 0.41700 
+DEBUG  PH Level 0.67385 
+DEBUG  Water Tank 2 Level 0.62120 
+DEBUG  Water Tank 1 Level 0.41704 
+DEBUG  PH Level 0.67375 
+DEBUG  Water Tank 2 Level 0.62211 
+DEBUG  Water Tank 1 Level 0.41707 
+DEBUG  PH Level 0.67365 
+DEBUG  Water Tank 2 Level 0.62302 
+DEBUG  Water Tank 1 Level 0.41711 
+DEBUG  PH Level 0.67356 
+DEBUG  Water Tank 2 Level 0.62393 
+DEBUG  Water Tank 1 Level 0.41715 
+DEBUG  PH Level 0.67346 
+DEBUG  Water Tank 2 Level 0.62483 
+DEBUG  Water Tank 1 Level 0.41719 
+DEBUG  PH Level 0.67336 
+DEBUG  Water Tank 2 Level 0.62574 
+DEBUG  Water Tank 1 Level 0.41722 
+DEBUG  PH Level 0.67326 
+DEBUG  Water Tank 2 Level 0.62665 
+DEBUG  Water Tank 1 Level 0.41726 
+DEBUG  PH Level 0.67317 
+DEBUG  Water Tank 2 Level 0.62756 
+DEBUG  Water Tank 1 Level 0.41730 
+DEBUG  PH Level 0.67307 
+DEBUG  Water Tank 2 Level 0.62846 
+DEBUG  Water Tank 1 Level 0.41733 
+DEBUG  PH Level 0.67297 
+DEBUG  Water Tank 2 Level 0.62937 
+DEBUG  Water Tank 1 Level 0.41737 
+DEBUG  PH Level 0.67288 
+DEBUG  Water Tank 2 Level 0.63028 
+DEBUG  Water Tank 1 Level 0.41741 
+DEBUG  PH Level 0.67278 
+DEBUG  Water Tank 2 Level 0.63119 
+DEBUG  Water Tank 1 Level 0.41744 
+DEBUG  PH Level 0.67268 
+DEBUG  Water Tank 2 Level 0.63209 
+DEBUG  Water Tank 1 Level 0.41748 
+DEBUG  PH Level 0.67258 
+DEBUG  Water Tank 2 Level 0.63300 
+DEBUG  Water Tank 1 Level 0.41752 
+DEBUG  PH Level 0.67249 
+DEBUG  Water Tank 2 Level 0.63391 
+DEBUG  Water Tank 1 Level 0.41756 
+DEBUG  PH Level 0.67239 
+DEBUG  Water Tank 2 Level 0.63481 
+DEBUG  Water Tank 1 Level 0.41759 
+DEBUG  PH Level 0.67229 
+DEBUG  Water Tank 2 Level 0.63572 
+DEBUG  Water Tank 1 Level 0.41763 
+DEBUG  PH Level 0.67219 
+DEBUG  Water Tank 2 Level 0.63663 
+DEBUG  Water Tank 1 Level 0.41767 
+DEBUG  PH Level 0.67210 
+DEBUG  Water Tank 2 Level 0.63754 
+DEBUG  Water Tank 1 Level 0.41770 
+DEBUG  PH Level 0.67200 
+DEBUG  Water Tank 2 Level 0.63844 
+DEBUG  Water Tank 1 Level 0.41774 
+DEBUG  PH Level 0.67190 
+DEBUG  Water Tank 2 Level 0.63935 
+DEBUG  Water Tank 1 Level 0.41778 
+DEBUG  PH Level 0.67181 
+DEBUG  Water Tank 2 Level 0.64026 
+DEBUG  Water Tank 1 Level 0.41781 
+DEBUG  PH Level 0.67171 
+DEBUG  Water Tank 2 Level 0.64117 
+DEBUG  Water Tank 1 Level 0.41785 
+DEBUG  PH Level 0.67161 
+DEBUG  Water Tank 2 Level 0.64207 
+DEBUG  Water Tank 1 Level 0.41789 
+DEBUG  PH Level 0.67151 
+DEBUG  Water Tank 2 Level 0.64298 
+DEBUG  Water Tank 1 Level 0.41793 
+DEBUG  PH Level 0.67142 
+DEBUG  Water Tank 2 Level 0.64389 
+DEBUG  Water Tank 1 Level 0.41796 
+DEBUG  PH Level 0.67132 
+DEBUG  Water Tank 2 Level 0.64480 
+DEBUG  Water Tank 1 Level 0.41800 
+DEBUG  PH Level 0.67122 
+DEBUG  Water Tank 2 Level 0.64570 
+DEBUG  Water Tank 1 Level 0.41804 
+DEBUG  PH Level 0.67113 
+DEBUG  Water Tank 2 Level 0.64661 
+DEBUG  Water Tank 1 Level 0.41807 
+DEBUG  PH Level 0.67103 
+DEBUG  Water Tank 2 Level 0.64752 
+DEBUG  Water Tank 1 Level 0.41811 
+DEBUG  PH Level 0.67093 
+DEBUG  Water Tank 2 Level 0.64843 
+DEBUG  Water Tank 1 Level 0.41815 
+DEBUG  PH Level 0.67083 
+DEBUG  Water Tank 2

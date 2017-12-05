@@ -140,22 +140,17 @@ class IdsSocket(Thread):
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
 
 	        if lit101 >= LIT_101_M['HH'] :
-	            #self.plc.send(MV101, 0, IP['plc101'])
-               	    mv = 0
+	            self.plc.send(MV101, 0, IP['plc101'])
 
 	        elif lit101 >= LIT_101_M['H']:
-	            #self.plc.send(MV101, 0, IP['plc101'])
-                    mv = 0
+	            self.plc.send(MV101, 0, IP['plc101'])
 
 	        elif lit101 <= LIT_101_M['L']:
-	            #self.plc.send(MV101, 1, IP['plc101'])
-                    mv = 1
+	            self.plc.send(MV101, 1, IP['plc101'])
 
 	        elif lit101 <= LIT_101_M['LL']:
-	            #self.plc.send(MV101, 1, IP['plc101'])                
-                    mv = 1
+	            self.plc.send(MV101, 1, IP['plc101'])                
 
-                self.send_message(IP['mv101'], 9587, mv)
        	    except KeyboardInterrupt:
 	    	print "\nCtrl+C was hitten, stopping server"
 	        client.close()

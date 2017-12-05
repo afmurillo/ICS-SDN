@@ -18,6 +18,8 @@ MV101 = ('MV101', 1)
 P101 = ('P101', 1)
 LIT101 = ('LIT101', 1)
 
+CUSTOM_PUMP_FLOWRATE_IN = 2.8
+
 class Ids101(PLC):
 
 	def switch_component(self, controller_ip, controller_port, component):
@@ -76,7 +78,7 @@ class Ids101(PLC):
 		self.estimated_level = 0.0
 
 		# The values are for a 0.2 period, we calculate every 1.0 period
-		inflow = float( (PUMP_FLOWRATE_IN * PP_PERIOD_HOURS * 2 )  / self.section )
+		inflow = float( (CUSTOM_PUMP_FLOWRATE_IN * PP_PERIOD_HOURS * 2 )  / self.section )
 		outflow = float( (PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS * 2  ) / self.section )
 
 		self.controller_port = PORTS['controller_ids_port']
@@ -152,6 +154,11 @@ class Ids101(PLC):
 		        else:
 			    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
 
+			    if self.new_estimated_level > 1.0:
+				self.new_estimated_level = 1.0
+			    if sel.new_estimated_level < 0.0:
+			        self.new_estimated_level = 0.0
+			
                             print "DEBUG estimated : %.5f" % (self.estimated_level)
                             print "DEBUG received : %.5f" % (self.received_level)
 
