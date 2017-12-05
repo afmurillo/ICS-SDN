@@ -195,8 +195,35 @@ cat second_gaussian/def_0_2.txt | grep 'PH Level'| awk '{print $4}' > second_gau
 cat second_gaussian/def_0_2.txt | grep 'Tank 1'| awk '{print $6}' > second_gaussian/tank_1_def_0_2.txt
 cat second_gaussian/def_0_2.txt | grep 'Tank 2'| awk '{print $6}' > second_gaussian/tank_2_def_0_2.txt
 
-cat faulty_model/def_2_0.txt | grep 'PH Level'| awk '{print $4}' > faulty_model/ph_def_0_2.txt
-cat faulty_model/def_2_0.txt | grep 'Tank 1'| awk '{print $6}' > faulty_model/tank_1_def_0_2.txt
-cat faulty_model/def_2_0.txt | grep 'Tank 2'| awk '{print $6}' > faulty_model/tank_2_def_0_2.txt
+# Faulty Model
+
+cat faulty_model/def_2_0.txt | grep 'PH Level'| awk '{print $4}' > faulty_model/ph_def_2_0.txt
+cat faulty_model/def_2_0.txt | grep 'Tank 1'| awk '{print $6}' > faulty_model/tank_1_def_2_0.txt
+cat faulty_model/def_2_0.txt | grep 'Tank 2'| awk '{print $6}' > faulty_model/tank_2_def_2_0.txt
+
+cat faulty_model/def_2_1.txt | grep 'PH Level'| awk '{print $4}' > faulty_model/ph_def_2_1.txt
+cat faulty_model/def_2_1.txt | grep 'Tank 1'| awk '{print $6}' > faulty_model/tank_1_def_2_1.txt
+cat faulty_model/def_2_1.txt | grep 'Tank 2'| awk '{print $6}' > faulty_model/tank_2_def_2_1.txt
+
+cat faulty_model/def_2_2.txt | grep 'PH Level'| awk '{print $4}' > faulty_model/ph_def_2_2.txt
+cat faulty_model/def_2_2.txt | grep 'Tank 1'| awk '{print $6}' > faulty_model/tank_1_def_2_2.txt
+cat faulty_model/def_2_2.txt | grep 'Tank 2'| awk '{print $6}' > faulty_model/tank_2_def_2_2.txt
+
+cat faulty_model/def_2_3.txt | grep 'PH Level'| awk '{print $4}' > faulty_model/ph_def_2_3.txt
+cat faulty_model/def_2_3.txt | grep 'Tank 1'| awk '{print $6}' > faulty_model/tank_1_def_2_3.txt
+cat faulty_model/def_2_3.txt | grep 'Tank 2'| awk '{print $6}' > faulty_model/tank_2_def_2_3.txt
+
+cat faulty_model/def_2_4.txt | grep 'PH Level'| awk '{print $4}' > faulty_model/ph_def_2_4.txt
+cat faulty_model/def_2_4.txt | grep 'Tank 1'| awk '{print $6}' > faulty_model/tank_1_def_2_4.txt
+cat faulty_model/def_2_4.txt | grep 'Tank 2'| awk '{print $6}' > faulty_model/tank_2_def_2_4.txt
+
+cat faulty_model/def_2_6.txt | grep 'PH Level'| awk '{print $4}' > faulty_model/ph_def_2_6.txt
+cat faulty_model/def_2_6.txt | grep 'Tank 1'| awk '{print $6}' > faulty_model/tank_1_def_2_6.txt
+cat faulty_model/def_2_6.txt | grep 'Tank 2'| awk '{print $6}' > faulty_model/tank_2_def_2_6.txt
+
+cat faulty_model/def_2_7.txt | grep 'PH Level'| awk '{print $4}' > faulty_model/ph_def_2_7.txt
+cat faulty_model/def_2_7.txt | grep 'Tank 1'| awk '{print $6}' > faulty_model/tank_1_def_2_7.txt
+cat faulty_model/def_2_7.txt | grep 'Tank 2'| awk '{print $6}' > faulty_model/tank_2_def_2_7.txt
+
 
 
