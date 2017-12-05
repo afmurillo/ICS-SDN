@@ -130,6 +130,16 @@ faulty_def_2_6= fscanf(fileID_36,formatSpec);
 fileID_36 = fopen('faulty_model/tank_1_def_2_7.txt','r');
 faulty_def_2_7= fscanf(fileID_36,formatSpec);
 
+fileID_37 = fopen('faulty_model/tank_1_def_2_8.txt','r');
+faulty_def_2_8= fscanf(fileID_37,formatSpec);
+
+fileID_38 = fopen('faulty_model/tank_1_def_2_9.txt','r');
+faulty_def_2_9= fscanf(fileID_38,formatSpec);
+
+fileID_39 = fopen('faulty_model/tank_1_def_3_0.txt','r');
+faulty_def_3_0= fscanf(fileID_39,formatSpec);
+
+
 % 
 % fileID_32 = fopen('random_control_commands.txt','r');
 % random_control_commands= fscanf(fileID_32,formatSpec);
@@ -828,5 +838,92 @@ ylabel('Tank 1 Level (m)')
 title('Water Tank 1 Level Behavior With Faulty Model: Inlet 2.7');
 
 matlab2tikz('faulty_2_7.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+% %%%%%%%%%%%%%%%%%%%%%%%%% Faulty Model inlet 1 2.8 %%%%%%%%%%%%%%%%%%%%%%%%
+% 
+h24=figure(24)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+
+hold on;
+plot(plant_time,faulty_def_2_8, '--b', 'linewidth', 1.5);
+
+lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+
+axis([0 120 0 1.2])
+grid on;
+
+%plot([42 42],[0 1.2], '--k')
+%axis([0 120 0 1.2])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Water Tank 1 Level Behavior With Faulty Model: Inlet 2.8');
+
+matlab2tikz('faulty_2_8.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%% Faulty Model inlet 1 2.9 %%%%%%%%%%%%%%%%%%%%%%%%
+% 
+h25=figure(25)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+
+hold on;
+plot(plant_time,faulty_def_2_9, '--b', 'linewidth', 1.5);
+
+lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+
+axis([0 120 0 1.2])
+grid on;
+
+%plot([42 42],[0 1.2], '--k')
+%axis([0 120 0 1.2])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Water Tank 1 Level Behavior With Faulty Model: Inlet 2.9');
+
+matlab2tikz('faulty_2_9.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%% Faulty Model inlet 1 3.0 %%%%%%%%%%%%%%%%%%%%%%%%
+% 
+h26=figure(26)
+set(gca, 'FontSize', fsz, 'LineWidth', 1.5 ); 
+%set(h(4),'linewidth',2.0);
+
+%subplot(2,1,1)
+plot(plant_time,tank_1, '-.k', 'linewidth', 1.5);
+
+hold on;
+plot(plant_time,faulty_def_3_0, '--b', 'linewidth', 1.5);
+
+lg = legend('Normal Operation', 'With SDN Defense', 'FontSize', 8, 'Location','southwest');
+
+axis([0 120 0 1.2])
+grid on;
+
+%plot([42 42],[0 1.2], '--k')
+%axis([0 120 0 1.2])
+
+%annotation('textarrow',[0.55,0.45],[0.37,0.37],'String','Attack');
+
+xlabel('Time (min)')
+ylabel('Tank 1 Level (m)')
+title('Water Tank 1 Level Behavior With Faulty Model: Inlet 3.0');
+
+matlab2tikz('faulty_3_0.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+
 
 
