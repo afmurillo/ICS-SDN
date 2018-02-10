@@ -14,6 +14,8 @@ import sys
 
 import time
 
+import subprocess
+
 from utils import IP
 
 from mininet.link import Intf
