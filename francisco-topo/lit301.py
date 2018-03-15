@@ -1,6 +1,6 @@
 from minicps.devices import PLC
 from utils import *
-
+import logging
 import time
 
 SENSOR_ADDR = IP['lit301']
@@ -9,7 +9,8 @@ LIT301 = ('LIT301', 3)
 
 class Lit301(PLC):
 	def pre_loop(self, sleep=0.1):
-		print 'DEBUG: sensor enters pre_loop'
+		logging.basicConfig(filename=LOG_LIT301_FILE, level=logging.DEBUG)
+		logging.debug('sensor enters pre_loop')
 		time.sleep(sleep)
 
 	def main_loop(self):
@@ -19,6 +20,7 @@ class Lit301(PLC):
 			self.level = float(self.get(LIT301))
 			print "LIT301", self.level
 			self.send(LIT301, self.level, IP['lit301'])
+			logging.debug('LIT301 level %s', self.level)			
 			time.sleep(PLC_PERIOD_SEC)
 
 

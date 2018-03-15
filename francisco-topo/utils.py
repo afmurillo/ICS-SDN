@@ -10,10 +10,18 @@ PH_PUMP_FLOWRATE_OUT = 0.7
 
 PUMP_FLOWRATE_OUT_2 = 2.5
 
-LOG_PH201_FILE='./ph201.log'
-LOG_P201_FILE='./p201.log'
-LOG_PLC201_FILE='./plc201.log'
-LOG_FIT201_FILE='./fit201.log'
+LOG_LIT101_FILE='./lit101.log'
+LOG_LIT301_FILE='./lit301.log'
+
+LOG_PLC101_FILE='./plc101.log'
+LOG_PLC301_FILE='./plc301.log'
+
+LOG_p101_FILE='./p101.log'
+LOG_p301_FILE='./p301.log'
+
+LOG_mv101_FILE='./mv101.log'
+LOG_mv301_FILE='./mv301.log'
+
 
 PH_201_M = {
 	'LL': 0.50,
