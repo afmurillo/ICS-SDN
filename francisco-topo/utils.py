@@ -16,11 +16,11 @@ LOG_LIT301_FILE='./lit301.log'
 LOG_PLC101_FILE='./plc101.log'
 LOG_PLC301_FILE='./plc301.log'
 
-LOG_p101_FILE='./p101.log'
-LOG_p301_FILE='./p301.log'
+LOG_P101_FILE='./p101.log'
+LOG_P301_FILE='./p301.log'
 
-LOG_mv101_FILE='./mv101.log'
-LOG_mv301_FILE='./mv301.log'
+LOG_MV01_FILE='./mv101.log'
+LOG_MV301_FILE='./mv301.log'
 
 
 PH_201_M = {
