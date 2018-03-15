@@ -23,6 +23,13 @@ LOG_MV01_FILE='./mv101.log'
 LOG_MV301_FILE='./mv301.log'
 
 
+LIT_101_M = {
+	'LL': 0.250,
+	'L': 0.50,
+	'H': 0.800,
+	'HH': 1.200
+}
+
 PH_201_M = {
 	'LL': 0.50,
 	'L': 0.700,
@@ -30,6 +37,12 @@ PH_201_M = {
 	'HH': 1.000
 }
 
+LIT_301_M = {
+	'LL': 0.250,
+	'L': 0.50,
+	'H': 0.800,
+	'HH': 1.200
+}
 
 TANK_HEIGHT = 1.600
 
@@ -107,6 +120,12 @@ GENERIC_DATA = {
 
 # Loop Tags
 
+LOOP_1_TAGS = (
+	('MV101', 1, 'INT'),
+	('LIT101', 1, 'REAL'),
+	('P101', 1, 'INT'),
+)
+
 LOOP_2_TAGS = (
 	('PH201', 2, 'REAL'),
 	('FIT201', 2, 'REAL'),
@@ -117,6 +136,71 @@ LOOP_3_TAGS = (
 	('LIT301', 3, 'REAL'),
 	('P301', 3, 'INT'),
 )
+
+################################################ Loop 1 Sensor and Protocols
+
+LIT101_SERVER = {
+	'address': IP['lit101'],
+	'tags': LOOP_1_TAGS
+}
+
+LIT101_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': LIT101_SERVER
+}
+
+MV101_SERVER = {
+	'address': IP['mv101'],
+	'tags': LOOP_1_TAGS
+}
+MV101_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': MV101_SERVER
+}
+
+P101_SERVER = {
+	'address': IP['p101'],
+	'tags': LOOP_1_TAGS
+}
+P101_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': P101_SERVER
+}
+
+PLC101_SERVER = {
+	'address': IP['plc101'],
+	'tags': LOOP_1_TAGS
+}
+PLC101_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': PLC101_SERVER
+}
+
+IDS101_SERVER = {
+	'address': IP['ids101'],
+	'tags': LOOP_1_TAGS
+}
+IDS101_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': IDS101_SERVER
+}
+
+SIM101_SERVER = {
+	'address': IP['sim101'],
+	'tags': LOOP_1_TAGS
+}
+
+SIM101_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': SIM101_SERVER
+}
+
 
 ################################################ Loop 2 Sensor and Protocols
 
@@ -164,6 +248,84 @@ PLC201_PROTOCOL = {
 	'server': PLC201_SERVER
 }
 
+IDS201_SERVER = {
+	'address': IP['ids201'],
+	'tags': LOOP_2_TAGS
+}
+IDS201_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': IDS201_SERVER
+}
+
+SIM201_SERVER = {
+	'address': IP['sim201'],
+	'tags': LOOP_2_TAGS
+}
+
+SIM201_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': SIM201_SERVER
+}
+
+################################################ Loop 3 Sensor and Protocols
+
+
+LIT301_SERVER = {
+	'address': IP['lit301'],
+	'tags': LOOP_3_TAGS
+}
+
+LIT301_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': LIT301_SERVER
+}
+
+P301_SERVER = {
+	'address': IP['p301'],
+	'tags': LOOP_3_TAGS
+}
+P301_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': P301_SERVER
+}
+
+PLC301_SERVER = {
+	'address': IP['plc301'],
+	'tags': LOOP_3_TAGS
+}
+PLC301_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': PLC301_SERVER
+}
+
+IDS301_SERVER = {
+	'address': IP['ids301'],
+	'tags': LOOP_3_TAGS
+}
+
+IDS301_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': IDS301_SERVER
+}
+
+SIM301_SERVER = {
+	'address': IP['sim301'],
+	'tags': LOOP_3_TAGS
+}
+
+SIM301_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': SIM301_SERVER
+}
+
+
 
 PATH = 'industry_db.sqlite'
 NAME = 'industry'
@@ -183,7 +345,12 @@ CREATE TABLE industry (
 """
 
 SCHEMA_INIT = """
+	INSERT INTO industry VALUES ('MV101', 1, '0');
+	INSERT INTO industry VALUES ('P101', 1, '0');
+	INSERT INTO industry VALUES ('LIT101', 1, '0.600');
 	INSERT INTO industry VALUES ('FIT201', 2, '0');
 	INSERT INTO industry VALUES ('PH201', 2, '0.700');
 	INSERT INTO industry VALUES ('P201', 2, '0');
+	INSERT INTO industry VALUES ('LIT301', 3, '0.600');
+	INSERT INTO industry VALUES ('P301', 3, '0');
 """
