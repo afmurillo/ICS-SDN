@@ -18,9 +18,8 @@ class Lit301(PLC):
 		count = 0
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT301))
-			print "LIT301", self.level
-			self.send(LIT301, self.level, IP['lit301'])
 			logging.debug('LIT301 level %s', self.level)			
+			self.send(LIT301, self.level, IP['lit301'])
 			time.sleep(PLC_PERIOD_SEC)
 
 

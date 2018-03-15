@@ -45,6 +45,8 @@ industry:
 	cd industry-based/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
 prog:
+	./controller.sh &
+	sleep .5
 	cd programatic-test/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
 fran:

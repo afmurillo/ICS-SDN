@@ -19,8 +19,8 @@ class Lit101(PLC):
 		count = 0
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT101))
-			self.send(LIT101, self.level, SENSOR_ADDR)
 			logging.debug('LIT101 level %s', self.level)			
+			self.send(LIT101, self.level, SENSOR_ADDR)
 			time.sleep(PLC_PERIOD_SEC)
 
 

@@ -43,3 +43,12 @@
 03-14 20:30:32.379 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 03-14 20:30:32.381 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 03-14 20:30:32.384 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 20:59:10.176 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 20:59:10.193 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 20:59:10.209 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:00:31.273 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:00:31.301 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:00:31.326 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:00:50.526 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:00:50.543 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:00:50.594 MainThread root     WARNING  logrotate_ Rotating log files due to signal
