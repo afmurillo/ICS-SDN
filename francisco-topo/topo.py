@@ -55,8 +55,6 @@ class SimpleTopo(Topo):
 
         lit301 = self.addHost('lit301',ip=IP['lit301'] + NETMASK, defaultRoute=gateway_3)#, defaultRoute="via 192.168.3.10")
         p301 = self.addHost('p301',ip=IP['p301'] + NETMASK, defaultRoute=gateway_3)#, defaultRoute="via 192.168.3.10")
-        ids301 = self.addHost('ids301',ip=IP['ids301'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
 
         self.addLink(lit301, s3)        
         self.addLink(p301, s3)                
-        self.addLink(ids301, s3)        

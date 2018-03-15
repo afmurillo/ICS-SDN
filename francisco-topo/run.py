@@ -31,24 +31,24 @@ class SimpleCPS(MiniCPS):
 
 
         self.net.start()
-
-    lit101 = self.net.get('lit101')
-    lit101.cmd('rm -rf lit101.log')
-    lit101.cmd('python lit101.py &')
+ 
+        lit101 = self.net.get('lit101')
+        lit101.cmd('rm -rf lit101.log')
+        lit101.cmd('python lit101.py &')
 
 	plc1 = self.net.get('plc101')    
 	plc1.cmd('route add default gw 192.168.2.254 plc101-eth0  ')
-    plc1.cmd('rm -rf plc101.log')
-    plc1.cmd('python plc101.py &')
+        plc1.cmd('rm -rf plc101.log')
+        plc1.cmd('python plc101.py &')
 
-    lit301 = self.net.get('lit301')
-    lit301.cmd('rm -rf lit301.log')
-    lit301.cmd('python lit301.py &')
+        lit301 = self.net.get('lit301')
+        lit301.cmd('rm -rf lit301.log')
+        lit301.cmd('python lit301.py &')
 
-    plc3 = self.net.get('plc301')
-    plc3.cmd('route add default gw 192.168.2.254 plc301-eth0  ')
-    plc3.cmd('rm -rf plc301.log')
-    plc3.cmd('python plc301.py &')
+        plc3 = self.net.get('plc301')
+        plc3.cmd('route add default gw 192.168.2.254 plc301-eth0  ')
+        plc3.cmd('rm -rf plc301.log')
+        plc3.cmd('python plc301.py &')
 
         # start devices
         CLI(self.net)
