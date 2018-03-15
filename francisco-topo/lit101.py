@@ -15,12 +15,11 @@ class Lit101(PLC):
 		time.sleep(sleep)
 
 	def main_loop(self):
-		print 'DEBUG: sensor enters main_loop'
 		count = 0
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT101))
-			logging.debug('LIT101 level %s', self.level)			
-			self.send(LIT101, self.level, SENSOR_ADDR)
+			logging.debug('LIT101 level %s', self.level)
+                        self.send(LIT101, self.level, SENSOR_ADDR)
 			time.sleep(PLC_PERIOD_SEC)
 
 
