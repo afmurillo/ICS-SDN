@@ -28,8 +28,6 @@ class SimpleCPS(MiniCPS):
 
         self.name = name
         self.net = net
-
-
         self.net.start()
 
 	plc2 = self.net.get('plc201')
