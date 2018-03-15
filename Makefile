@@ -45,11 +45,11 @@ industry:
 	cd industry-based/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
 prog:
-	./controller.sh &	
 	cd programatic-test/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
 fran:
 	./controller.sh &
+	sleep .5
 	cd francisco-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
 clean-simulation:
