@@ -27,7 +27,7 @@ class SimpleTopo(Topo):
 
 
         # Add switches
-        s1 = [ self.addSwitch( s ) for s in ('s1')]
+	s1 = self.addSwitch('s1')
 
         gateway_1 = 'via ' + defaultIP
  
@@ -46,7 +46,6 @@ class SimpleTopo(Topo):
         plant101 = self.addHost('plant101')
 
         self.addLink(p101, s1)
-        self.addLink(mv101, s1)
         self.addLink(lit101, s1)
         self.addLink(lit102, s1)
         self.addLink(lit103, s1)
@@ -55,14 +54,3 @@ class SimpleTopo(Topo):
         self.addLink(ids101, s1)
         self.addLink(sim101, s1)
       
-        gateway_3 = 'via ' + IP['plc301'] + NETMASK#'192.168.3.254/24'
-
-        plc301 = self.addNode('plc301',ip=IP['plc301'] + NETMASK, cls=LinuxRouter)
-        self.addLink( s3, plc301, intfName2='plc301-eth1', params2={ 'ip' : '192.168.3.254/24' } )
-
-        lit301 = self.addHost('lit301',ip=IP['lit301'] + NETMASK, defaultRoute=gateway_3)#, defaultRoute="via 192.168.3.10")
-        p301 = self.addHost('p301',ip=IP['p301'] + NETMASK, defaultRoute=gateway_3)#, defaultRoute="via 192.168.3.10")
-
-        self.addLink(lit301, s3)        
-        self.addLink(p301, s3)                
-
