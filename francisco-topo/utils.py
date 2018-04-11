@@ -1,3 +1,4 @@
+import math
 GRAVITATION = 9.81
 TANK_DIAMETER = 1.38
 TANK_SECTION = 1.5
@@ -22,11 +23,11 @@ LOG_P301_FILE='./p301.log'
 LOG_MV01_FILE='./mv101.log'
 LOG_MV301_FILE='./mv301.log'
 
-S = 0.0154
-SN = 5e-5
-U13 = 0.5
-U32 = 0.5
-U20 = 0.6
+s = 0.0154
+sn = 5e-5
+u13 = 0.5
+u32 = 0.5
+u20 = 0.6
 QMAX = 1.5e-4
 LJMAX = 0.62
 
@@ -42,8 +43,8 @@ Y20 = 0.200
 Y30 = 0.300;
 
 # Tracking Controller Parameters
-K1 = 1e-4*[21.6 3 -5; 2.9 19 -4];
-K2 = 1e-4*[-0.95 -0.32; -0.30 -0.91];
+#K1 = 1e-4*[21.6 3 -5; 2.9 19 -4];
+#K2 = 1e-4*[-0.95 -0.32; -0.30 -0.91];
 
 
 
