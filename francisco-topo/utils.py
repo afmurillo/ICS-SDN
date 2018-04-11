@@ -46,9 +46,9 @@ Y30 = 0.300
 U10 = 0.350e-004
 U20 = 0.375e-004
 
-Q1 = mu13*sn*sqrt(2*g*(Y10-Y30));
+Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
 #%Q1o means Q1_operation = 3.5018e-5
-Q2 = mu20*Sn*sqrt(2*g*Y20)-mu32*Sn*sqrt(2*g*(Y30-Y20));
+Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
 #%Q2o means Q2_operation = 3.1838e-5
 
 # Tracking Controller Parameters

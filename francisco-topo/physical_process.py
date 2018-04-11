@@ -26,16 +26,27 @@ class RawWaterTank(Tank):
 		logging.debug('starting simulation')
 		while(count <= PP_SAMPLES):
 
-			Q1 = mu13*Sn*sqrt(2*g*(Y10-Y30));
-			Q2 = mu20*Sn*sqrt(2*g*Y20)-mu32*Sn*sqrt(2*g*(Y30-Y20));
+			Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
+			Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
 
 			self.L1 = self.Q1 - self.q13
 			self.L2 = self.Q2 + self.q32 - self.q20
 			self.L3 = self.q13 - self.q32
 
 			self.q13 = u13*sn*sign(self.L1-self.L3)*math.sqrt(2*g*(self.L1-self.L3))
-			self.q32=u32*sn*sign(self.L3-self.L2)*math.sqrt(2*g*(self.L3-self.L2))
+			print "q13", self.q13
+
+			print "L3", self.L3
+			print "L2", self.L2
+			print "u32", u32
+			print "sn", sn 
+
+			# Por que L2 es menor que L3?
+			self.q32=u32*sn*sign(self.L3-self.L2)*math.sqrt(abs(2*g*(self.L3-self.L2)))
+			print "q32", self.q32
+
 			self.q20 = u20*sn*math.sqrt(2*g*self.L2)
+			print "q20", self.q20
 		
 			logging.debug('L1: %s', self.L1)
 			logging.debug('L2: %s', self.L2)
