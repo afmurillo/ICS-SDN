@@ -1,88 +1,27 @@
 from minicps.devices import Tank
 from utils import *
-
+from numpy import *
 import sys
 import time
 
-MV101 = ('MV101', 1)
-P101 = ('P101', 1)
-LIT101 = ('LIT101', 1)
-
-FIT201 = ('FIT201', 2)
-PH201 = ('PH201', 2)
-P201 = ('P201', 2)
-
-LIT301 = ('LIT301', 3)
-P301 = ('P301', 3)
-
 class RawWaterTank(Tank):
 	def pre_loop(self):
-		self.set(MV101, 1)
-		self.set(P101, 0)
-		self.lit101 = self.set(LIT101, 0.4)
-
-		self.ph_level = self.set(PH201, 0.7)
-		self.set(P201, 0)
-
-		self.set(P301, 1)
-		self.lit301 = self.set(LIT301, 0.4)
+		L1= 0.4
+		L2=0.2
+		L3=0.3
 
 	def main_loop(self):
 		count = 0
 		while(count <= PP_SAMPLES):
 
 			# First tank
-			new_lit_101 = float(self.get(LIT101))
-			water_volume = self.section*new_lit_101
-			
-			mv101 = self.get(MV101)
-			if int(mv101) == 1:
-				inflow = PUMP_FLOWRATE_IN * PP_PERIOD_HOURS
-				water_volume += inflow
-			else:
-				inflow = 0
+			L1 = Q1 - q13
+			L2 = Q2 + q32 - q20
+			L3 = q13 - q32
 
-			# outflow volumes
-			p101 = self.get(P101)
-			if int(p101) == 1:
-				outflow = PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS
-				water_volume -= outflow	
-			else: 
-				outflow = 0
-
-			new_lit_101 = water_volume / self.section
-
-			if new_lit_101 <= 0.0:
-				new_lit_101 = 0.0
-			
-			self.lit101 = self.set(LIT101, new_lit_101)
-
-			# Second tank - third loop
-			new_lit_301 = float(self.get(LIT301))
-			water_volume_2 = self.section*new_lit_301
-			
-			if int(p101) == 1:
-				inflow_2 = PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS
-				water_volume_2 += inflow_2
-			else:
-				inflow_2 = 0
-
-			p301 = self.get(P301)
-			if int(p301) == 1:
-				outflow_2 = PUMP_FLOWRATE_OUT_2 * PP_PERIOD_HOURS
-				water_volume_2 -= outflow_2
-			else:
-				outflow_2 = 0
-
-			new_lit_301 = water_volume_2 / self.section
-
-			if new_lit_301 <= 0.0:
-				new_lit_301 = 0.0			
-
-			print "DEBUG  Water Tank 1 Level %.5f " % new_lit_101
-			print "DEBUG  PH Level %.5f " % new_ph201
-			print "DEBUG  Water Tank 2 Level %.5f " % new_lit_301
-			self.lit301 = self.set(LIT301, new_lit_301)
+			q13 = u13*sn*sign(L1-L3)*math.sqrt(2*g*(L1-l3))
+			q32=u32*sn*sign(L3-L2)*math.sqrt(2*g*(L3-L2))
+			q20 = u20*sn*math.sqrt(2*g*L2)
 		
 			count += 1
 			time.sleep(PP_PERIOD_SEC)

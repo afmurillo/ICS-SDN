@@ -22,6 +22,30 @@ LOG_P301_FILE='./p301.log'
 LOG_MV01_FILE='./mv101.log'
 LOG_MV301_FILE='./mv301.log'
 
+S = 0.0154
+SN = 5e-5
+U13 = 0.5
+U32 = 0.5
+U20 = 0.6
+QMAX = 1.5e-4
+LJMAX = 0.62
+
+mu13 = 0.5
+mu20 = 0.675
+mu32 = 0.5;
+W = math.sqrt(2*9.81);
+g = 9.81;
+
+# Output Operation Points
+Y10 = 0.400
+Y20 = 0.200
+Y30 = 0.300;
+
+# Tracking Controller Parameters
+K1 = 1e-4*[21.6 3 -5; 2.9 19 -4];
+K2 = 1e-4*[-0.95 -0.32; -0.30 -0.91];
+
+
 
 LIT_101_M = {
 	'LL': 0.250,
