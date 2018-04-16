@@ -26,7 +26,9 @@ class RawWaterTank(Tank):
 		logging.debug('starting simulation')
 		while(count <= PP_SAMPLES):
 
-			# First tank
+			Q1 = mu13*Sn*sqrt(2*g*(Y10-Y30));
+			Q2 = mu20*Sn*sqrt(2*g*Y20)-mu32*Sn*sqrt(2*g*(Y30-Y20));
+
 			self.L1 = self.Q1 - self.q13
 			self.L2 = self.Q2 + self.q32 - self.q20
 			self.L3 = self.q13 - self.q32
