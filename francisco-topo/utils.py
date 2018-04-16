@@ -33,14 +33,23 @@ LJMAX = 0.62
 
 mu13 = 0.5
 mu20 = 0.675
-mu32 = 0.5;
-W = math.sqrt(2*9.81);
-g = 9.81;
+mu32 = 0.5
+W = math.sqrt(2*9.81)
+g = 9.81
 
 # Output Operation Points
 Y10 = 0.400
 Y20 = 0.200
-Y30 = 0.300;
+Y30 = 0.300
+
+# Input operating points (m3/s)
+U10 = 0.350e-004
+U20 = 0.375e-004
+
+Q1 = mu13*sn*sqrt(2*g*(Y10-Y30));
+#%Q1o means Q1_operation = 3.5018e-5
+Q2 = mu20*Sn*sqrt(2*g*Y20)-mu32*Sn*sqrt(2*g*(Y30-Y20));
+#%Q2o means Q2_operation = 3.1838e-5
 
 # Tracking Controller Parameters
 #K1 = 1e-4*[21.6 3 -5; 2.9 19 -4];

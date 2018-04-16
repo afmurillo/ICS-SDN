@@ -14,9 +14,8 @@ class RawWaterTank(Tank):
 		self.L2=0.2
 		self.L3=0.3
 
-		self.Q1 = 0
-		self.Q2 = 0
-		self.Q3 = 0
+		self.Q1 = Q1
+		self.Q2 = Q2
 
 		self.q13 = 0
 		self.q32 = 0
