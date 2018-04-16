@@ -27,7 +27,7 @@ class SimpleTopo(Topo):
 
 
         # Add switches
-        s1, s2, s3  = [ self.addSwitch( s ) for s in ('s1', 's2', 's3') ]
+        s1 = [ self.addSwitch( s ) for s in ('s1')]
 
         gateway_1 = 'via ' + defaultIP
  
@@ -35,8 +35,12 @@ class SimpleTopo(Topo):
         self.addLink( s1, plc101, intfName2='plc101-eth1', params2={ 'ip' : defaultIP } )  
 
         p101 = self.addHost('p101', ip=IP['p101'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
-        mv101 = self.addHost('mv101',ip=IP['mv101'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
+        p102 = self.addHost('p102',ip=IP['p102'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
+
         lit101 = self.addHost('lit101',ip=IP['lit101'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
+        lit102 = self.addHost('lit102',ip=IP['lit102'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
+        lit103 = self.addHost('lit103',ip=IP['lit103'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
+
         ids101 = self.addHost('ids101',ip=IP['ids101'] + NETMASK, defaultRoute=gateway_1 )
         sim101 = self.addHost('sim101',ip=IP['sim101'] + NETMASK, defaultRoute=gateway_1 )
         plant101 = self.addHost('plant101')
@@ -44,6 +48,9 @@ class SimpleTopo(Topo):
         self.addLink(p101, s1)
         self.addLink(mv101, s1)
         self.addLink(lit101, s1)
+        self.addLink(lit102, s1)
+        self.addLink(lit103, s1)
+        self.addLink(p102, s1)
     
         self.addLink(ids101, s1)
         self.addLink(sim101, s1)
@@ -58,3 +65,4 @@ class SimpleTopo(Topo):
 
         self.addLink(lit301, s3)        
         self.addLink(p301, s3)                
+

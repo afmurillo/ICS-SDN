@@ -105,6 +105,9 @@ IP = {
 	'plc101': '192.168.1.14',
 	'ids101': '192.168.1.15',
 	'sim101': '192.168.1.16',
+	'p102' : '192.168.1.17',
+	'lit102' : '192.168.1.18',
+	'lit103' : '192.168.1.19',
 
 	'fit201': '192.168.2.20',
 	'ph201': '192.168.2.21',
@@ -157,7 +160,9 @@ GENERIC_DATA = {
 LOOP_1_TAGS = (
 	('MV101', 1, 'INT'),
 	('LIT101', 1, 'REAL'),
-	('P101', 1, 'INT'),
+	('P101', 1, 'REAL'),
+	('P102', 1, 'REAL'),
+	('LIT101', 1, 'REAL'),
 )
 
 LOOP_2_TAGS = (
@@ -184,6 +189,29 @@ LIT101_PROTOCOL = {
 	'server': LIT101_SERVER
 }
 
+LIT102_SERVER = {
+	'address': IP['lit102'],
+	'tags': LOOP_1_TAGS
+}
+
+LIT102_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': LIT102_SERVER
+}
+
+LIT103_SERVER = {
+	'address': IP['lit103'],
+	'tags': LOOP_1_TAGS
+}
+
+LIT103_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': LIT103_SERVER
+}
+
+
 MV101_SERVER = {
 	'address': IP['mv101'],
 	'tags': LOOP_1_TAGS
@@ -202,6 +230,16 @@ P101_PROTOCOL = {
 	'name': 'enip',
 	'mode': 1,
 	'server': P101_SERVER
+}
+
+P102_SERVER = {
+	'address': IP['p102'],
+	'tags': LOOP_1_TAGS
+}
+P102_PROTOCOL = {
+	'name': 'enip',
+	'mode': 1,
+	'server': P102_SERVER
 }
 
 PLC101_SERVER = {
