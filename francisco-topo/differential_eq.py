@@ -3,6 +3,7 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 import math
 
+
 def francisco_model(l,t,q):
 
 
@@ -30,8 +31,6 @@ def francisco_model(l,t,q):
       L3,
       u13*sn*np.sign(L1-L3)*math.sqrt(2*g*(L1-L3)) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
       ]
-      
-  print "function created"
       
   return f
   #Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
@@ -74,7 +73,6 @@ def francisco_model(l,t,q):
       u13*sn*np.sign(L1-L3)*math.sqrt(2*g*(L1-L3)) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
       ]
       
-  print "function created"
       
   return f
   #Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
@@ -107,7 +105,9 @@ t = np.linspace(start=0, stop=1, num=100)
 Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
 Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
 q = [Q1, Q2]
-print q
 l0 = [0.400, 0.200, 0.400]
 wsol = odeint(francisco_model, l0, t, args=(q,),atol=abserr, rtol=relerr)
-print wsol
+
+# Print the solution.
+for t1, w1 in zip(t, wsol):
+ print t1, w1[0], w1[1], w1[2]
