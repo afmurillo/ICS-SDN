@@ -64,6 +64,9 @@ q = [Q1, Q2]
 l0 = [0.400, 0.200, 0.400]
 wsol = odeint(francisco_model, l0, t, args=(q,),atol=abserr, rtol=relerr)
 
+#l=[wsol[-1][0], wsol[-1][1], wsol[-1][2]]
+#print "Valores al final del calculo: ", l
+
 # Print the solution.
 for t1, w1 in zip(t, wsol):
  print t1, w1[0], w1[1], w1[2]
