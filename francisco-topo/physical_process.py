@@ -1,6 +1,7 @@
 from minicps.devices import Tank
+from scipy.integrate import odeint
 from utils import *
-from numpy import *
+import numpy as np
 import sys
 import time
 import math
@@ -16,20 +17,20 @@ LIT103 = ('LIT103', 1)
 
 class RawWaterTank(Tank):
 
-	def plant_model(self):
+	def plant_model(self, l, t, q):
   		Q1, Q2 = q
 		L1, L2, L3 = l
 
 		# System of 3 differential equations of the water tanks  
   		f = [L1,
-      		Q1 - u13*sn*np.sign(L1-L3)*math.sqrt(2*g*(L1-L3)),
+      		Q1 - u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))),
       		L2,
       		Q2 + u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))  - u20*sn*math.sqrt(2*g*L2),
       		L3,
-      		u13*sn*np.sign(L1-L3)*math.sqrt(2*g*(L1-L3)) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
+      		u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
       		]
             
-  	return f
+	  	return f
 
 	def pre_loop(self):
 		logging.basicConfig(filename="plant.log", level=logging.DEBUG)
@@ -37,20 +38,20 @@ class RawWaterTank(Tank):
 		self.L1= 0.4
 		self.L2=0.2
 		self.L3=0.3
-		self.Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));	
-		self.Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
+		self.Q1 = mu13*sn*math.sqrt(abs(2*g*(Y10-Y30)));	
+		self.Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(abs(2*g*(Y30-Y20)));
 
 		# Writes values in the database
 		self.set(Q101, self.Q1)
 		self.set(Q102, self.Q2)
 
-		self.set(L101, self.L1)
-		self.set(L102, self.L2)
-		self.set(L103, self.L3)
+		self.set(LIT101, self.L1)
+		self.set(LIT102, self.L2)
+		self.set(LIT103, self.L3)
 
 		# These vectors are used by the model
 		self.q = [self.Q1, self.Q2]
-		self.l = [self.L1 self.L2, self.L3]
+		self.l = [self.L1, self.L2, self.L3]
 
 		self.abserr = 1.0e-8
 		self.relerr = 1.0e-6
@@ -62,13 +63,13 @@ class RawWaterTank(Tank):
 
 
 		while(count <= PP_SAMPLES):
-			wsol = odeint(plant_model, self.l, t, args=(self.q,),atol=self.abserr, rtol=self.relerr)
+			wsol = odeint(self.plant_model, self.l, t, args=(self.q,),atol=self.abserr, rtol=self.relerr)
 			self.l=[wsol[-1][0], wsol[-1][1], wsol[-1][2]]
 
 			#Update the values in the database
-			self.set(L101, self.l[0])
-			self.set(L102, self.l[1])
-			self.set(L103, self.l[2])
+			self.set(LIT101, self.l[0])
+			self.set(LIT102, self.l[1])
+			self.set(LIT103, self.l[2])
 			
 			count += 1
 			time.sleep(PP_PERIOD_SEC)
