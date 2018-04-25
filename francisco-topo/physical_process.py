@@ -6,52 +6,70 @@ import time
 import math
 import logging
 
+
+Q101 = ('Q101', 1)
+Q102 = ('Q102', 1)
+LIT101 = ('LIT101', 1)
+LIT102 = ('LIT102', 1)
+LIT103 = ('LIT103', 1)
+
+
 class RawWaterTank(Tank):
+
+	def plant_model(self):
+  		Q1, Q2 = q
+		L1, L2, L3 = l
+
+		# System of 3 differential equations of the water tanks  
+  		f = [L1,
+      		Q1 - u13*sn*np.sign(L1-L3)*math.sqrt(2*g*(L1-L3)),
+      		L2,
+      		Q2 + u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))  - u20*sn*math.sqrt(2*g*L2),
+      		L3,
+      		u13*sn*np.sign(L1-L3)*math.sqrt(2*g*(L1-L3)) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
+      		]
+            
+  	return f
+
 	def pre_loop(self):
 		logging.basicConfig(filename="plant.log", level=logging.DEBUG)
 		logging.debug('plant enters pre_loop')
 		self.L1= 0.4
 		self.L2=0.2
 		self.L3=0.3
+		self.Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));	
+		self.Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
 
-		self.Q1 = Q1
-		self.Q2 = Q2
+		# Writes values in the database
+		self.set(Q101, self.Q1)
+		self.set(Q102, self.Q2)
 
-		self.q13 = 0
-		self.q32 = 0
-		self.q20 = 0
+		self.set(L101, self.L1)
+		self.set(L102, self.L2)
+		self.set(L103, self.L3)
+
+		# These vectors are used by the model
+		self.q = [self.Q1, self.Q2]
+		self.l = [self.L1 self.L2, self.L3]
+
+		self.abserr = 1.0e-8
+		self.relerr = 1.0e-6
 
 	def main_loop(self):
 		count = 0
 		logging.debug('starting simulation')
+		t = np.linspace(start=0, stop=1, num=100)	
+
+
 		while(count <= PP_SAMPLES):
+			wsol = odeint(plant_model, self.l, t, args=(self.q,),atol=self.abserr, rtol=self.relerr)
+			self.l=[wsol[-1][0], wsol[-1][1], wsol[-1][2]]
 
-			Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
-			Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
-
-			self.L1 = self.Q1 - self.q13
-			self.L2 = self.Q2 + self.q32 - self.q20
-			self.L3 = self.q13 - self.q32
-
-			self.q13 = u13*sn*sign(self.L1-self.L3)*math.sqrt(2*g*(self.L1-self.L3))
-			print "q13", self.q13
-
-			print "L3", self.L3
-			print "L2", self.L2
-			print "u32", u32
-			print "sn", sn 
-
-			# Por que L2 es menor que L3?
-			self.q32=u32*sn*sign(self.L3-self.L2)*math.sqrt(abs(2*g*(self.L3-self.L2)))
-			print "q32", self.q32
-
-			self.q20 = u20*sn*math.sqrt(2*g*self.L2)
-			print "q20", self.q20
-		
-			logging.debug('L1: %s', self.L1)
-			logging.debug('L2: %s', self.L2)
-			logging.debug('L3: %s', self.L3)
-
+			#Update the values in the database
+			self.set(L101, self.l[0])
+			self.set(L102, self.l[1])
+			self.set(L103, self.l[2])
+			
 			count += 1
 			time.sleep(PP_PERIOD_SEC)
 
@@ -63,3 +81,4 @@ if __name__ == '__main__':
 		section=TANK_SECTION,
 		level=RWT_INIT_LEVEL
 	)
+

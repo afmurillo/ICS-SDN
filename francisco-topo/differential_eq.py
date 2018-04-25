@@ -31,11 +31,6 @@ def francisco_model(l,t,q):
       
       
   return f
-  #Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
-	#Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
-  #L1 = 
-	#L2 = Q2 + u32*sn*sign(self.L3-self.L2)*math.sqrt(abs(2*g*(self.L3-self.L2)))  - u20*sn*math.sqrt(2*g*self.L2)
-	#L3 = u13*sn*sign(self.L1-self.L3)*math.sqrt(2*g*(self.L1-self.L3)) - u32*sn*sign(self.L3-self.L2)*math.sqrt(abs(2*g*(self.L3-self.L2)))
   
 s = 0.0154
 sn = 5e-5

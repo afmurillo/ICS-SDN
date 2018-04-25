@@ -34,8 +34,8 @@ class SimpleTopo(Topo):
         plc101 = self.addNode('plc101',ip=IP['plc101'] + NETMASK, cls=LinuxRouter)
         self.addLink( s1, plc101, intfName2='plc101-eth1', params2={ 'ip' : defaultIP } )  
 
-        p101 = self.addHost('p101', ip=IP['p101'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
-        p102 = self.addHost('p102',ip=IP['p102'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
+        q101 = self.addHost('q101', ip=IP['q101'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
+        q102 = self.addHost('q102',ip=IP['q102'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
 
         lit101 = self.addHost('lit101',ip=IP['lit101'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
         lit102 = self.addHost('lit102',ip=IP['lit102'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
@@ -45,11 +45,11 @@ class SimpleTopo(Topo):
         sim101 = self.addHost('sim101',ip=IP['sim101'] + NETMASK, defaultRoute=gateway_1 )
         plant101 = self.addHost('plant101')
 
-        self.addLink(p101, s1)
+        self.addLink(q101, s1)
         self.addLink(lit101, s1)
         self.addLink(lit102, s1)
         self.addLink(lit103, s1)
-        self.addLink(p102, s1)
+        self.addLink(q102, s1)
     
         self.addLink(ids101, s1)
         self.addLink(sim101, s1)

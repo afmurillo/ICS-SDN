@@ -11,7 +11,7 @@ import select
 
 PLC101_ADDR = IP['plc101']
 
-P101 = ('P101', 1)
+Q101 = ('Q101', 1)
 
 class PSocket(Thread):
     """ Class that receives water level from the water_tank.py  """
@@ -23,7 +23,7 @@ class PSocket(Thread):
     def run(self):
         print "DEBUG entering socket thread run"
         self.sock = socket.socket()     # Create a socket object    
-        self.sock.bind((IP['p101'] , 7842 ))
+        self.sock.bind((IP['q101'] , 7842 ))
         self.sock.listen(5)
 
         while True:
@@ -32,10 +32,10 @@ class PSocket(Thread):
                 data = client.recv(4096)                                                # Get data from the client         
             
                 message_dict = eval(json.loads(data))
-                p101 = int(message_dict['Variable'])
+                q101 = int(message_dict['Variable'])
 
-                print "received from PLC101!", p101
-		self.plc.set(P101, p101)           
+                print "received from PLC101!", q101
+		self.plc.set(Q101, q101)           
 
             except KeyboardInterrupt:
                 print "\nCtrl+C was hitten, stopping server"
@@ -44,15 +44,15 @@ class PSocket(Thread):
 
 class PP101(PLC):
         def pre_loop(self, sleep=0.1):
-                print 'DEBUG: p101 enters pre_loop'
+                print 'DEBUG: q101 enters pre_loop'
                 time.sleep(sleep)
 
         def main_loop(self):
-                print 'DEBUG: p101 enters main_loop'
+                print 'DEBUG: q101 enters main_loop'
                 count = 0
                 psocket = PSocket(self)
                 psocket.start()       
 
 if __name__ == '__main__':
-	p101 = PP101(name='p101',state=STATE,protocol=P101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
+	q101 = PP101(name='q101',state=STATE,protocol=Q101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
 
