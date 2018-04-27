@@ -25,7 +25,7 @@ class RawWaterTank(Tank):
   		f = [L1,
       		Q1 - u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))),
       		L2,
-      		Q2 + u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))  - u20*sn*math.sqrt(2*g*L2),
+      		Q2 + u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))  - u20*sn*math.sqrt(abs(2*g*L2)),
       		L3,
       		u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
       		]
