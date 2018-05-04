@@ -46,25 +46,7 @@ class Lit301Socket(Thread):
 	        lit301 = float(message_dict['Variable'])
 
 	        print "received from LIT301!", lit301
-            
-	        if lit301 >= LIT_301_M['HH'] :
-                    #self.plc.send(P101, 0, IP['plc101'])                  
-	            self.send_message(IP['p101'], 7842 , 0)
-
-	        elif lit301 >= LIT_301_M['H']:
-                    #self.plc.send(P101, 0, IP['plc101'])
-	            self.send_message(IP['p101'], 7842 , 0)
-
-
-            	elif lit301 <= LIT_301_M['L']:
-                    #self.plc.send(P101, 1, IP['plc101'])
-                    self.send_message(IP['p101'], 7842 , 1)
-
-
-            	elif lit301 <= LIT_301_M['LL']:
-                    #self.plc.send(P101, 1, IP['plc101'])
-	            self.send_message(IP['p101'], 7842 , 1)
-
+        
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
                 client.close()
@@ -218,48 +200,6 @@ class PLC101(PLC):
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
 		print "plc1 lit101", lit101
                 #hmi.setLit101(lit101)
-
-
-                if random_control_experiment == 0:
-
-    	            if lit101 >= LIT_101_M['HH']:
-                        self.send(MV101, 0, IP['plc101'])
-
-                    elif lit101 >= LIT_101_M['H']:
-                        self.send(MV101, 0, IP['plc101'])
-
-                    elif lit101 <= LIT_101_M['LL']:
-                        self.send(MV101, 1, IP['plc101'])
-
-                    elif lit101 <= LIT_101_M['L']:
-                        self.send(MV101, 1, IP['plc101'])
-
-
-                elif random_control_experiment == 1:    
-
-                    if lit101 >= 0.6:
-                        random_control_active = 1
-		        "Activating random control"
-
-                    if random_control_active == 1 and random_counter < 10:                    
-                        random_counter = random_counter + 1
-		        "Keeping last control action"
-
-                    elif random_counter >= 10:
-                        random_counter=0
-		        "Updating control action"		    
-                    if (random() > 0.5):
-                        self.send(MV101, 1, IP['plc101'])
-                        print "Action on MV101: 1"
-                    else:
-                        self.send(MV101, 0, IP['plc101'])
-                        print "Action on MV101: 0"
-
-		elif random_control_experiment ==2:
-			action = in_file.readline().split(':')[1]
-			self.send(MV101, int(action), IP['plc101'])
-			print "Action read on MV101: ", action
-
 	    except Exception as e:
                    print e
 		   print "Switching to backup"
