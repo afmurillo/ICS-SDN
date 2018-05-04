@@ -64,8 +64,19 @@ class RawWaterTank(Tank):
 
 		while(count <= PP_SAMPLES):
 			wsol = odeint(self.plant_model, self.l, t, args=(self.q,),atol=self.abserr, rtol=self.relerr)
+
+			if (wsol[-1][0]) > 1.0:
+				wsol[-1][0] = 1.0
+
+                        if (wsol[-1][1]) > 1.0:
+                                wsol[-1][1] = 1.0
+
+                        if (wsol[-1][2]) > 1.0:
+                                wsol[-1][2] = 1.0
+
 			self.l=[wsol[-1][0], wsol[-1][1], wsol[-1][2]]
 
+			print "Result at time", count, " ", self.l
 			#Update the values in the database
 			self.set(LIT101, self.l[0])
 			self.set(LIT102, self.l[1])
