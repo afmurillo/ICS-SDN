@@ -53,28 +53,6 @@ Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
 #K2 = 1e-4*[-0.95 -0.32; -0.30 -0.91];
 
 
-
-LIT_101_M = {
-	'LL': 0.250,
-	'L': 0.50,
-	'H': 0.800,
-	'HH': 1.200
-}
-
-PH_201_M = {
-	'LL': 0.50,
-	'L': 0.700,
-	'H': 0.800,
-	'HH': 1.000
-}
-
-LIT_301_M = {
-	'LL': 0.250,
-	'L': 0.50,
-	'H': 0.800,
-	'HH': 1.200
-}
-
 TANK_HEIGHT = 1.600
 
 PLC_PERIOD_SEC = 0.4
@@ -251,6 +229,6 @@ SCHEMA_INIT = """
 	INSERT INTO industry VALUES ('Q101', 1, '0');
 	INSERT INTO industry VALUES ('Q102', 1, '0');
 	INSERT INTO industry VALUES ('LIT101', 1, '0.400');
-	INSERT INTO industry VALUES ('LIT102', 2, '0.200');
-	INSERT INTO industry VALUES ('LIT301', 3, '0.300');
+	INSERT INTO industry VALUES ('LIT102', 1, '0.200');
+	INSERT INTO industry VALUES ('LIT103', 1, '0.300');
 """

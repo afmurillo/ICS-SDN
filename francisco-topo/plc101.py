@@ -20,7 +20,6 @@ LIT301 = ('LIT301', 3)
 
 SENSOR_ADDR = IP['lit101']
 IDS_ADDR = IP['ids101']
-PLC301_ADDR = IP['plc301']
 
 # TODO: real value tag where to read/write flow sensor
 
@@ -34,7 +33,7 @@ class Lit301Socket(Thread):
     def run(self):
         print "DEBUG entering socket thread run"
         self.sock = socket.socket()     # Create a socket object    
-        self.sock.bind((IP['plc101-HMI'] , 8754 ))
+        self.sock.bind((IP['plc101'] , 8754 ))
         self.sock.listen(5)
 
         while (self.plc.count <= PLC_SAMPLES):

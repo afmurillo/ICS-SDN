@@ -24,6 +24,6 @@ class Lit103(PLC):
 
 
 if __name__ == '__main__':
-	lit103 = Lit103(name='lit103',state=STATE,protocol=LIT301_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
+	lit103 = Lit103(name='lit103',state=STATE,protocol=LIT103_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
 			
 
