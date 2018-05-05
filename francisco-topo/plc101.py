@@ -21,6 +21,7 @@ LIT301 = ('LIT301', 3)
 SENSOR_ADDR = IP['lit101']
 IDS_ADDR = IP['ids101']
 
+
 # TODO: real value tag where to read/write flow sensor
 
 class Lit301Socket(Thread):
@@ -42,10 +43,11 @@ class Lit301Socket(Thread):
 		data = client.recv(4096)                                                # Get data from the client         
             
             	message_dict = eval(json.loads(data))
-	        lit301 = float(message_dict['Variable'])
+	        lit103 = float(message_dict['Variable'])
 
-	        print "received from LIT301!", lit301
-        
+	        print "received from LIT103!", lit103
+		self.xhat[2] = lit103
+	
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
                 client.close()
@@ -162,6 +164,21 @@ class PLC101(PLC):
 
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
+	
+	# Controller Initial Conditions	
+	self.xhat = [0; 0; 0];
+	self.prev_inc_i = [0; 0];
+	self.w1 = [0; 0; 0];
+	self.w2 = [0; 0; 0];
+	self.prev_ya = [0; 0];
+	self.u_min = [-4e-5; -4e-5];
+	self.u_max = [5e-5; 5e-5];
+	#self.x_min = zeros(3,1) - [Y10; Y20; Y30];
+	self.x_max = 0.62*ones(3,1) - [Y10; Y20; Y30]
+	self.z = [0; 0];
+	current_inc_i = -[K1, K2] * [self.xhat; self.z]
+	#n_a = 5e-6*randn(2,2001);
+	
         time.sleep(sleep)        
 
     def main_loop(self):
@@ -198,6 +215,18 @@ class PLC101(PLC):
 	    	lit101 = float(self.receive(LIT101, SENSOR_ADDR))
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
 		print "plc1 lit101", lit101
+		
+		#xhat is the vector used for the controller. In the next version, xhat shouldn't be read from sensors, but from luerenberg observer
+		self.xhat[0]= lit101
+		self.xhat[1]= float(self.get(LIT102))
+		
+		self.current_inc_i = -[K1, K2] * [self.xhat; self.z]
+		#self.current_inc_i = sat_vec(Current_inc_i, u_min, u_max);
+		self.q1 = self.current_inc_i[0]
+		self.q2 = self.current_inc_i[1]
+		self.send(Q101, self.q1, IP['plc101'])
+		self.send(Q102, self.q2, IP['plc101'])
+					
                 #hmi.setLit101(lit101)
 	    except Exception as e:
                    print e
