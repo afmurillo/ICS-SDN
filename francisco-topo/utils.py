@@ -49,8 +49,8 @@ Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
 #%Q2o means Q2_operation = 3.1838e-5
 
 # Tracking Controller Parameters
-#K1 = 1e-4*[21.6 3 -5; 2.9 19 -4];
-#K2 = 1e-4*[-0.95 -0.32; -0.30 -0.91];
+K1 = 1e-4*[21.6 3 -5; 2.9 19 -4];
+K2 = 1e-4*[-0.95 -0.32; -0.30 -0.91];
 
 
 TANK_HEIGHT = 1.600
