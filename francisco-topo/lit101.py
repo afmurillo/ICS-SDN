@@ -25,5 +25,4 @@ class Lit101(PLC):
 
 if __name__ == '__main__':
 	lit101 = Lit101(name='lit101',state=STATE,protocol=LIT101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
-			
 

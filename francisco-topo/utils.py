@@ -55,9 +55,9 @@ Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
 #%Q2o means Q2_operation = 3.1838e-5
 
 # Tracking Controller Parameters
-K1 = 1e-4*[21.6 3 -5; 2.9 19 -4];
-K2 = 1e-4*[-0.95 -0.32; -0.30 -0.91];
-
+cte = 0.0001
+K1 = np.array([[cte*21.6, cte*3, cte*-5],[cte*2.9, cte*19, cte*-4]])
+K2 = np.array([[cte*-0.95, cte*-0.32], [cte*-0.30, cte*-0.91]])
 
 TANK_HEIGHT = 1.600
 

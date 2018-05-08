@@ -27,7 +27,7 @@ IDS_ADDR = IP['ids101']
 class Lit301Socket(Thread):
     """ Class that receives water level from the water_tank.py  """
 
-    def __init__(self, plc_object):        
+    def __init__(self, plc_object):
         Thread.__init__(self)
         self.plc = plc_object
 
@@ -40,14 +40,12 @@ class Lit301Socket(Thread):
         while (self.plc.count <= PLC_SAMPLES):
             try:
             	client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client         
-            
+		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data))
-	        lit103 = float(message_dict['Variable'])
+	        self.lit103 = float(message_dict['Variable'])
 
 	        print "received from LIT103!", lit103
-		self.xhat[2] = lit103
-	
+
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
                 client.close()
@@ -176,7 +174,7 @@ class PLC101(PLC):
 	#self.x_min = zeros(3,1) - [Y10; Y20; Y30];
 	self.x_max = 0.62*ones(3,1) - [Y10; Y20; Y30]
 	self.z = [0; 0];
-	current_inc_i = -[K1, K2] * [self.xhat; self.z]
+	current_inc_i = np.array([[0],[0]])
 	#n_a = 5e-6*randn(2,2001);
 	
         time.sleep(sleep)        
@@ -212,22 +210,49 @@ class PLC101(PLC):
 
             # lit101 [meters]
 	    try:
-	    	lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+
+
+		if self.count <= 200:
+			ref_y0 = 0.4
+		if self.count > 200 and self.count <= 1500:
+			ref_y0 = 0.450
+		if self.count > 1500:
+			ref_y0 = 0.4
+
+                if self.count <= 400:
+                        ref_y1 = 0.2
+                if self.count > 400 and self.count <= 1700:
+                        ref_y1 = 0.225
+                if self.count > 1700:
+                        ref_y1 = 0.2
+
+	    	self.lit101 = float(self.receive(LIT101, SENSOR_ADDR))
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
 		print "plc1 lit101", lit101
-		
+
 		#xhat is the vector used for the controller. In the next version, xhat shouldn't be read from sensors, but from luerenberg observer
-		self.xhat[0]= lit101
-		self.xhat[1]= float(self.get(LIT102))
-		
-		self.current_inc_i = -[K1, K2] * [self.xhat; self.z]
-		#self.current_inc_i = sat_vec(Current_inc_i, u_min, u_max);
+		self.lit102 = float(self.get(LIT102))
+		self.xhat= np.array([[lit101],[lit102],[self.lit103]])
+		self.z = np.array([[0.0],[0.0]])
 		# Z(k+1) = z(k) + ref(k) - xhat(k)
+
+		self.K1K2 = np.concatenate((K1,K2),axis=1)
+		self.xhatz=np.concatenate((xhat,z), axis=0)
+		self.current_inc_i = np.matmul(-K1K2,xhatz)
+		if self.current_inc_i[0] > QMAX:
+			self.current_inc_i[0] = QMAX
+
+                if self.current_inc_i[1] > QMAX:
+                        self.current_inc_i[1] = QMAX
+
 		self.q1 = self.current_inc_i[0]
 		self.q2 = self.current_inc_i[1]
 		self.send(Q101, self.q1, IP['plc101'])
 		self.send(Q102, self.q2, IP['plc101'])
-					
+
+		z[0,0] = z[0,0] + rey_y0 - self.lit101
+		z[1,0] = z[1,0] + rey_y1 - self.lit103
+		
                 #hmi.setLit101(lit101)
 	    except Exception as e:
                    print e
