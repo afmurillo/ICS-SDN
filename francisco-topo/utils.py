@@ -1,4 +1,5 @@
 import math
+import numpy as np
 GRAVITATION = 9.81
 TANK_DIAMETER = 1.38
 TANK_SECTION = 1.5
@@ -42,6 +43,11 @@ Y30 = 0.300
 # Input operating points (m3/s)
 U10 = 0.350e-004
 U20 = 0.375e-004
+
+#Reference
+#Y1 = 0.4 (t=1,200) 0.450 (t=201, 1500), 0.4 (t=1501, 2000)
+#Y2 = 0.2 (t=1,400) 0.225 (t=401, 1700), 0.2 (t=1701, 2000)
+
 
 Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
 #%Q1o means Q1_operation = 3.5018e-5

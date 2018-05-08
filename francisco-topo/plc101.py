@@ -222,6 +222,7 @@ class PLC101(PLC):
 		
 		self.current_inc_i = -[K1, K2] * [self.xhat; self.z]
 		#self.current_inc_i = sat_vec(Current_inc_i, u_min, u_max);
+		# Z(k+1) = z(k) + ref(k) - xhat(k)
 		self.q1 = self.current_inc_i[0]
 		self.q2 = self.current_inc_i[1]
 		self.send(Q101, self.q1, IP['plc101'])
