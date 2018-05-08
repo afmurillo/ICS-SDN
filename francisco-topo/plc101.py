@@ -164,18 +164,9 @@ class PLC101(PLC):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
 	
 	# Controller Initial Conditions	
-	self.xhat = [0; 0; 0];
-	self.prev_inc_i = [0; 0];
-	self.w1 = [0; 0; 0];
-	self.w2 = [0; 0; 0];
-	self.prev_ya = [0; 0];
-	self.u_min = [-4e-5; -4e-5];
-	self.u_max = [5e-5; 5e-5];
-	#self.x_min = zeros(3,1) - [Y10; Y20; Y30];
-	self.x_max = 0.62*ones(3,1) - [Y10; Y20; Y30]
-	self.z = [0; 0];
+	self.xhat = xhat = np.array([[Y10],[Y20],[Y30]])
+	self.z =  np.array([[0],[0]])
 	current_inc_i = np.array([[0],[0]])
-	#n_a = 5e-6*randn(2,2001);
 	
         time.sleep(sleep)        
 
