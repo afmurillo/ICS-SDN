@@ -21,15 +21,13 @@ class RawWaterTank(Tank):
   		Q1, Q2 = q
 		L1, L2, L3 = l
 
-		# System of 3 differential equations of the water tanks  
-  		f = [L1,
-      		Q1 - u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))),
-      		L2,
+		# System of 3 differential equations of the water tanks
+  		f = [
+                Q1 - u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))),
       		Q2 + u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))  - u20*sn*math.sqrt(abs(2*g*L2)),
-      		L3,
       		u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
       		]
-            
+
 	  	return f
 
 	def pre_loop(self):
@@ -63,6 +61,9 @@ class RawWaterTank(Tank):
 
 
 		while(count <= PP_SAMPLES):
+			self.Q1 = float(self.get(Q101))
+			self.Q2 = float(self.get(Q102))
+			self.q = [self.Q1, self.Q2]
 			wsol = odeint(self.plant_model, self.l, t, args=(self.q,),atol=self.abserr, rtol=self.relerr)
 
 			if (wsol[-1][0]) > 1.0:

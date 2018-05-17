@@ -10,7 +10,6 @@ LIT103 = ('LIT103', 1)
 class Lit103(PLC):
 	def pre_loop(self, sleep=0.1):
 		logging.basicConfig(filename=LOG_LIT103_FILE, level=logging.DEBUG)
-		logging.debug('sensor enters pre_loop')
 		time.sleep(sleep)
 
 	def main_loop(self):
