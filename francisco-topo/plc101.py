@@ -219,6 +219,7 @@ class PLC101(PLC):
 		#xhat is the vector used for the controller. In the next version, xhat shouldn't be read from sensors, but from luerenberg observer
 		self.lit102 = float(self.get(LIT102))
 		print "plc1 lit102", self.lit102
+		print "plc1 lit103", lit103
 		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		self.z = np.array([[0.0],[0.0]])
 		# Z(k+1) = z(k) + ref(k) - xhat(k)
@@ -236,8 +237,6 @@ class PLC101(PLC):
 		self.q1 = self.current_inc_i[0]
 		self.q2 = self.current_inc_i[1]
 
-		print "Sending to actuators"
-		#This is the problem
 		self.send(Q101, float(self.q1), IP['plc101'])
 		self.send(Q102, float(self.q2), IP['plc101'])
 
@@ -246,8 +245,6 @@ class PLC101(PLC):
 
 		self.z[0,0] = self.z[0,0] + float(ref_y0) - self.lit101
 		self.z[1,0] = self.z[1,0] + float(ref_y1) - lit103
-
-		print "calculated z"
 
 	    except Exception as e:
                    print e

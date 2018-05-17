@@ -32,20 +32,20 @@ class SimpleCPS(MiniCPS):
 
         self.net.start()
  
-        #lit101 = self.net.get('lit101')
-        #lit101.cmd('rm -rf lit101.log')
+        lit101 = self.net.get('lit101')
+        lit101.cmd('rm -rf lit101.log')
         #lit101.cmd('python lit101.py &')
 
 	    #plc1 = self.net.get('plc101')    
 	    #plc1.cmd('route add default gw 192.168.2.254 plc101-eth0  ')
         #plc1.cmd('python plc101.py &')
 
-        #lit102 = self.net.get('lit102')
-        #lit102.cmd('rm -rf lit102.log')
+        lit102 = self.net.get('lit102')
+        lit102.cmd('rm -rf lit102.log')
         #lit102.cmd('python lit102.py &')
 
-        #lit103 = self.net.get('lit103')
-        #lit103.cmd('rm -rf lit103.log')
+        lit103 = self.net.get('lit103')
+        lit103.cmd('rm -rf lit103.log')
         #lit103.cmd('python lit103.py &')
 
 
