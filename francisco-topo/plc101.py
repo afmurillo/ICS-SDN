@@ -169,6 +169,8 @@ class PLC101(PLC):
         out_file = open(control_file, 'w')
 	in_file = open(input_file, 'r')
 
+	self.z = np.array([[0.0],[0.0]])
+
         while(self.count <= PLC_SAMPLES):
 
             # lit101 [meters]
@@ -198,7 +200,6 @@ class PLC101(PLC):
 		print "plc1 lit102", self.lit102
 		print "plc1 lit103", lit103
 		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
-		self.z = np.array([[0.0],[0.0]])
 		# Z(k+1) = z(k) + ref(k) - xhat(k)
 
 		self.K1K2 = np.concatenate((K1,K2),axis=1)
@@ -216,8 +217,6 @@ class PLC101(PLC):
 
                 self.send_message(IP['q101'], 7842 ,float(self.q1))
                 self.send_message(IP['q102'], 7842 ,float(self.q1))
-		#self.send(Q101, float(self.q1), IP['plc101'])
-		#self.send(Q102, float(self.q2), IP['plc101'])
 
 		print "plc1 q101", self.q1
 		print "plc1 q102", self.q2
