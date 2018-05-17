@@ -1,6 +1,4 @@
-"""
-PLC 1
-"""
+""" PLC 1 """
 
 from minicps.devices import PLC
 from threading import Thread
@@ -12,17 +10,17 @@ import select
 import socket
 import time
 
-MV101 = ('MV101', 1)
-LIT101 = ('LIT101', 1)
-P101 = ('P101', 1)
+Q101 = ('Q101', 1)
+Q102 = ('Q101', 1)
 
-LIT301 = ('LIT301', 3)
+LIT101 = ('LIT101', 1)
+LIT102 = ('LIT102', 1)
+LIT103 = ('LIT103', 1)
 
 SENSOR_ADDR = IP['lit101']
 IDS_ADDR = IP['ids101']
+lit103 = 0
 
-
-# TODO: real value tag where to read/write flow sensor
 
 class Lit301Socket(Thread):
     """ Class that receives water level from the water_tank.py  """
@@ -33,7 +31,7 @@ class Lit301Socket(Thread):
 
     def run(self):
         print "DEBUG entering socket thread run"
-        self.sock = socket.socket()     # Create a socket object    
+        self.sock = socket.socket()     # Create a socket object
         self.sock.bind((IP['plc101'] , 8754 ))
         self.sock.listen(5)
 
@@ -42,7 +40,7 @@ class Lit301Socket(Thread):
             	client, addr = self.sock.accept()
 		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data))
-	        self.lit103 = float(message_dict['Variable'])
+	        lit103 = float(message_dict['Variable'])
 
 	        print "received from LIT103!", lit103
 
@@ -95,13 +93,13 @@ class HMISocket(Thread):
 class IdsSocket(Thread):
     """ Class that receives water level from the water_tank.py  """
 
-    def __init__(self, plc_object):        
+    def __init__(self, plc_object):
         Thread.__init__(self)
         self.plc = plc_object
 
     def run(self):
         print "DEBUG entering socket thread run"
-        self.sock = socket.socket()     # Create a socket object    
+        self.sock = socket.socket()     # Create a socket object
         self.sock.bind((IP['plc101'] , 4234 ))
         self.sock.listen(5)
 
@@ -112,26 +110,25 @@ class IdsSocket(Thread):
 
 		#lit101 = float(self.plc.recieve(LIT101, IDS_ADDR))
 	        message_dict = eval(json.loads(data))
-	        lit101 = float(message_dict['Variable'])
-		print "received from IDS!", lit101
+	        self.lit101 = float(message_dict['Variable'])
+		print "received from IDS!", self.lit101
 
-            
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
 
-	        if lit101 >= LIT_101_M['HH'] :
+	        if self.lit101 >= LIT_101_M['HH'] :
 	            #self.plc.send(MV101, 0, IP['plc101'])
                	    mv = 0
 
-	        elif lit101 >= LIT_101_M['H']:
+	        elif self.lit101 >= LIT_101_M['H']:
 	            #self.plc.send(MV101, 0, IP['plc101'])
                     mv = 0
 
-	        elif lit101 <= LIT_101_M['L']:
+	        elif self.lit101 <= LIT_101_M['L']:
 	            #self.plc.send(MV101, 1, IP['plc101'])
                     mv = 1
 
-	        elif lit101 <= LIT_101_M['LL']:
-	            #self.plc.send(MV101, 1, IP['plc101'])                
+	        elif self.lit101 <= LIT_101_M['LL']:
+	            #self.plc.send(MV101, 1, IP['plc101'])
                     mv = 1
 
                 self.send_message(IP['mv101'], 9587, mv)
@@ -156,19 +153,17 @@ class IdsSocket(Thread):
             return
         if(ready_to_write > 0):
             sock.send(message)
-        sock.close()        
+        sock.close()
 
 class PLC101(PLC):
 
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
-	
-	# Controller Initial Conditions	
+	# Controller Initial Conditions
 	self.xhat = xhat = np.array([[Y10],[Y20],[Y30]])
 	self.z =  np.array([[0],[0]])
 	current_inc_i = np.array([[0],[0]])
-	
-        time.sleep(sleep)        
+        time.sleep(sleep)
 
     def main_loop(self):
         """plc1 main loop.
@@ -219,17 +214,19 @@ class PLC101(PLC):
 
 	    	self.lit101 = float(self.receive(LIT101, SENSOR_ADDR))
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
-		print "plc1 lit101", lit101
+		print "plc1 lit101", self.lit101
 
 		#xhat is the vector used for the controller. In the next version, xhat shouldn't be read from sensors, but from luerenberg observer
 		self.lit102 = float(self.get(LIT102))
-		self.xhat= np.array([[lit101],[lit102],[self.lit103]])
+		print "plc1 lit102", self.lit102
+		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		self.z = np.array([[0.0],[0.0]])
 		# Z(k+1) = z(k) + ref(k) - xhat(k)
 
 		self.K1K2 = np.concatenate((K1,K2),axis=1)
-		self.xhatz=np.concatenate((xhat,z), axis=0)
-		self.current_inc_i = np.matmul(-K1K2,xhatz)
+		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
+		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
+
 		if self.current_inc_i[0] > QMAX:
 			self.current_inc_i[0] = QMAX
 
@@ -238,13 +235,19 @@ class PLC101(PLC):
 
 		self.q1 = self.current_inc_i[0]
 		self.q2 = self.current_inc_i[1]
+
+		print "Sending to actuators"
 		self.send(Q101, self.q1, IP['plc101'])
 		self.send(Q102, self.q2, IP['plc101'])
 
-		z[0,0] = z[0,0] + rey_y0 - self.lit101
-		z[1,0] = z[1,0] + rey_y1 - self.lit103
-		
-                #hmi.setLit101(lit101)
+		print "plc1 q101", self.q1
+		print "plc1 q102", self.q2
+
+		#self.z[0,0] = self.z[0,0] + float(ref_y0) - self.lit101
+		#self.z[1,0] = self.z[1,0] + float(ref_y1) - lit103
+
+		print "calculated z"
+
 	    except Exception as e:
                    print e
 		   print "Switching to backup"
