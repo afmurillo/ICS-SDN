@@ -172,7 +172,7 @@ Q101_PROTOCOL = {
 }
 
 Q102_SERVER = {
-	'address': IP['p102'],
+	'address': IP['q102'],
 	'tags': LOOP_1_TAGS
 }
 

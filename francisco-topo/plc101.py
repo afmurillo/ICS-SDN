@@ -237,14 +237,15 @@ class PLC101(PLC):
 		self.q2 = self.current_inc_i[1]
 
 		print "Sending to actuators"
-		self.send(Q101, self.q1, IP['plc101'])
-		self.send(Q102, self.q2, IP['plc101'])
+		#This is the problem
+		self.send(Q101, float(self.q1), IP['plc101'])
+		self.send(Q102, float(self.q2), IP['plc101'])
 
 		print "plc1 q101", self.q1
 		print "plc1 q102", self.q2
 
-		#self.z[0,0] = self.z[0,0] + float(ref_y0) - self.lit101
-		#self.z[1,0] = self.z[1,0] + float(ref_y1) - lit103
+		self.z[0,0] = self.z[0,0] + float(ref_y0) - self.lit101
+		self.z[1,0] = self.z[1,0] + float(ref_y1) - lit103
 
 		print "calculated z"
 
