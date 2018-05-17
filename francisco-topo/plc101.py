@@ -214,8 +214,8 @@ class PLC101(PLC):
 		self.q1 = self.current_inc_i[0]
 		self.q2 = self.current_inc_i[1]
 
-        self.send_message(IP['q101'], 7842 ,float(self.q1))
-        self.send_message(IP['q102'], 7842 ,float(self.q1))
+                self.send_message(IP['q101'], 7842 ,float(self.q1))
+                self.send_message(IP['q102'], 7842 ,float(self.q1))
 		#self.send(Q101, float(self.q1), IP['plc101'])
 		#self.send(Q102, float(self.q2), IP['plc101'])
 

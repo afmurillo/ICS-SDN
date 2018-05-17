@@ -38,8 +38,8 @@ class RawWaterTank(Tank):
 		self.L1= 0.4
 		self.L2=0.2
 		self.L3=0.3
-		self.Q1 = mu13*sn*math.sqrt(abs(2*g*(Y10-Y30)));	
-		self.Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(abs(2*g*(Y30-Y20)));
+		self.Q1 = mu13*sn*math.sqrt(abs(2*g*(Y10-Y30)))
+		self.Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(abs(2*g*(Y30-Y20)))
 
 		# Writes values in the database
 		self.set(Q101, self.Q1)
@@ -59,7 +59,7 @@ class RawWaterTank(Tank):
 	def main_loop(self):
 		count = 0
 		logging.debug('starting simulation')
-		t = np.linspace(start=0, stop=1, num=100)	
+		t = np.linspace(start=0, stop=1, num=100)
 
 
 		while(count <= PP_SAMPLES):
@@ -81,7 +81,6 @@ class RawWaterTank(Tank):
 			self.set(LIT101, self.l[0])
 			self.set(LIT102, self.l[1])
 			self.set(LIT103, self.l[2])
-			
 			count += 1
 			time.sleep(PP_PERIOD_SEC)
 

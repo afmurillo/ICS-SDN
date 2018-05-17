@@ -120,3 +120,12 @@
 05-17 01:12:08.850 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 05-17 01:12:08.850 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 05-17 01:12:08.853 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:27:08.747 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:27:08.750 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:33:29.046 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:33:29.049 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:34:13.478 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:34:13.513 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:39:37.471 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:39:37.490 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:39:37.490 MainThread root     WARNING  logrotate_ Rotating log files due to signal
