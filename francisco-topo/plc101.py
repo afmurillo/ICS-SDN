@@ -49,47 +49,6 @@ class Lit301Socket(Thread):
                 client.close()
         	break
 
-
-    def send_message(self, ipaddr, port, message):
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.connect((ipaddr, port))
-
-        msg_dict = dict.fromkeys(['Type', 'Variable'])
-        msg_dict['Type'] = "Report"
-        msg_dict['Variable'] = message
-        message = json.dumps(str(msg_dict))
-
-        try:
-            ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
-        except:
-            print "Socket error"
-            return
-        if(ready_to_write > 0):
-            sock.send(message)
-        sock.close()
-
-class HMISocket(Thread):
-    """ Class that responds to the POLL command from HMI """
-    def __init__(self, plc_object):
-        Thread.__init__(self)
-        self.plc = plc_object
-        self.lit101 = 0.0
-
-    def run(self):
-        print "DEBUG entering socket thread run"
-        self.sock = socket.socket()
-        self.sock.connect((IP['HMI'], int(PORTS['hmi_poll_port'])))
-        data = ''
-        while True:
-            while data=='':
-                data = self.sock.recv(100)
-                time.sleep(1)
-                if data == "POLL":
-                    self.sock.send("LIT101: "+str(self.lit101))
-                data = ''
-    def setLit101(self, val):
-        self.lit101 = val
-
 class IdsSocket(Thread):
     """ Class that receives water level from the water_tank.py  """
 
@@ -156,6 +115,24 @@ class IdsSocket(Thread):
         sock.close()
 
 class PLC101(PLC):
+
+    def send_message(self, ipaddr, port, message):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.connect((ipaddr, port))
+
+        msg_dict = dict.fromkeys(['Type', 'Variable'])
+        msg_dict['Type'] = "Report"
+        msg_dict['Variable'] = message
+        message = json.dumps(str(msg_dict))
+
+        try:
+            ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
+        except:
+            print "Socket error"
+            return
+        if(ready_to_write > 0):
+            sock.send(message)
+        sock.close()
 
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
@@ -237,8 +214,10 @@ class PLC101(PLC):
 		self.q1 = self.current_inc_i[0]
 		self.q2 = self.current_inc_i[1]
 
-		self.send(Q101, float(self.q1), IP['plc101'])
-		self.send(Q102, float(self.q2), IP['plc101'])
+        self.send_message(IP['q101'], 7842 ,float(self.q1))
+        self.send_message(IP['q102'], 7842 ,float(self.q1))
+		#self.send(Q101, float(self.q1), IP['plc101'])
+		#self.send(Q102, float(self.q2), IP['plc101'])
 
 		print "plc1 q101", self.q1
 		print "plc1 q102", self.q2
