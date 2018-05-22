@@ -54,6 +54,9 @@ fran:
 	sleep .5
 	cd francisco-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
+javier:
+	cd javier-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
+
 clean-simulation:
 	sudo pkill  -f -u root "python -m cpppo.server.enip"
 	sudo mn -c
