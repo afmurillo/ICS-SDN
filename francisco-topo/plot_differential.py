@@ -19,4 +19,4 @@ plot(t, x2, 'g', linewidth=lw)
  
 legend((r'$x_1$', r'$x_2$'), prop=FontProperties(size=16))
 title('Tank Levels without Control')
-savefig('francisco_topo.png', dpi=100)
+savefig('solo_tanques.png', dpi=100)
