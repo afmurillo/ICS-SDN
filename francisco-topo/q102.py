@@ -32,7 +32,7 @@ class PSocket(Thread):
                 data = client.recv(4096)                                                # Get data from the client         
             
                 message_dict = eval(json.loads(data))
-                q102 = int(message_dict['Variable'])
+                q102 = float(message_dict['Variable'])
 
                 print "received from PLC101!", q102 
 		self.plc.set(Q102, q102)           

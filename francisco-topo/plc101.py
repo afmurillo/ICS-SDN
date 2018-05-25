@@ -169,8 +169,6 @@ class PLC101(PLC):
         out_file = open(control_file, 'w')
 	in_file = open(input_file, 'r')
 
-	self.z = np.array([[0.0],[0.0]])
-
         while(self.count <= PLC_SAMPLES):
 
             # lit101 [meters]
@@ -223,6 +221,8 @@ class PLC101(PLC):
 
 		self.z[0,0] = self.z[0,0] + float(ref_y0) - self.lit101
 		self.z[1,0] = self.z[1,0] + float(ref_y1) - lit103
+
+		self.count = self.count + 1
 
 	    except Exception as e:
                    print e

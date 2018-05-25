@@ -23,9 +23,9 @@ class RawWaterTank(Tank):
 
 		# System of 3 differential equations of the water tanks
   		f = [
-                Q1 - u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))),
-      		Q2 + u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))  - u20*sn*math.sqrt(abs(2*g*L2)),
-      		u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
+                L1 + Q1 - u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))),
+      		L2 + Q2 + u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))  - u20*sn*math.sqrt(abs(2*g*L2)),
+      		L3 + u13*sn*np.sign(L1-L3)*math.sqrt(abs(2*g*(L1-L3))) - u32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*(L3-L2)))
       		]
 
 	  	return f
@@ -57,8 +57,9 @@ class RawWaterTank(Tank):
 	def main_loop(self):
 		count = 0
 		logging.debug('starting simulation')
-		t = np.linspace(start=0, stop=1, num=100)
-
+		stoptime = 1
+		numpoints = 1000
+		t = [stoptime * float(i) / (numpoints - 1) for i in range(numpoints)]
 
 		while(count <= PP_SAMPLES):
 			self.Q1 = float(self.get(Q101))

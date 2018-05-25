@@ -47,12 +47,18 @@ Y30 = 0.300
 abserr = 1.0e-8
 relerr = 1.0e-6
 
-t = np.linspace(start=0, stop=1, num=100)
+#t = np.linspace(start=0, stop=1, num=100)
+stoptime = 1
+numpoints = 1000
+t = [stoptime * float(i) / (numpoints - 1) for i in range(numpoints)]
+
+
 Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30))
 Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20))
 q = [Q1, Q2]
 l0 = [0.400, 0.200, 0.400]
 wsol = odeint(francisco_model, l0, t, args=(q,),atol=abserr, rtol=relerr)
+
 
 #l=[wsol[-1][0], wsol[-1][1], wsol[-1][2]]
 #print "Valores al final del calculo: ", l
