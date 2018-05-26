@@ -7,16 +7,18 @@ from matplotlib.font_manager import FontProperties
  
 t, x1, xy, x2, = loadtxt('result_differential.dat', unpack=True)
  
+
 figure(1, figsize=(6, 4.5))
- 
+
 xlabel('t')
 grid(True)
 hold(True)
 lw = 1
- 
+
 plot(t, x1, 'b', linewidth=lw)
+plot(t, xy, 'r', linewidth=lw)
 plot(t, x2, 'g', linewidth=lw)
- 
-legend((r'$x_1$', r'$x_2$'), prop=FontProperties(size=16))
+
+legend((r'$L1$', r'$L2$', r'$L3$'), prop=FontProperties(size=16))
 title('Tank Levels without Control')
 savefig('solo_tanques.png', dpi=100)

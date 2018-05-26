@@ -49,71 +49,6 @@ class Lit301Socket(Thread):
                 client.close()
         	break
 
-class IdsSocket(Thread):
-    """ Class that receives water level from the water_tank.py  """
-
-    def __init__(self, plc_object):
-        Thread.__init__(self)
-        self.plc = plc_object
-
-    def run(self):
-        print "DEBUG entering socket thread run"
-        self.sock = socket.socket()     # Create a socket object
-        self.sock.bind((IP['plc101'] , 4234 ))
-        self.sock.listen(5)
-
-        while (self.plc.count <= PLC_SAMPLES):
-            try:
-	        client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client         
-
-		#lit101 = float(self.plc.recieve(LIT101, IDS_ADDR))
-	        message_dict = eval(json.loads(data))
-	        self.lit101 = float(message_dict['Variable'])
-		print "received from IDS!", self.lit101
-
-	        #print 'DEBUG plc1 lit101: %.5f' % lit101
-
-	        if self.lit101 >= LIT_101_M['HH'] :
-	            #self.plc.send(MV101, 0, IP['plc101'])
-               	    mv = 0
-
-	        elif self.lit101 >= LIT_101_M['H']:
-	            #self.plc.send(MV101, 0, IP['plc101'])
-                    mv = 0
-
-	        elif self.lit101 <= LIT_101_M['L']:
-	            #self.plc.send(MV101, 1, IP['plc101'])
-                    mv = 1
-
-	        elif self.lit101 <= LIT_101_M['LL']:
-	            #self.plc.send(MV101, 1, IP['plc101'])
-                    mv = 1
-
-                self.send_message(IP['mv101'], 9587, mv)
-       	    except KeyboardInterrupt:
-	    	print "\nCtrl+C was hitten, stopping server"
-	        client.close()
-		break
-
-    def send_message(self, ipaddr, port, message):
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.connect((ipaddr, port))
-
-        msg_dict = dict.fromkeys(['Type', 'Variable'])
-        msg_dict['Type'] = "Report"
-        msg_dict['Variable'] = message
-        message = json.dumps(str(msg_dict))
-
-        try:
-            ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
-        except:
-            print "Socket error"
-            return
-        if(ready_to_write > 0):
-            sock.send(message)
-        sock.close()
-
 class PLC101(PLC):
 
     def send_message(self, ipaddr, port, message):
@@ -154,8 +89,6 @@ class PLC101(PLC):
         lit301socket = Lit301Socket(self)
         lit301socket.start()
         self.count = 0
-        backup = IdsSocket(self)
-	backup.start()
         #hmi = HMISocket(self)
         #hmi.start()
 

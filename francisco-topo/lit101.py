@@ -5,7 +5,6 @@ import logging
 import time
 
 SENSOR_ADDR = IP['lit101']
-
 LIT101 = ('LIT101', 1)
 
 class Lit101(PLC):
