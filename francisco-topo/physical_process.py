@@ -18,12 +18,12 @@ LIT103 = ('LIT103', 1)
 class RawWaterTank(Tank):
 
 	def plant_model(self, l, t, q):
-  		Q1, Q2 = q
+  		MQ1, MQ2 = q
 		L1, L2, L3 = l
 
 		# System of 3 differential equations of the water tanks
-                f = [(Q1 - mu13*sn*np.sign(abs(L1-L3))*math.sqrt(2*g*abs(L1-L3)))/s,
-                (Q2 + mu32*sn*np.sign(abs(L3-L2))*math.sqrt(abs(2*g*(L3-L2)))  - mu20*sn*math.sqrt(2*g*L2))/s,
+                f = [(MQ1 - mu13*sn*np.sign(L1-L3)*math.sqrt(2*g*abs(L1-L3)))/s,
+                (MQ2 + mu32*sn*np.sign(L3-L2)*math.sqrt(2*g*abs(L3-L2)) - mu20*sn*math.sqrt(2*g*L2))/s,
                 (mu13*sn*np.sign(L1-L3)*math.sqrt(2*g*abs(L1-L3)) - mu32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*abs(L3-L2))))/s
                 ]
 
@@ -35,16 +35,16 @@ class RawWaterTank(Tank):
 		self.Y1= 0.4
 		self.Y2=0.2
 		self.Y3=0.3
-		self.Q1 = mu13*sn*math.sqrt(abs(2*g*(Y10-Y30)))
-		self.Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(abs(2*g*(Y30-Y20)))
-
-		# Writes values in the database
-		self.set(Q101, self.Q1)
-		self.set(Q102, self.Q2)
 
 		self.set(LIT101, self.Y1)
 		self.set(LIT102, self.Y2)
 		self.set(LIT103, self.Y3)
+
+		self.Q1 = Q1
+		self.Q2 = Q2
+
+		self.set(Q101, self.Q1)
+		self.set(Q102, self.Q2)
 
 		# These vectors are used by the model
 		self.q = [self.Q1, self.Q2]
@@ -86,7 +86,7 @@ class RawWaterTank(Tank):
 			self.set(LIT102, self.l[1])
 			self.set(LIT103, self.l[2])
 			count += 1
-			time.sleep(PP_PERIOD_SEC)
+			time.sleep(PLC_PERIOD_SEC)
 
 if __name__ == '__main__':
 	rwt = RawWaterTank(

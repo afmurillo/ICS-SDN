@@ -16,14 +16,14 @@ Q101 = ('Q101', 1)
 class PSocket(Thread):
     """ Class that receives water level from the water_tank.py  """
 
-    def __init__(self, plc_object):        
+    def __init__(self, plc_object):
         Thread.__init__(self)
         self.plc = plc_object
-	self.q101 = Q1
+	self.q101 = 0
 
     def run(self):
         print "DEBUG entering socket thread run"
-        self.sock = socket.socket()     # Create a socket object    
+        self.sock = socket.socket()     # Create a socket object
         self.sock.bind((IP['q101'] , 7842 ))
         self.sock.listen(5)
 
@@ -33,7 +33,7 @@ class PSocket(Thread):
                 data = client.recv(4096)                                                # Get data from the client
 
                 message_dict = eval(json.loads(data))
-                self.q101 = float(message_dict['Variable']) + self.q101
+                self.q101 = float(message_dict['Variable'])
 
                 print "received from PLC101!", self.q101
 		self.plc.set(Q101, self.q101)

@@ -19,7 +19,7 @@ class PSocket(Thread):
     def __init__(self, plc_object):        
         Thread.__init__(self)
         self.plc = plc_object
-	self.q102 = Q2
+	self.q102 = 0
 
     def run(self):
         print "DEBUG entering socket thread run"
@@ -33,7 +33,7 @@ class PSocket(Thread):
                 data = client.recv(4096)                                                # Get data from the client         
 
                 message_dict = eval(json.loads(data))
-                self.q102 = self.q102 + float(message_dict['Variable'])
+                self.q102 = float(message_dict['Variable'])
 
                 print "received from PLC101!", self.q102 
 		self.plc.set(Q102, self.q102)           

@@ -40,15 +40,14 @@ class Lit301Socket(Thread):
         while (self.plc.count <= PLC_SAMPLES):
             try:
             	client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client         
-            
+		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data))
 	        lit301 = float(message_dict['Variable'])
 
 	        print "received from LIT301!", lit301
-            
+
 	        if lit301 >= LIT_301_M['HH'] :
-                    #self.plc.send(P101, 0, IP['plc101'])                  
+                    #self.plc.send(P101, 0, IP['plc101'])
 	            self.send_message(IP['p101'], 7842 , 0)
 
 
