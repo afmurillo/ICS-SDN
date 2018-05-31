@@ -19,6 +19,7 @@ class PSocket(Thread):
     def __init__(self, plc_object):        
         Thread.__init__(self)
         self.plc = plc_object
+	self.q102 = Q2
 
     def run(self):
         print "DEBUG entering socket thread run"
@@ -30,12 +31,12 @@ class PSocket(Thread):
             try:
                 client, addr = self.sock.accept()
                 data = client.recv(4096)                                                # Get data from the client         
-            
-                message_dict = eval(json.loads(data))
-                q102 = float(message_dict['Variable'])
 
-                print "received from PLC101!", q102 
-		self.plc.set(Q102, q102)           
+                message_dict = eval(json.loads(data))
+                self.q102 = self.q102 + float(message_dict['Variable'])
+
+                print "received from PLC101!", self.q102 
+		self.plc.set(Q102, self.q102)           
 
             except KeyboardInterrupt:
                 print "\nCtrl+C was hitten, stopping server"

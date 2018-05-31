@@ -11,7 +11,7 @@ import socket
 import time
 
 Q101 = ('Q101', 1)
-Q102 = ('Q101', 1)
+Q102 = ('Q102', 1)
 
 LIT101 = ('LIT101', 1)
 LIT102 = ('LIT102', 1)
@@ -72,9 +72,8 @@ class PLC101(PLC):
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
 	# Controller Initial Conditions
-	self.xhat = xhat = np.array([[Y10],[Y20],[Y30]])
 	self.z =  np.array([[0],[0]])
-	current_inc_i = np.array([[0],[0]])
+	self.current_inc_i = np.array([[0],[0]])
         time.sleep(sleep)
 
     def main_loop(self):
@@ -102,12 +101,11 @@ class PLC101(PLC):
         out_file = open(control_file, 'w')
 	in_file = open(input_file, 'r')
 
+        ref_y0 = Y10
+        ref_y1 = Y20
+
         while(self.count <= PLC_SAMPLES):
-
-            # lit101 [meters]
 	    try:
-
-
 		if self.count <= 200:
 			ref_y0 = 0.4
 		if self.count > 200 and self.count <= 1500:
@@ -130,12 +128,14 @@ class PLC101(PLC):
 		self.lit102 = float(self.get(LIT102))
 		print "plc1 lit102", self.lit102
 		print "plc1 lit103", lit103
-		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
-		# Z(k+1) = z(k) + ref(k) - xhat(k)
 
+		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		self.K1K2 = np.concatenate((K1,K2),axis=1)
+
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
 		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
+		#print "non cumulative control action: ", np.matmul(-self.K1K2,self.xhatz)
+		#self.current_inc_i = self.current_inc_i + np.matmul(-self.K1K2,self.xhatz)
 
 		if self.current_inc_i[0] > QMAX:
 			self.current_inc_i[0] = QMAX
@@ -147,13 +147,14 @@ class PLC101(PLC):
 		self.q2 = self.current_inc_i[1]
 
                 self.send_message(IP['q101'], 7842 ,float(self.q1))
-                self.send_message(IP['q102'], 7842 ,float(self.q1))
+                self.send_message(IP['q102'], 7842 ,float(self.q2))
 
 		print "plc1 q101", self.q1
 		print "plc1 q102", self.q2
 
+		# Z(k+1) = z(k) + ref(k) - xhat(k)
 		self.z[0,0] = self.z[0,0] + float(ref_y0) - self.lit101
-		self.z[1,0] = self.z[1,0] + float(ref_y1) - lit103
+		self.z[1,0] = self.z[1,0] + float(ref_y1) - self.lit102
 
 		self.count = self.count + 1
 

@@ -46,13 +46,15 @@ U20 = 0.375e-004
 #Y2 = 0.2 (t=1,400) 0.225 (t=401, 1700), 0.2 (t=1701, 2000)
 
 
-Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30));
+#Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30)) + 0.4e-5;
+Q1 = mu13*sn*math.sqrt(2*g*(Y10-Y30))
 #%Q1o means Q1_operation = 3.5018e-5
-Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20));
+#Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20)) + 0.8e-5;
+Q2 = mu20*sn*math.sqrt(2*g*Y20)-mu32*sn*math.sqrt(2*g*(Y30-Y20))
 #%Q2o means Q2_operation = 3.1838e-5
 
 # Tracking Controller Parameters
-cte = 0.0001
+cte = 1e-4
 K1 = np.array([[cte*21.6, cte*3, cte*-5],[cte*2.9, cte*19, cte*-4]])
 K2 = np.array([[cte*-0.95, cte*-0.32], [cte*-0.30, cte*-0.91]])
 
