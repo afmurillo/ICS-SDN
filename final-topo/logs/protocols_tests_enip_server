@@ -8887,3 +8887,82 @@
 06-13 19:28:27.477 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 06-13 19:28:27.484 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 06-13 19:28:27.489 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.605 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.606 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.614 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.650 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.655 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.657 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.672 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.672 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:07:12.672 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.646 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.667 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.667 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.693 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.693 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.693 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.694 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.721 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:12:49.722 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:31:36.656 Thread-130 enip.srv ERROR    enip_srv_t EtherNet/IP error at 0 total bytes:
+''
+-^ (byte 0)
+
+Failed with exception:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/cpppo/server/enip/main.py", line 772, in enip_srv_tcp
+    msg	= network.recv( conn, timeout=wait )
+  File "/usr/local/lib/python2.7/dist-packages/cpppo/server/network.py", line 58, in wrapper
+    r,_,_	= select.select( [args[0].fileno()], [], [], rem )
+ValueError: filedescriptor out of range in select()
+
+
+07-18 19:36:19.058 Thread-130 network  WARNING  run        enip_srv server failure: filedescriptor out of range in select()
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/cpppo/server/network.py", line 151, in run
+    super( server_thread, self ).run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/cpppo/server/enip/main.py", line 631, in enip_srv
+    enip_srv_tcp( conn, addr, name=name, enip_process=enip_process, delay=delay, **kwds )
+  File "/usr/local/lib/python2.7/dist-packages/cpppo/server/enip/main.py", line 772, in enip_srv_tcp
+    msg	= network.recv( conn, timeout=wait )
+  File "/usr/local/lib/python2.7/dist-packages/cpppo/server/network.py", line 58, in wrapper
+    r,_,_	= select.select( [args[0].fileno()], [], [], rem )
+ValueError: filedescriptor out of range in select()
+
+07-18 19:36:20.659 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:36:20.662 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:36:20.664 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:36:20.665 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:36:20.667 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:36:20.670 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:36:20.670 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:36:20.714 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 19:36:20.725 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.493 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.506 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.539 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.549 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.559 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.559 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.603 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.604 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 20:34:16.604 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:28.955 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:28.958 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:28.975 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:28.985 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:28.988 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:28.991 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:28.996 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:29.005 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:22:29.033 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:36:30.876 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:36:30.877 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:36:30.877 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:36:30.876 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:36:30.880 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:36:30.883 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+07-18 21:36:30.890 MainThread root     WARNING  logrotate_ Rotating log files due to signal

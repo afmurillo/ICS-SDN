@@ -5,6 +5,7 @@ PLC 1
 from minicps.devices import PLC
 from threading import Thread
 from utils import *
+from random import *
 
 import json
 import select
@@ -39,15 +40,14 @@ class Lit301Socket(Thread):
         while (self.plc.count <= PLC_SAMPLES):
             try:
             	client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client         
-            
+		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data))
 	        lit301 = float(message_dict['Variable'])
 
 	        print "received from LIT301!", lit301
-            
+
 	        if lit301 >= LIT_301_M['HH'] :
-                    #self.plc.send(P101, 0, IP['plc101'])                  
+                    #self.plc.send(P101, 0, IP['plc101'])
 	            self.send_message(IP['p101'], 7842 , 0)
 
 
@@ -182,11 +182,10 @@ class PLC101(PLC):
 
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
-        time.sleep(sleep)
+        time.sleep(sleep)        
 
     def main_loop(self):
         """plc1 main loop.
-
             - reads sensors value
             - drives actuators according to the control strategy
             - updates its enip server
@@ -199,8 +198,19 @@ class PLC101(PLC):
         self.count = 0
         backup = IdsSocket(self)
 	backup.start()
-        hmi = HMISocket(self)
-        hmi.start()
+        #hmi = HMISocket(self)
+        #hmi.start()
+
+        # Only for random control experiment!
+        random_control_experiment = 0
+        random_control_active = 0
+        random_counter = 0
+        control_file = '/home/mininet/ICS-SDN/paper-topo/control_actions.txt'
+        input_file = "/home/mininet/ICS-SDN/paper-topo/control_list.txt"
+
+        out_file = open(control_file, 'w')
+	in_file = open(input_file, 'r')
+
         while(self.count <= PLC_SAMPLES):
 
             # lit101 [meters]
@@ -208,20 +218,49 @@ class PLC101(PLC):
 	    	lit101 = float(self.receive(LIT101, SENSOR_ADDR))
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
 		print "plc1 lit101", lit101
+                #hmi.setLit101(lit101)
 
-	        if lit101 >= LIT_101_M['HH'] :
-                   self.send(MV101, 0, IP['plc101'])
 
-                elif lit101 >= LIT_101_M['H']:
-                   self.send(MV101, 0, IP['plc101'])
+                if random_control_experiment == 0:
 
-                elif lit101 <= LIT_101_M['LL']:
-                   self.send(MV101, 1, IP['plc101'])
+    	            if lit101 >= LIT_101_M['HH']:
+                        self.send(MV101, 0, IP['plc101'])
 
-                elif lit101 <= LIT_101_M['L']:
-                   self.send(MV101, 1, IP['plc101'])
+                    elif lit101 >= LIT_101_M['H']:
+                        self.send(MV101, 0, IP['plc101'])
 
-                hmi.setLit101(lit101)
+                    elif lit101 <= LIT_101_M['LL']:
+                        self.send(MV101, 1, IP['plc101'])
+
+                    elif lit101 <= LIT_101_M['L']:
+                        self.send(MV101, 1, IP['plc101'])
+
+
+                elif random_control_experiment == 1:    
+
+                    if lit101 >= 0.6:
+                        random_control_active = 1
+		        "Activating random control"
+
+                    if random_control_active == 1 and random_counter < 10:                    
+                        random_counter = random_counter + 1
+		        "Keeping last control action"
+
+                    elif random_counter >= 10:
+                        random_counter=0
+		        "Updating control action"		    
+                    if (random() > 0.5):
+                        self.send(MV101, 1, IP['plc101'])
+                        print "Action on MV101: 1"
+                    else:
+                        self.send(MV101, 0, IP['plc101'])
+                        print "Action on MV101: 0"
+
+		elif random_control_experiment ==2:
+			action = in_file.readline().split(':')[1]
+			self.send(MV101, int(action), IP['plc101'])
+			print "Action read on MV101: ", action
+
 	    except Exception as e:
                    print e
 		   print "Switching to backup"
@@ -231,5 +270,3 @@ class PLC101(PLC):
 if __name__ == "__main__":
 
     plc101 = PLC101(name='plc101',state=STATE,protocol=PLC101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
-    #plc1.pre_loop()
-    #plc1.main_loop()

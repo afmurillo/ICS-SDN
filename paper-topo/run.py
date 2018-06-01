@@ -34,15 +34,24 @@ class SimpleCPS(MiniCPS):
 	plc2 = self.net.get('plc201')
 	plc3 = self.net.get('plc301')
 
+        ids101 = self.net.get('ids101')
+        _intf = Intf( 'eth2', node=ids101 )
+        ids101.cmd('ifconfig eth2 192.168.56.101')
 
-	ids = self.net.get('ids101')
-	_intf = Intf( 'eth0', node=ids )
-	ids.cmd('ifconfig eth0 192.168.56.155')
+	ids301 = self.net.get('ids301')
+	ids301.cmd('route add -net 192.168.1.0 netmask 255.255.255.0 dev ids301-eth3')
+
+	_intf = Intf( 'eth3', node=ids301 )
+        ids301.cmd('ifconfig eth3 192.168.56.103')
+
 
 
 	plc1.cmd('route add default gw 192.168.1.254 plc101-eth0  ')
 	plc2.cmd('route add default gw 192.168.2.254 plc201-eth0  ')
 	plc3.cmd('route add default gw 192.168.3.254 plc301-eth0  ')	
+
+	plc1.cmd('route add -net 192.168.3.0 netmask 255.255.255.0 dev plc101-eth2')
+	plc3.cmd('route add -net 192.168.1.0 netmask 255.255.255.0 dev plc301-eth2')
 
         # start devices
         CLI(self.net)
@@ -57,3 +66,4 @@ if __name__ == "__main__":
     net = Mininet(topo=topo, controller = controller)
 
     dynamic_cps = SimpleCPS(name='industry',net=net)
+

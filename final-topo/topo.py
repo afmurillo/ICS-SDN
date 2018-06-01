@@ -49,41 +49,29 @@ class SimpleTopo(Topo):
         self.addLink(plc101, s1)
         self.addLink(ids101, s1)
         self.addLink(sim101, s1)
-        #self.addLink(plc1, sdns)
 
         gateway_2 = 'via ' + '192.168.2.254/24'
 
         fit201 = self.addHost('fit201',ip=IP['fit201'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
         ph201 = self.addHost('ph201',ip=IP['ph201'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
         p201 = self.addHost('p201',ip=IP['p201'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
-        #ids201 = self.addHost('ids201',ip=IP['ids201'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
-        #sim201 = self.addHost('sim201',ip=IP['sim201'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
       
         plc201 = self.addHost('plc201',ip=IP['plc201'] + NETMASK, defaultRoute=gateway_2)
-        #plant201 = self.addHost('plant201')
 
         self.addLink(fit201, s2)
         self.addLink(ph201, s2)
         self.addLink(p201, s2)
-        #self.addLink(ids201, s2)
-        #self.addLink(sim201, s2)
 
 
         self.addLink(plc201, s2)
-        #self.addLink(plc2, sdns)
 
         gateway_3 = 'via ' + '192.168.3.254/24'
 
         lit301 = self.addHost('lit301',ip=IP['lit301'] + NETMASK, defaultRoute=gateway_3)#, defaultRoute="via 192.168.3.10")
         p301 = self.addHost('p301',ip=IP['p301'] + NETMASK, defaultRoute=gateway_3)#, defaultRoute="via 192.168.3.10")
         plc301 = self.addHost('plc301',ip=IP['plc301'] + NETMASK, defaultRoute=gateway_3)
-        #ids301 = self.addHost('ids301',ip=IP['ids301'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
-        #sim301 = self.addHost('sim301',ip=IP['sim301'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
-        #plant301 = self.addHost('plant301')
 
         self.addLink(lit301, s3)        
         self.addLink(p301, s3)                
         self.addLink(plc301, s3)      
-        #self.addLink(ids301, s3)        
-        #self.addLink(sim301, s3)
 

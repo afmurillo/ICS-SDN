@@ -90,6 +90,7 @@ class Ids101(PLC):
 
 	                mv101 = int(self.get(MV101))
    	                p101 = int(self.get(P101))
+
                 	if self.intrusion == False:
 
 			    print "No attack detected"

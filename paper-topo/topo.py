@@ -83,13 +83,16 @@ class SimpleTopo(Topo):
 
         lit301 = self.addHost('lit301',ip=IP['lit301'] + NETMASK, defaultRoute=gateway_3)#, defaultRoute="via 192.168.3.10")
         p301 = self.addHost('p301',ip=IP['p301'] + NETMASK, defaultRoute=gateway_3)#, defaultRoute="via 192.168.3.10")
-        #ids301 = self.addHost('ids301',ip=IP['ids301'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
+        ids301 = self.addHost('ids301',ip=IP['ids301'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
         #sim301 = self.addHost('sim301',ip=IP['sim301'] + NETMASK, defaultRoute=gateway_2)#, defaultRoute="via 192.168.2.10")
         #plant301 = self.addHost('plant301')
+
 
         self.addLink(lit301, s3)        
         self.addLink(p301, s3)                
         #self.addLink(plc301, s3)      
-        #self.addLink(ids301, s3)        
+        self.addLink(ids301, s3)        
         #self.addLink(sim301, s3)
+
+	self.addLink( s4, ids301, intfName2='ids301-eth3', params2={ 'ip' : '192.168.4.20/24' } )
 

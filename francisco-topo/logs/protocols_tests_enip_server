@@ -1,0 +1,237 @@
+02-09 15:45:33.939 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+02-09 15:45:34.140 MainThread network  WARNING  join       enip_srv server TID [ 6790/47256685811456] hanging on None
+02-09 15:46:11.099 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+02-09 15:46:11.299 MainThread network  WARNING  join       enip_srv server TID [ 6823/47629652403968] hanging on None
+02-09 15:48:08.885 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+02-09 15:48:09.086 MainThread network  WARNING  join       enip_srv server TID [ 6912/47114867427072] hanging on None
+02-09 15:52:22.611 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+02-09 15:52:22.812 MainThread network  WARNING  join       enip_srv server TID [ 7051/48002252924672] hanging on None
+02-09 15:53:56.414 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+02-09 15:53:56.615 MainThread network  WARNING  join       enip_srv server TID [ 7083/47047183824640] hanging on None
+02-09 15:54:26.507 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+02-09 15:54:26.707 MainThread network  WARNING  join       enip_srv server TID [ 7109/47390292670208] hanging on None
+02-09 15:55:04.938 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:00:37.053 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:02:25.007 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:03:27.347 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:16:20.172 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:20:12.153 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:20:12.156 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:20:12.161 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:20:12.223 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:21:16.480 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:21:16.494 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:21:16.509 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:24:31.591 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:24:31.593 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:24:31.621 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:28:16.525 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:28:16.535 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:28:16.536 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:29:10.097 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:29:10.168 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+02-09 16:29:10.168 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 16:26:19.635 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 16:26:19.647 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 16:26:19.647 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:12:33.400 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+03-14 21:12:33.619 MainThread network  WARNING  join       enip_srv server TID [12102/47797176071936] hanging on None
+03-14 21:13:43.464 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:13:43.486 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+03-14 21:13:43.539 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-03 17:55:22.687 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-03 17:55:22.691 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-03 17:55:22.703 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-03 17:55:22.713 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-30 21:58:16.900 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-30 21:59:25.455 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+04-30 21:59:25.655 MainThread network  WARNING  join       enip_srv server TID [ 7265/47987592525568] hanging on None
+04-30 21:59:57.018 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+04-30 21:59:57.218 MainThread network  WARNING  join       enip_srv server TID [ 7556/46934722373376] hanging on None
+04-30 22:00:04.264 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-30 22:00:04.274 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-30 22:01:06.658 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-30 22:01:06.668 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+04-30 22:01:06.715 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-08 15:39:30.349 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-08 15:39:30.355 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-08 15:40:22.990 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-08 15:40:23.031 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 20:53:05.066 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 20:53:05.066 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 20:54:07.107 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 20:54:07.152 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 21:02:45.822 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 21:02:45.859 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 21:09:26.979 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 21:09:26.987 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 21:19:49.484 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 21:19:49.516 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 23:35:29.375 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-07 23:35:29.383 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 18:20:06.602 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 18:20:06.615 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 20:49:25.550 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 20:49:25.615 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 23:02:55.380 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 23:02:55.381 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 23:52:51.949 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 23:52:51.982 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 23:53:24.600 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-16 23:53:24.915 MainThread network  WARNING  join       enip_srv server TID [13798/139768842151680] hanging on None
+05-16 23:54:38.321 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 23:54:38.327 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-16 23:55:07.424 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-16 23:55:07.625 MainThread network  WARNING  join       enip_srv server TID [15050/140258427459328] hanging on None
+05-17 00:02:16.269 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:02:16.273 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:03:47.040 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-17 00:03:47.241 MainThread network  WARNING  join       enip_srv server TID [18494/139857849075456] hanging on None
+05-17 00:07:47.445 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:07:47.450 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:08:16.373 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-17 00:08:16.574 MainThread network  WARNING  join       enip_srv server TID [20775/139923888932608] hanging on None
+05-17 00:08:35.332 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:08:35.334 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:21:19.828 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-17 00:21:20.028 MainThread network  WARNING  join       enip_srv server TID [21693/140252323391232] hanging on None
+05-17 00:21:22.157 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:21:22.201 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:45:04.246 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-17 00:45:04.447 MainThread network  WARNING  join       enip_srv server TID [ 2074/139621891327744] hanging on None
+05-17 00:45:49.756 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:45:49.760 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:46:41.742 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:46:41.759 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:46:41.772 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:47:11.374 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:47:11.399 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:47:11.424 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:50:18.274 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:50:18.323 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:50:18.353 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:50:49.962 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-17 00:50:50.162 MainThread network  WARNING  join       enip_srv server TID [ 6069/140147791791872] hanging on None
+05-17 00:51:21.339 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:51:21.342 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:52:31.477 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:52:31.478 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 00:52:31.545 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 01:12:08.850 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 01:12:08.850 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 01:12:08.853 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:27:08.747 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:27:08.750 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:33:29.046 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:33:29.049 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:34:13.478 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:34:13.513 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:39:37.471 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:39:37.490 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 04:39:37.490 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 07:25:47.079 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 07:25:47.111 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 07:25:47.121 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 09:18:04.165 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 09:18:04.226 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-17 09:18:04.249 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:12:08.654 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:12:08.664 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:12:08.727 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:20:57.590 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:20:57.623 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:20:57.690 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:23:25.269 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:23:25.284 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:23:25.374 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:26:53.849 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:26:53.874 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 13:26:53.888 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+                                                                                                                                                                                                                                                                                    05-25 14:00:10.432 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:00:10.439 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:00:10.470 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:02:48.493 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-25 14:02:48.703 MainThread network  WARNING  join       enip_srv server TID [ 3156/140361398937344] hanging on None
+05-25 14:03:06.203 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-25 14:03:06.404 MainThread network  WARNING  join       enip_srv server TID [ 2892/140385346520832] hanging on None
+05-25 14:03:12.393 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-25 14:03:12.594 MainThread network  WARNING  join       enip_srv server TID [ 2933/140619186251520] hanging on None
+05-25 14:03:17.252 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-25 14:03:17.452 MainThread network  WARNING  join       enip_srv server TID [ 3365/139763944916736] hanging on None
+05-25 14:08:30.029 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:09:28.967 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-25 14:09:29.168 MainThread network  WARNING  join       enip_srv server TID [ 5532/140358222542592] hanging on None
+05-25 14:15:14.277 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:15:14.287 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:24:50.617 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:24:50.660 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:24:50.674 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:41:23.582 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:41:23.587 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 14:41:23.622 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 16:56:52.865 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-25 16:56:53.067 MainThread network  WARNING  join       enip_srv server TID [15196/139770142168832] hanging on None
+05-25 16:56:53.786 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-25 16:56:53.986 MainThread network  WARNING  join       enip_srv server TID [15097/140046340892416] hanging on None
+05-25 16:56:54.162 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-25 16:56:54.362 MainThread network  WARNING  join       enip_srv server TID [15070/139636332119808] hanging on None
+05-25 17:15:19.001 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 17:15:19.057 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-25 17:15:19.072 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:02:58.710 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:02:58.718 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:04:22.948 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:04:22.951 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:06:13.376 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:06:13.384 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:10:29.800 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:10:29.821 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:10:29.836 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:14:20.447 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:14:20.481 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:14:20.499 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:18:43.490 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:18:43.495 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:18:43.518 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:21:51.448 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:21:51.455 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:21:51.524 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:34:33.938 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 01:34:34.139 MainThread network  WARNING  join       enip_srv server TID [20719/140314606589696] hanging on None
+05-31 01:34:58.480 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 01:34:58.680 MainThread network  WARNING  join       enip_srv server TID [20576/140659557713664] hanging on None
+05-31 01:35:18.505 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:36:48.742 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 01:36:48.943 MainThread network  WARNING  join       enip_srv server TID [21918/140265862428416] hanging on None
+05-31 01:39:12.893 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:39:12.894 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 01:40:01.590 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 01:40:01.791 MainThread network  WARNING  join       enip_srv server TID [23872/139685074339584] hanging on None
+05-31 02:33:12.786 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 02:33:12.797 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 03:41:23.141 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 03:41:23.341 MainThread network  WARNING  join       enip_srv server TID [14153/139936364832512] hanging on None
+05-31 03:41:30.193 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 03:41:30.255 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 03:43:48.707 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 03:43:48.908 MainThread network  WARNING  join       enip_srv server TID [15106/140232823326464] hanging on None
+05-31 04:01:16.824 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:01:16.825 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:02:48.166 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 04:02:48.367 MainThread network  WARNING  join       enip_srv server TID [22964/140702902744832] hanging on None
+05-31 04:19:24.490 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:19:24.497 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:20:04.210 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 04:20:04.411 MainThread network  WARNING  join       enip_srv server TID [30974/139693899945728] hanging on None
+05-31 04:23:33.440 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:23:33.442 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:24:43.654 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:24:43.659 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:26:59.019 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:26:59.020 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:27:56.955 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:27:56.960 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:28:51.960 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+05-31 04:28:52.160 MainThread network  WARNING  join       enip_srv server TID [ 3493/140067074623232] hanging on None
+05-31 04:30:52.103 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-31 04:30:52.114 MainThread root     WARNING  logrotate_ Rotating log files due to signal

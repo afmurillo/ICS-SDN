@@ -25,18 +25,20 @@ class MVSocket(Thread):
         self.sock = socket.socket()     # Create a socket object    
         self.sock.bind((IP['mv101'] ,9587 ))
         self.sock.listen(5)
+	self.command_time = 0
 
         while True:
             try:
             	client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client         
-            
+		data = client.recv(4096)                                                # Get data from the client                     		
             	message_dict = eval(json.loads(data))
 	        mv101 = int(message_dict['Variable'])
 
 	        print "received from PLC101!", mv101
-		self.plc.set(MV101, mv101)           
-
+		self.plc.set(MV101, mv101)          
+		self.command_time = time.time() - self.command_time
+		print "Command time:", self.command_time
+ 
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
                 client.close()

@@ -30,6 +30,23 @@ paper:
 final:
 	cd final-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
+industry:
+	cd industry-based/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
+
+prog:
+	./controller.sh &
+	sleep .5
+	cd programatic-test/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
+
+fran:
+	./controller.sh &
+	sleep .5
+	cd francisco-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
+
+javier:
+	cd javier-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
+
 clean-simulation:
 	sudo pkill  -f -u root "python -m cpppo.server.enip"
 	sudo mn -c
+	sudo pkill -9 python2.7

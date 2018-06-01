@@ -94,6 +94,11 @@ class DynamicController(object):
         self.controller_socket = ControllerSocket(self)
         self.controller_socket.start()
         self.attack_detected = False
+	self.compromised_sensor = False
+	self.compromised_plc = False 
+        self.start_control_time = 0
+	self.stop_control_time = 0
+	self.control_time = 0
 
     def add_connection_object(self, connection):
 	self.connections.append(connection)
@@ -105,6 +110,7 @@ class DynamicController(object):
     def received_message(self, message):
         """ Handles the message received"""
         print "DEBUG: in recieved_message"
+	self.start_control_time = time.time()
         message_dict = eval(json.loads(message))
         print "Message received: " + str(message_dict)
         if message_dict['Type'] == "Command":
@@ -116,9 +122,12 @@ class DynamicController(object):
         if message['Variable'] == 'Switch_flow':
             #self.switch_flow('lit101','ids101',10,of.OFP_FLOW_PERMANENT, True)
             self.simple_switch_flow()
+	    self.compromised_sensor = True
 
         if message['Variable'] == 'Switch_plc':
-            self.switch_flow('plc1','plc2',10,of.OFP_FLOW_PERMANENT, True)
+            self.simple_switch_flow()
+	    #self.compromised_plc = True
+		
 
     def simple_switch_flow(self):
         # Simple switch just deletes all flow entries, triggering packet_in events.
@@ -128,7 +137,12 @@ class DynamicController(object):
         msg = of.ofp_flow_mod(command=of.OFPFC_DELETE)
         msg.priority = 65535
         for connection in self.connections:
-                connection.send(msg)                
+	    connection.send(msg)                
+
+	self.stop_control_time = time.time()
+	self.control_time = self.stop_control_time - self.start_control_time
+	print "Control Time: ", self.control_time
+
 
     def switch_flow(self, old_host, new_host, idle_timeout, hard_timeout, drop):
 
@@ -172,9 +186,14 @@ class DynamicController(object):
 		nw_src = a_msg.match.nw_src
 		print "Nw src: ", nw_src
 
-	        if (in_port == 4) and (nw_src == "192.168.1.10"):
-		    log.debug("Dropping packets from malicious sensor!")
-	            return
+	        if (in_port == 4) and (nw_src == "192.168.1.10") and (self.compromised_sensor):
+			log.debug("Dropping packets from malicious sensor!")
+		        return
+
+	        #if (in_port == 4) and (nw_src == "192.168.3.30") and (self.compromised_plc):
+                #log.debug("Dropping packets from malicious PLC!")
+                #return
+
 
         def flood(message=None):
             """
@@ -193,7 +212,6 @@ class DynamicController(object):
             log.debug(message)
 	    for connection in self.connections:
             	connection.send(msg)
-            #self.connection.send(msg)
 
 
         def drop(duration=None):
