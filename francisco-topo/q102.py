@@ -36,7 +36,7 @@ class PSocket(Thread):
                 self.q102 = float(message_dict['Variable'])
 
                 print "received from PLC101!", self.q102 
-		self.plc.set(Q102, self.q102)           
+		self.plc.set(Q102, self.q102)
 
             except KeyboardInterrupt:
                 print "\nCtrl+C was hitten, stopping server"

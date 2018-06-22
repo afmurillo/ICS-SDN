@@ -61,7 +61,7 @@ K2 = np.array([[cte*-0.95, cte*-0.32], [cte*-0.30, cte*-0.91]])
 
 TANK_HEIGHT = 1.600
 
-PLC_PERIOD_SEC = 0.4
+PLC_PERIOD_SEC = 1
 PLC_PERIOD_HOURS = PLC_PERIOD_SEC/360.0
 PLC_SAMPLES = 5000
 

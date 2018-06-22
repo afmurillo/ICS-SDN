@@ -20,7 +20,8 @@ LIT103 = ('LIT103', 1)
 SENSOR_ADDR = IP['lit101']
 IDS_ADDR = IP['ids101']
 
-lit103 = Y30
+#lit103 = Y30
+#lit103_prev = Y30
 
 class Lit301Socket(Thread):
     """ Class that receives water level from the water_tank.py  """
@@ -40,7 +41,8 @@ class Lit301Socket(Thread):
             	client, addr = self.sock.accept()
 		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data))
-	        lit103 = float(message_dict['Variable'])
+	        lit103 = float(message_dict['Variable']) - lit103_prev
+		lit103_prev = lit103
 
 	        print "received from LIT103!", lit103
 
@@ -72,8 +74,6 @@ class PLC101(PLC):
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
 	# Controller Initial Conditions
-	self.z =  np.array([[0],[0]])
-	self.current_inc_i = np.array([[0],[0]])
         time.sleep(sleep)
 
     def main_loop(self):
@@ -85,57 +85,81 @@ class PLC101(PLC):
 
         print 'DEBUG: swat-s1 plc1 enters main_loop.'
 
-        lit301socket = Lit301Socket(self)
-        lit301socket.start()
+        #lit301socket = Lit301Socket(self)
+        #lit301socket.start()
         self.count = 0
 
         ref_y0 = Y10
         ref_y1 = Y20
 
-	self.delta_q1 = 0
-	self.delta_q2 = 0
+	self.delta_q1 = 0.0
+	self.delta_q2 = 0.0
 
 	self.q1 = Q1 + self.delta_q1
 	self.q2 = Q2 + self.delta_q2
 
-	self.lit101_error = 0
-	self.lit102_error = 0
+	self.lit101_error = 0.0
+	self.lit102_error = 0.0
+
+	self.lit101 = 0.0
+	self.lit101_prev = Y10
+
+	self.lit102 = 0.0
+	self.lit102_prev = Y20
+
+	lit103 = 0.0
+	lit103_prev = Y30
+
+	self.received_lit101 = 0.0
+	self.received_lit102 = 0.0
+	received_lit103 = 0.0
+
+	self.z =  np.array([[0.0],[0.0]], )
+	self.current_inc_i = np.array([[0.0],[0.0]])
 
         while(self.count <= PLC_SAMPLES):
 	    try:
 
-		if self.count <= 200:
+		if self.count <= 5:
 			ref_y0 = 0.4
-		if self.count > 200 and self.count <= 1500:
-			ref_y0 = 0.4
-		if self.count > 1500:
+		if self.count > 5 and self.count <= 80:
+			ref_y0 = 0.450
+		if self.count > 80:
 			ref_y0 = 0.4
 
-                if self.count <= 400:
+                if self.count <= 10:
                         ref_y1 = 0.2
-                if self.count > 400 and self.count <= 1700:
-                        ref_y1 = 0.2
-                if self.count > 1700:
+                if self.count > 10 and self.count <= 90:
+                        ref_y1 = 0.225
+                if self.count > 90:
                         ref_y1 = 0.2
 
-	    	self.lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-	        #print 'DEBUG plc1 lit101: %.5f' % lit101
-		print "plc1 lit101", self.lit101
+		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+	    	self.lit101 = self.received_lit101 - self.lit101_prev
+		self.lit101_prev = self.received_lit101
+		print "diferential lit101", self.lit101
 
 		#xhat is the vector used for the controller. In the next version, xhat shouldn't be read from sensors, but from luerenberg observer
-		self.lit102 = float(self.get(LIT102))
-		print "plc1 lit102", self.lit102
-		print "plc1 lit103", lit103
+		self.received_lit102 = float(self.get(LIT102))
+		self.lit102 = self.received_lit102 - self.lit102_prev
+		self.lit102_prev = self.received_lit102
+		print "diferential lit102", self.lit102
+
+		received_lit103 = float(self.get(LIT103))
+		lit103 = received_lit103 - lit103_prev
+		lit103_prev = received_lit103
+		print "diferential lit103", lit103
 
 		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
-		self.lit101_error = self.lit101 - ref_y0
-		self.lit102_error = self.lit102 - ref_y1
+		self.lit101_error = self.received_lit101 - ref_y0
+		self.lit102_error = self.received_lit102 - ref_y1
 		print "Error: ", self.lit101_error, " ", self.lit102_error
 
 		# Z(k+1) = z(k) + error(k)
 		self.z[0,0] = self.z[0,0] + self.lit101_error
 		self.z[1,0] = self.z[1,0] + self.lit102_error
 
+		# xhat should be xhat(t) = xhat(t) - xhat(-1)
 		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		self.K1K2 = np.concatenate((K1,K2),axis=1)
 
@@ -151,7 +175,6 @@ class PLC101(PLC):
 		self.q2 = self.q2 + self.delta_q2
 		print "Cumulative inc: ", " ", self.current_inc_i[0], " ", self.current_inc_i[1]
 		print "Sending to actuators: ", " ", self.q1, " ", self.q2
-
 
                 self.send_message(IP['q101'], 7842 ,float(self.q1))
                 self.send_message(IP['q102'], 7842 ,float(self.q2))
