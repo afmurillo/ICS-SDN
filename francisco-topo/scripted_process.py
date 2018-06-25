@@ -9,8 +9,6 @@ import logging
 
 class TankControl():
 	def init(self):
- 		self.Q1 = Q1
-		self.Q2 = Q2
 
 		self.stoptime = 1
 		self.numpoints = 100
@@ -77,41 +75,44 @@ class TankControl():
                         wsol[-1][2] = 1.0
 
 		l=[wsol[-1][0], wsol[-1][1], wsol[-1][2]]
-		print "Result at time", self.count, " ", l
+		print self.count, " ", l
 
 		return l
 
         def change_references(self):
 
-		if self.count <= 5:
+		if self.count <= 200:
 			self.ref_y0 = 0.4
-		if self.count > 5 and self.count <= 80:
+		if self.count > 200 and self.count <= 1500:
 			self.ref_y0 = 0.450
-		if self.count > 80:
+		if self.count > 1500:
 			self.ref_y0 = 0.4
 
-                if self.count <= 10:
+                if self.count <= 400:
                         self.ref_y1 = 0.2
-                if self.count > 10 and self.count <= 90:
+                if self.count > 400 and self.count <= 1700:
                   	self.ref_y1 = 0.225
-                if self.count > 90:
+                if self.count > 1700:
               	        self.ref_y1 = 0.2
 
         def simulate_plc(self):
 
-   	        self.diff_lit101 = self.lit101 - self.lit101_prev
+   	        #self.diff_lit101 = self.lit101 - self.lit101_prev
+   	        self.diff_lit101 = self.lit101 - Y10
 		self.lit101_prev = self.lit101
 
-		self.diff_lit102 = self.lit102 - self.lit102_prev
+		#self.diff_lit102 = self.lit102 - self.lit102_prev
+		self.diff_lit102 = self.lit102 - Y20
 		self.lit102_prev = self.lit102
 
-		self.diff_lit103 = self.lit103 - self.lit103_prev
+		#self.diff_lit103 = self.lit103 - self.lit103_prev
+		self.diff_lit103 = self.lit103 - Y30
 		self.lit103_prev = self.lit103
 
 		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
-		self.lit101_error = self.lit101 - self.ref_y0
-		self.lit102_error = self.lit102 - self.ref_y1
-		print "Error: ", self.lit101_error, " ", self.lit102_error
+		self.lit101_error = self.ref_y0 - self.lit101
+		self.lit102_error = self.ref_y1 - self.lit102
+		#print "Error: ", self.lit101_error, " ", self.lit102_error
 
 		# Z(k+1) = z(k) + error(k)
 		self.z[0,0] = self.z[0,0] + self.lit101_error
@@ -120,11 +121,11 @@ class TankControl():
 		# xhat should be xhat(t) = xhat(t) - xhat(-1)
 		self.xhat= np.array([[self.diff_lit101],[self.diff_lit102],[self.diff_lit103]])
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
-		print "xhatz: ", self.xhatz
+		#print "xhatz: ", self.xhatz
 
 		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
 
-		print "Cumulative inc: ", " ", self.current_inc_i[0], " ", self.current_inc_i[1]	
+		#print "Cumulative inc: ", " ", self.current_inc_i[0], " ", self.current_inc_i[1]
 		return self.current_inc_i
 
 
@@ -151,13 +152,19 @@ class TankControl():
 			self.delta_q1 = u[0]
 			self.delta_q2 = u[1]
 
-			self.q1 = self.q1 + self.delta_q1
-			self.q2 = self.q2 + self.delta_q2
-			print "Sending to actuators: ", " ", self.q1, " ", self.q2
+			#self.q1 = self.q1 + self.delta_q1
+			#self.q2 = self.q2 + self.delta_q2
+
+			self.q1 = Q1 + self.delta_q1
+			self.q2 = Q2 + self.delta_q2
+
+			#print "Sending to actuators: ", " ", self.q1, " ", self.q2
 
 			self.count += 1
+			if (self.count >= 2000):
+				break
 
-			print "----"
+			#print "----"
 			time.sleep(self.script_time)
 
 if __name__ == '__main__':
