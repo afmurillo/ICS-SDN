@@ -5,7 +5,7 @@ from pylab import figure, plot, xlabel, grid, hold, legend, title, savefig
 from matplotlib.font_manager import FontProperties
  
  
-t, x1, xy, x2, = loadtxt('escript.log', unpack=True)
+t, x1, xy, x2, = loadtxt('results_control.txt', unpack=True)
  
 
 figure(1, figsize=(6, 4.5))

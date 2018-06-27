@@ -47,22 +47,20 @@ class RawWaterTank(Tank):
 		self.set(Q102, self.Q2)
 
 		# These vectors are used by the model
-		self.q = [self.Q1, self.Q2]
 		self.l = [self.Y1, self.Y2, self.Y3]
-
 		self.abserr = 1.0e-8
 		self.relerr = 1.0e-6
 
 	def main_loop(self):
 		count = 0
-		logging.debug('starting simulation')
+		#logging.debug('starting simulation')
 		#logging.debug('Initial values: L1: ', self.l[0], ' L2: ', self.l[1], ' L3: ', self.l[2])
 		stoptime = 1
 		numpoints = 100
 		t = [stoptime * float(i) / (numpoints - 1) for i in range(numpoints)]
 
 		while(count <= PP_SAMPLES):
-			print "Result at time", count, " ", self.l
+			print count, " ", self.l
 			self.Q1 = float(self.get(Q101))
 			self.Q2 = float(self.get(Q102))
 			self.q = [self.Q1, self.Q2]
