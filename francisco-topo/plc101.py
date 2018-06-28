@@ -73,18 +73,18 @@ class PLC101(PLC):
 
     def change_references(self):
 
-            if self.count <= 200:
+            if self.count <= 50:
                     self.ref_y0 = 0.4
-            if self.count > 200 and self.count <= 1500:
+            if self.count > 50 and self.count <= 400:
                     self.ref_y0 = 0.450
-            if self.count > 1500:
+            if self.count > 400:
                     self.ref_y0 = 0.4
 
-            if self.count <= 400:
+            if self.count <= 100:
                     self.ref_y1 = 0.2
-            if self.count > 400 and self.count <= 1700:
+            if self.count > 100 and self.count <= 450:
                     self.ref_y1 = 0.225
-            if self.count > 1700:
+            if self.count > 450:
                     self.ref_y1 = 0.2
 
 
@@ -120,13 +120,12 @@ class PLC101(PLC):
 
         print 'DEBUG: swat-s1 plc1 enters main_loop.'
 
-        while(self.count <= 2000):
+        while(self.count <= 500):
 	    try:
 
 		self.change_references()
 		print "Count: ", self.count, "ref_y0: ", self.ref_y0
 		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-		self.received_lit101 = float(self.get(LIT101))
 	    	self.lit101 = self.received_lit101 - Y10
 
 		#xhat is the vector used for the controller. In the next version, xhat shouldn't be read from sensors, but from luerenberg observer
