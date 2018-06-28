@@ -31,7 +31,7 @@ class Lit301Socket(Thread):
         self.plc = plc_object
 
     def run(self):
-        print "DEBUG entering socket thread run"
+        #print "DEBUG entering socket thread run"
         self.sock = socket.socket()     # Create a socket object
         self.sock.bind((IP['plc101'] , 8754 ))
         self.sock.listen(5)
@@ -44,7 +44,7 @@ class Lit301Socket(Thread):
 	        lit103 = float(message_dict['Variable']) - lit103_prev
 		lit103_prev = lit103
 
-	        print "received from LIT103!", lit103
+	        #print "received from LIT103!", lit103
 
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
@@ -139,7 +139,7 @@ class PLC101(PLC):
 		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
 		self.lit101_error = self.ref_y0 - self.received_lit101
 		self.lit102_error = self.ref_y1 - self.received_lit102
-		print "Error: ", self.lit101_error, " ", self.lit102_error
+		#print "Error: ", self.lit101_error, " ", self.lit102_error
 
 		# Z(k+1) = z(k) + error(k)
 		self.z[0,0] = self.z[0,0] + self.lit101_error
@@ -148,14 +148,14 @@ class PLC101(PLC):
 		# xhat should be xhat(t) = xhat(t) - xhat(-1)
 		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
-		print "xhatz: ", self.xhatz
+		#print "xhatz: ", self.xhatz
 
 		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
 
 		self.q1 = Q1 + self.current_inc_i[0]
 		self.q2 = Q2 + self.current_inc_i[1]
 		#print "Cumulative inc: ", " ", self.current_inc_i[0], " ", self.current_inc_i[1]
-		print "Sending to actuators: ", " ", self.q1, " ", self.q2
+		#print "Sending to actuators: ", " ", self.q1, " ", self.q2
 
 		#self.set(Q101, float(self.q1))
 		#self.set(Q102, float(self.q2))

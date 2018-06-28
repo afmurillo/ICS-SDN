@@ -3,9 +3,10 @@
 from numpy import loadtxt
 from pylab import figure, plot, xlabel, grid, hold, legend, title, savefig
 from matplotlib.font_manager import FontProperties
+import sys
  
  
-t, x1, xy, x2, = loadtxt('results_control.txt', unpack=True)
+t, x1, xy, x2, = loadtxt(sys.argv[1] , unpack=True)
  
 
 figure(1, figsize=(6, 4.5))
@@ -21,4 +22,4 @@ plot(t, x2, 'g', linewidth=lw)
 
 legend((r'$L101$', r'$L102$', r'$L103$'), prop=FontProperties(size=16))
 title('Tank Levels with Control')
-savefig('scripted_control.png', dpi=100)
+savefig(sys.argv[2], dpi=100)
