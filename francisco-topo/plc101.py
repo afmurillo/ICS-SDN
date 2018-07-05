@@ -75,16 +75,16 @@ class PLC101(PLC):
 
             if self.count <= 50:
                     self.ref_y0 = 0.4
-            if self.count > 50 and self.count <= 400:
+            if self.count > 50 and self.count <= 150:
                     self.ref_y0 = 0.450
-            if self.count > 400:
+            if self.count > 150:
                     self.ref_y0 = 0.4
 
-            if self.count <= 100:
+            if self.count <= 70:
                     self.ref_y1 = 0.2
-            if self.count > 100 and self.count <= 450:
+            if self.count > 70 and self.count <= 200:
                     self.ref_y1 = 0.225
-            if self.count > 450:
+            if self.count > 200:
                     self.ref_y1 = 0.2
 
 
@@ -120,7 +120,7 @@ class PLC101(PLC):
 
         print 'DEBUG: swat-s1 plc1 enters main_loop.'
 
-        while(self.count <= 500):
+        while(self.count <= PLC_SAMPLES):
 	    try:
 
 		self.change_references()

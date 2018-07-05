@@ -16,7 +16,7 @@ class BadLit101(PLC):
 		self.diff_attack_value = -0.02
 		self.attack_value = 0.35
 		self.bad_data = 0.0
-		self.attack_time_begin = 200
+		self.attack_time_begin = 100
 		self.attack_time_end = 300
                 self.set(LIT101, Y10)
                 self.set(LIT102, Y20)
