@@ -128,14 +128,17 @@ class PLC101(PLC):
 		self.change_references()
 		print "Count: ", self.count, "ref_y0: ", self.ref_y0
 		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-	    	self.lit101 = self.received_lit101 - Y10
-
-		#xhat is the vector used for the controller. In the next version, xhat shouldn't be read from sensors, but from luerenberg observer
 		self.received_lit102 = float(self.get(LIT102))
-		self.lit102 = self.received_lit102 - Y20
-
 		received_lit103 = float(self.get(LIT103))
-		lit103 = received_lit103 - Y30
+
+                self.ya[0,0]=self.received_lit101
+                self.ya[1,0]=self.received_lit102
+
+                self.xhat = np.matmul(Aobsv-np.matmul(np.matmul(Gobsv,Cobsv),Aobsv),self.xhat) + np.matmul(Bobsv-np.matmul(np.matmul(Gobsv,Cobsv),Bobsv),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
+
+	    	self.lit101 = self.xhat[0]
+		self.lit102 = self.xhat[1]
+		lit103 = self.xhat[2]
 
 		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
 		self.lit101_error = self.ref_y0 - self.received_lit101
@@ -146,13 +149,8 @@ class PLC101(PLC):
 		self.z[0,0] = self.z[0,0] + self.lit101_error
 		self.z[1,0] = self.z[1,0] + self.lit102_error
 
-                self.ya[0,0]=self.lit101
-                self.ya[1,0]=self.lit102
-		#Xhat with attack
-                self.xhat_2 = np.matmul(Aobsv-np.matmul(np.matmul(Gobsv,Cobsv),Aobsv),self.xhat_2) + np.matmul(Bobsv-np.matmul(np.matmul(Gobsv,Cobsv),Bobsv),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
-
                 # Xhat used without attack
-		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
+		#self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		#print "Calculado xhat"
 		print self.count, self.xhat[0], self.xhat[1], self.xhat[2]
 		#print self.z

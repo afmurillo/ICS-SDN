@@ -73,19 +73,20 @@ class PLC101(PLC):
 
     def change_references(self):
 
-            if self.count <= 50:
+            if self.count <= 200:
                     self.ref_y0 = 0.4
-            if self.count > 50 and self.count <= 150:
+            if self.count > 200 and self.count <= 1500:
                     self.ref_y0 = 0.450
-            if self.count > 150:
+            if self.count > 1500:
                     self.ref_y0 = 0.4
 
-            if self.count <= 70:
+            if self.count <= 400:
                     self.ref_y1 = 0.2
-            if self.count > 70 and self.count <= 200:
+            if self.count > 400 and self.count <= 1700:
                     self.ref_y1 = 0.225
-            if self.count > 200:
+            if self.count > 1700:
                     self.ref_y1 = 0.2
+
 
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
@@ -106,12 +107,9 @@ class PLC101(PLC):
 	self.received_lit102 = 0.0
 	received_lit103 = 0.0
 
-	self.z =  np.array([[0.0],[0.0]])
-        self.xhat =  np.array([[0.0],[0.0],[0.0]])
-        self.xhat_2 =  np.array([[0.0],[0.0],[0.0]])
+	self.z =  np.array([[0.0],[0.0]], )
+	self.current_inc_i = np.array([[0.0],[0.0]])
 	self.K1K2 = np.concatenate((K1,K2),axis=1)
-	self.prev_inc_i = np.array([[0.0],[0.0]])
-        self.ya=np.array([[0.0],[0.0]])
 
     def main_loop(self):
         """plc1 main loop.
@@ -122,12 +120,13 @@ class PLC101(PLC):
 
         print 'DEBUG: swat-s1 plc1 enters main_loop.'
 
-        while(self.count <= PLC_SAMPLES):
+        while(self.count <= 2000):
 	    try:
 
 		self.change_references()
 		print "Count: ", self.count, "ref_y0: ", self.ref_y0
 		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+		self.received_lit101 = float(self.get(LIT101))
 	    	self.lit101 = self.received_lit101 - Y10
 
 		#xhat is the vector used for the controller. In the next version, xhat shouldn't be read from sensors, but from luerenberg observer
@@ -146,23 +145,12 @@ class PLC101(PLC):
 		self.z[0,0] = self.z[0,0] + self.lit101_error
 		self.z[1,0] = self.z[1,0] + self.lit102_error
 
-                self.ya[0,0]=self.lit101
-                self.ya[1,0]=self.lit102
-		#Xhat with attack
-                self.xhat_2 = np.matmul(Aobsv-np.matmul(np.matmul(Gobsv,Cobsv),Aobsv),self.xhat_2) + np.matmul(Bobsv-np.matmul(np.matmul(Gobsv,Cobsv),Bobsv),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
-
-                # Xhat used without attack
+		# xhat should be xhat(t) = xhat(t) - xhat(-1)
 		self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
-		#print "Calculado xhat"
-		print self.count, self.xhat[0], self.xhat[1], self.xhat[2]
-		#print self.z
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
 		#print "xhatz: ", self.xhatz
 
-		#print "Concatenado"
-
 		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
-                self.prev_inc_i = self.current_inc_i
 
 		self.q1 = Q1 + self.current_inc_i[0]
 		self.q2 = Q2 + self.current_inc_i[1]
@@ -176,8 +164,6 @@ class PLC101(PLC):
 
 		#print "plc1 q101", self.q1
 		#print "plc1 q102", self.q2
-
-
 
 		self.count += 1
 		time.sleep(PLC_PERIOD_SEC)
