@@ -87,6 +87,28 @@ class PLC101(PLC):
             if self.count > 200:
                     self.ref_y1 = 0.2
 
+    def saturar_xhat(self, valores):
+
+	for i in range(len(valores)):
+	    if valores[i] > self.xmax[i]:
+		valores[i] = self.xmax[i]
+
+	    if  valores[i] < self.xmin[i]:
+		valores[i] = self.xmin[i]
+
+	return valores
+
+    def saturar_inc(self, valores):
+        for i in range(len(valores)):
+            if valores[i] > self.xmax[i]:
+                valores[i] = self.xmax[i]
+
+            if  valores[i] < self.xmin[i]:
+                valores[i] = self.xmin[i]
+
+        return valores
+
+
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
 	# Controller Initial Conditions
@@ -108,10 +130,15 @@ class PLC101(PLC):
 
 	self.z =  np.array([[0.0],[0.0]])
         self.xhat =  np.array([[0.0],[0.0],[0.0]])
-        self.xhat_2 =  np.array([[0.0],[0.0],[0.0]])
 	self.K1K2 = np.concatenate((K1,K2),axis=1)
 	self.prev_inc_i = np.array([[0.0],[0.0]])
         self.ya=np.array([[0.0],[0.0]])
+
+	self.xmin = [-0.4, -0.2, -0.3]
+	self.xmax = [0.22, 0.42, 0.32]
+
+	self.umin = [-4e-5, -4e-5]
+	self.umax = [5e-5, 5e-5]
 
     def main_loop(self):
         """plc1 main loop.
@@ -126,19 +153,21 @@ class PLC101(PLC):
 	    try:
 
 		self.change_references()
-		print "Count: ", self.count, "ref_y0: ", self.ref_y0
 		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-		self.received_lit102 = float(self.get(LIT102))
-		received_lit103 = float(self.get(LIT103))
+                self.lit101 = self.received_lit101 - Y10
 
-                self.ya[0,0]=self.received_lit101
-                self.ya[1,0]=self.received_lit102
+		self.received_lit102 = float(self.get(LIT102))
+		self.lit102 = self.received_lit102 - Y20
+
+		received_lit103 = float(self.get(LIT103))
+		lit103 = received_lit103 - Y30
+
+                self.ya[0,0]=self.lit101
+                self.ya[1,0]=self.lit102
 
                 self.xhat = np.matmul(Aobsv-np.matmul(np.matmul(Gobsv,Cobsv),Aobsv),self.xhat) + np.matmul(Bobsv-np.matmul(np.matmul(Gobsv,Cobsv),Bobsv),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
+		self.xhat=self.saturar_xhat(self.xhat)
 
-	    	self.lit101 = self.xhat[0]
-		self.lit102 = self.xhat[1]
-		lit103 = self.xhat[2]
 
 		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
 		self.lit101_error = self.ref_y0 - self.received_lit101
@@ -160,6 +189,8 @@ class PLC101(PLC):
 		#print "Concatenado"
 
 		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
+		self.current_inc_i = self.saturar_inc(self.current_inc_i)
+
                 self.prev_inc_i = self.current_inc_i
 
 		self.q1 = Q1 + self.current_inc_i[0]
