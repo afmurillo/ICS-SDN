@@ -165,7 +165,15 @@ class PLC101(PLC):
                 self.ya[0,0]=self.lit101
                 self.ya[1,0]=self.lit102
 
-                self.xhat = np.matmul(Aobsv-np.matmul(np.matmul(Gobsv,Cobsv),Aobsv),self.xhat) + np.matmul(Bobsv-np.matmul(np.matmul(Gobsv,Cobsv),Bobsv),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
+                self.xhat = np.matmul((Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))),self.xhat) + np.matmul((Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
+		#gc = np.matmul(Gobsv,Cobsv)
+		#gca = np.matmul(gc,Aobsv)
+		#prod_1 = Aobsv-gca
+
+		#gcb = np.matmul(gc,Bobsv)
+		#prod_2 = Bobsv - gcb
+                #self.xhat = np.matmul(prod_1,self.xhat) + np.matmul(prod_2,self.prev_inc_i) + np.matmul(Gobsv,self.ya)
+
 		self.xhat=self.saturar_xhat(self.xhat)
 
 

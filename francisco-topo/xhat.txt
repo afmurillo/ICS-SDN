@@ -1,8 +1,3 @@
-DEBUG: concatenating server address with default port.
-DEBUG enip server tags_string:  LIT101:1=REAL LIT102:1=REAL LIT103:1=REAL Q101:1=REAL Q102:1=REAL 
-DEBUG enip _start_server cmd:  '/usr/bin/python' '-m' 'cpppo.server.enip' '--print' '--log' 'logs/protocols_tests_enip_server' '--address' '192.168.1.14:44818' 'LIT101:1=REAL' 'LIT102:1=REAL' 'LIT103:1=REAL' 'Q101:1=REAL' 'Q102:1=REAL'
-DEBUG: swat-s1 plc1 enters pre_loop
-DEBUG: swat-s1 plc1 enters main_loop.
 0   5.95748422e-09   2.98023223e-12   3.14179062e-07
 1   5.96508514e-09   7.94214031e-09  -4.25507504e-07
 2   5.95302912e-09  -4.29663468e-09   6.88755907e-07

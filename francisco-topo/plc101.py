@@ -135,7 +135,6 @@ class PLC101(PLC):
 		received_lit103 = float(self.get(LIT103))
 		lit103 = received_lit103 - Y30
 
-		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
 		self.lit101_error = self.ref_y0 - self.received_lit101
 		self.lit102_error = self.ref_y1 - self.received_lit102
 		#print "Error: ", self.lit101_error, " ", self.lit102_error
