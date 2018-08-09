@@ -153,8 +153,9 @@ class PLC101(PLC):
 	    try:
 
 		self.change_references()
-		#self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-		self.received_lit101 = float(self.get(LIT101))
+		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+
+		#self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
 
 		self.received_lit102 = float(self.get(LIT102))
@@ -209,6 +210,7 @@ class PLC101(PLC):
 
 		#self.set(Q101, float(self.q1))
 		#self.set(Q102, float(self.q2))
+
                 self.send_message(IP['q101'], 7842 ,float(self.q1))
                 self.send_message(IP['q102'], 7842 ,float(self.q2))
 
