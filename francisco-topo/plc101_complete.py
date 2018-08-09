@@ -153,7 +153,8 @@ class PLC101(PLC):
 	    try:
 
 		self.change_references()
-		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+		#self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+		self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
 
 		self.received_lit102 = float(self.get(LIT102))
@@ -213,8 +214,6 @@ class PLC101(PLC):
 
 		#print "plc1 q101", self.q1
 		#print "plc1 q102", self.q2
-
-
 
 		self.count += 1
 		time.sleep(PLC_PERIOD_SEC)
