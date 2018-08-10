@@ -69,9 +69,11 @@ Gobsv=np.array([[0.9995, 0.0005],[0.0005, 0.9995],[52.7105, 48.2054]])
 
 TANK_HEIGHT = 1.600
 
-PLC_PERIOD_SEC = 4
+PLC_PERIOD_SEC = 1
+LIT_PERIOD_SEC = 1
 PLC_PERIOD_HOURS = PLC_PERIOD_SEC/360.0
 PLC_SAMPLES = 500
+LIT_SAMPLES = (PLC_PERIOD_SEC/LIT_PERIOD_SEC) * PLC_SAMPLES
 PP_SAMPLES = 500
 
 PP_RESCALING_HOURS = 10
@@ -134,6 +136,18 @@ LOOP_1_TAGS = (
 )
 
 ################################################ Loop 1 Sensor and Protocols
+
+TANK_SERVER = {
+        'address': IP['plant101'],
+        'tags': LOOP_1_TAGS
+}
+
+
+TANK_PROTOCOL = {
+        'name': 'enip',
+        'mode': 1,
+        'server': TANK_SERVER
+}
 
 LIT101_SERVER = {
 	'address': IP['lit101'],

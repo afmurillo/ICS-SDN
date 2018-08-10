@@ -43,14 +43,13 @@ class SimpleTopo(Topo):
 
         ids101 = self.addHost('ids101',ip=IP['ids101'] + NETMASK, defaultRoute=gateway_1 )
         sim101 = self.addHost('sim101',ip=IP['sim101'] + NETMASK, defaultRoute=gateway_1 )
-        plant101 = self.addHost('plant101')
+        plant101 = self.addHost('plant101',ip=IP['plant101'] + NETMASK, defaultRoute=gateway_1 )#, defaultRoute="via 192.168.1.11")
 
         self.addLink(q101, s1)
         self.addLink(lit101, s1)
+	self.addLink(plant101, s1)
         self.addLink(lit102, s1)
         self.addLink(lit103, s1)
         self.addLink(q102, s1)
-    
         self.addLink(ids101, s1)
         self.addLink(sim101, s1)
-      

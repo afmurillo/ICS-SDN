@@ -19,6 +19,7 @@ LIT103 = ('LIT103', 1)
 
 SENSOR_ADDR = IP['lit101']
 IDS_ADDR = IP['ids101']
+PLC_ADDR = IP['plc101']
 
 #lit103 = Y30
 #lit103_prev = Y30
@@ -156,9 +157,9 @@ class PLC101(PLC):
 	    try:
 
 		self.change_references()
-		#self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
 
-		self.received_lit101 = float(self.get(LIT101))
+		#self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
 
 		self.received_lit102 = float(self.get(LIT102))
@@ -224,6 +225,7 @@ class PLC101(PLC):
 		#print "plc1 q102", self.q2
 
 		self.count += 1
+		#self.send(LIT101, self.lit101, PLC_ADDR)
 		time.sleep(PLC_PERIOD_SEC)
 
 		# Nos hace falta definir antes del loop el vector con los valores de referencia (numpy.zeros inicializa un arreglo con 0 del tamano deseado)
