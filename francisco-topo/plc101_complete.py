@@ -149,6 +149,9 @@ class PLC101(PLC):
 
         print 'DEBUG: swat-s1 plc1 enters main_loop.'
 
+	prod_1 = Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))
+	prod_2 = Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))
+
         while(self.count <= PLC_SAMPLES):
 	    try:
 
@@ -167,7 +170,8 @@ class PLC101(PLC):
                 self.ya[0,0]=self.lit101
                 self.ya[1,0]=self.lit102
 
-                self.xhat = np.matmul((Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))),self.xhat) + np.matmul((Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
+                #self.xhat = np.matmul((Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))),self.xhat) + np.matmul((Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
+	        self.xhat = np.matmul(prod_1,self.xhat) + np.matmul(prod_2,self.prev_inc_i) + np.matmul(Gobsv,self.ya)
 		#gc = np.matmul(Gobsv,Cobsv)
 		#gca = np.matmul(gc,Aobsv)
 		#prod_1 = Aobsv-gca
