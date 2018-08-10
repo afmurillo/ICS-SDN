@@ -483,3 +483,6 @@
 08-10 15:27:57.535 MainThread network  WARNING  join       enip_srv server TID [ 6198/139739448829696] hanging on None
 08-10 15:28:09.750 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 08-10 15:38:56.264 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+08-10 16:01:33.325 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+08-10 16:01:33.534 MainThread network  WARNING  join       enip_srv server TID [21304/140078479800064] hanging on None
+08-10 16:01:44.295 MainThread root     WARNING  logrotate_ Rotating log files due to signal
