@@ -173,14 +173,6 @@ class PLC101(PLC):
 
                 #self.xhat = np.matmul((Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))),self.xhat) + np.matmul((Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
 	        self.xhat = np.matmul(prod_1,self.xhat) + np.matmul(prod_2,self.prev_inc_i) + np.matmul(Gobsv,self.ya)
-		#gc = np.matmul(Gobsv,Cobsv)
-		#gca = np.matmul(gc,Aobsv)
-		#prod_1 = Aobsv-gca
-
-		#gcb = np.matmul(gc,Bobsv)
-		#prod_2 = Bobsv - gcb
-                #self.xhat = np.matmul(prod_1,self.xhat) + np.matmul(prod_2,self.prev_inc_i) + np.matmul(Gobsv,self.ya)
-
 		self.xhat=self.saturar_xhat(self.xhat)
 
 
@@ -199,8 +191,6 @@ class PLC101(PLC):
 		#print self.z
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
 		#print "xhatz: ", self.xhatz
-
-		#print "Concatenado"
 
 		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
 		self.current_inc_i = self.saturar_inc(self.current_inc_i)
@@ -227,8 +217,6 @@ class PLC101(PLC):
 		self.count += 1
 		#self.send(LIT101, self.lit101, PLC_ADDR)
 		time.sleep(PLC_PERIOD_SEC)
-
-		# Nos hace falta definir antes del loop el vector con los valores de referencia (numpy.zeros inicializa un arreglo con 0 del tamano deseado)
 
 	    except Exception as e:
                    print e
