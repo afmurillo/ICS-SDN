@@ -156,9 +156,9 @@ class PLC101(PLC):
 	    try:
 
 		self.change_references()
-		self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+		#self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
 
-		#self.received_lit101 = float(self.get(LIT101))
+		self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
 
 		self.received_lit102 = float(self.get(LIT102))
@@ -195,7 +195,6 @@ class PLC101(PLC):
                 # Xhat used without attack
 		#self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		#print "Calculado xhat"
-		print self.count, self.xhat[0], self.xhat[1], self.xhat[2]
 		#print self.z
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
 		#print "xhatz: ", self.xhatz
@@ -209,6 +208,9 @@ class PLC101(PLC):
 
 		self.q1 = Q1 + self.current_inc_i[0]
 		self.q2 = Q2 + self.current_inc_i[1]
+
+		print self.count, self.q1, self.q2, self.q1
+
 		#print "Cumulative inc: ", " ", self.current_inc_i[0], " ", self.current_inc_i[1]
 		#print "Sending to actuators: ", " ", self.q1, " ", self.q2
 
