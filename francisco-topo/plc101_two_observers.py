@@ -198,7 +198,7 @@ class PLC101(PLC):
 		#self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
 
-		print count, self.zhat_uio1, self.zhat_uio2
+		print count, self.zhat_uio1
 
 		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
 		self.current_inc_i = self.saturar_inc(self.current_inc_i)
