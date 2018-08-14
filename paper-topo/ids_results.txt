@@ -1,0 +1,127 @@
+DEBUG get_query: SELECT value FROM industry WHERE name = ? AND pid = ?
+DEBUG set_query: UPDATE industry SET value = ? WHERE name = ? AND pid = ?
+DEBUG: rwt has no networking capabilities.
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69990 
+DEBUG  Water Tank 2 Level 0.39907 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69981 
+DEBUG  Water Tank 2 Level 0.39815 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69971 
+DEBUG  Water Tank 2 Level 0.39722 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69961 
+DEBUG  Water Tank 2 Level 0.39630 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69951 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69942 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69932 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69922 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69913 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69903 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69893 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69883 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69874 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69864 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69854 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40094 
+DEBUG  PH Level 0.69844 
+DEBUG  Water Tank 2 Level 0.39537 
+DEBUG  Water Tank 1 Level 0.40004 
+DEBUG  PH Level 0.69835 
+DEBUG  Water Tank 2 Level 0.39628 
+DEBUG  Water Tank 1 Level 0.39913 
+DEBUG  PH Level 0.69825 
+DEBUG  Water Tank 2 Level 0.39719 
+DEBUG  Water Tank 1 Level 0.39822 
+DEBUG  PH Level 0.69815 
+DEBUG  Water Tank 2 Level 0.39809 
+DEBUG  Water Tank 1 Level 0.39731 
+DEBUG  PH Level 0.69806 
+DEBUG  Water Tank 2 Level 0.39900 
+DEBUG  Water Tank 1 Level 0.39641 
+DEBUG  PH Level 0.69796 
+DEBUG  Water Tank 2 Level 0.39991 
+DEBUG  Water Tank 1 Level 0.39550 
+DEBUG  PH Level 0.69786 
+DEBUG  Water Tank 2 Level 0.40081 
+DEBUG  Water Tank 1 Level 0.39459 
+DEBUG  PH Level 0.69796 
+DEBUG  Water Tank 2 Level 0.40172 
+DEBUG  Water Tank 1 Level 0.39369 
+DEBUG  PH Level 0.69806 
+DEBUG  Water Tank 2 Level 0.40263 
+DEBUG  Water Tank 1 Level 0.39278 
+DEBUG  PH Level 0.69815 
+DEBUG  Water Tank 2 Level 0.40354 
+DEBUG  Water Tank 1 Level 0.39187 
+DEBUG  PH Level 0.69825 
+DEBUG  Water Tank 2 Level 0.40444 
+DEBUG  Water Tank 1 Level 0.39096 
+DEBUG  PH Level 0.69835 
+DEBUG  Water Tank 2 Level 0.40535 
+DEBUG  Water Tank 1 Level 0.39006 
+DEBUG  PH Level 0.69844 
+DEBUG  Water Tank 2 Level 0.40626 
+DEBUG  Water Tank 1 Level 0.38915 
+DEBUG  PH Level 0.69854 
+DEBUG  Water Tank 2 Level 0.40717 
+DEBUG  Water Tank 1 Level 0.38824 
+DEBUG  PH Level 0.69864 
+DEBUG  Water Tank 2 Level 0.40807 
+DEBUG  Water Tank 1 Level 0.38733 
+DEBUG  PH Level 0.69874 
+DEBUG  Water Tank 2 Level 0.40898 
+DEBUG  Water Tank 1 Level 0.38643 
+DEBUG  PH Level 0.69883 
+DEBUG  Water Tank 2 Level 0.40989 
+DEBUG  Water Tank 1 Level 0.38552 
+DEBUG  PH Level 0.69893 
+DEBUG  Water Tank 2 Level 0.41080 
+DEBUG  Water Tank 1 Level 0.38461 
+DEBUG  PH Level 0.69903 
+DEBUG  Water Tank 2 Level 0.41170 
+DEBUG  Water Tank 1 Level 0.38465 
+DEBUG  PH Level 0.69913 
+DEBUG  Water Tank 2 Level 0.41261 
+DEBUG  Water Tank 1 Level 0.38469 
+DEBUG  PH Level 0.69922 
+DEBUG  Water Tank 2 Level 0.41352 
+DEBUG  Water Tank 1 Level 0.38472 
+DEBUG  PH Level 0.69932 
+DEBUG  Water Tank 2 Level 0.41443 
+DEBUG  Water Tank 1 Level 0.38476 
+DEBUG  PH Level 0.69942 
+DEBUG  Water Tank 2 Level 0.41533 
+DEBUG  Water Tank 1 Level 0.38480 
+DEBUG  PH Level 0.69951 
+DEBUG  Water Tank 2 Level 0.41624 
+DEBUG  Water Tank 1 Level 0.38483 
+DEBUG  PH Level 0.69961 
+DEBUG  Water Tank 2 Level 0.41715 
+DEBUG  Water Tank 1 Level 0.38487 
+DEBUG  PH Level 0.69971 
+DEBUG  Water Tank 2 Level 0.41806 
+DEBUG  Water 

@@ -1,0 +1,36 @@
+% This file was created by matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.951\figurewidth,
+height=\figureheight,
+at={(0\figurewidth,0\figureheight)},
+scale only axis,
+xmin=0.02,
+xmax=0.22,
+xlabel={Standard Deviation},
+xmajorgrids,
+ymin=0.05,
+ymax=0.15,
+ylabel={Delta / t},
+ymajorgrids,
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={System without Defense VS System with Defense}
+]
+\addplot [color=black,dashdotted,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0.02	0.0643981429642588\\
+0.04	0.0993697175706069\\
+0.06	0.0649949812546868\\
+0.08	0.14344159460135\\
+0.1	0.0621927418145456\\
+0.12	0.0507166458385407\\
+0.14	0.0738827918020498\\
+0.16	0.0784906098475376\\
+0.18	0.0852967733066736\\
+0.2	0.119749840039991\\
+};
+\end{axis}
+\end{tikzpicture}%
