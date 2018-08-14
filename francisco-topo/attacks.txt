@@ -1,3 +1,0 @@
-Dos formas de ataque:
-1 - Siempre reducir un valor del valor que recibimos
-2 - MOdificar siempre por un valor fijo, en un punto de operación anterior
