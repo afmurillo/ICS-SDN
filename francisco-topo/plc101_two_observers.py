@@ -24,6 +24,20 @@ PLC_ADDR = IP['plc101']
 #lit103 = Y30
 #lit103_prev = Y30
 
+class Lit101Socket(Thread):
+    def __init__(self, plc_object):
+        Thread.__init__(self)
+        self.plc = plc_object
+
+    def run(self):
+        while (self.plc.count <= PLC_SAMPLES):
+           try:
+		self.plc.received_lit101 = float(self.plc.receive(LIT101, SENSOR_ADDR))
+           except KeyboardInterrupt:
+                print "\nCtrl+C was hitten, stopping server"
+                client.close()
+                break
+
 class Lit301Socket(Thread):
     """ Class that receives water level from the water_tank.py  """
 
@@ -134,7 +148,6 @@ class PLC101(PLC):
 
 	self.K1K2 = np.concatenate((K1,K2),axis=1)
 	self.prev_inc_i = np.array([[0.0],[0.0]])
-
         self.ya=np.array([[0.0],[0.0]])
         self.prev_ya=np.array([[0.0],[0.0]])
 
@@ -158,12 +171,14 @@ class PLC101(PLC):
 	prod_3 = np.matmul(T1,B)
 	prod_4 = np.matmul(T2,B)
 
+        lit101socket = Lit101Socket(self)
+        lit101socket.start()
+
         while(self.count <= PLC_SAMPLES):
 	    try:
 
 		self.change_references()
-		#self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-		self.received_lit101 = float(self.get(LIT101))
+		#self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
 
 		self.received_lit102 = float(self.get(LIT102))

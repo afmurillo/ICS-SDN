@@ -4,10 +4,9 @@ from numpy import loadtxt
 from pylab import figure, plot, xlabel, grid, hold, legend, title, savefig
 from matplotlib.font_manager import FontProperties
 import sys
- 
- 
+
 t, x1, xy, x2, = loadtxt(sys.argv[1] , unpack=True)
- 
+
 
 figure(1, figsize=(6, 4.5))
 
