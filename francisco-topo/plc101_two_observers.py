@@ -163,7 +163,6 @@ class PLC101(PLC):
 
 		self.change_references()
 		#self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-
 		self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
 
@@ -198,18 +197,16 @@ class PLC101(PLC):
 		#self.xhat= np.array([[self.lit101],[self.lit102],[lit103]])
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
 
-		print count, self.zhat_uio1
+		print self.count, self.zhat_uio1.transpose()
 
 		self.current_inc_i = np.matmul(-self.K1K2,self.xhatz)
 		self.current_inc_i = self.saturar_inc(self.current_inc_i)
 
                 self.prev_inc_i = self.current_inc_i
-
 		self.prev_ya = self.ya
 
 		self.q1 = Q1 + self.current_inc_i[0]
 		self.q2 = Q2 + self.current_inc_i[1]
-
 
 		#self.set(Q101, float(self.q1))
 		#self.set(Q102, float(self.q2))
@@ -218,7 +215,6 @@ class PLC101(PLC):
                 self.send_message(IP['q102'], 7842 ,float(self.q2))
 
 		self.count += 1
-		#self.send(LIT101, self.lit101, PLC_ADDR)
 		time.sleep(PLC_PERIOD_SEC)
 
 	    except Exception as e:

@@ -50,9 +50,8 @@ class PP101(PLC):
 
         def main_loop(self):
                 print 'DEBUG: q101 enters main_loop'
-                count = 0
-                psocket = PSocket(self)
-                psocket.start()       
+       	        psocket = PSocket(self)
+                psocket.start()
 
 if __name__ == '__main__':
 	q101 = PP101(name='q101',state=STATE,protocol=Q101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
