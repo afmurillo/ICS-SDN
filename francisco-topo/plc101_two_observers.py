@@ -42,11 +42,11 @@ class Lit101Socket(Thread):
 		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data))
 	        self.plc.received_lit101 = float(message_dict['Variable'])
-		
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
                 client.close()
         	break
+        print "Socket closed"
 
 class Lit301Socket(Thread):
     """ Class that receives water level from the water_tank.py  """
