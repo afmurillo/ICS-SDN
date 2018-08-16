@@ -76,7 +76,9 @@ class TankControl():
 	        self.w2 =  np.array([[0.0],[0.0],[0.0]])
 
 		self.prev_inc_i = np.array([[0.0],[0.0]])
+		self.ym=np.array([[0.0],[0.0]])
 		self.ya=np.array([[0.0],[0.0]])
+		self.yr=np.array([[0.0],[0.0]])
 	        self.prev_ya=np.array([[0.0],[0.0]])
 
 		self.xmin = [-0.4, -0.2, -0.3]
@@ -84,6 +86,15 @@ class TankControl():
 
 		self.umin = [-4e-5, -4e-5]
 		self.umax = [5e-5, 5e-5]
+
+		self.prod_3 = np.matmul(T1,B)
+		self.prod_4 = np.matmul(T2,B)
+
+		self.tim_uio_1 = 0
+		self.tim_uio_2 = 0
+		self.th_uio_on = 0.003*2
+
+		self.defense = 1.0
 
 
 	def plant_model(self, l, t, q):
@@ -97,6 +108,8 @@ class TankControl():
 	    	]
 
 	  	return f
+
+
 
         def simulate_plant(self):
 		# These vectors are used by the model
@@ -113,7 +126,9 @@ class TankControl():
                         wsol[-1][2] = 1.0
 
 		l=[wsol[-1][0], wsol[-1][1], wsol[-1][2]]
-		#print self.count, " ", l
+
+
+		print self.count, " ", l
 
 		return l
 
@@ -121,16 +136,16 @@ class TankControl():
 
 		if self.count <= 50:
 			self.ref_y0 = 0.4
-		if self.count > 50 and self.count <= 150:
+		if self.count > 50 and self.count <= 350:
 			self.ref_y0 = 0.450
-		if self.count > 150:
+		if self.count > 350:
 			self.ref_y0 = 0.4
 
                 if self.count <= 70:
                         self.ref_y1 = 0.2
-                if self.count > 70 and self.count <= 200:
+                if self.count > 70 and self.count <= 400:
                   	self.ref_y1 = 0.225
-                if self.count > 200:
+                if self.count > 400:
               	        self.ref_y1 = 0.2
 
         def simulate_plc(self):
@@ -147,32 +162,63 @@ class TankControl():
 		self.diff_lit103 = self.lit103 - Y30
 		self.lit103_prev = self.lit103
 
-		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
-		self.lit101_error = self.ref_y0 - self.lit101
-		self.lit102_error = self.ref_y1 - self.lit102
-		#print "Error: ", self.lit101_error, " ", self.lit102_error
+		# Asignamos ym
+                self.ym[0,0]=self.diff_lit101
+                self.ym[1,0]=self.diff_lit102
 
-		# Asignamos ya
-                self.ya[0,0]=self.diff_lit101
-                self.ya[1,0]=self.diff_lit102
+		
+		#if self.count >=  self.attack_time_begin and self.count <= self.attack_time_end:
+		#if self.bad_lit_flag == 1:
+		#self.diff_lit101 = self.diff_lit101 + self.diff_attack_value
 
-		# Z(k+1) = z(k) + error(k)
-		self.z[0,0] = self.z[0,0] + self.lit101_error
-		self.z[1,0] = self.z[1,0] + self.lit102_error
+		self.ya[0,0]=self.ym[0,0]
+		self.ya[1,0]=self.ym[1,0]
 
-
-		prod_3 = np.matmul(T1,B)
-		prod_4 = np.matmul(T2,B)
-
+		if self.count >=  self.attack_time_begin and self.count <= self.attack_time_end:
+			if self.bad_lit_flag == 1:
+				#self.diff_lit101 = self.diff_lit101 + self.diff_attack_value
+				self.ya[1,0] = self.ym[1,0] + self.diff_attack_value
+			elif self.bad_lit_flag == 2:
+				self.ya[1,0] = self.abs_attack_value
+			
 		# Two observers
-		self.w1 = np.matmul(F1, self.w1) + np.matmul(prod_3,self.prev_inc_i) + Ksp1*self.prev_ya[1,0]
+		self.w1 = np.matmul(F1, self.w1) + np.matmul(self.prod_3,self.prev_inc_i) + Ksp1*self.prev_ya[1,0]
 		self.zhat_uio1 = self.w1 + Hsp1*self.ya[1,0]
 
-		self.w2 = np.matmul(F2, self.w2) + np.matmul(prod_4,self.prev_inc_i) + Ksp2*self.prev_ya[0,0]
-		self.zhat_uio2 = self.w2 + Hsp2*self.ya[0,0]
+		self.ruio1 = self.ya - np.matmul(Cobsv,self.zhat_uio1 )		
+		#print self.count, " ", self.ruio1.transpose()
 
-		print self.count, self.zhat_uio1.transpose()
-	
+		self.w2 = np.matmul(F2, self.w2) + np.matmul(self.prod_4,self.prev_inc_i) + Ksp2*self.prev_ya[0,0]
+		self.zhat_uio2 = self.w2 + Hsp2*self.ya[0,0]	
+
+		self.ruio2 = self.ya - np.matmul(Cobsv,self.zhat_uio2 )		
+		#print self.count, " ", self.ruio2.transpose()
+
+		if abs(self.ruio1[0]) >= self.th_uio_on:
+			self.tim_uio_1 = 1
+		else:
+			self.tim_uio_1 = 0
+
+		if abs(self.ruio2[1]) >= self.th_uio_on:
+			self.tim_uio_2 = 1
+		else:
+			self.tim_uio_2 = 0
+
+		#print self.count, " ", self.tim_uio_1
+		#print self.count, " ", self.tim_uio_2
+
+		self.v1 = np.matmul(Cobsv[0],(self.zhat_uio1-self.zhat_uio2))*self.tim_uio_1
+		#print  self.count, " ", self.v1
+
+		self.v2 = np.matmul(Cobsv[1],(self.zhat_uio2-self.zhat_uio1))*self.tim_uio_2
+		#print  self.count, " ", self.v2
+
+		self.v_total=np.array([[self.v1[0]],[self.v2[0]]])	
+		#print self.count, " ", self.v_total.transpose()
+
+		self.yr = self.ya + self.defense*self.v_total
+		#self.yr = self.ya
+
 		# xhat should be xhat(t) = xhat(t) - xhat(-1)
 		self.xhat = np.matmul((Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))),self.xhat) + np.matmul((Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
 		self.xhat = self.saturar_xhat(self.xhat)
@@ -185,6 +231,16 @@ class TankControl():
 
 		self.prev_inc_i = self.current_inc_i
 		self.prev_ya = self.ya
+
+		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
+		self.lit101_error = self.ref_y0 - self.yr[0,0] - Y10
+		self.lit102_error = self.ref_y1 - self.yr[1,0] - Y20
+		#print "Error: ", self.lit101_error, " ", self.lit102_error
+
+
+		# Z(k+1) = z(k) + error(k)
+		self.z[0,0] = self.z[0,0] + self.lit101_error
+		self.z[1,0] = self.z[1,0] + self.lit102_error
 
 
 		return self.current_inc_i
@@ -200,14 +256,25 @@ class TankControl():
 		x = []
 		u = []
 
+		# 0 = No attack present
+		# 1 = Differential attack 
+		# 2 = Absolute attack
+
+		self.bad_lit_flag = 1
+ 	 	self.diff_attack_value = -0.02
+		self.abs_attack_value = -0.01
+		self.attack_time_begin = 200
+		self.attack_time_end = 300
 
 		while(self.count <= PP_SAMPLES):
+			# Variable real
 			x=self.simulate_plant()
 
+			# Variable que entrega el sensor
 			self.lit101 = x[0]
 			self.lit102 = x[1]
 			self.lit103 = x[2]
-
+			
 			self.change_references()
 			u=self.simulate_plc()
 
