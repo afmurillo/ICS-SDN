@@ -41,10 +41,10 @@ class SimpleCPS(MiniCPS):
         #lit103.cmd('python lit103.py &')
 
         q101 = self.net.get('q101')
-        #q101.cmd('python q101.py &')
+        q101.cmd('python q101.py &')
 
         q102 = self.net.get('q102')
-        #q102.cmd('python q102.py &')
+        q102.cmd('python q102.py &')
 
         # start devices
         CLI(self.net)

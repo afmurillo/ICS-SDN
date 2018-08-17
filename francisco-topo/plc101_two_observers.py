@@ -159,8 +159,8 @@ class PLC101(PLC):
 	self.K1K2 = np.concatenate((K1,K2),axis=1)
 	self.prev_inc_i = np.array([[0.0],[0.0]])
         self.ym=np.array([[0.0],[0.0]])
-		self.ya=np.array([[0.0],[0.0]])
-		self.yr=np.array([[0.0],[0.0]])
+	self.ya=np.array([[0.0],[0.0]])
+	self.yr=np.array([[0.0],[0.0]])
         self.prev_ya=np.array([[0.0],[0.0]])
 
 	self.xmin = [-0.4, -0.2, -0.3]
@@ -169,15 +169,21 @@ class PLC101(PLC):
 	self.umin = [-4e-5, -4e-5]
 	self.umax = [5e-5, 5e-5]
 
-	prod_1 = Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))
-	prod_2 = Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))
+	self.prod_1 = Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))
+	self.prod_2 = Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))
 
-	prod_3 = np.matmul(T1,B)
-	prod_4 = np.matmul(T2,B)
+	self.prod_3 = np.matmul(T1,B)
+	self.prod_4 = np.matmul(T2,B)
 
 	self.tim_uio_1 = 0
 	self.tim_uio_2 = 0
 	self.th_uio_on = 0.003*2
+
+	self.bad_lit_flag = 1
+ 	self.diff_attack_value = -0.02
+	self.abs_attack_value = -0.01
+	self.attack_time_begin = 200
+	self.attack_time_end = 300
 
 	self.defense = 1.0
 
@@ -208,7 +214,7 @@ class PLC101(PLC):
 
                 #self.xhat = np.matmul((Aobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Aobsv))),self.xhat) + np.matmul((Bobsv-(np.matmul(np.matmul(Gobsv,Cobsv),Bobsv))),self.prev_inc_i) + np.matmul(Gobsv,self.ya)
 
-    	self.ya[0,0]=self.ym[0,0]
+	    	self.ya[0,0]=self.ym[0,0]
 		self.ya[1,0]=self.ym[1,0]
 
 		if self.count >=  self.attack_time_begin and self.count <= self.attack_time_end:
@@ -216,16 +222,14 @@ class PLC101(PLC):
 				#self.diff_lit101 = self.diff_lit101 + self.diff_attack_value
 				self.ya[1,0] = self.ym[1,0] + self.diff_attack_value
 			elif self.bad_lit_flag == 2:
-				self.ya[1,0] = self.abs_attack_value	
-		
-		self.w1 = np.matmul(F1, self.w1) + np.matmul(prod_3,self.prev_inc_i) + Ksp1*self.prev_ya[1,0]
+				self.ya[1,0] = self.abs_attack_value
+		self.w1 = np.matmul(F1, self.w1) + np.matmul(self.prod_3,self.prev_inc_i) + Ksp1*self.prev_ya[1,0]
 		self.zhat_uio1 = self.w1 + Hsp1*self.ya[1,0]
 		self.ruio1 = self.ya - np.matmul(Cobsv,self.zhat_uio1 )
 
-		self.w2 = np.matmul(F2, self.w2) + np.matmul(prod_4,self.prev_inc_i) + Ksp2*self.prev_ya[0,0]
-		self.zhat_uio2 = self.w2 + Hsp2*self.ya[0,0]		
-		self.ruio2 = self.ya - np.matmul(Cobsv,self.zhat_uio2 )	
-        
+		self.w2 = np.matmul(F2, self.w2) + np.matmul(self.prod_4,self.prev_inc_i) + Ksp2*self.prev_ya[0,0]
+		self.zhat_uio2 = self.w2 + Hsp2*self.ya[0,0]
+		self.ruio2 = self.ya - np.matmul(Cobsv,self.zhat_uio2 )
 		if abs(self.ruio1[0]) >= self.th_uio_on:
 			self.tim_uio_1 = 1
 		else:
@@ -236,7 +240,7 @@ class PLC101(PLC):
 		else:
 			self.tim_uio_2 = 0
 
-		#print self.count, " ", self.tim_uio_1
+		print self.count, " ", self.tim_uio_1
 		#print self.count, " ", self.tim_uio_2
 
 		self.v1 = np.matmul(Cobsv[0],(self.zhat_uio1-self.zhat_uio2))*self.tim_uio_1
@@ -245,13 +249,13 @@ class PLC101(PLC):
 		self.v2 = np.matmul(Cobsv[1],(self.zhat_uio2-self.zhat_uio1))*self.tim_uio_2
 		#print  self.count, " ", self.v2
 
-		self.v_total=np.array([[self.v1[0]],[self.v2[0]]])	
+		self.v_total=np.array([[self.v1[0]],[self.v2[0]]])
 		#print self.count, " ", self.v_total.transpose()
 
 		self.yr = self.ya + self.defense*self.v_total
 		#self.yr = self.ya
 
-	        self.xhat = np.matmul(prod_1,self.xhat) + np.matmul(prod_2,self.prev_inc_i) + np.matmul(Gobsv,self.ya)
+	        self.xhat = np.matmul(self.prod_1,self.xhat) + np.matmul(self.prod_2,self.prev_inc_i) + np.matmul(Gobsv,self.ya)
 		self.xhat=self.saturar_xhat(self.xhat)
 		self.xhatz=np.concatenate((self.xhat,self.z), axis=0)
 
@@ -260,7 +264,6 @@ class PLC101(PLC):
 
                 self.prev_inc_i = self.current_inc_i
 		self.prev_ya = self.ya
-
 
 		# Aca hay que calcular el error de L1, L2 (self.lit101' y self.lit102')
 		self.lit101_error = self.ref_y0 - self.yr[0,0] - Y10
