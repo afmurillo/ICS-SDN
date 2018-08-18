@@ -179,7 +179,7 @@ class PLC101(PLC):
 	self.tim_uio_2 = 0
 	self.th_uio_on = 0.003*2
 
-	self.bad_lit_flag = 1
+	self.bad_lit_flag = 0
  	self.diff_attack_value = -0.02
 	self.abs_attack_value = -0.01
 	self.attack_time_begin = 200
