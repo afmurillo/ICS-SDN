@@ -1,9 +1,8 @@
-from minicps.devices import PLC
-from utils import *
-import random
-import logging
+from minicps.devices import PLC 
+from utils import * 
+import random 
+import logging 
 import time
-
 
 import socket
 import json
@@ -38,16 +37,18 @@ class Lit101(PLC):
 
 	def main_loop(self):
 		count = 0
-		self.bad_lit_flag = 0
+		self.bad_lit_flag = 1
  	 	self.diff_attack_value = -20e-3
-		self.attack_time_begin = 200
-		self.attack_time_end = 300
+		self.attack_time_begin = 600000
+		self.attack_time_end = 750000
 
+		print "empezando"
 		while True:
+			#print count
 			self.level = float(self.get(LIT101))
 			if count >=  self.attack_time_begin and count <= self.attack_time_end:
 				if self.bad_lit_flag == 1:
-					self.ya[0,0] = self.ym[0,0] + self.diff_attack_value
+					self.level = self.level + self.diff_attack_value
                         self.send_message(IP['plc101'], 8754,self.level)
 			count = count + 1
 
