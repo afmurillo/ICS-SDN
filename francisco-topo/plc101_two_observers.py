@@ -96,19 +96,19 @@ class PLC101(PLC):
 
     def change_references(self):
 
-            if self.count <= 50:
-                    self.ref_y0 = 0.4
-            if self.count > 50 and self.count <= 150:
-                    self.ref_y0 = 0.450
-            if self.count > 150:
-                    self.ref_y0 = 0.4
+        if self.count <= 50:
+            self.ref_y0 = 0.4
+        if self.count > 50 and self.count <= 350:
+            self.ref_y0 = 0.450
+        if self.count > 350:
+            self.ref_y0 = 0.4
 
-            if self.count <= 70:
-                    self.ref_y1 = 0.2
-            if self.count > 70 and self.count <= 200:
-                    self.ref_y1 = 0.225
-            if self.count > 200:
-                    self.ref_y1 = 0.2
+        if self.count <= 70:
+            self.ref_y1 = 0.2
+        if self.count > 70 and self.count <= 400:
+            self.ref_y1 = 0.225
+        if self.count > 400:
+            self.ref_y1 = 0.2
 
     def saturar_xhat(self, valores):
 

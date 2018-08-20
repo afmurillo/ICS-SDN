@@ -39,12 +39,10 @@ class Lit101(PLC):
 		count = 0
 		self.bad_lit_flag = 1
  	 	self.diff_attack_value = -20e-3
-		self.attack_time_begin = 600000
-		self.attack_time_end = 750000
+		self.attack_time_begin = 625000
+		self.attack_time_end = 950000
 
-		print "empezando"
 		while True:
-			#print count
 			self.level = float(self.get(LIT101))
 			if count >=  self.attack_time_begin and count <= self.attack_time_end:
 				if self.bad_lit_flag == 1:
