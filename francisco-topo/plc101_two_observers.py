@@ -185,7 +185,7 @@ class PLC101(PLC):
 	self.attack_time_begin = 200
 	self.attack_time_end = 300
 
-	self.defense = 1.0
+	self.defense = 0.0
 
     def main_loop(self):
         """plc1 main loop.

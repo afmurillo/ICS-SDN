@@ -39,7 +39,7 @@ class Lit101(PLC):
 		count = 0
 		self.bad_lit_flag = 2
  	 	self.diff_attack_value = -20e-3
-		self.abs_attack_value = -0.01
+		self.abs_attack_value = 0.43
 		self.attack_time_begin = 625000
 		self.attack_time_end = 950000
 
