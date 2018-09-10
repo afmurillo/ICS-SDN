@@ -92,7 +92,7 @@ xlabel('Time (s)')
 ylabel('Tank 1 Level (m)')
 title('Plant Behavior With Stealth Attack without Defense');
 matlab2tikz('tikz/diff_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_diff_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('tikz/std_diff_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 
 % %%%%%%%%%%%%%%%%%%%%%%%%% Differential Attack - Defense %%%%%%%%%%%%%%%%%%%%%%%
 h3=figure(3)
@@ -113,7 +113,6 @@ xlabel('Time (s)')
 ylabel('Tank 1 Level (m)')
 title('Plant Behavior With Stealth Attack with Defense');
 matlab2tikz('tikz/diff_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_diff_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
 
 % %%%%%%%%%%%%%%%%%%%%%%%%% Absolute Attack - No Defense %%%%%%%%%%%%%%%%%%%%%%%
 h4=figure(4)
@@ -134,7 +133,6 @@ xlabel('Time (s)')
 ylabel('Tank 1 Level (m)')
 title('Plant Behavior With Replay Attack without Defense');
 matlab2tikz('tikz/abs_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_abs_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
 
 % %%%%%%%%%%%%%%%%%%%%%%%%% Absolute Attack - Defense %%%%%%%%%%%%%%%%%%%%%%%
 h5=figure(5)
@@ -155,5 +153,4 @@ xlabel('Time (s)')
 ylabel('Tank 1 Level (m)')
 title('Plant Behavior With Replay Attack with Defense');
 matlab2tikz('tikz/abs_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_abs_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
 
