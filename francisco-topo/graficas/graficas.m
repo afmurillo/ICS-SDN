@@ -68,10 +68,10 @@ grid on
 axis([20 500 0 0.5])
 grid on;
 xlabel('Time (s)')
-ylabel('Tank 1 Level (m)')
-title('Plant Behavior Without Attacks');
+ylabel('Tank Level (m)')
+title({'Virtual Environment','Plant Behavior Without Attacks'});
 matlab2tikz('tikz/no_attack.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_no_attack.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('tikz/std_no_attack.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '0.5\columnwidth', 'width', '0.8\columnwidth');
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Differential Attack - No Defense %%%%%%%%%%%%%%%%%%%%%%%
 h2=figure(2)
@@ -89,10 +89,10 @@ grid on
 axis([20 500 0 0.5])
 grid on;
 xlabel('Time (s)')
-ylabel('Tank 1 Level (m)')
-title('Plant Behavior With Stealth Attack without Defense');
+ylabel('Tank Level (m)')
+title({'Virtual Environment','Plant Behavior With Stealth Attack without Defense'});
 matlab2tikz('tikz/diff_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_diff_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('tikz/std_diff_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '0.5\columnwidth', 'width', '0.8\columnwidth');
 
 % %%%%%%%%%%%%%%%%%%%%%%%%% Differential Attack - Defense %%%%%%%%%%%%%%%%%%%%%%%
 h3=figure(3)
@@ -110,10 +110,10 @@ grid on
 axis([20 500 0 0.5])
 grid on;
 xlabel('Time (s)')
-ylabel('Tank 1 Level (m)')
-title('Plant Behavior With Stealth Attack with Defense');
+ylabel('Tank Level (m)')
+title({'Virtual Environment', 'Plant Behavior With Stealth Attack with Defense'});
 matlab2tikz('tikz/diff_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_diff_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('tikz/std_diff_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height','0.5\columnwidth', 'width', '0.8\columnwidth');
 
 % %%%%%%%%%%%%%%%%%%%%%%%%% Absolute Attack - No Defense %%%%%%%%%%%%%%%%%%%%%%%
 h4=figure(4)
@@ -131,10 +131,10 @@ grid on
 axis([20 450 0 0.8])
 grid on;
 xlabel('Time (s)')
-ylabel('Tank 1 Level (m)')
-title('Plant Behavior With Replay Attack without Defense');
+ylabel('Tank Level (m)')
+title({'Virtual Environment','Plant Behavior With Replay Attack without Defense'});
 matlab2tikz('tikz/abs_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_abs_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('tikz/std_abs_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '0.5\columnwidth', 'width', '0.8\columnwidth');
 
 % %%%%%%%%%%%%%%%%%%%%%%%%% Absolute Attack - Defense %%%%%%%%%%%%%%%%%%%%%%%
 h5=figure(5)
@@ -152,8 +152,8 @@ grid on
 axis([0 500 0 0.5])
 grid on;
 xlabel('Time (s)')
-ylabel('Tank 1 Level (m)')
-title('Plant Behavior With Replay Attack with Defense');
+ylabel('Tank Level (m)')
+title({'Virtual Environment','Plant Behavior With Replay Attack with Defense'});
 matlab2tikz('tikz/abs_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/std_abs_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('tikz/std_abs_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height', '0.5\columnwidth', 'width', '0.8\columnwidth');
 

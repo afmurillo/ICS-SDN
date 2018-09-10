@@ -5,7 +5,7 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.951\figurewidth,
+width=0.976\figurewidth,
 height=\figureheight,
 at={(0\figurewidth,0\figureheight)},
 scale only axis,
@@ -15,11 +15,11 @@ xlabel={Time (s)},
 xmajorgrids,
 ymin=0,
 ymax=0.8,
-ylabel={Tank 1 Level (m)},
+ylabel={Tank Level (m)},
 ymajorgrids,
 axis background/.style={fill=white},
-title style={font=\bfseries},
-title={Plant Behavior With Replay Attack without Defense},
+title style={font=\bfseries,align=center},
+title={Virtual Environment\\[1ex]Plant Behavior With Replay Attack without Defense},
 legend style={at={(0.03,0.97)},anchor=north west,legend cell align=left,align=left,draw=white!15!black}
 ]
 \addplot [color=blue,solid,line width=1.5pt]
@@ -30,7 +30,7 @@ legend style={at={(0.03,0.97)},anchor=north west,legend cell align=left,align=le
 3	0.452017873833004\\
 4	0.447898050567391\\
 5	0.441960028913618\\
-6	0.436245918872744\\
+6	0.436245918872743\\
 7	0.431184130715614\\
 8	0.426800151166596\\
 9	0.423027294899929\\
@@ -267,7 +267,7 @@ legend style={at={(0.03,0.97)},anchor=north west,legend cell align=left,align=le
 240	0.712544288238263\\
 241	0.712512681565395\\
 242	0.720963137084521\\
-243	0.721159474891862\\
+243	0.721159474891861\\
 244	0.729460124414502\\
 245	0.729884474740107\\
 246	0.738035626523864\\
@@ -346,7 +346,7 @@ legend style={at={(0.03,0.97)},anchor=north west,legend cell align=left,align=le
 319	0.436029608055816\\
 320	0.436537485270734\\
 321	0.437030632206643\\
-322	0.437509134075941\\
+322	0.43750913407594\\
 323	0.437973111326853\\
 324	0.438422715708029\\
 325	0.438858126622509\\
@@ -1233,7 +1233,7 @@ legend style={at={(0.03,0.97)},anchor=north west,legend cell align=left,align=le
 194	0.34360486740675\\
 195	0.344282286883318\\
 196	0.344973260735643\\
-197	0.34567758905446\\
+197	0.345677589054459\\
 198	0.346394909980599\\
 199	0.347125120133802\\
 200	0.347867851373508\\

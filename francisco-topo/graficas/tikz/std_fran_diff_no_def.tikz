@@ -16,9 +16,9 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.951\figurewidth,
-height=\figureheight,
-at={(0\figurewidth,0\figureheight)},
+width=0.78\columnwidth,
+height=0.5\columnwidth,
+at={(0\columnwidth,0\columnwidth)},
 scale only axis,
 xmin=20,
 xmax=500,
@@ -26,11 +26,11 @@ xlabel={Time (s)},
 xmajorgrids,
 ymin=0,
 ymax=0.5,
-ylabel={Tank 1 Level (m)},
+ylabel={Tank Level (m)},
 ymajorgrids,
 axis background/.style={fill=white},
-title style={font=\bfseries},
-title={Matlab Simulation: Plant Behavior With Stealth Attack without Defense},
+title style={font=\bfseries,align=center},
+title={Matlab Simulation\\[1ex]Plant Behavior With Stealth Attack without Defense},
 legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=left,draw=white!15!black}
 ]
 \addplot [color=black,dashed,line width=2.0pt]
@@ -727,7 +727,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 183	0.450768895535679\\
 184	0.450750898180125\\
 185	0.450733265365329\\
-186	0.450715993247022\\
+186	0.450715993247021\\
 187	0.450699077756942\\
 188	0.450682514628188\\
 189	0.450666299418689\\
@@ -1024,7 +1024,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 480	0.399278426167984\\
 481	0.399295473441581\\
 482	0.399312224583282\\
-483	0.399328678289327\\
+483	0.399328678289326\\
 484	0.399344833776273\\
 485	0.399360690743027\\
 486	0.399376249335026\\
@@ -1769,7 +1769,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 213	0.225269306861907\\
 214	0.225262379881741\\
 215	0.225255622493978\\
-216	0.225249031163615\\
+216	0.225249031163614\\
 217	0.225242602385219\\
 218	0.225236332686284\\
 219	0.22523021863023\\
@@ -2040,7 +2040,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 484	0.199468202031992\\
 485	0.199483297923036\\
 486	0.199497990036183\\
-487	0.199512287624974\\
+487	0.199512287624973\\
 488	0.199526199832115\\
 489	0.199539735683102\\
 490	0.199552904080585\\
@@ -2393,7 +2393,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 333	0.345863916634433\\
 334	0.345696700120374\\
 335	0.345522974681628\\
-336	0.345344634966541\\
+336	0.34534463496654\\
 337	0.345163281825678\\
 338	0.344980261317531\\
 339	0.344796699308772\\

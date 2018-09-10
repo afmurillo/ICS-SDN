@@ -5,7 +5,7 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.951\figurewidth,
+width=0.976\figurewidth,
 height=\figureheight,
 at={(0\figurewidth,0\figureheight)},
 scale only axis,
@@ -18,8 +18,8 @@ ymax=0.5,
 ylabel={Tank 1 Level (m)},
 ymajorgrids,
 axis background/.style={fill=white},
-title style={font=\bfseries},
-title={Matlab Simulation: Plant Behavior With Stealth Attack with Defense},
+title style={font=\bfseries,align=center},
+title={Matlab Simulation\\[1ex]Plant Behavior With Stealth Attack with Defense},
 legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=left,draw=white!15!black}
 ]
 \addplot [color=black,dashed,line width=2.0pt]
@@ -716,7 +716,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 183	0.450768895535679\\
 184	0.450750898180125\\
 185	0.450733265365329\\
-186	0.450715993247022\\
+186	0.450715993247021\\
 187	0.450699077756942\\
 188	0.450682514628188\\
 189	0.450666299418689\\
@@ -942,7 +942,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 409	0.399613439073146\\
 410	0.399503929221095\\
 411	0.399403192202902\\
-412	0.399310719987164\\
+412	0.399310719987163\\
 413	0.399226030728186\\
 414	0.399148667470771\\
 415	0.399078196917836\\
@@ -1758,7 +1758,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 213	0.225269306861907\\
 214	0.225262379881741\\
 215	0.225255622493978\\
-216	0.225249031163615\\
+216	0.225249031163614\\
 217	0.225242602385219\\
 218	0.225236332686284\\
 219	0.22523021863023\\
@@ -2382,7 +2382,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 333	0.345863916634433\\
 334	0.345696700120374\\
 335	0.345522974681628\\
-336	0.345344634966541\\
+336	0.34534463496654\\
 337	0.345163281825678\\
 338	0.344980261317531\\
 339	0.344796699308772\\

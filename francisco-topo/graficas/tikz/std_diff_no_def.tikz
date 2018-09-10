@@ -16,9 +16,9 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.951\figurewidth,
-height=\figureheight,
-at={(0\figurewidth,0\figureheight)},
+width=0.78\columnwidth,
+height=0.5\columnwidth,
+at={(0\columnwidth,0\columnwidth)},
 scale only axis,
 xmin=20,
 xmax=500,
@@ -26,11 +26,11 @@ xlabel={Time (s)},
 xmajorgrids,
 ymin=0,
 ymax=0.5,
-ylabel={Tank 1 Level (m)},
+ylabel={Tank Level (m)},
 ymajorgrids,
 axis background/.style={fill=white},
-title style={font=\bfseries},
-title={Plant Behavior With Stealth Attack without Defense},
+title style={font=\bfseries,align=center},
+title={Virtual Environment\\[1ex]Plant Behavior With Stealth Attack without Defense},
 legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=left,draw=white!15!black}
 ]
 \addplot [color=blue,solid,line width=1.5pt]
@@ -41,7 +41,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 3	0.452017873833004\\
 4	0.447898050567391\\
 5	0.441960028913618\\
-6	0.436245918872744\\
+6	0.436245918872743\\
 7	0.431184130715614\\
 8	0.426800151166596\\
 9	0.423027294899929\\
@@ -366,10 +366,10 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 328	0.476620847440126\\
 329	0.474452582993252\\
 330	0.470672055812177\\
-331	0.4669765394764\\
+331	0.466976539476399\\
 332	0.463728078360752\\
 333	0.460956033957284\\
-334	0.45861337580723\\
+334	0.458613375807229\\
 335	0.456641376529813\\
 336	0.454985180960492\\
 337	0.45359685950287\\
@@ -726,7 +726,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 182	0.227083353875372\\
 183	0.21860394873614\\
 184	0.227096010542551\\
-185	0.218652122080155\\
+185	0.218652122080154\\
 186	0.227173512799699\\
 187	0.218574756089414\\
 188	0.227122696383594\\
@@ -888,7 +888,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 344	0.223379236711706\\
 345	0.223425037346647\\
 346	0.223483600047076\\
-347	0.223550866103612\\
+347	0.223550866103611\\
 348	0.223623612704574\\
 349	0.22369930404024\\
 350	0.223775966985872\\
@@ -987,7 +987,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 443	0.202141374490027\\
 444	0.20194753719253\\
 445	0.201765138761348\\
-446	0.201593661664905\\
+446	0.201593661664904\\
 447	0.201432601382419\\
 448	0.201281467235548\\
 449	0.201130722577203\\
@@ -1491,7 +1491,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 441	0.312449458131369\\
 442	0.312150536386923\\
 443	0.311856734720843\\
-444	0.311568092309087\\
+444	0.311568092309086\\
 445	0.311284637975163\\
 446	0.31100639088144\\
 447	0.310733361191723\\

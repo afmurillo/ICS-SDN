@@ -16,9 +16,9 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.951\figurewidth,
-height=\figureheight,
-at={(0\figurewidth,0\figureheight)},
+width=0.78\columnwidth,
+height=0.5\columnwidth,
+at={(0\columnwidth,0\columnwidth)},
 scale only axis,
 xmin=20,
 xmax=500,
@@ -26,11 +26,11 @@ xlabel={Time (s)},
 xmajorgrids,
 ymin=0,
 ymax=0.5,
-ylabel={Tank 1 Level (m)},
+ylabel={Tank Level (m)},
 ymajorgrids,
 axis background/.style={fill=white},
-title style={font=\bfseries},
-title={Plant Behavior Without Attacks},
+title style={font=\bfseries,align=center},
+title={Virtual Environment\\[1ex]Plant Behavior Without Attacks},
 legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=left,draw=white!15!black}
 ]
 \addplot [color=blue,solid,line width=1.5pt]
@@ -41,7 +41,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 3	0.452017873833004\\
 4	0.447898050567391\\
 5	0.441960028913618\\
-6	0.436245918872744\\
+6	0.436245918872743\\
 7	0.431184130715614\\
 8	0.426800151166596\\
 9	0.423027294899929\\
@@ -493,7 +493,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 455	0.396838983682163\\
 456	0.396880496689692\\
 457	0.396918954562972\\
-458	0.396954444640788\\
+458	0.396954444640787\\
 459	0.396987051411526\\
 460	0.397016856624586\\
 461	0.397043939396631\\
@@ -727,7 +727,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 183	0.225593501933538\\
 184	0.225497926672273\\
 185	0.225419848099946\\
-186	0.225356316930623\\
+186	0.225356316930622\\
 187	0.22530486270541\\
 188	0.225263416982686\\
 189	0.225230248797434\\
@@ -868,7 +868,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 324	0.22501080617721\\
 325	0.225025963221064\\
 326	0.224990801071059\\
-327	0.225067581401456\\
+327	0.225067581401455\\
 328	0.224895183979631\\
 329	0.225277388758639\\
 330	0.224425222386321\\
@@ -946,7 +946,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 402	0.219030500758921\\
 403	0.218687080842547\\
 404	0.218273686620127\\
-405	0.217803250781026\\
+405	0.217803250781025\\
 406	0.217287933816692\\
 407	0.216738352445639\\
 408	0.216163575558216\\
