@@ -193,15 +193,27 @@ class PLC101(PLC):
             - drives actuators according to the control strategy
             - updates its enip server
         """
-        lit101socket = Lit101Socket(self)
-        lit101socket.start()
+        #lit101socket = Lit101Socket(self)
+        #lit101socket.start()
+
+	begin = time.time()
+	print " %Begin ",         begin
+	while_begin = 0.0
+	lit_rec_time = 0.0
+	control_time = 0.0
+	act_send_time = 0.0
+	time_btw_cycles = 0.0
 
         while(self.count <= PLC_SAMPLES):
 	    try:
 
+		time_btw_cycles = time.time() - time_btw_cycles
+		while_begin = time.time() - begin
 		self.change_references()
-		#self.received_lit101 = float(self.get(LIT101))
+
+		self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
+		lit_rec_time =time.time() - while_begin
 
 		self.received_lit102 = float(self.get(LIT102))
 		self.lit102 = self.received_lit102 - Y20
@@ -273,18 +285,27 @@ class PLC101(PLC):
 		self.z[0,0] = self.z[0,0] + self.lit101_error
 		self.z[1,0] = self.z[1,0] + self.lit102_error
 
-
-
 		self.q1 = Q1 + self.current_inc_i[0]
 		self.q2 = Q2 + self.current_inc_i[1]
 
 		#self.set(Q101, float(self.q1))
 		#self.set(Q102, float(self.q2))
 
+		control_time = time.time() - lit_rec_time
+
                 self.send_message(IP['q101'], 7842 ,float(self.q1))
                 self.send_message(IP['q102'], 7842 ,float(self.q2))
 
+		act_send_time = time.time() - control_time
+
 		self.count += 1
+
+		print "% while ", while_begin
+		print "% lit rec ", lit_rec_time
+		print "% control ", control_time
+		print "% act send ", act_send_time
+		print "% btw ", time_btw_cycles
+
 		time.sleep(PLC_PERIOD_SEC)
 
 	    except Exception as e:
