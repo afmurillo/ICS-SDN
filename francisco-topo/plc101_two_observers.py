@@ -7,6 +7,7 @@ from random import *
 
 
 import json
+from decimal import Decimal
 import select
 import socket
 import time
@@ -41,7 +42,7 @@ class Lit101Socket(Thread):
             try:
             	client, addr = self.sock.accept()
 		data = client.recv(4096)                                                # Get data from the client
-            	message_dict = eval(json.loads(data))
+            	message_dict = eval(json.loads(data, parse_float=Decimal))
 	        self.plc.received_lit101 = float(message_dict['Variable'])
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
@@ -65,7 +66,7 @@ class Lit301Socket(Thread):
             try:
             	client, addr = self.sock.accept()
 		data = client.recv(4096)                                                # Get data from the client
-            	message_dict = eval(json.loads(data))
+            	message_dict = eval(json.loads(data, parse_float=Decimal))
 	        lit103 = float(message_dict['Variable']) - lit103_prev
 		lit103_prev = lit103
 
@@ -194,8 +195,8 @@ class PLC101(PLC):
             - drives actuators according to the control strategy
             - updates its enip server
         """
-        #lit101socket = Lit101Socket(self)
-        #lit101socket.start()
+        lit101socket = Lit101Socket(self)
+        lit101socket.start()
 
 	begin = time.time()
 	print " %Begin ",         begin
@@ -212,7 +213,7 @@ class PLC101(PLC):
 		while_begin = time.time() - begin
 		self.change_references()
 
-		self.received_lit101 = float(self.get(LIT101))
+		#self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
 		lit_rec_time =time.time() - time_btw_cycles
 
