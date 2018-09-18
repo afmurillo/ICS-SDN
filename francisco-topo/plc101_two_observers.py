@@ -44,13 +44,14 @@ class Lit101Socket(Thread):
 		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data, parse_float=Decimal))
 	        self.plc.received_lit101 = float(message_dict['Variable'])
+		self.plc.lit_rec_time = time.time()
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
                 client.close()
         	break
         print "Socket closed"
 
-class Lit301Socket(Thread):
+class Lit102Socket(Thread):
     """ Class that receives water level from the water_tank.py  """
 
     def __init__(self, plc_object):
@@ -59,7 +60,7 @@ class Lit301Socket(Thread):
 
     def run(self):
         self.sock = socket.socket()     # Create a socket object
-        self.sock.bind((IP['plc101'] , 8754 ))
+        self.sock.bind((IP['plc101'] , 8755 ))
         self.sock.listen(5)
 
         while (self.plc.count <= PLC_SAMPLES):
@@ -67,14 +68,13 @@ class Lit301Socket(Thread):
             	client, addr = self.sock.accept()
 		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data, parse_float=Decimal))
-	        lit103 = float(message_dict['Variable']) - lit103_prev
-		lit103_prev = lit103
-
-
+	        self.plc.received_lit102 = float(message_dict['Variable'])
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
                 client.close()
         	break
+        print "Socket closed"
+
 
 class PLC101(PLC):
 
@@ -189,6 +189,8 @@ class PLC101(PLC):
 
 	self.defense = 0.0
 
+
+
     def main_loop(self):
         """plc1 main loop.
             - reads sensors value
@@ -198,26 +200,27 @@ class PLC101(PLC):
         lit101socket = Lit101Socket(self)
         lit101socket.start()
 
+        lit102socket = Lit102Socket(self)
+        lit102socket.start()
+
 	begin = time.time()
 	print " %Begin ",         begin
 	while_begin = 0.0
-	lit_rec_time = 0.0
+	self.plc.lit_rec_time =0.0
 	control_time = 0.0
 	act_send_time = 0.0
 	time_btw_cycles = 0.0
 
+
         while(self.count <= PLC_SAMPLES):
 	    try:
 
-		time_btw_cycles = time.time() - time_btw_cycles
-		while_begin = time.time() - begin
+		time_btw_cycles = time.time()
 		self.change_references()
 
-		#self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
-		lit_rec_time =time.time() - time_btw_cycles
+		#lit_rec_time = time.time() - time_btw_cycles
 
-		self.received_lit102 = float(self.get(LIT102))
 		self.lit102 = self.received_lit102 - Y20
 
 		received_lit103 = float(self.get(LIT103))
@@ -293,7 +296,7 @@ class PLC101(PLC):
 		#self.set(Q101, float(self.q1))
 		#self.set(Q102, float(self.q2))
 
-		control_time = time.time() - lit_rec_time
+		control_time = time.time() - time_btw_cycles
 
                 self.send_message(IP['q101'], 7842 ,float(self.q1))
                 self.send_message(IP['q102'], 7842 ,float(self.q2))
@@ -302,11 +305,10 @@ class PLC101(PLC):
 
 		self.count += 1
 
-		print "% while ", while_begin
-		print "% lit rec ", lit_rec_time
 		print "% control ", control_time
 		print "% act send ", act_send_time
 		print "% btw ", time_btw_cycles
+		print "% lit rec ", self.plc.lit_rec_time
 
 		time.sleep(PLC_PERIOD_SEC)
 
