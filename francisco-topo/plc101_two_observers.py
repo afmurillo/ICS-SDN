@@ -5,6 +5,7 @@ from threading import Thread
 from utils import *
 from random import *
 
+
 import json
 import select
 import socket
@@ -213,7 +214,7 @@ class PLC101(PLC):
 
 		self.received_lit101 = float(self.get(LIT101))
                 self.lit101 = self.received_lit101 - Y10
-		lit_rec_time =time.time() - while_begin
+		lit_rec_time =time.time() - time_btw_cycles
 
 		self.received_lit102 = float(self.get(LIT102))
 		self.lit102 = self.received_lit102 - Y20
