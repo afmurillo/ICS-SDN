@@ -37,7 +37,8 @@ class Lit101EnipSocket(Thread):
 
         while (self.plc.count <= PLC_SAMPLES):
             try:
-	        self.plc.received_lit101 = float(self.plc.receive(LIT101, SENSOR_ADDR))
+	        self.plc.received_lit101 = float(Decimal(self.plc.receive(LIT101, SENSOR_ADDR)))
+		print self.plc.received_lit101
             except KeyboardInterrupt:
  	        print "\nCtrl+C was hitten, stopping server"
                 client.close()
