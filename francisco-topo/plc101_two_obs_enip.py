@@ -182,7 +182,7 @@ class PLC101(PLC):
 	self.attack_time_begin = 200
 	self.attack_time_end = 300
 
-	self.defense = 0.0
+	self.defense = 1.0
 
     def main_loop(self):
         """plc1 main loop.
@@ -226,12 +226,6 @@ class PLC101(PLC):
 	    	self.ya[0,0]=self.ym[0,0]
 		self.ya[1,0]=self.ym[1,0]
 
-		if self.count >=  self.attack_time_begin and self.count <= self.attack_time_end:
-			if self.bad_lit_flag == 1:
-				#self.diff_lit101 = self.diff_lit101 + self.diff_attack_value
-				self.ya[1,0] = self.ym[1,0] + self.diff_attack_value
-			elif self.bad_lit_flag == 2:
-				self.ya[1,0] = self.abs_attack_value
 		self.w1 = np.matmul(F1, self.w1) + np.matmul(self.prod_3,self.prev_inc_i) + Ksp1*self.prev_ya[1,0]
 		self.zhat_uio1 = self.w1 + Hsp1*self.ya[1,0]
 		self.ruio1 = self.ya - np.matmul(Cobsv,self.zhat_uio1 )

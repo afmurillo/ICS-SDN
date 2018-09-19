@@ -187,7 +187,7 @@ class PLC101(PLC):
 	self.attack_time_begin = 200
 	self.attack_time_end = 300
 
-	self.defense = 0.0
+	self.defense = 1.0
 
 
 
@@ -206,7 +206,7 @@ class PLC101(PLC):
 	begin = time.time()
 	print " %Begin ",         begin
 	while_begin = 0.0
-	self.plc.lit_rec_time =0.0
+	self.lit_rec_time =0.0
 	control_time = 0.0
 	act_send_time = 0.0
 	time_btw_cycles = 0.0
@@ -308,7 +308,7 @@ class PLC101(PLC):
 		print "% control ", control_time
 		print "% act send ", act_send_time
 		print "% btw ", time_btw_cycles
-		print "% lit rec ", self.plc.lit_rec_time
+		print "% lit rec ", self.lit_rec_time
 
 		time.sleep(PLC_PERIOD_SEC)
 

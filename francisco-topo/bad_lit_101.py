@@ -37,7 +37,7 @@ class Lit101(PLC):
 
 	def main_loop(self):
 		count = 0
-		self.bad_lit_flag = 2
+		self.bad_lit_flag = 1
  	 	self.diff_attack_value = -20e-3
 		self.abs_attack_value = 0.43
 		self.attack_time_begin = 625000
