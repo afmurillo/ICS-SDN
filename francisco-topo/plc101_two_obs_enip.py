@@ -207,6 +207,7 @@ class PLC101(PLC):
 		while_begin = time.time() - begin
 		self.change_references()
 
+		#self.received_lit101 = float(self.receive(LIT101, SENSOR_ADDR))
                 self.lit101 = self.received_lit101 - Y10
 		lit_rec_time =time.time() - time_btw_cycles
 

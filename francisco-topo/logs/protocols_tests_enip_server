@@ -627,3 +627,23 @@
 09-18 15:47:51.259 MainThread network  WARNING  join       enip_srv server TID [16213/139720508045056] hanging on None
 09-18 15:47:52.346 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
 09-18 15:47:52.546 MainThread network  WARNING  join       enip_srv server TID [16219/140147656054528] hanging on None
+09-18 15:57:03.720 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-18 15:57:03.745 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-18 15:59:21.601 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-18 15:59:21.614 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-18 16:00:02.173 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-18 16:00:02.374 MainThread network  WARNING  join       enip_srv server TID [30227/139882603964160] hanging on None
+09-18 16:00:02.591 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-18 16:00:02.792 MainThread network  WARNING  join       enip_srv server TID [30237/139637261555456] hanging on None
+09-18 16:00:22.072 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-18 16:00:22.276 MainThread network  WARNING  join       enip_srv server TID [30958/140499772688128] hanging on None
+09-18 16:00:22.553 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-18 16:00:22.754 MainThread network  WARNING  join       enip_srv server TID [30990/140061179094784] hanging on None
+09-18 16:00:36.294 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-18 16:00:36.495 MainThread network  WARNING  join       enip_srv server TID [31020/140697390196480] hanging on None
+09-18 18:53:03.575 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-18 18:53:03.801 MainThread network  WARNING  join       enip_srv server TID [ 5225/140556114056960] hanging on None
+09-18 18:53:04.738 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-18 18:53:04.939 MainThread network  WARNING  join       enip_srv server TID [ 5239/139947851880192] hanging on None
+09-18 19:05:00.623 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-18 19:05:00.824 MainThread network  WARNING  join       enip_srv server TID [ 6658/139787142072064] hanging on None

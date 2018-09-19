@@ -19,7 +19,6 @@ class Lit101(PLC):
 		logging.basicConfig(filename=LOG_LIT101_FILE, level=logging.DEBUG)
 
 	def main_loop(self):
-		count = 0
 		while True:
 			self.level = float(self.get(LIT101))
 			self.send(LIT101, self.level, SENSOR_ADDR)
