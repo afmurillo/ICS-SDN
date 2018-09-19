@@ -41,7 +41,7 @@ class Lit102(PLC):
 		while True:
 			self.level = float(self.get(LIT102))
                         self.send_message(IP['plc101'], 8755,self.level)
-			time.sleep(PLC_PERIOD_SEC)
+			#time.sleep(PLC_PERIOD_SEC)
 
 if __name__ == '__main__':
 	lit102 = Lit102(name='lit102',state=STATE,protocol=LIT102_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
