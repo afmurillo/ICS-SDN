@@ -42,8 +42,8 @@ class Lit101Socket(Thread):
             try:
             	client, addr = self.sock.accept()
 		data = client.recv(4096)                                                # Get data from the client
-            	#message_dict = eval(json.loads(data, parse_float=Decimal))
-            	message_dict = eval(json.loads(data))
+            	message_dict = eval(json.loads(data, parse_float=Decimal))
+            	#message_dict = eval(json.loads(data))
 	        self.plc.received_lit101 = float(message_dict['Variable'])
 		self.plc.lit_rec_time = time.time()
             except KeyboardInterrupt:
@@ -189,7 +189,7 @@ class PLC101(PLC):
 	self.attack_time_begin = 200
 	self.attack_time_end = 300
 
-	self.defense = 1.0
+	self.defense = 0.0
 
     def main_loop(self):
         """plc1 main loop.
@@ -242,6 +242,7 @@ class PLC101(PLC):
 		self.w2 = np.matmul(F2, self.w2) + np.matmul(self.prod_4,self.prev_inc_i) + Ksp2*self.prev_ya[0,0]
 		self.zhat_uio2 = self.w2 + Hsp2*self.ya[0,0]
 		self.ruio2 = self.ya - np.matmul(Cobsv,self.zhat_uio2 )
+
 		print self.count, " ", self.ruio2.transpose()
 
 		if abs(self.ruio1[0]) >= self.th_uio_on:
