@@ -42,7 +42,8 @@ class Lit101Socket(Thread):
             try:
             	client, addr = self.sock.accept()
 		data = client.recv(4096)                                                # Get data from the client
-            	message_dict = eval(json.loads(data, parse_float=Decimal))
+            	#message_dict = eval(json.loads(data, parse_float=Decimal))
+            	message_dict = eval(json.loads(data))
 	        self.plc.received_lit101 = float(message_dict['Variable'])
 		self.plc.lit_rec_time = time.time()
             except KeyboardInterrupt:
@@ -179,7 +180,8 @@ class PLC101(PLC):
 
 	self.tim_uio_1 = 0
 	self.tim_uio_2 = 0
-	self.th_uio_on = 0.003*2
+	#self.th_uio_on = 0.003*2
+	self.th_uio_on = 0.001*2
 
 	self.bad_lit_flag = 0
  	self.diff_attack_value = -0.02
@@ -188,8 +190,6 @@ class PLC101(PLC):
 	self.attack_time_end = 300
 
 	self.defense = 1.0
-
-
 
     def main_loop(self):
         """plc1 main loop.
@@ -204,7 +204,7 @@ class PLC101(PLC):
         lit102socket.start()
 
 	begin = time.time()
-	print " %Begin ",         begin
+	#print " %Begin ",         begin
 	while_begin = 0.0
 	self.lit_rec_time =0.0
 	control_time = 0.0
@@ -219,9 +219,7 @@ class PLC101(PLC):
 		self.change_references()
 
                 self.lit101 = self.received_lit101 - Y10
-		#lit_rec_time = time.time() - time_btw_cycles
-
-		self.lit102 = self.received_lit102 - Y20
+		self.lit102 = float(self.get(LIT102)) - Y20
 
 		received_lit103 = float(self.get(LIT103))
 		lit103 = received_lit103 - Y30
@@ -234,19 +232,18 @@ class PLC101(PLC):
 	    	self.ya[0,0]=self.ym[0,0]
 		self.ya[1,0]=self.ym[1,0]
 
-		if self.count >=  self.attack_time_begin and self.count <= self.attack_time_end:
-			if self.bad_lit_flag == 1:
-				#self.diff_lit101 = self.diff_lit101 + self.diff_attack_value
-				self.ya[1,0] = self.ym[1,0] + self.diff_attack_value
-			elif self.bad_lit_flag == 2:
-				self.ya[1,0] = self.abs_attack_value
 		self.w1 = np.matmul(F1, self.w1) + np.matmul(self.prod_3,self.prev_inc_i) + Ksp1*self.prev_ya[1,0]
 		self.zhat_uio1 = self.w1 + Hsp1*self.ya[1,0]
 		self.ruio1 = self.ya - np.matmul(Cobsv,self.zhat_uio1 )
 
+		#print self.count, " ", self.ruio1[0]
+		#print self.count, " ", self.ruio1.transpose()
+
 		self.w2 = np.matmul(F2, self.w2) + np.matmul(self.prod_4,self.prev_inc_i) + Ksp2*self.prev_ya[0,0]
 		self.zhat_uio2 = self.w2 + Hsp2*self.ya[0,0]
 		self.ruio2 = self.ya - np.matmul(Cobsv,self.zhat_uio2 )
+		print self.count, " ", self.ruio2.transpose()
+
 		if abs(self.ruio1[0]) >= self.th_uio_on:
 			self.tim_uio_1 = 1
 		else:
@@ -257,7 +254,7 @@ class PLC101(PLC):
 		else:
 			self.tim_uio_2 = 0
 
-		print self.count, " ", self.tim_uio_1
+		#print self.count, " ", self.tim_uio_1
 		#print self.count, " ", self.tim_uio_2
 
 		self.v1 = np.matmul(Cobsv[0],(self.zhat_uio1-self.zhat_uio2))*self.tim_uio_1
@@ -305,10 +302,10 @@ class PLC101(PLC):
 
 		self.count += 1
 
-		print "% control ", control_time
-		print "% act send ", act_send_time
-		print "% btw ", time_btw_cycles
-		print "% lit rec ", self.lit_rec_time
+		#print "% control ", control_time
+		#print "% act send ", act_send_time
+		#print "% btw ", time_btw_cycles
+		#print "% lit rec ", self.lit_rec_time
 
 		time.sleep(PLC_PERIOD_SEC)
 
