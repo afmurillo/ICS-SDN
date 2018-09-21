@@ -702,3 +702,21 @@
 09-19 23:56:59.492 MainThread network  WARNING  join       enip_srv server TID [ 5734/140586682365696] hanging on None
 09-19 23:57:06.616 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
 09-19 23:57:06.817 MainThread network  WARNING  join       enip_srv server TID [ 5743/140279694423808] hanging on None
+09-20 13:18:00.343 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 13:18:00.375 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 14:47:37.268 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 14:47:37.268 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 14:48:50.606 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 14:48:50.636 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 14:49:18.556 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-20 14:49:18.756 MainThread network  WARNING  join       enip_srv server TID [ 6697/140515213063936] hanging on None
+09-20 14:49:45.318 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 22:40:49.249 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-20 22:40:49.449 MainThread network  WARNING  join       enip_srv server TID [15312/139989934659328] hanging on None
+09-20 22:40:49.794 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-20 22:40:49.994 MainThread network  WARNING  join       enip_srv server TID [15321/140491118675712] hanging on None
+09-20 22:40:50.233 MainThread network  WARNING  server_mai enip_srv server termination: KeyboardInterrupt()
+09-20 22:40:50.434 MainThread network  WARNING  join       enip_srv server TID [15318/139785406543616] hanging on None
+09-20 22:42:03.849 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 22:42:03.871 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+09-20 22:42:03.897 MainThread root     WARNING  logrotate_ Rotating log files due to signal

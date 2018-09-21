@@ -5,8 +5,8 @@ import logging
 import time
 
 
-import socket
-import json
+import socket 
+import json 
 import select
 
 
@@ -41,7 +41,7 @@ class Lit101(PLC):
 		while True:
 			self.level = float(self.get(LIT101))
                         self.send_message(IP['plc101'], 8754,self.level)
-			#time.sleep(PLC_PERIOD_SEC)
+			time.sleep(0.0005)
 
 if __name__ == '__main__':
 	lit101 = Lit101(name='lit101',state=STATE,protocol=LIT101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)

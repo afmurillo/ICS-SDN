@@ -40,8 +40,10 @@ class Lit101(PLC):
 		self.bad_lit_flag = 2
  	 	self.diff_attack_value = -20e-3
 		self.abs_attack_value = 0.43
-		self.attack_time_begin = 625000
-		self.attack_time_end = 950000
+		#self.attack_time_begin = 625000
+		#self.attack_time_end = 950000
+		self.attack_time_begin = 200000
+		self.attack_time_end = 360000
 
 		while True:
 			self.level = float(self.get(LIT101))
@@ -53,6 +55,7 @@ class Lit101(PLC):
 
                         self.send_message(IP['plc101'], 8754,self.level)
 			count = count + 1
+			time.sleep(0.0005)
 
 if __name__ == '__main__':
 	lit101 = Lit101(name='lit101',state=STATE,protocol=LIT101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)

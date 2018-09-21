@@ -139,19 +139,14 @@ class PLC101(PLC):
 	# Controller Initial Conditions
         self.count = 0
 
-        self.ref_y0 = Y10
-        self.ref_y1 = Y20
 
+	self.received_lit101 = 0.4
 	self.lit101 = 0.0
 	self.lit102 = 0.0
 	lit103 = 0.0
 
 	self.q1 = 0.0
 	self.q2 = 0.0
-
-	self.received_lit101 = 0.0
-	self.received_lit102 = 0.0
-	received_lit103 = 0.0
 
 	self.z =  np.array([[0.0],[0.0]])
 
@@ -181,15 +176,10 @@ class PLC101(PLC):
 	self.tim_uio_1 = 0
 	self.tim_uio_2 = 0
 	#self.th_uio_on = 0.003*2
-	self.th_uio_on = 0.001*2
+	self.th_uio_on = 0.0015
 
 	self.bad_lit_flag = 0
- 	self.diff_attack_value = -0.02
-	self.abs_attack_value = -0.01
-	self.attack_time_begin = 200
-	self.attack_time_end = 300
-
-	self.defense = 0.0
+	self.defense = 1.0
 
     def main_loop(self):
         """plc1 main loop.
@@ -220,9 +210,7 @@ class PLC101(PLC):
 
                 self.lit101 = self.received_lit101 - Y10
 		self.lit102 = float(self.get(LIT102)) - Y20
-
-		received_lit103 = float(self.get(LIT103))
-		lit103 = received_lit103 - Y30
+		lit103 =  float(self.get(LIT103)) - Y30
 
                 self.ym[0,0]=self.lit101
                 self.ym[1,0]=self.lit102
@@ -301,7 +289,7 @@ class PLC101(PLC):
 
 		act_send_time = time.time() - control_time
 
-		self.count += 1
+		self.count = self.count + 1
 
 		#print "% control ", control_time
 		#print "% act send ", act_send_time
