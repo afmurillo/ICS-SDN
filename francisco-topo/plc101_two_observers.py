@@ -179,7 +179,7 @@ class PLC101(PLC):
 	self.th_uio_on = 0.0015
 
 	self.bad_lit_flag = 0
-	self.defense = 1.0
+	self.defense = 0.0
 
     def main_loop(self):
         """plc1 main loop.
