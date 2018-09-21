@@ -1,0 +1,9 @@
+DEBUG get_query: SELECT value FROM industry WHERE name = ? AND pid = ?
+DEBUG set_query: UPDATE industry SET value = ? WHERE name = ? AND pid = ?
+DEBUG EnipProtocol server addr:  192.168.1.13
+DEBUG: concatenating server address with default port.
+DEBUG enip server tags_string:  LIT101:1=REAL LIT102:1=REAL LIT103:1=REAL Q101:1=REAL Q102:1=REAL 
+DEBUG enip _start_server cmd:  ['/usr/bin/python', '-m', 'cpppo.server.enip', '--print', '--log', 'logs/protocols_tests_enip_server', '--address', '192.168.1.13:44818', 'LIT101:1=REAL', 'LIT102:1=REAL', 'LIT103:1=REAL', 'Q101:1=REAL', 'Q102:1=REAL']
+0   [0.4, 0.2, 0.3]
+1   [0.40000000000000002, 0.20000000000000001, 0.29999999999999999]
+2   [0.40000000000000002, 0.20000000000000001, 0.29999999999999999]
