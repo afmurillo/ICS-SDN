@@ -216,7 +216,7 @@ grid on;
 xlabel('Attack Value of Bias Attack (m)')
 ylabel('Average Error(m)')
 title({'Plant Mean Error with Bias Attack'});
-matlab2tikz('tikz/std_mean_error_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('tikz/mean_error_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
 matlab2tikz('tikz/std_mean_error_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height','0.5\columnwidth', 'width', '0.8\columnwidth');
 
 
