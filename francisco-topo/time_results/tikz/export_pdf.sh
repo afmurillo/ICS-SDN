@@ -12,3 +12,5 @@ pdflatex std_error_0_5_def.tikz std_error_0_5_def.pdf
 pdflatex std_error_0_5_no_atk.tikz std_error_0_5_no_atk.pdf
 pdflatex std_error_no_atk.tikz std_error_no_atk.pdf
 pdflatex std_no_attack.tikz std_no_attack.pdf
+pdflatex mean_error_no_atk.tikz mean_error_no_atk.pdf
+pdflatex std_mean_error_def.tikz std_mean_error_def.pdf
