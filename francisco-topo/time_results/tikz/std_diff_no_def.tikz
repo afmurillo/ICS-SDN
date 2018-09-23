@@ -16,7 +16,7 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.79\columnwidth,
+width=0.761\columnwidth,
 height=0.5\columnwidth,
 at={(0\columnwidth,0\columnwidth)},
 scale only axis,
@@ -29,8 +29,8 @@ ymax=0.5,
 ylabel={Tank Level (m)},
 ymajorgrids,
 axis background/.style={fill=white},
-title style={font=\bfseries,align=center},
-title={Virtual Environment\\[1ex]Plant Behavior With Bias Attack without Defense},
+title style={font=\bfseries},
+title={Plant Behavior with Bias Attack without Defense},
 legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=left,draw=white!15!black}
 ]
 \addplot [color=blue,solid,line width=1.5pt]
