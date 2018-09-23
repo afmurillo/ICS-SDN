@@ -219,8 +219,8 @@ grid on;
 xlabel('Attack Value of Bias Attack (m)')
 ylabel('Average Error(m)')
 title({'Virtual Environment', 'Average Error with Bias Attack'});
-matlab2tikz('tikz/mean_error_no_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-matlab2tikz('tikz/mean_error_no_atk.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height','0.5\columnwidth', 'width', '0.8\columnwidth');
+matlab2tikz('tikz/std_mean_error_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
+matlab2tikz('tikz/std_mean_error_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height','0.5\columnwidth', 'width', '0.8\columnwidth');
 
 
 
