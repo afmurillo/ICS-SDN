@@ -1,0 +1,44 @@
+% This file was created by matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.987\figurewidth,
+height=\figureheight,
+at={(0\figurewidth,0\figureheight)},
+scale only axis,
+xmin=0.001,
+xmax=0.005,
+xlabel={Attack Value of Bias Attack (m)},
+xmajorgrids,
+ymin=0,
+ymax=0.018,
+ylabel={Average Error(m)},
+ymajorgrids,
+axis background/.style={fill=white},
+title style={font=\bfseries,align=center},
+title={Virtual Environment\\[1ex]Average Error with Bias Attack},
+legend style={at={(0.03,0.97)},anchor=north west,legend cell align=left,align=left,draw=white!15!black}
+]
+\addplot [color=red,dashdotted,line width=1.5pt]
+  table[row sep=crcr]{%
+0.001	0.00309671475980141\\
+0.002	0.00719987793712471\\
+0.003	0.00991529330562371\\
+0.004	0.0134860981381795\\
+0.005	0.0163991473610508\\
+};
+\addlegendentry{Error without Defense};
+
+\addplot [color=blue,solid,line width=1.5pt]
+  table[row sep=crcr]{%
+0.001	8.90707236654381e-05\\
+0.002	0.00509935201587764\\
+0.003	0.000902494946895618\\
+0.004	0.0032524610723348\\
+0.005	5.97998824686242e-05\\
+};
+\addlegendentry{Error with Defense};
+
+\end{axis}
+\end{tikzpicture}%
