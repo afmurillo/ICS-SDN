@@ -150,8 +150,12 @@ matlab2tikz('tikz/diff_def.tikz', 'showInfo', false, 'parseStrings', false, 'sta
 matlab2tikz('tikz/std_diff_def.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', true, 'height','0.5\columnwidth', 'width', '0.8\columnwidth');
 
 %%%%%%%%%%%%%%%%%%%%%%%% Errors %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%% Without attack %%%
 lit_101_error_no_atk = ref_vector - lit101_no_attack;
 lit_102_error_no_atk = ref_vector_2 - lit102_no_attack;
+
+mean_lit_101_error_no_atk(1:5) = mean(lit_101_error_no_atk);
 
 lit_101_error_diff_0_1_no_def = ref_vector - lit101_diff_0_1_no_def;
 lit_102_error_diff_0_1_no_def = ref_vector_2 - lit102_diff_0_1_no_def;
@@ -207,8 +211,9 @@ set(gca, 'FontSize', fsz, 'LineWidth', 1.5);
 plot(error_vector, abs(mean_error_no_def),'-.r', 'linewidth', 1.5);
 hold on
 plot(error_vector, abs(mean_error_def), '-b', 'linewidth', 1.5);
+plot(error_vector, abs(mean_lit_101_error_no_atk), '--k', 'linewidth', 1.5);
 
-g = legend('Error without Defense','Error with Defense','Location','northwest');
+g = legend('Mean Error without Defense','Mean Error with Defense','Mean Error without Attack', 'Location','northwest');
 g.FontSize = 14;
 grid on
 %axis([0 500 0 0.06])
