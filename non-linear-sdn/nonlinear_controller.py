@@ -50,8 +50,6 @@ class DynamicController(object):
 
         # We just use this to know when to log a helpful message
         self.hold_down_expired = 0
-        self.controller_socket = ControllerSocket(self)
-        self.controller_socket.start()
         self.attack_detected = False
 	self.compromised_sensor = False
 	self.compromised_plc = False 
@@ -77,7 +75,7 @@ class DynamicController(object):
         #print "From connection: ", str(event.dpid)
 
         in_port = event.port
-        if packet.type=pkt.IP_TYPE:
+        if packet.type == pkt.IP_TYPE:
             ip_packet=packet.payload
             print ip_packet.srcip
 

@@ -28,8 +28,6 @@ class SimpleCPS(MiniCPS):
 
         self.name = name
         self.net = net
-
-
         self.net.start()
 
         lit101 = self.net.get('lit101')
@@ -54,8 +52,8 @@ class SimpleCPS(MiniCPS):
 if __name__ == "__main__":
 
     topo = SimpleTopo()
-    #controller = RemoteController('c0', ip=IP['controller'], port=6633 )
     controller = RemoteController('c0', ip=IP['controller'], port=6633 )
+    #controller = RemoteController('c0', ip=IP['controller'], port=5543 )
     net = Mininet(topo=topo, controller = controller)
 
     dynamic_cps = SimpleCPS(name='industry',net=net)

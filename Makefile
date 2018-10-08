@@ -43,6 +43,11 @@ fran:
 	sleep .5
 	cd francisco-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
+linear:
+	#non-linear-sdn/controller.sh &
+	sleep .5
+	cd non-linear-sdn/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
+
 javier:
 	cd javier-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
