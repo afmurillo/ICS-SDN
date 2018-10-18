@@ -66,9 +66,28 @@ class DynamicController(object):
 
     def mirror_traffic(self, event):
         """ 
-	Mirrors traffic from LIT101 to the IDS101
-	"""
-	packet=event.parsed
+    	Mirrors traffic from LIT101 to the IDS101
+	    """
+	    packet=event.parsed
+        #port = self.macToPort[packet.dst]
+        if packet.type == ethernet.IP_TYPE:
+            ip_packet=packet.payload
+            print ip_packet.srcip
+            if ip_packet.srcip == '192.168.1.10' and ip_packet.dstip=='192.168.1.14':
+                print "this needs to be mirrored"
+                msg.match = of.ofp_match.from_packet(packet, event.port)
+                msg.idle_timeout = 10
+                msg.hard_timeout = 30                                
+                action = of.ofp_action_output(port=self.ids_port)
+                msg.actions.append(action)
+                msg.data = event.ofp
+
+            else:
+                return
+        else:
+            return
+
+        
 
 
 
@@ -82,13 +101,11 @@ class DynamicController(object):
         #print "From connection: ", str(event.dpid)
 
         in_port = event.port
-        #if packet.type == ethernet.IP_TYPE:
-        #ip_packet=packet.payload
-        #print ip_packet.srcip
+        if ip_packet.srcip == '192.168.1.15':
+                print "ids packet"
+                self.ids_mac = packet.src
+                self.ids_port=event.port
 
-        #if (ip_packet.srcip == '192.168.1.10'):
-	#print "Packet from lit101"
-	#mirror_traffic(self.event)
 
         def flood(message=None):
             """
@@ -159,11 +176,16 @@ class DynamicController(object):
                     % (packet.src, event.port, packet.dst, port))
                 msg = of.ofp_flow_mod()
                 msg.match = of.ofp_match.from_packet(packet, event.port)
+                msg.idle_timeout = 10
+                msg.hard_timeout = 30                                
                 action = of.ofp_action_output(port=port)
                 msg.actions.append(action)
                 msg.data = event.ofp
+
 		for connection in self.connections:
             		connection.send(msg)
+
+                mirror_traffic(event)
 
 class CentralComponent(object):
 
