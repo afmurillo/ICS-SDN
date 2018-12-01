@@ -8038,7 +8038,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
   table[row sep=crcr]{%
 133.366666666667	0.65054\\
 };
-\addlegendentry{With SDN Defense};
+\addlegendentry{With False Alarm};
 
 \end{axis}
 \end{tikzpicture}%

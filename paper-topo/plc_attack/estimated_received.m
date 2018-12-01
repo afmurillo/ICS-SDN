@@ -127,7 +127,7 @@ ylabel('Tank 301 Level (m)')
 title('Water Tank 301 Level Behavior With Attack and IDS');
 
 matlab2tikz('defense_plc.tikz', 'showInfo', false, 'parseStrings', false, 'standalone', false, 'height', '\figureheight', 'width', '\figurewidth');
-
+saveas(h4, 'defense_plc.fig')
 % h5=figure(5)
 % 
 % 

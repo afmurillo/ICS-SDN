@@ -17,7 +17,7 @@ ylabel={Tank 1 Level (m)},
 ymajorgrids,
 axis background/.style={fill=white},
 title style={font=\bfseries},
-title={Water Tank 1 Level Behavior With Faulty Model: Inlet 2.2},
+title={Water Tank 1 Level Behavior With Faulty IDS Observer: Inlet 2.2},
 legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=left,draw=white!15!black}
 ]
 \addplot [color=black,dashdotted,line width=1.5pt,forget plot]
