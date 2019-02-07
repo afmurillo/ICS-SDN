@@ -64,7 +64,24 @@ class DynamicController(object):
     def close_connection(self):
         self.controller_socket.close_connection()
 
-       
+    def mirror_traffic(self, event):
+        """ 
+    	Mirrors traffic from LIT101 to the IDS101
+        """
+        packet=event.parsed
+        if packet.type == ethernet.IP_TYPE:
+            ip_packet=packet.payload
+            print ip_packet.srcip
+            if ip_packet.srcip == '192.168.1.10' and ip_packet.dstip=='192.168.1.14':
+                print "Mirroring"
+		msg = of.ofp_flow_mod()
+                msg.match = of.ofp_match.from_packet(packet, event.port)
+                msg.idle_timeout = 1
+                msg.hard_timeout = 1
+                action = of.ofp_action_output(port=self.ids_port)
+                msg.actions.append(action)
+                msg.data = event.ofp
+
     def _handle_PacketIn(self, event):
         """
         Manage PacketIn events sent by event,connection datapaths.
@@ -75,9 +92,12 @@ class DynamicController(object):
         #print "From connection: ", str(event.dpid)
 
         in_port = event.port
-        if packet.type == pkt.IP_TYPE:
+        if packet.type == ethernet.IP_TYPE:
             ip_packet=packet.payload
-            print ip_packet.srcip
+            if ip_packet.srcip == '192.168.1.15':
+                print "ids packet"
+                self.ids_mac = packet.src
+                self.ids_port=event.port
 
 
         def flood(message=None):
@@ -149,23 +169,25 @@ class DynamicController(object):
                     % (packet.src, event.port, packet.dst, port))
                 msg = of.ofp_flow_mod()
                 msg.match = of.ofp_match.from_packet(packet, event.port)
-                msg.match.dl_src = None
-                msg.match.dl_dst = None
-                msg.match.dl_vlan = None
-                msg.match.dl_vlan_pcp = None
-                msg.match.nw_tos = None
-                msg.match.nw_proto = None
-                msg.match.tp_src = None
-                msg.match.tp_dst = None
-                msg.idle_timeout = 10
-                msg.hard_timeout = 30
-                msg.priority = 10000
+                msg.idle_timeout = 1
+                msg.hard_timeout = 1
                 action = of.ofp_action_output(port=port)
                 msg.actions.append(action)
+
+	        if packet.type == ethernet.IP_TYPE:
+	            ip_packet=packet.payload
+
+                    if ip_packet.srcip == '192.168.1.10' and ip_packet.dstip=='192.168.1.14':
+                        print "Mirroring"
+                        action_2 = of.ofp_action_output(port=self.ids_port)
+                        msg.actions.append(action_2)
+
                 msg.data = event.ofp
+
 		for connection in self.connections:
             		connection.send(msg)
-                #self.connection.send(msg)
+
+                self.mirror_traffic(event)
 
 class CentralComponent(object):
 

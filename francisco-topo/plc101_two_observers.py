@@ -141,6 +141,7 @@ class PLC101(PLC):
 
 
 	self.received_lit101 = 0.4
+	self.received_lit102 = 0.2
 	self.lit101 = 0.0
 	self.lit102 = 0.0
 	lit103 = 0.0
@@ -179,7 +180,7 @@ class PLC101(PLC):
 	self.th_uio_on = 0.0015
 
 	self.bad_lit_flag = 0
-	self.defense = 0.0
+	self.defense = 1.0
 
     def main_loop(self):
         """plc1 main loop.
@@ -209,7 +210,8 @@ class PLC101(PLC):
 		self.change_references()
 
                 self.lit101 = self.received_lit101 - Y10
-		self.lit102 = float(self.get(LIT102)) - Y20
+		#self.lit102 = float(self.get(LIT102)) - Y20
+		self.lit102 = self.received_lit102 - Y20
 		lit103 =  float(self.get(LIT103)) - Y30
 
                 self.ym[0,0]=self.lit101
