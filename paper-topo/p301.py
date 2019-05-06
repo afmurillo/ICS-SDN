@@ -52,10 +52,13 @@ class PP301(PLC):
 		count = 0
 	        psocket = PSocket(self)
 	        psocket.start()
+		start=time.time()
+		end=0
 
 		while count<=PLC_SAMPLES:
 			p301 = int(self.receive(P301, PLC301_ADDR))
-			print "\n Received p301 command %.5f" % p301, '\n'
+			end = time.time()
+			print '\n p301: time: ', sample_time, ' value: ', p301, '\n'
 			self.set(P301, p301)
 
 

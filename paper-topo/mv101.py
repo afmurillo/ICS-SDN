@@ -53,15 +53,16 @@ class Mv101(PLC):
 	def main_loop(self):
 		print 'DEBUG: mv101 enters main_loop'
 		count = 0
-
-
 	        mvsocket = MVSocket(self)
 	        mvsocket.start()
-
+		start=time.time()
+		end=0
 		while count<=PLC_SAMPLES:
 			try:
 				mv101 = int(self.receive(MV101, PLC101_ADDR))
-				print "DEBUG: Received mv101 command %.5f" % mv101
+				end = time.time()
+				sample_time = end-start
+				print '\n mv101: time: ', sample_time , ' value: ', mv101 '\n'
 				self.set(MV101, mv101)
 
 		        except:

@@ -25,6 +25,8 @@ class PSocket(Thread):
         self.sock = socket.socket()     # Create a socket object    
         self.sock.bind((IP['p101'] , 7842 ))
         self.sock.listen(5)
+	start=time.time()
+	end=0
 
         while True:
             try:
@@ -32,9 +34,11 @@ class PSocket(Thread):
                 data = client.recv(4096)                                                # Get data from the client
                 message_dict = eval(json.loads(data))
                 p101 = int(message_dict['Variable'])
+		end = time.time()
+		sample_time = end-start
 
-                print "\n received from PLC101", p101, '\n'
-		self.plc.set(P101, p101)           
+		print '\n p101: time: ', sample_time, ' value: ', p101, '\n'
+		self.plc.set(P101, p101)
 
             except KeyboardInterrupt:
                 print "\nCtrl+C was hitten, stopping server"
