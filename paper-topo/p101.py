@@ -29,12 +29,11 @@ class PSocket(Thread):
         while True:
             try:
                 client, addr = self.sock.accept()
-                data = client.recv(4096)                                                # Get data from the client         
-            
+                data = client.recv(4096)                                                # Get data from the client
                 message_dict = eval(json.loads(data))
                 p101 = int(message_dict['Variable'])
 
-                print "received from PLC101!", p101
+                print "\n received from PLC101", p101, '\n'
 		self.plc.set(P101, p101)           
 
             except KeyboardInterrupt:

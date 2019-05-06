@@ -34,7 +34,7 @@ class RawWaterTank(Tank):
 			# First tank
 			new_lit_101 = float(self.get(LIT101))
 			water_volume = self.section*new_lit_101
-			
+
 			mv101 = self.get(MV101)
 			if int(mv101) == 1:
 				inflow = PUMP_FLOWRATE_IN * PP_PERIOD_HOURS
@@ -47,8 +47,8 @@ class RawWaterTank(Tank):
 			if int(p101) == 1:
 				outflow = PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS
 				water_volume -= outflow
-				fit_201 = outflow		
-			else: 
+				fit_201 = outflow
+			else:
 				outflow = 0
 				fit_201 = 0
 
@@ -57,7 +57,7 @@ class RawWaterTank(Tank):
 
 			if new_lit_101 <= 0.0:
 				new_lit_101 = 0.0
-			
+
 			self.lit101 = self.set(LIT101, new_lit_101)
 
 			# PH Second loop
@@ -76,7 +76,7 @@ class RawWaterTank(Tank):
 			# Second tank - third loop
 			new_lit_301 = float(self.get(LIT301))
 			water_volume_2 = self.section*new_lit_301
-			
+
 			if int(p101) == 1:
 				inflow_2 = PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS
 				water_volume_2 += inflow_2
@@ -93,13 +93,10 @@ class RawWaterTank(Tank):
 			new_lit_301 = water_volume_2 / self.section
 
 			if new_lit_301 <= 0.0:
-				new_lit_301 = 0.0			
+				new_lit_301 = 0.0
 
-			print "DEBUG  Water Tank 1 Level %.5f " % new_lit_101
-			print "DEBUG  PH Level %.5f " % new_ph201
-			print "DEBUG  Water Tank 2 Level %.5f " % new_lit_301
 			self.lit301 = self.set(LIT301, new_lit_301)
-		
+			print "Water ", new_lit_101, self.lit301
 			count += 1
 			time.sleep(PP_PERIOD_SEC)
 
@@ -111,5 +108,3 @@ if __name__ == '__main__':
 		section=TANK_SECTION,
 		level=RWT_INIT_LEVEL
 	)
-#	rwt.pre_loop()
-#	rwt.main_loop()

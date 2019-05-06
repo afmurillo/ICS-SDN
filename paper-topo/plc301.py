@@ -46,8 +46,6 @@ class PLC301(PLC):
 
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
-        print
-        time.sleep(sleep)
 
     def main_loop(self):
         """plc1 main loop.

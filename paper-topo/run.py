@@ -61,8 +61,11 @@ class SimpleCPS(MiniCPS):
 if __name__ == "__main__":
 
     topo = SimpleTopo()
+    #Use when controller is in the same machine as MiniCPS
+    controller = RemoteController('c0', ip='127.0.0.1', port=6633)
+
+    #Use when remote controller
     #controller = RemoteController('c0', ip=IP['controller'], port=6633 )
-    controller = RemoteController('c0', ip=IP['controller'], port=6633 )
     net = Mininet(topo=topo, controller = controller)
 
     dynamic_cps = SimpleCPS(name='industry',net=net)

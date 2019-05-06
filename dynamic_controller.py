@@ -44,7 +44,7 @@ class ControllerSocket(Thread):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)     # Create a socket object
 
     def run(self):
-        print 'DEBUG listening on port', int(PORTS['controller_ids_port'])
+        #print 'DEBUG listening on port', int(PORTS['controller_ids_port'])
         self.sock.bind((IP['controller'] , int(PORTS['controller_ids_port'])))
         self.sock.listen(5)
 

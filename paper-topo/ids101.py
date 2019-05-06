@@ -23,7 +23,7 @@ CUSTOM_PUMP_FLOWRATE_IN = 3.0
 class Ids101(PLC):
 
 	def switch_component(self, controller_ip, controller_port, component):
-	    print "Connecting to ONOS"
+	    print "Connecting to POX"
 	    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	    sock.connect((controller_ip, int(controller_port)))
 	    msg_dict = dict.fromkeys(['Type', 'Variable'])

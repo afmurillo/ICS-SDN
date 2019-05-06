@@ -46,18 +46,16 @@ class PSocket(Thread):
 
 class PP301(PLC):
 	def pre_loop(self, sleep=0.1):
-		print 'DEBUG: p301 enters pre_loop'
 		time.sleep(sleep)
 
 	def main_loop(self):
-		print 'DEBUG: p301 enters main_loop'
 		count = 0
 	        psocket = PSocket(self)
 	        psocket.start()
 
 		while count<=PLC_SAMPLES:
 			p301 = int(self.receive(P301, PLC301_ADDR))
-			print "DEBUG: Received p301 command %.5f" % p301
+			print "\n Received p301 command %.5f" % p301, '\n'
 			self.set(P301, p301)
 
 
