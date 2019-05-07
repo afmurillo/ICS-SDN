@@ -62,7 +62,7 @@ class Mv101(PLC):
 				mv101 = int(self.receive(MV101, PLC101_ADDR))
 				end = time.time()
 				sample_time = end-start
-				print '\n mv101: time: ', sample_time , ' value: ', mv101 '\n'
+				print '\n mv101: time: ', sample_time , ' value: ', mv101, '\n'
 				self.set(MV101, mv101)
 
 		        except:

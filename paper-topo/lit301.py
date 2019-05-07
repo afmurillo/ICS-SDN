@@ -13,8 +13,8 @@ class Lit301(PLC):
 
 	def main_loop(self):
 		count = 0
-		gaussian_noise_experiment = 0
-		noise_level = 0.18
+		gaussian_noise_experiment = 1
+		noise_level = 0.1
 		start=time.time()
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT301))

@@ -15,8 +15,8 @@ class Lit101(PLC):
 	def main_loop(self):
 		print 'DEBUG: sensor enters main_loop'
 		count = 0
-		gaussian_noise_experiment = 0
-		noise_level = 0.18
+		gaussian_noise_experiment = 1
+		noise_level = 0.1
 		start=time.time()
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT101))

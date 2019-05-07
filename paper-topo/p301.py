@@ -58,6 +58,7 @@ class PP301(PLC):
 		while count<=PLC_SAMPLES:
 			p301 = int(self.receive(P301, PLC301_ADDR))
 			end = time.time()
+			sample_time = end-start
 			print '\n p301: time: ', sample_time, ' value: ', p301, '\n'
 			self.set(P301, p301)
 
