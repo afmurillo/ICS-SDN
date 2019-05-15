@@ -7,7 +7,7 @@ from threading import Thread
 import socket
 import json
 import select
-
+import logging
 
 PLC101_ADDR = IP['plc101']
 
@@ -53,6 +53,7 @@ class Mv101(PLC):
 	def main_loop(self):
 		print 'DEBUG: mv101 enters main_loop'
 		count = 0
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/mv101.log')
 	        mvsocket = MVSocket(self)
 	        mvsocket.start()
 		start=time.time()
@@ -62,7 +63,7 @@ class Mv101(PLC):
 				mv101 = int(self.receive(MV101, PLC101_ADDR))
 				end = time.time()
 				sample_time = end-start
-				print '\n mv101: time: ', sample_time , ' value: ', mv101, '\n'
+				logging.info('MV101: %f', mv101)
 				self.set(MV101, mv101)
 
 		        except:

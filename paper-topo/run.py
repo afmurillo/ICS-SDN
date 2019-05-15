@@ -34,6 +34,15 @@ class SimpleCPS(MiniCPS):
 	plc2 = self.net.get('plc201')
 	plc3 = self.net.get('plc301')
 
+	lit101 = self.net.get('lit101')
+	lit301 = self.net.get('lit301')
+
+	p101 = self.net.get('p101')
+	mv101 = self.net.get('mv101')
+	p301 = self.net.get('p301')
+
+	plant = self.net.get('plant101')
+
         ids101 = self.net.get('ids101')
         _intf = Intf( 'eth2', node=ids101 )
         ids101.cmd('ifconfig eth2 192.168.56.101')
@@ -52,6 +61,19 @@ class SimpleCPS(MiniCPS):
 
 	plc1.cmd('route add -net 192.168.3.0 netmask 255.255.255.0 dev plc101-eth2')
 	plc3.cmd('route add -net 192.168.1.0 netmask 255.255.255.0 dev plc301-eth2')
+
+
+	lit101.cmd('python lit101.py &')
+	lit301.cmd('python lit301.py &')
+
+	p101.cmd('python p101.py &')
+	plc1.cmd('python plc101.py &')
+	mv101.cmd('python mv101.py &')
+
+	plc3.cmd('python plc301.py &')
+	p301.cmd('python p301.py &')
+
+	plant.cmd('python physical_process.py &')
 
         # start devices
         CLI(self.net)

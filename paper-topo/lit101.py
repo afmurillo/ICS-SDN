@@ -4,6 +4,8 @@ import random
 
 import time
 
+import logging
+
 SENSOR_ADDR = IP['lit101']
 
 LIT101 = ('LIT101', 1)
@@ -13,10 +15,11 @@ class Lit101(PLC):
 		time.sleep(sleep)
 
 	def main_loop(self):
-		print 'DEBUG: sensor enters main_loop'
+		#print 'DEBUG: sensor enters main_loop'
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/lit101.log')
 		count = 0
 		gaussian_noise_experiment = 1
-		noise_level = 0.1
+		noise_level = 0.5
 		start=time.time()
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT101))
@@ -29,7 +32,9 @@ class Lit101(PLC):
 			self.send(LIT101, self.level, SENSOR_ADDR)
 			end=time.time()
 			sample_time = end-start
-			print '\n lit101: time: ', sample_time, 'value: ', self.level, '\n'
+			#print '\n lit101: time: ', sample_time, 'value: ', self.level, '\n'
+			self.level = 0.5
+			logging.info('LIT101: %f', self.level)
 			time.sleep(PLC_PERIOD_SEC)
 
 

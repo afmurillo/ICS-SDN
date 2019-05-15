@@ -16,6 +16,8 @@ import time
 
 import subprocess
 
+import logging
+
 from utils import IP
 
 from mininet.link import Intf

@@ -7,7 +7,7 @@ from threading import Thread
 import socket
 import json
 import select
-
+import logging
 
 PLC101_ADDR = IP['plc101']
 
@@ -22,6 +22,7 @@ class PSocket(Thread):
 
     def run(self):
         print "DEBUG entering socket thread run"
+	logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/p101.log')
         self.sock = socket.socket()     # Create a socket object    
         self.sock.bind((IP['p101'] , 7842 ))
         self.sock.listen(5)
@@ -37,7 +38,7 @@ class PSocket(Thread):
 		end = time.time()
 		sample_time = end-start
 
-		print '\n p101: time: ', sample_time, ' value: ', p101, '\n'
+		logging.info('P101: %f', p101)
 		self.plc.set(P101, p101)
 
             except KeyboardInterrupt:

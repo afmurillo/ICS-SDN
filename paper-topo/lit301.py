@@ -2,6 +2,7 @@ from minicps.devices import PLC
 from utils import *
 import random
 import time
+import logging
 
 SENSOR_ADDR = IP['lit301']
 
@@ -15,6 +16,7 @@ class Lit301(PLC):
 		count = 0
 		gaussian_noise_experiment = 1
 		noise_level = 0.1
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/lit301.log')
 		start=time.time()
 		while count<=PLC_SAMPLES:
 			self.level = float(self.get(LIT301))
@@ -27,7 +29,7 @@ class Lit301(PLC):
 			self.send(LIT301, self.level, IP['lit301'])
 			end = time.time()
 			sample_time = end-start
-			print '\n lit301: time: ',sample_time, 'value: ', self.level, '\n'
+			logging.info('LIT301: %f', self.level)
 			time.sleep(PLC_PERIOD_SEC)
 
 
