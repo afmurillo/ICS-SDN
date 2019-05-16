@@ -26,7 +26,6 @@ class PSocket(Thread):
         self.sock = socket.socket()     # Create a socket object    
         self.sock.bind((IP['p101'] , 7842 ))
         self.sock.listen(5)
-	start=time.time()
 	end=0
 
         while True:
@@ -35,8 +34,6 @@ class PSocket(Thread):
                 data = client.recv(4096)                                                # Get data from the client
                 message_dict = eval(json.loads(data))
                 p101 = int(message_dict['Variable'])
-		end = time.time()
-		sample_time = end-start
 
 		logging.info('P101: %f', p101)
 		self.plc.set(P101, p101)
@@ -55,7 +52,7 @@ class PP101(PLC):
                 print 'DEBUG: p101 enters main_loop'
                 count = 0
                 psocket = PSocket(self)
-                psocket.start()       
+                psocket.start()
 
 if __name__ == '__main__':
 	p101 = PP101(name='p101',state=STATE,protocol=P101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)

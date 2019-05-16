@@ -56,13 +56,9 @@ class Mv101(PLC):
 		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/mv101.log')
 	        mvsocket = MVSocket(self)
 	        mvsocket.start()
-		start=time.time()
-		end=0
 		while count<=PLC_SAMPLES:
 			try:
 				mv101 = int(self.receive(MV101, PLC101_ADDR))
-				end = time.time()
-				sample_time = end-start
 				logging.info('MV101: %f', mv101)
 				self.set(MV101, mv101)
 
