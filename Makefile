@@ -27,6 +27,10 @@ TESTER_OPTS_COV_HTML = $(TESTER_OPTS) --with-coverage --cover-html
 paper:
 	cd paper-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
+replay:
+	cd replay-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
+
+
 final:
 	cd final-topo/; $(PYTHON) $(PYTHON_OPTS) run.py; cd ..
 
