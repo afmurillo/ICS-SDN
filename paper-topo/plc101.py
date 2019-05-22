@@ -11,6 +11,7 @@ import json
 import select
 import socket
 import time
+import logging
 
 MV101 = ('MV101', 1)
 LIT101 = ('LIT101', 1)
@@ -32,7 +33,6 @@ class Lit301Socket(Thread):
         self.plc = plc_object
 
     def run(self):
-        print "DEBUG entering socket thread run"
         self.sock = socket.socket()     # Create a socket object    
         self.sock.bind((IP['plc101-HMI'] , 8754 ))
         self.sock.listen(5)
@@ -43,8 +43,6 @@ class Lit301Socket(Thread):
 		data = client.recv(4096)                                                # Get data from the client
             	message_dict = eval(json.loads(data))
 	        lit301 = float(message_dict['Variable'])
-
-	        print "received from LIT301!", lit301
 
 	        if lit301 >= LIT_301_M['HH'] :
                     #self.plc.send(P101, 0, IP['plc101'])
@@ -98,7 +96,6 @@ class HMISocket(Thread):
         self.lit101 = 0.0
 
     def run(self):
-        print "DEBUG entering socket thread run"
         self.sock = socket.socket()
         self.sock.connect((IP['HMI'], int(PORTS['hmi_poll_port'])))
         data = ''
@@ -120,7 +117,6 @@ class IdsSocket(Thread):
         self.plc = plc_object
 
     def run(self):
-        print "DEBUG entering socket thread run"
         self.sock = socket.socket()     # Create a socket object    
         self.sock.bind((IP['plc101'] , 4234 ))
         self.sock.listen(5)
@@ -133,7 +129,6 @@ class IdsSocket(Thread):
 		#lit101 = float(self.plc.recieve(LIT101, IDS_ADDR))
 	        message_dict = eval(json.loads(data))
 	        lit101 = float(message_dict['Variable'])
-		print "received from IDS!", lit101
 
             
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
@@ -217,7 +212,6 @@ class PLC101(PLC):
 	    try:
 	    	lit101 = float(self.receive(LIT101, SENSOR_ADDR))
 	        #print 'DEBUG plc1 lit101: %.5f' % lit101
-		print "plc1 lit101", lit101
                 #hmi.setLit101(lit101)
 
 

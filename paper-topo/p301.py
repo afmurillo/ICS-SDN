@@ -8,7 +8,7 @@ from threading import Thread
 import socket
 import json
 import select
-
+import logging
 
 PLC301_ADDR = IP['plc301']
 
@@ -50,15 +50,15 @@ class PP301(PLC):
 
 	def main_loop(self):
 		count = 0
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/p301.log')
 	        psocket = PSocket(self)
 	        psocket.start()
-		start=time.time()
 		end=0
 
 		while count<=PLC_SAMPLES:
 			p301 = int(self.receive(P301, PLC301_ADDR))
-			end = time.time()
-			print '\n p301: time: ', sample_time, ' value: ', p301, '\n'
+			#print '\n p301: time: ', sample_time, ' value: ', p301, '\n'
+			logging.info('P301: %f', p301)
 			self.set(P301, p301)
 
 

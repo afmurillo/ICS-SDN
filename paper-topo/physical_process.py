@@ -3,6 +3,7 @@ from utils import *
 
 import sys
 import time
+import logging
 
 MV101 = ('MV101', 1)
 P101 = ('P101', 1)
@@ -29,6 +30,7 @@ class RawWaterTank(Tank):
 
 	def main_loop(self):
 		count = 0
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/plant.log')
 		while(count <= PP_SAMPLES):
 
 			# First tank
@@ -96,7 +98,8 @@ class RawWaterTank(Tank):
 				new_lit_301 = 0.0
 
 			self.lit301 = self.set(LIT301, new_lit_301)
-			print "Water ", new_lit_101, self.lit301
+			#print "Water ", new_lit_101, self.lit301
+			logging.info('LIT101: %f, LIT301 %f', new_lit_101, self.lit301)
 			count += 1
 			time.sleep(PP_PERIOD_SEC)
 
