@@ -16,18 +16,11 @@ class Lit101(PLC):
 
 	def main_loop(self):
 		#print 'DEBUG: sensor enters main_loop'
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_gaussian_noise/lit101.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/lit101.log')
 		count = 0
-<<<<<<< HEAD
-		gaussian_noise_experiment = 1
-		noise_level = 0.18
-		start=time.time()
-		while count<=PLC_SAMPLES:
-=======
 		gaussian_noise_experiment = 0
-		noise_level = 0.03
+		noise_level = 0.02
 		while True:
->>>>>>> a23c8bec56d2be40099ce958ef6ea06717354001
 			self.level = float(self.get(LIT101))
 			if gaussian_noise_experiment == 1:
 				self.level = self.level + random.gauss(0, noise_level)

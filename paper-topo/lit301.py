@@ -15,8 +15,8 @@ class Lit301(PLC):
 	def main_loop(self):
 		count = 0
 		gaussian_noise_experiment = 0
-		noise_level = 0.03
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_gaussian_noise/lit301.log')
+		noise_level = 0.02
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/lit301.log')
 		while True:
 			self.level = float(self.get(LIT301))
 			if gaussian_noise_experiment == 1:
