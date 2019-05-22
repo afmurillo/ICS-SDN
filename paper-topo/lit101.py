@@ -16,7 +16,7 @@ class Lit101(PLC):
 
 	def main_loop(self):
 		#print 'DEBUG: sensor enters main_loop'
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise/lit101.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise_2/lit101.log')
 		count = 0
 		gaussian_noise_experiment = 0
 		noise_level = 0.02
