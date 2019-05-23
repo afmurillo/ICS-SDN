@@ -22,7 +22,7 @@ class PSocket(Thread):
 
     def run(self):
         print "DEBUG entering socket thread run"
-	logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise_2/p101.log')
+	logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack/p101.log')
         self.sock = socket.socket()     # Create a socket object    
         self.sock.bind((IP['p101'] , 7842 ))
         self.sock.listen(5)

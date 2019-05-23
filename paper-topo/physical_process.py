@@ -30,7 +30,7 @@ class RawWaterTank(Tank):
 
 	def main_loop(self):
 		count = 0
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='diogo_no_noise_2/plant.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack/plant.log')
 		while(count <= PP_SAMPLES):
 
 			# First tank

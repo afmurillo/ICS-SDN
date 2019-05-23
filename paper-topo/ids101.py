@@ -9,6 +9,8 @@ import socket
 import json
 import select
 
+import logging
+
 SENSOR_ADDR = IP['lit101']
 PLC101_ADDR = IP['plc101']
 IDS_ADDR = IP['ids101']
@@ -23,7 +25,7 @@ CUSTOM_PUMP_FLOWRATE_IN = 3.0
 class Ids101(PLC):
 
 	def switch_component(self, controller_ip, controller_port, component):
-	    print "Connecting to POX"
+	    #print "Connecting to POX"
 	    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	    sock.connect((controller_ip, int(controller_port)))
 	    msg_dict = dict.fromkeys(['Type', 'Variable'])
@@ -34,17 +36,17 @@ class Ids101(PLC):
 	        ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
 		self.stop_defense_time = time.time()
 		self.defense_time = self.stop_defense_time - self.start_defense_time
-		print "Defense time: ", self.defense_time
+		#print "Defense time: ", self.defense_time
 	    except socket.error, exc:
-	        print "Socket error"
-	        print exc
+	        #print "Socket error"
+	        #print exc
 	        return
             if(ready_to_write > 0):
 	        sock.send(message)
 	    sock.close()
 
 	def calculate_controls(self, variable):
- 	    print "calculate action control"
+ 	    #print "calculate action control"
 	    estimated = 1
 
             if variable >= LIT_101_M['HH'] :
@@ -61,18 +63,16 @@ class Ids101(PLC):
 			estimated = 1
 		else:
 			estimated = 0
-	
  	    return estimated
 
 	def pre_loop(self, sleep=0.1):
 
 		# Estimated values
 		self.section = TANK_SECTION
-		print "DEBUG: in pre_loop"
 		time.sleep(sleep)
 
 	def main_loop(self):
-		print "main loop"
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack/ids101.log')
 		count = 0
 		self.received_level = 0.0
 		self.estimated_level = 0.0
@@ -95,7 +95,7 @@ class Ids101(PLC):
 
 		#print "Connecting to controller"		
 
-		print "Entering while"
+		#print "Entering while"
 		#self.send_message(IP['plc101'], 4234, 0)
 
 		while(count <= PP_SAMPLES):	
@@ -105,8 +105,6 @@ class Ids101(PLC):
 
                 	if self.sensor_intrusion == False:
 
-			    print "No attack detected"
-		
 			    try:
 				    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
 				    self.start_defense_time = time.time()
@@ -116,16 +114,17 @@ class Ids101(PLC):
 			    #  x(t+1)                =        x(t)          +              u(t)            +  L (      y(t)           -     x(t)            )   
 			    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101  + 1.0*(self.received_level - self.estimated_level)
 
-		            print "DEBUG estimated : %.5f" % (self.estimated_level)
-		            print "DEBUG received : %.5f" % (self.received_level)
+                            logging.info('IDS101: %f', self.estimated_level)
+                            logging.info('IDS101: %f', self.received_level)
 
 	                    delta =  abs(self.estimated_level - self.received_level)
-		            print "DEBUG delta : %.5f" % (delta)
+			    logging.info('IDS101: %f', delta)
 
 	                    if (delta > self.threshold) and (count>2):
 	                        self.switch_component(self.controller_ip, self.controller_port, "Switch_flow")
 	                        self.sensor_intrusion = True
-	                        print "Intrusion detected!"		
+	                        logging.info('IDS101: Intrustion detected')
+				#print "Intrusion detected!"
 				continue
 
 			    #if self.new_estimated_level > self.estimated_level:
@@ -134,10 +133,10 @@ class Ids101(PLC):
 			    #self.filling = False
 
 			    #self.estimated_mv101 = self.calculate_controls(self.received_level)
-			   
+
 			    #if mv101 != self.estimated_mv101:
 			    #if count > 5:
-			    #self.plc_count += 1		    
+			    #self.plc_count
 			    #if self.plc_count >= 3:
 			    ##self.plc_intrusion = True
 			    #print "Received MV ", mv101
@@ -146,10 +145,10 @@ class Ids101(PLC):
 			    #print "@@@ PLC INTRUSION!!! @@@@"
 			    #self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
 			    #else:
-			    #self.plc_count = 0 			   
+			    #self.plc_count = 0
 
 			    #x(t) = x(t+1)
-			    self.estimated_level = self.new_estimated_level			   
+			    self.estimated_level = self.new_estimated_level
 
 		        else:
 			    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
