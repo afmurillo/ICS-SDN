@@ -1274,3 +1274,10 @@
 05-22 09:28:11.775 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 05-22 09:28:11.836 MainThread root     WARNING  logrotate_ Rotating log files due to signal
 05-22 09:29:12.072 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-22 18:27:39.939 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-22 18:27:39.954 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-22 18:27:40.013 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-22 18:27:40.044 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-22 18:27:40.051 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-22 18:27:40.091 MainThread root     WARNING  logrotate_ Rotating log files due to signal
+05-22 18:27:40.114 MainThread root     WARNING  logrotate_ Rotating log files due to signal
