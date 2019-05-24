@@ -68,8 +68,7 @@ class Ids101(PLC):
 	def pre_loop(self, sleep=0.1):
 
 		# Estimated values
-		self.section = TANK_SECTION
-		time.sleep(sleep)
+		self.section = TANK_SECTION	
 
 	def main_loop(self):
 		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack/ids101.log')
@@ -92,11 +91,6 @@ class Ids101(PLC):
 		self.start_defense_time = 0
 		self.stop_defense_time = 0
 		self.defense_time = 0
-
-		#print "Connecting to controller"		
-
-		#print "Entering while"
-		#self.send_message(IP['plc101'], 4234, 0)
 
 		while(count <= PP_SAMPLES):	
 
@@ -121,7 +115,9 @@ class Ids101(PLC):
 			    logging.info('IDS101: %f', delta)
 
 	                    if (delta > self.threshold) and (count>2):
-	                        self.switch_component(self.controller_ip, self.controller_port, "Switch_flow")
+	                        #self.switch_component(self.controller_ip, self.controller_port, "Switch_flow")
+				# toDo: Implement this
+				self.notifyPLCOfIntrustion()
 	                        self.sensor_intrusion = True
 	                        logging.info('IDS101: Intrustion detected')
 				#print "Intrusion detected!"
