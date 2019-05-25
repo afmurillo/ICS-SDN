@@ -128,28 +128,20 @@ class IdsSocket(Thread):
 
 		#lit101 = float(self.plc.recieve(LIT101, IDS_ADDR))
 	        message_dict = eval(json.loads(data))
-	        lit101 = float(message_dict['Variable'])
+		
+		message_type = message_dict['Type']
+		
+		if message_type == "Report":
+		
+			lit101 = float(message_dict['Variable'])
+			self.plc.lit101_ids101 = lit101
 
-            
-	        #print 'DEBUG plc1 lit101: %.5f' % lit101
-
-	        if lit101 >= LIT_101_M['HH'] :
-	            #self.plc.send(MV101, 0, IP['plc101'])
-               	    mv = 0
-
-	        elif lit101 >= LIT_101_M['H']:
-	            #self.plc.send(MV101, 0, IP['plc101'])
-                    mv = 0
-
-	        elif lit101 <= LIT_101_M['L']:
-	            #self.plc.send(MV101, 1, IP['plc101'])
-                    mv = 1
-
-	        elif lit101 <= LIT_101_M['LL']:
-	            #self.plc.send(MV101, 1, IP['plc101'])                
-                    mv = 1
-
-                self.send_message(IP['mv101'], 9587, mv)
+			# print 'DEBUG plc1 lit101: %.5f' % lit101
+			# self.send_message(IP['mv101'], 9587, mv)
+			
+		elif message_type == "Intrussion":
+			self.plc.intrussion = message_dict['Variable']
+			
        	    except KeyboardInterrupt:
 	    	print "\nCtrl+C was hitten, stopping server"
 	        client.close()
@@ -191,70 +183,33 @@ class PLC101(PLC):
         lit301socket = Lit301Socket(self)
         lit301socket.start()
         self.count = 0
+	self.lit101_intrussion = False
+	self.lit101_ids101 = 0.0
         backup = IdsSocket(self)
 	backup.start()
         #hmi = HMISocket(self)
         #hmi.start()
 
-        # Only for random control experiment!
-        random_control_experiment = 0
-        random_control_active = 0
-        random_counter = 0
-        control_file = '/home/mininet/ICS-SDN/paper-topo/control_actions.txt'
-        input_file = "/home/mininet/ICS-SDN/paper-topo/control_list.txt"
-
-        out_file = open(control_file, 'w')
-	in_file = open(input_file, 'r')
-
         while(self.count <= PLC_SAMPLES):
 
-            # lit101 [meters]
 	    try:
-	    	lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-	        #print 'DEBUG plc1 lit101: %.5f' % lit101
-                #hmi.setLit101(lit101)
+		if self.lit101_intrussion == False:
+			lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+		else:
+			lit101 = self.lit101_ids101 
 
+		if lit101 >= LIT_101_M['HH']:
+		    self.send(MV101, 0, IP['plc101'])
 
-                if random_control_experiment == 0:
+		elif lit101 >= LIT_101_M['H']:
+	            self.send(MV101, 0, IP['plc101'])
 
-    	            if lit101 >= LIT_101_M['HH']:
-                        self.send(MV101, 0, IP['plc101'])
+		elif lit101 <= LIT_101_M['LL']:
+		    self.send(MV101, 1, IP['plc101'])
 
-                    elif lit101 >= LIT_101_M['H']:
-                        self.send(MV101, 0, IP['plc101'])
-
-                    elif lit101 <= LIT_101_M['LL']:
-                        self.send(MV101, 1, IP['plc101'])
-
-                    elif lit101 <= LIT_101_M['L']:
-                        self.send(MV101, 1, IP['plc101'])
-
-
-                elif random_control_experiment == 1:    
-
-                    if lit101 >= 0.6:
-                        random_control_active = 1
-		        "Activating random control"
-
-                    if random_control_active == 1 and random_counter < 10:                    
-                        random_counter = random_counter + 1
-		        "Keeping last control action"
-
-                    elif random_counter >= 10:
-                        random_counter=0
-		        "Updating control action"		    
-                    if (random() > 0.5):
-                        self.send(MV101, 1, IP['plc101'])
-                        print "Action on MV101: 1"
-                    else:
-                        self.send(MV101, 0, IP['plc101'])
-                        print "Action on MV101: 0"
-
-		elif random_control_experiment ==2:
-			action = in_file.readline().split(':')[1]
-			self.send(MV101, int(action), IP['plc101'])
-			print "Action read on MV101: ", action
-
+		elif lit101 <= LIT_101_M['L']:
+		    self.send(MV101, 1, IP['plc101'])
+						
 	    except Exception as e:
                    print e
 		   print "Switching to backup"
