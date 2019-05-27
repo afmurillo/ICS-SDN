@@ -179,19 +179,19 @@ class Ids101(PLC):
 				self.new_estimated_level = 1.0
 			    if self.new_estimated_level < 0.0:
 			        self.new_estimated_level = 0.0
-				
+
 			    if (self.received_level == self.new_estimated_level):
 			    	self.good_values_counter = self.good_values_counter + 1
-				
+
 				if (self.good_values_counter > self.good_threshold ):
 					self.sensor_intrusion = False
 					self.notifyPLCOfIntrustion(self.sensor_intrusion)	                        				
 	                        	logging.info('IDS101: Intrustion has stopped')
-			
+
 			    self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
 			    logging.info('IDS101: Estimated Level: %f', self.new_estimated_level )
-			    logging.info('IDS101: Received Level: %f', self.self.received_level )
-					
+			    logging.info('IDS101: Received Level: %f', self.received_level )
+
 			    self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
 			    self.estimated_level = self.new_estimated_level
 		            #self.received_level = float(self.receive(LIT301, LIT301_ADDR))

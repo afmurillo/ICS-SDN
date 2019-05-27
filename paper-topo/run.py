@@ -59,30 +59,21 @@ class SimpleCPS(MiniCPS):
 	plc1.cmd('route add -net 192.168.3.0 netmask 255.255.255.0 dev plc101-eth2')
 	plc3.cmd('route add -net 192.168.1.0 netmask 255.255.255.0 dev plc301-eth2')
 
+	#lit101.cmd('python lit101.py &')
 
-	#lit101.cmd(sys.executable + 'python lit101.py > lit101.test &')
-	#time.sleep(0.5)
+	#p101.cmd('python p101.py &')
 
-	#p101.cmd(sys.executable  +'python p101.py &')
-	#time.sleep(0.5)
+	#plc1.cmd('python plc101.py &')
 
-	#plc1.cmd(sys.executable  + 'python plc101.py &')
-	#time.sleep(0.5)
+	#lit301.cmd('python lit301.py &')
 
-	#lit301.cmd(sys.executable + 'python lit301.py &')
-	#time.sleep(0.5)
+	#mv101.cmd('python mv101.py &')
 
-	#mv101.cmd(sys.executable + 'python mv101.py &')
-	#time.sleep(0.5)
+	#plc3.cmd('python plc301.py &')
 
-	#plc3.cmd(sys.executable + 'python plc301.py &')
-	#time.sleep(0.5)
+	#p301.cmd('python p301.py &')
 
-	#p301.cmd(sys.executable + 'python p301.py &')
-	#time.sleep(0.5)
-
-	#plant.cmd(sys.executable + 'python physical_process.py &')
-
+	#plant.cmd('python physical_process.py &')
 
         # start devices
         CLI(self.net)
