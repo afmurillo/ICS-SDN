@@ -82,7 +82,7 @@ class Ids101(PLC):
 		self.received_level = 0.0
 		
 		# Water level estimated by the observer
-		self.estimated_level = 0.0
+		self.estimated_level = 0.4
 		
 		# Water level estimated when an intrusion is detected
 		self.intrusion_level = 0.0
@@ -114,92 +114,60 @@ class Ids101(PLC):
 	                mv101 = int(self.get(MV101))
    	                p101 = int(self.get(P101))
 
-			if self.sensor_intrusion == False:
+			if count == 0:
+			    self.new_estimated_level = float(self.receive(LIT101, SENSOR_ADDR))
 
-			    try:
-				    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
-				    self.start_defense_time = time.time()
-			    except:
-				    continue
+			else:
+				if self.sensor_intrusion == False:
 
-			    #  x(t+1)                =        x(t)          +              u(t)            +  L (      y(t)           -     x(t)            )   
-			    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101  + 1.0*(self.received_level - self.estimated_level)
+				    try:
+					    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
+					    self.start_defense_time = time.time()
+				    except:
+					    continue
 
-                            logging.info('IDS101: %f', self.estimated_level)
-                            logging.info('IDS101: %f', self.received_level)
+				    #  x(t+1)                =        x(t)          +              u(t)            +  L (      y(t)           -     x(t)            )   
+				    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101  + 1.0*(self.received_level - self.estimated_level)
+		                    delta =  abs(self.estimated_level - self.received_level)
+				    logging.info('IDS101: NORMAL %f', self.received_level )
 
-	                    delta =  abs(self.estimated_level - self.received_level)
-			    logging.info('IDS101: %f', delta)
+		                    if (delta > self.threshold):
+	        	                #self.switch_component(self.controller_ip, self.controller_port, "Switch_flow")
+	                	        self.sensor_intrusion = True
+					self.notifyPLCOfIntrustion(self.sensor_intrusion)
+					self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
+					continue
 
-	                    if (delta > self.threshold) and (count>2):
-	                        #self.switch_component(self.controller_ip, self.controller_port, "Switch_flow")			
-	                        self.sensor_intrusion = True
-				self.notifyPLCOfIntrustion(self.sensor_intrusion)
-				self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
-	                        logging.info('IDS101: Intrustion detected')
-				#print "Intrusion detected!"
-				continue
+				    #x(t) = x(t+1)
+				    self.estimated_level = self.new_estimated_level
 
-			    #if self.new_estimated_level > self.estimated_level:
-			    #self.filling = True
-			    #else:
-			    #self.filling = False
+			        else:
 
-			    #self.estimated_mv101 = self.calculate_controls(self.received_level)
+				    # We still need to receive the sensor information to see if the attack has stopped
+				    try:
+					    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
+					    self.start_defense_time = time.time()
+				    except:
+					    continue
+				    # Calculate the estimated level, without the compromised sensor data
+				    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
+				    if self.new_estimated_level > 1.0:
+					self.new_estimated_level = 1.0
+				    if self.new_estimated_level < 0.0:
+				        self.new_estimated_level = 0.0
 
-			    #if mv101 != self.estimated_mv101:
-			    #if count > 5:
-			    #self.plc_count
-			    #if self.plc_count >= 3:
-			    ##self.plc_intrusion = True
-			    #print "Received MV ", mv101
-			    #print "Estimated MV ", self.estimated_mv101
-			    #print "Filling ", self.filling
-			    #print "@@@ PLC INTRUSION!!! @@@@"
-			    #self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
-			    #else:
-			    #self.plc_count = 0
-
-			    #x(t) = x(t+1)
-			    self.estimated_level = self.new_estimated_level
-
-		        else:
-
-			    # We still need to receive the sensor information to see if the attack has stopped
-			    try:
-				    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
-				    self.start_defense_time = time.time()
-			    except:
-				    continue								
-					
-			    # Calculate the estimated level, without the compromised sensor data
-			    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
-						
-			    if self.new_estimated_level > 1.0:
-				self.new_estimated_level = 1.0
-			    if self.new_estimated_level < 0.0:
-			        self.new_estimated_level = 0.0
-
-			    if (self.received_level == self.new_estimated_level):
-			    	self.good_values_counter = self.good_values_counter + 1
-
-				if (self.good_values_counter > self.good_threshold ):
+				    if (self.received_level == self.new_estimated_level):
 					self.sensor_intrusion = False
-					self.notifyPLCOfIntrustion(self.sensor_intrusion)	                        				
-	                        	logging.info('IDS101: Intrustion has stopped')
+					self.notifyPLCOfIntrustion(self.sensor_intrusion)
+				    else:
+					self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
+					logging.info('IDS101: ATTACK : %f', self.new_estimated_level )
 
-			    self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
-			    logging.info('IDS101: Estimated Level: %f', self.new_estimated_level )
-			    logging.info('IDS101: Received Level: %f', self.received_level )
+				    self.estimated_level = self.new_estimated_level
 
-			    self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
-			    self.estimated_level = self.new_estimated_level
-		            #self.received_level = float(self.receive(LIT301, LIT301_ADDR))
-			    self.wait_time = PLC_PERIOD_SEC
-
-	                #self.switch_sensor(self.controller_ip, self.controller_port)
-	                count += 1		
-	                time.sleep(self.wait_time)					
+    		        self.wait_time = PLC_PERIOD_SEC
+		        count += 1
+		        time.sleep(self.wait_time)
 
     	def send_message(self, ipaddr, port, message, message_type):
 	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

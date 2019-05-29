@@ -16,15 +16,15 @@ class Lit101(PLC):
 
 	def main_loop(self):
 		#print 'DEBUG: sensor enters main_loop'
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='replay_attack/replay_lit101.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='replay_defense_short_attacks/replay_lit101.log')
 		count = 0
-		gaussian_noise_experiment = 1
+		gaussian_noise_experiment = 0
 		noise_level = 0.03
-		attack_lower_limit = 0
-		random_duration = random.randint(50,200)
+		attack_lower_limit = 20
+		random_duration = random.randint(5,20)
 		#random_duration = 10
 		attack_upper_limit = attack_lower_limit + random_duration
-		attack_upper_window = attack_lower_limit + 1000
+		attack_upper_window = attack_lower_limit + 60
 		print "attack", attack_lower_limit, " to ", attack_upper_limit
 		attack_active = 0
 
@@ -33,6 +33,7 @@ class Lit101(PLC):
 			if (count>=attack_lower_limit and count<=attack_upper_limit):
 				if count == attack_lower_limit:
 					self.level = float(self.get(LIT101))
+					logging.info('REPLAY: STARTING ATTACK')
 				attack_active = 1
 			else:
 				attack_active = 0
@@ -46,20 +47,19 @@ class Lit101(PLC):
 					if self.level < 0:
 						self.level = 0.0
 				self.send(LIT101, self.level, SENSOR_ADDR)
-				logging.info('LIT101: %f', self.level)
-                                logging.info('NORMAL')
+				logging.info('LIT101 NORMAL: %f', self.level)
 				time.sleep(PLC_PERIOD_SEC)
 			else:
 				self.send(LIT101, self.level, SENSOR_ADDR)
-                                logging.info('LIT101: %f', self.level)
-                                logging.info('ATTACK')
+                                logging.info('LIT101 ATTACK: %f', self.level)
                                 time.sleep(PLC_PERIOD_SEC)
 
 			if (count >= attack_upper_window):
 				attack_lower_limit = attack_upper_window
-				random_duration = random.randint(50,200)
+				random_duration = random.randint(5,20)
 		                attack_upper_limit = attack_lower_limit + random_duration
-        		        attack_upper_window = attack_lower_limit + 1000
+        		        attack_upper_window = attack_lower_limit + 60
+				logging.info('REPLAY: STOPING ATTACK')
 
 			count = count +1
 

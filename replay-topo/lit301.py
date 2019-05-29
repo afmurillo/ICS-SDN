@@ -16,7 +16,7 @@ class Lit301(PLC):
 		count = 0
 		gaussian_noise_experiment = 0
 		noise_level = 0.03
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='replay_attack/lit301.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='replay_defense_short_attacks/lit301.log')
 		while True:
 			self.level = float(self.get(LIT301))
 			if gaussian_noise_experiment == 1:
