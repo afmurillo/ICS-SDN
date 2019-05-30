@@ -20,12 +20,11 @@ class Lit101(PLC):
 		count = 0
 		gaussian_noise_experiment = 1
 		noise_level = 0.03
-		attack_lower_limit = 0
-		random_duration = random.randint(50,200)
+		attack_lower_limit = 50
+		random_duration = random.randint(5,20)
 		#random_duration = 10
 		attack_upper_limit = attack_lower_limit + random_duration
-		attack_upper_window = attack_lower_limit + 1000
-		print "attack", attack_lower_limit, " to ", attack_upper_limit
+		attack_upper_window = attack_lower_limit + 60
 		attack_active = 0
 
 		while count<=PLC_SAMPLES:
@@ -57,9 +56,9 @@ class Lit101(PLC):
 
 			if (count >= attack_upper_window):
 				attack_lower_limit = attack_upper_window
-				random_duration = random.randint(50,200)
+				random_duration = random.randint(5,20)
 		                attack_upper_limit = attack_lower_limit + random_duration
-        		        attack_upper_window = attack_lower_limit + 1000
+        		        attack_upper_window = attack_lower_limit + 60
 
 			count = count +1
 

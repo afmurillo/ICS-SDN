@@ -116,7 +116,7 @@ class Ids101(PLC):
 
 			if count == 0:
 			    self.new_estimated_level = float(self.receive(LIT101, SENSOR_ADDR))
-
+			    self.estimated_level = self.new_estimated_level
 			else:
 				if self.sensor_intrusion == False:
 
@@ -151,12 +151,8 @@ class Ids101(PLC):
 					    continue
 				    # Calculate the estimated level, without the compromised sensor data
 				    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
-				    if self.new_estimated_level > 1.0:
-					self.new_estimated_level = 1.0
-				    if self.new_estimated_level < 0.0:
-				        self.new_estimated_level = 0.0
-
-				    if (self.received_level == self.new_estimated_level):
+				    delta = abs(self.new_estimated_level - self.received_level )
+ 				    if (delta < self.threshold):
 					self.sensor_intrusion = False
 					self.notifyPLCOfIntrustion(self.sensor_intrusion)
 				    else:
