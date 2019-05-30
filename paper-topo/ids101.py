@@ -75,7 +75,7 @@ class Ids101(PLC):
 		self.section = TANK_SECTION	
 
 	def main_loop(self):
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack_4/ids101.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack_5/ids101.log')
 		count = 0
 		
 		# Water level reported by LIT101
@@ -151,10 +151,12 @@ class Ids101(PLC):
 					    continue
 				    # Calculate the estimated level, without the compromised sensor data
 				    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
-				    delta = abs(self.new_estimated_level - self.received_level )
+				    delta = abs(self.estimated_level - self.received_level )
  				    if (delta < self.threshold):
 					self.sensor_intrusion = False
 					self.notifyPLCOfIntrustion(self.sensor_intrusion)
+					self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
+				        logging.info('IDS101: NORMAL %f', self.received_level )
 				    else:
 					self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
 					logging.info('IDS101: ATTACK : %f', self.new_estimated_level )

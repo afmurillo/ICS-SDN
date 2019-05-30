@@ -1,0 +1,15 @@
+Sensor normal  18673
+Sensor attack  9036
+IDS normal  30434
+IDS attack  132
+
+
+F+P 27709
+True Positives:  36.0
+False Negatives:  9000.0
+False Positives:  84.0
+True Negatives:  18589.0
+Accuracy:  0.672164278754
+p  0.3
+r   0.00398406374502
+e  0.995501526268
