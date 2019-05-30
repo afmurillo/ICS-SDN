@@ -1,0 +1,7 @@
+The duration of these attacks was handled by: 
+                attack_lower_limit = 20
+                random_duration = random.randint(50,200)
+                attack_upper_limit = attack_lower_limit + random_duration
+                attack_upper_window = attack_lower_limit +400
+                attack_active = 0
+
