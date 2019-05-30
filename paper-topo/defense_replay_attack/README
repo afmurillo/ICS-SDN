@@ -1,0 +1,6 @@
+The duration of these attacks was handled by:
+			if (count >= attack_upper_window):
+				attack_lower_limit = attack_upper_window
+				random_duration = random.randint(50,200)
+		                attack_upper_limit = attack_lower_limit + random_duration
+        		        attack_upper_window = attack_lower_limit + 1000

@@ -1,0 +1,12 @@
+The duration of these attacks was controlled by
+
+
+                attack_lower_limit = 20
+                random_duration = random.randint(5,20)
+                #random_duration = 10
+                attack_upper_limit = attack_lower_limit + random_duration
+                attack_upper_window = attack_lower_limit + 60
+                print "attack", attack_lower_limit, " to ", attack_upper_limit
+                attack_active = 0
+                attack_active = 0
+
