@@ -50,7 +50,7 @@ class PP301(PLC):
 
 	def main_loop(self):
 		count = 0
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack/p301.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack_4/p301.log')
 	        psocket = PSocket(self)
 	        psocket.start()
 		end=0

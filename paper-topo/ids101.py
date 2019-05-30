@@ -75,7 +75,7 @@ class Ids101(PLC):
 		self.section = TANK_SECTION	
 
 	def main_loop(self):
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack/ids101.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack_4/ids101.log')
 		count = 0
 		
 		# Water level reported by LIT101

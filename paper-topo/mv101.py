@@ -53,7 +53,7 @@ class Mv101(PLC):
 	def main_loop(self):
 		print 'DEBUG: mv101 enters main_loop'
 		count = 0
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack/mv101.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack_4/mv101.log')
 	        mvsocket = MVSocket(self)
 	        mvsocket.start()
 		while count<=PLC_SAMPLES:
