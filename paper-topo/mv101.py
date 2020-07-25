@@ -8,6 +8,8 @@ import socket
 import json
 import select
 import logging
+import signal
+import sys
 
 PLC101_ADDR = IP['plc101']
 
@@ -25,50 +27,49 @@ class MVSocket(Thread):
         self.sock = socket.socket()     # Create a socket object    
         self.sock.bind((IP['mv101'] ,9587 ))
         self.sock.listen(5)
-	self.command_time = 0
+        self.command_time = 0
 
         while True:
             try:
-            	client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client                     		
-            	message_dict = eval(json.loads(data))
-	        mv101 = int(message_dict['Variable'])
-
-	        print "received from PLC101!", mv101
-		self.plc.set(MV101, mv101)          
-		self.command_time = time.time() - self.command_time
-		print "Command time:", self.command_time
+               client, addr = self.sock.accept()
+               data = client.recv(4096)                                                # Get data from the client
+               message_dict = eval(json.loads(data))
+               mv101 = int(message_dict['Variable'])
+               print "received from PLC101!", mv101
+               self.plc.set(MV101, mv101)
+               self.command_time = time.time() - self.command_time
+               print "Command time:", self.command_time
  
             except KeyboardInterrupt:
- 	        print "\nCtrl+C was hitten, stopping server"
+                print "\nCtrl+C was hitten, stopping server"
                 client.close()
-        	break
+                break
 
 
 class Mv101(PLC):
-	def pre_loop(self, sleep=0.1):
-		print 'DEBUG: mv101 enters pre_loop'
-		time.sleep(sleep)
+    def sigint_handler(self, sig, frame):
+        print "I received a SIGINT!"
+        sys.exit(0)
 
-	def main_loop(self):
-		print 'DEBUG: mv101 enters main_loop'
-		count = 0
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack_5/mv101.log')
-	        mvsocket = MVSocket(self)
-	        mvsocket.start()
-		while count<=PLC_SAMPLES:
-			try:
-				mv101 = int(self.receive(MV101, PLC101_ADDR))
-				logging.info('MV101: %f', mv101)
-				self.set(MV101, mv101)
+    def pre_loop(self, sleep=0.1):
+        signal.signal(signal.SIGINT, self.sigint_handler)
+        signal.signal(signal.SIGTERM, self.sigint_handler)
 
-		        except:
-				print "Switching to backup"
-			        break			
+    def main_loop(self):
+        print 'DEBUG: mv101 enters main_loop'
+        count = 0
+        logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='output/mv101.log')
+        mvsocket = MVSocket(self)
+        mvsocket.start()
+        while count<=PLC_SAMPLES:
+            try:
+                mv101 = int(self.receive(MV101, PLC101_ADDR))
+                logging.info('MV101: %f', mv101)
+                self.set(MV101, mv101)
 
+            except:
+                print "Switching to backup"
+                break
 
 if __name__ == '__main__':
-	mv101 = Mv101(name='mv101',state=STATE,protocol=MV101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)
-#	mv101.pre_loop()
-#	mv101.main_loop()
-
+    mv101 = Mv101(name='mv101',state=STATE,protocol=MV101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)

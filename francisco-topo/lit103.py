@@ -2,16 +2,23 @@ from minicps.devices import PLC
 from utils import *
 import logging
 import time
+import signal
+import sys
 
 SENSOR_ADDR = IP['lit103']
 
 LIT103 = ('LIT103', 1)
 
 class Lit103(PLC):
-	def pre_loop(self, sleep=0.1):
-		logging.basicConfig(filename=LOG_LIT103_FILE, level=logging.DEBUG)
-                self.set(LIT103, Y30)
+	def sigint_handler(self, sig, frame):
+		print "I received a SIGINT!"
+		sys.exit(0)
 
+	def pre_loop(self, sleep=0.1):
+		signal.signal(signal.SIGINT, self.sigint_handler)
+		signal.signal(signal.SIGTERM, self.sigint_handler)
+		logging.basicConfig(filename=LOG_LIT103_FILE, level=logging.DEBUG)
+		self.set(LIT103, Y30)
 		time.sleep(sleep)
 
 	def main_loop(self):
@@ -22,7 +29,6 @@ class Lit103(PLC):
 			logging.debug('LIT103 level %s', self.level)			
 			self.send(LIT103, self.level, IP['lit103'])
 			time.sleep(PLC_PERIOD_SEC)
-
 
 if __name__ == '__main__':
 	lit103 = Lit103(name='lit103',state=STATE,protocol=LIT103_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)

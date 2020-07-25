@@ -1,5 +1,0 @@
-This data was generated runing the experiment without attack and without gaussian noise, each .log represents the sensor/actuator values at each sample period.
-In this folder and "diono_no_noise" is that this one was run over a longer time period
-This information was sent in the network between the sensors/actuators and the PLCs. The network information is stored in the pcap files.
-s1-eth1: Connects the PLC101 with the switch1 and since all information in the first control loop is either sent by or sent to PLC101, represents all data traffic on loop 1
-s3-eth1: Connects the PLC301 with the switch3 and in the same sense as s1-eth1, represents all data traffic on loop 3

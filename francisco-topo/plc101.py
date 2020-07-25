@@ -9,6 +9,8 @@ import json
 import select
 import socket
 import time
+import signal
+import sys
 
 Q101 = ('Q101', 1)
 Q102 = ('Q102', 1)
@@ -38,18 +40,16 @@ class Lit301Socket(Thread):
 
         while (self.plc.count <= PLC_SAMPLES):
             try:
-            	client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client
-            	message_dict = eval(json.loads(data))
-	        lit103 = float(message_dict['Variable']) - lit103_prev
-		lit103_prev = lit103
-
-	        #print "received from LIT103!", lit103
+                client, addr = self.sock.accept()
+                data = client.recv(4096)                                                # Get data from the client
+                message_dict = eval(json.loads(data))
+                lit103 = float(message_dict['Variable']) - lit103_prev
+                lit103_prev = lit103
 
             except KeyboardInterrupt:
- 	        print "\nCtrl+C was hitten, stopping server"
+                print "\nCtrl+C was hitten, stopping server"
                 client.close()
-        	break
+                break
 
 class PLC101(PLC):
 
@@ -87,29 +87,35 @@ class PLC101(PLC):
             if self.count > 200:
                     self.ref_y1 = 0.2
 
+    def sigint_handler(self, sig, frame):
+        print "I received a SIGINT!"
+        sys.exit(0)
 
     def pre_loop(self, sleep=0.1):
         print 'DEBUG: swat-s1 plc1 enters pre_loop'
-	# Controller Initial Conditions
+        signal.signal(signal.SIGINT, self.sigint_handler)
+        signal.signal(signal.SIGTERM, self.sigint_handler)
+
+        # Controller Initial Conditions
         self.count = 0
 
         self.ref_y0 = Y10
         self.ref_y1 = Y20
 
-	self.lit101 = 0.0
-	self.lit102 = 0.0
-	lit103 = 0.0
+        self.lit101 = 0.0
+        self.lit102 = 0.0
+        lit103 = 0.0
 
-	self.q1 = 0.0
-	self.q2 = 0.0
+        self.q1 = 0.0
+        self.q2 = 0.0
 
-	self.received_lit101 = 0.0
-	self.received_lit102 = 0.0
-	received_lit103 = 0.0
+        self.received_lit101 = 0.0
+        self.received_lit102 = 0.0
+        received_lit103 = 0.0
 
-	self.z =  np.array([[0.0],[0.0]], )
-	self.current_inc_i = np.array([[0.0],[0.0]])
-	self.K1K2 = np.concatenate((K1,K2),axis=1)
+        self.z =  np.array([[0.0],[0.0]], )
+        self.current_inc_i = np.array([[0.0],[0.0]])
+        self.K1K2 = np.concatenate((K1,K2),axis=1)
 
     def main_loop(self):
         """plc1 main loop.

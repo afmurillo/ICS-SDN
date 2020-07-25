@@ -3,20 +3,26 @@ from utils import *
 import random
 
 import time
-
+import signal
 import logging
+import sys
 
 SENSOR_ADDR = IP['lit101']
 
 LIT101 = ('LIT101', 1)
 
 class Lit101(PLC):
+
+	def sigint_handler(self, sig, frame):
+		print "I received a SIGINT!"
+		sys.exit(0)
+
 	def pre_loop(self, sleep=0.1):
-		time.sleep(sleep)
+		signal.signal(signal.SIGINT, self.sigint_handler)
+		signal.signal(signal.SIGTERM, self.sigint_handler)
 
 	def main_loop(self):
-		#print 'DEBUG: sensor enters main_loop'
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack/lit101.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='output/lit101.log')
 		count = 0
 		gaussian_noise_experiment = 0
 		noise_level = 0.02

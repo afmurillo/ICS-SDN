@@ -10,6 +10,8 @@ import json
 import select
 
 import logging
+import signal
+import sys
 
 SENSOR_ADDR = IP['lit101']
 PLC101_ADDR = IP['plc101']
@@ -25,57 +27,59 @@ CUSTOM_PUMP_FLOWRATE_IN = 3.0
 class Ids101(PLC):
 
 	def switch_component(self, controller_ip, controller_port, component):
-	    #print "Connecting to POX"
-	    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	    sock.connect((controller_ip, int(controller_port)))
-	    msg_dict = dict.fromkeys(['Type', 'Variable'])
-	    msg_dict['Type'] = "Command"		
-	    msg_dict['Variable'] = component
-	    message = json.dumps(str(msg_dict))
-	    try:
-	        ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
-		self.stop_defense_time = time.time()
-		self.defense_time = self.stop_defense_time - self.start_defense_time
-		#print "Defense time: ", self.defense_time
-	    except socket.error, exc:
-	        #print "Socket error"
-	        #print exc
-	        return
-            if(ready_to_write > 0):
-	        sock.send(message)
-	    sock.close()
+		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		sock.connect((controller_ip, int(controller_port)))
+		msg_dict = dict.fromkeys(['Type', 'Variable'])
+		msg_dict['Type'] = "Command"
+		msg_dict['Variable'] = component
+		message = json.dumps(str(msg_dict))
+		try:
+			ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
+			self.stop_defense_time = time.time()
+			self.defense_time = self.stop_defense_time - self.start_defense_time
+
+		except socket.error, exc:
+			return
+
+		if(ready_to_write > 0):
+			sock.send(message)
+			sock.close()
 
 	
 	def notifyPLCOfIntrustion(self, intrussion):
-	    self.send_message(IP['plc101'], 4234, intrussion, "Intrussion")	
+		self.send_message(IP['plc101'], 4234, intrussion, "Intrussion")
 	
 	def calculate_controls(self, variable):
- 	    #print "calculate action control"
-	    estimated = 1
-
-            if variable >= LIT_101_M['HH'] :
-	        estimated = 0
-            elif variable >= LIT_101_M['H'] :
-		estimated = 0
-            elif variable <= LIT_101_M['L']:
-		estimated = 1
-            elif variable <= LIT_101_M['LL']:
 		estimated = 1
 
-	    if variable > LIT_101_M['L'] and variable < LIT_101_M['H']:
-		if self.filling:
-			estimated = 1
-		else:
+		if variable >= LIT_101_M['HH'] :
 			estimated = 0
- 	    return estimated
+		elif variable >= LIT_101_M['H'] :
+			estimated = 0
+		elif variable <= LIT_101_M['L']:
+			estimated = 1
+		elif variable <= LIT_101_M['LL']:
+			estimated = 1
+
+		if variable > LIT_101_M['L'] and variable < LIT_101_M['H']:
+			if self.filling:
+				estimated = 1
+			else:
+				estimated = 0
+		return estimated
+
+	def sigint_handler(self, sig, frame):
+		print "I received a SIGINT!"
+		sys.exit(0)
 
 	def pre_loop(self, sleep=0.1):
-
+		signal.signal(signal.SIGINT, self.sigint_handler)
+		signal.signal(signal.SIGTERM, self.sigint_handler)
 		# Estimated values
 		self.section = TANK_SECTION	
 
 	def main_loop(self):
-		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='defense_replay_attack_5/ids101.log')
+		logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, filename='output/ids101.log')
 		count = 0
 		
 		# Water level reported by LIT101
@@ -109,81 +113,81 @@ class Ids101(PLC):
 		self.stop_defense_time = 0
 		self.defense_time = 0
 
-		while(count <= PP_SAMPLES):	
+		while count <= PP_SAMPLES:
 
-	                mv101 = int(self.get(MV101))
-   	                p101 = int(self.get(P101))
+			mv101 = int(self.get(MV101))
+			p101 = int(self.get(P101))
 
 			if count == 0:
-			    self.new_estimated_level = float(self.receive(LIT101, SENSOR_ADDR))
-			    self.estimated_level = self.new_estimated_level
+				self.new_estimated_level = float(self.receive(LIT101, SENSOR_ADDR))
+				self.estimated_level = self.new_estimated_level
+
 			else:
 				if self.sensor_intrusion == False:
 
-				    try:
-					    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
-					    self.start_defense_time = time.time()
-				    except:
-					    continue
+					try:
+						self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
+						self.start_defense_time = time.time()
+					except:
+						continue
 
-				    #  x(t+1)                =        x(t)          +              u(t)            +  L (      y(t)           -     x(t)            )   
-				    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101  + 1.0*(self.received_level - self.estimated_level)
-		                    delta =  abs(self.estimated_level - self.received_level)
-				    logging.info('IDS101: NORMAL %f', self.received_level )
+					#  x(t+1)                =        x(t)          +              u(t)            +  L (      y(t)           -     x(t)            )
+					self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101  + 1.0*(self.received_level - self.estimated_level)
+					delta =  abs(self.estimated_level - self.received_level)
+					logging.info('IDS101: NORMAL %f', self.received_level )
 
-		                    if (delta > self.threshold):
-	        	                #self.switch_component(self.controller_ip, self.controller_port, "Switch_flow")
-	                	        self.sensor_intrusion = True
-					self.notifyPLCOfIntrustion(self.sensor_intrusion)
-					self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
-					continue
+					if (delta > self.threshold):
+						self.sensor_intrusion = True
+						self.notifyPLCOfIntrustion(self.sensor_intrusion)
+						self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
+						continue
 
-				    #x(t) = x(t+1)
-				    self.estimated_level = self.new_estimated_level
+					self.estimated_level = self.new_estimated_level
 
-			        else:
+				else:
+					# We still need to receive the sensor information to see if the attack has stopped
+					try:
+						self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
+						self.start_defense_time = time.time()
+					except:
+						continue
 
-				    # We still need to receive the sensor information to see if the attack has stopped
-				    try:
-					    self.received_level = float(self.receive(LIT101, SENSOR_ADDR))
-					    self.start_defense_time = time.time()
-				    except:
-					    continue
-				    # Calculate the estimated level, without the compromised sensor data
-				    self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
-				    delta = abs(self.estimated_level - self.received_level )
- 				    if (delta < self.threshold):
-					self.sensor_intrusion = False
-					self.notifyPLCOfIntrustion(self.sensor_intrusion)
-					self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
-				        logging.info('IDS101: NORMAL %f', self.received_level )
-				    else:
-					self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
-					logging.info('IDS101: ATTACK : %f', self.new_estimated_level )
+					# Calculate the estimated level, without the compromised sensor data
+					self.new_estimated_level = self.estimated_level + inflow*mv101 - outflow*p101
+					delta = abs(self.estimated_level - self.received_level )
 
-				    self.estimated_level = self.new_estimated_level
+					if (delta < self.threshold):
+						self.sensor_intrusion = False
+						self.notifyPLCOfIntrustion(self.sensor_intrusion)
+						self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
+						logging.info('IDS101: NORMAL %f', self.received_level )
+					else:
+						self.send_message(IP['plc101'], 4234, self.new_estimated_level, "Report")
+						logging.info('IDS101: ATTACK : %f', self.new_estimated_level )
 
-    		        self.wait_time = PLC_PERIOD_SEC
-		        count += 1
-		        time.sleep(self.wait_time)
+					self.estimated_level = self.new_estimated_level
 
-    	def send_message(self, ipaddr, port, message, message_type):
-	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	        sock.connect((ipaddr, port))
+			self.wait_time = PLC_PERIOD_SEC
+			count += 1
+			time.sleep(self.wait_time)
 
-	        msg_dict = dict.fromkeys(['Type', 'Variable'])
-	        msg_dict['Type'] = message_type
-	        msg_dict['Variable'] = message
-	        message = json.dumps(str(msg_dict))
+	def send_message(self, ipaddr, port, message, message_type):
+		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		sock.connect((ipaddr, port))
 
-	        try:
-	            ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
-	        except:
-	            print "Socket error"
-	            return
-	        if(ready_to_write > 0):
-	            sock.send(message)
-	        sock.close()
+		msg_dict = dict.fromkeys(['Type', 'Variable'])
+		msg_dict['Type'] = message_type
+		msg_dict['Variable'] = message
+		message = json.dumps(str(msg_dict))
+
+		try:
+			ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
+		except:
+			print "Socket error"
+			return
+		if(ready_to_write > 0):
+			sock.send(message)
+			sock.close()
 
 if __name__ == '__main__':
 	ids101 = Ids101(name='ids101',state=STATE,protocol=IDS101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)

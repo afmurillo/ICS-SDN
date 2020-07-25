@@ -12,6 +12,8 @@ import select
 import socket
 import time
 import logging
+import signal
+import sys
 
 MV101 = ('MV101', 1)
 LIT101 = ('LIT101', 1)
@@ -22,8 +24,6 @@ LIT301 = ('LIT301', 3)
 SENSOR_ADDR = IP['lit101']
 IDS_ADDR = IP['ids101']
 PLC301_ADDR = IP['plc301']
-
-# TODO: real value tag where to read/write flow sensor
 
 class Lit301Socket(Thread):
     """ Class that receives water level from the water_tank.py  """
@@ -37,37 +37,28 @@ class Lit301Socket(Thread):
         self.sock.bind((IP['plc101-HMI'] , 8754 ))
         self.sock.listen(5)
 
-        while (self.plc.count <= PLC_SAMPLES):
+        while True:
             try:
-            	client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client
-            	message_dict = eval(json.loads(data))
-	        lit301 = float(message_dict['Variable'])
+                client, addr = self.sock.accept()
+                data = client.recv(4096)                                                # Get data from the client
+                message_dict = eval(json.loads(data))
+                lit301 = float(message_dict['Variable'])
 
-	        if lit301 >= LIT_301_M['HH'] :
-                    #self.plc.send(P101, 0, IP['plc101'])
-	            self.send_message(IP['p101'], 7842 , 0)
+                if lit301 >= LIT_301_M['HH'] :
+                    self.send_message(IP['p101'], 7842 , 0)
 
+                elif lit301 >= LIT_301_M['H']:
+                    self.send_message(IP['p101'], 7842 , 0)
 
-	        elif lit301 >= LIT_301_M['H']:
-                    #self.plc.send(P101, 0, IP['plc101'])
-	            self.send_message(IP['p101'], 7842 , 0)
-
-
-            	elif lit301 <= LIT_301_M['L']:
-                    #self.plc.send(P101, 1, IP['plc101'])
+                elif lit301 <= LIT_301_M['L']:
                     self.send_message(IP['p101'], 7842 , 1)
 
-
-            	elif lit301 <= LIT_301_M['LL']:
-                    #self.plc.send(P101, 1, IP['plc101'])
-	            self.send_message(IP['p101'], 7842 , 1)
-
-
+                elif lit301 <= LIT_301_M['LL']:
+                    self.send_message(IP['p101'], 7842 , 1)
             except KeyboardInterrupt:
- 	        print "\nCtrl+C was hitten, stopping server"
+                print "\nCtrl+C was hitten, stopping server"
                 client.close()
-        	break
+                break
 
 
     def send_message(self, ipaddr, port, message):
@@ -121,31 +112,23 @@ class IdsSocket(Thread):
         self.sock.bind((IP['plc101'] , 4234 ))
         self.sock.listen(5)
 
-        while (self.plc.count <= PLC_SAMPLES):
+        while True:
             try:
-	        client, addr = self.sock.accept()
-		data = client.recv(4096)                                                # Get data from the client         
+                client, addr = self.sock.accept()
+                data = client.recv(4096)                                                # Get data from the client
+                message_dict = eval(json.loads(data))
+                message_type = message_dict['Type']
 
-		#lit101 = float(self.plc.recieve(LIT101, IDS_ADDR))
-	        message_dict = eval(json.loads(data))
-		
-		message_type = message_dict['Type']
-		
-		if message_type == "Report":
-		
-			lit101 = float(message_dict['Variable'])
-			self.plc.lit101_ids101 = lit101
+                if message_type == "Report":
+                    lit101 = float(message_dict['Variable'])
+                    self.plc.lit101_ids101 = lit101
 
-			# print 'DEBUG plc1 lit101: %.5f' % lit101
-			# self.send_message(IP['mv101'], 9587, mv)
-			
-		elif message_type == "Intrussion":
-			self.plc.intrussion = message_dict['Variable']
-			
-       	    except KeyboardInterrupt:
-	    	print "\nCtrl+C was hitten, stopping server"
-	        client.close()
-		break
+                elif message_type == "Intrussion":
+                    self.plc.intrussion = message_dict['Variable']
+            except KeyboardInterrupt:
+                print "\nCtrl+C was hitten, stopping server"
+                client.close()
+                break
 
     def send_message(self, ipaddr, port, message):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -167,9 +150,13 @@ class IdsSocket(Thread):
 
 class PLC101(PLC):
 
+    def sigint_handler(self, sig, frame):
+        print "I received a SIGINT!"
+        sys.exit(0)
+
     def pre_loop(self, sleep=0.1):
-        print 'DEBUG: swat-s1 plc1 enters pre_loop'
-        time.sleep(sleep)        
+        signal.signal(signal.SIGINT, self.sigint_handler)
+        signal.signal(signal.SIGTERM, self.sigint_handler)
 
     def main_loop(self):
         """plc1 main loop.
@@ -183,39 +170,34 @@ class PLC101(PLC):
         lit301socket = Lit301Socket(self)
         lit301socket.start()
         self.count = 0
-	self.lit101_intrussion = False
-	self.lit101_ids101 = 0.0
+        self.lit101_intrussion = False
+        self.lit101_ids101 = 0.0
         backup = IdsSocket(self)
-	backup.start()
-        #hmi = HMISocket(self)
-        #hmi.start()
+        backup.start()
 
-        while(self.count <= PLC_SAMPLES):
+        while True:
+            try:
+                if self.lit101_intrussion == False:
+                    lit101 = float(self.receive(LIT101, SENSOR_ADDR))
+                else:
+                    lit101 = self.lit101_ids101
 
-	    try:
-		if self.lit101_intrussion == False:
-			lit101 = float(self.receive(LIT101, SENSOR_ADDR))
-		else:
-			lit101 = self.lit101_ids101 
+                if lit101 >= LIT_101_M['HH']:
+                    self.send(MV101, 0, IP['plc101'])
 
-		if lit101 >= LIT_101_M['HH']:
-		    self.send(MV101, 0, IP['plc101'])
+                elif lit101 >= LIT_101_M['H']:
+                    self.send(MV101, 0, IP['plc101'])
 
-		elif lit101 >= LIT_101_M['H']:
-	            self.send(MV101, 0, IP['plc101'])
+                elif lit101 <= LIT_101_M['LL']:
+                    self.send(MV101, 1, IP['plc101'])
 
-		elif lit101 <= LIT_101_M['LL']:
-		    self.send(MV101, 1, IP['plc101'])
+                elif lit101 <= LIT_101_M['L']:
+                    self.send(MV101, 1, IP['plc101'])
 
-		elif lit101 <= LIT_101_M['L']:
-		    self.send(MV101, 1, IP['plc101'])
-						
-	    except Exception as e:
-                   print e
-		   print "Switching to backup"
-		   break
-
+            except Exception as e:
+                print e
+                print "Switching to backup"
+                break
 
 if __name__ == "__main__":
-
     plc101 = PLC101(name='plc101',state=STATE,protocol=PLC101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)

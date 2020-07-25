@@ -11,6 +11,8 @@ import sys
 import socket
 import json
 import select
+import signal
+import sys
 
 P301 = ('P301', 3)
 LIT301 = ('LIT301', 3)
@@ -44,8 +46,13 @@ class HMISocket(Thread):
 # TODO: real value tag where to read/write flow sensor
 class PLC301(PLC):
 
+    def sigint_handler(self, sig, frame):
+        print "I received a SIGINT!"
+        sys.exit(0)
+
     def pre_loop(self, sleep=0.1):
-        print 'DEBUG: swat-s1 plc1 enters pre_loop'
+        signal.signal(signal.SIGINT, self.sigint_handler)
+        signal.signal(signal.SIGTERM, self.sigint_handler)
 
     def main_loop(self):
         """plc1 main loop.
@@ -65,15 +72,19 @@ class PLC301(PLC):
             self.send_message(PLC101_ADDR, 8754, lit301)
 
             if lit301 >= LIT_301_M['HH'] :
+                print "Opening P301"
                 self.send(P301, 1, IP['plc301'])
 
             elif lit301 >= LIT_301_M['H']:
+                print "Opening P301"
                 self.send(P301, 1, IP['plc301'])
 
             elif lit301 <= LIT_301_M['LL']:
+                print "Closing P301"
                 self.send(P301, 0, IP['plc301'])
 
             elif lit301 <= LIT_301_M['L']:
+                print "Closing P301"
                 self.send(P301, 0, IP['plc301'])
 
 

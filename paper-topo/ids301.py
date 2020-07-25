@@ -8,6 +8,7 @@ import time
 import socket
 import json
 import select
+import signal
 
 SENSOR_ADDR = IP['lit301']
 #PLC101_ADDR = IP['plc101']
@@ -22,45 +23,52 @@ class Ids101(PLC):
 
 	def switch_component(self, controller_ip, controller_port, component):
 		print "Connecting to ONOS"
-	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	        sock.connect((controller_ip, int(controller_port)))
-	        msg_dict = dict.fromkeys(['Type', 'Variable'])
-	        msg_dict['Type'] = "Command"		
-	        msg_dict['Variable'] = component
-	        message = json.dumps(str(msg_dict))
-	        try:
-	            ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
-	        except socket.error, exc:
-	            print "Socket error"
-		    print exc
-	            return
-	        if(ready_to_write > 0):
-	            sock.send(message)
-	        sock.close()
+		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		sock.connect((controller_ip, int(controller_port)))
+		msg_dict = dict.fromkeys(['Type', 'Variable'])
+		msg_dict['Type'] = "Command"
+		msg_dict['Variable'] = component
+		message = json.dumps(str(msg_dict))
+		try:
+			ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
+		except socket.error, exc:
+			print "Socket error"
+			print exc
+			return
+
+		if(ready_to_write > 0):
+			sock.send(message)
+		sock.close()
 
 	def calculate_controls(self, variable):
- 	    print "calculate action control"
-	    estimated = 1
-
-            if variable >= LIT_301_M['HH'] :
-	        estimated = 0
-            elif variable >= LIT_301_M['H'] :
-		estimated = 0
-            elif variable <= LIT_301_M['L']:
-		estimated = 1
-            elif variable <= LIT_301_M['LL']:
+		print "calculate action control"
 		estimated = 1
 
-	    if variable > LIT_301_M['L'] and variable < LIT_301_M['H']:
-		if self.filling:
-			estimated = 1
-		else:
+		if variable >= LIT_301_M['HH'] :
 			estimated = 0
+		elif variable >= LIT_301_M['H'] :
+			estimated = 0
+		elif variable <= LIT_301_M['L']:
+			estimated = 1
+		elif variable <= LIT_301_M['LL']:
+			estimated = 1
+
+		if variable > LIT_301_M['L'] and variable < LIT_301_M['H']:
+			if self.filling:
+				estimated = 1
+			else:
+				estimated = 0
 	
- 	    return estimated
+		return estimated
+
+
+	def sigint_handler(self, sig, frame):
+		print "I received a SIGINT!"
+		sys.exit(0)
 
 	def pre_loop(self, sleep=0.1):
-
+		signal.signal(signal.SIGINT, self.sigint_handler)
+		signal.signal(signal.SIGTERM, self.sigint_handler)
 		# Estimated values
 		self.section = TANK_SECTION
 		print "DEBUG: in pre_loop"
@@ -90,79 +98,78 @@ class Ids101(PLC):
 		#self.send_message(IP['plc101'], 4234, 0)
 
 		while(count <= PP_SAMPLES):	
+			"""""
+			IDS needs to:
+		    Detect compromised PLC
+		    If plc is compromised needs to:
+		    1. Keep sendind data to the PLC101
+		    2. Calculate and send control action to P301			
+			"""""
+			try:
+				self.received_level = float(self.receive(LIT301, SENSOR_ADDR))
+				print "Received LIT301", self.received_level
+			except:
+				continue
 
-		    # IDS needs to:
-		    # Detect compromised PLC
-		    # If plc is compromised needs to:
-		    #  1. Keep sendind data to the PLC101
-		    #  2. Calculate and send control action to P301
+			if self.plc_intrusion == False:
 
-		    try:
-			self.received_level = float(self.receive(LIT301, SENSOR_ADDR))
-			print "Received LIT301", self.received_level
-		    except:
-			continue
+				p301 = int(self.get(P301))
+				if self.received_level > self.previous_level:
+					self.filling = True
+				else:
+					self.filling = False
 
-		    if self.plc_intrusion == False:
-			p301 = int(self.get(P301))
-			if self.received_level > self.previous_level:
-			    self.filling = True
-		        else:
-			    self.filling = False
+				self.estimated_p301 = self.calculate_controls(self.received_level)
+				if p301 != self.estimated_p301:
+					if count > 5:
+						self.plc_count += 1
+						if self.plc_count >= 3:
+							self.plc_intrusion = True
+							print "Received P301 ", p301
+							print "Estimated P301 ", self.estimated_p301
+							print "Filling ", self.filling
+							print "@@@ PLC INTRUSION!!! @@@@"
+							self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
+					else:
+						self.plc_count = 0
 
-			self.estimated_p301 = self.calculate_controls(self.received_level)
-			   
-			if p301 != self.estimated_p301:
-			    if count > 5:
-			        self.plc_count += 1		    
-				if self.plc_count >= 3:
-				    self.plc_intrusion = True
-				    print "Received P301 ", p301
-				    print "Estimated P301 ", self.estimated_p301
-				    print "Filling ", self.filling
-				    print "@@@ PLC INTRUSION!!! @@@@"
-				    self.switch_component(self.controller_ip, self.controller_port, "Switch_plc")
-			    else:
-				self.plc_count = 0 
-			    
-		    	#x(t) = x(t+1)
-		    	self.previous_level = self.received_level
+				#x(t) = x(t+1)
+				self.previous_level = self.received_level
 
-		    else:
-			self.send_message(PLC101_ADDR, 8754, self.received_level)
-			print "Sending level to PLC101", self.received_level
-	            	if self.received_level >= LIT_301_M['HH'] :	            
-	                    p301 = 1
-	                elif self.received_level >= LIT_301_M['H']:
-	                    p301 = 1
-	                elif self.received_level <= LIT_301_M['LL']:
-	                    p301 = 0
-	            	elif self.received_level <= LIT_301_M['L']:
-	            	    p301 = 0
-	                	            
+			else:
+				self.send_message(PLC101_ADDR, 8754, self.received_level)
+				print "Sending level to PLC101", self.received_level
+				if self.received_level >= LIT_301_M['HH'] :
+					p301 = 1
+				elif self.received_level >= LIT_301_M['H']:
+					p301 = 1
+				elif self.received_level <= LIT_301_M['LL']:
+					p301 = 0
+				elif self.received_level <= LIT_301_M['L']:
+					p301 = 0
+
 			print "Sending to P301", p301
-	            	self.send_message(IP['p301'], 6568, p301)
+			self.send_message(IP['p301'], 6568, p301)
 
-	            count += 1		
-        	    time.sleep(self.wait_time)					
+			count += 1
+			time.sleep(self.wait_time)
 
-    	def send_message(self, ipaddr, port, message):
-	        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	        sock.connect((ipaddr, port))
+	def send_message(self, ipaddr, port, message):
+		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		sock.connect((ipaddr, port))
 
-	        msg_dict = dict.fromkeys(['Type', 'Variable'])
-	        msg_dict['Type'] = "Report"
-	        msg_dict['Variable'] = message
-	        message = json.dumps(str(msg_dict))
-
-	        try:
-	            ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
-	        except:
-	            print "Socket error"
-	            return
-	        if(ready_to_write > 0):
-	            sock.send(message)
-	        sock.close()
+		msg_dict = dict.fromkeys(['Type', 'Variable'])
+		msg_dict['Type'] = "Report"
+		msg_dict['Variable'] = message
+		message = json.dumps(str(msg_dict))
+		try:
+			ready_to_read, ready_to_write, in_error = select.select([sock, ], [sock, ], [], 5)
+		except:
+			print "Socket error"
+			return
+		if(ready_to_write > 0):
+			sock.send(message)
+		sock.close()
 
 if __name__ == '__main__':
 	ids101 = Ids101(name='ids101',state=STATE,protocol=IDS101_PROTOCOL,memory=GENERIC_DATA,disk=GENERIC_DATA)

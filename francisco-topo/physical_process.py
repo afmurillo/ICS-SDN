@@ -7,7 +7,8 @@ import sys
 import time
 import math
 import logging
-
+import signal
+import sys
 
 Q101 = ('Q101', 1)
 Q102 = ('Q102', 1)
@@ -18,19 +19,25 @@ PLC_ADDR = IP['plc101']
 
 class RawWaterTank(PLC):
 
+	def sigint_handler(self, sig, frame):
+		print "I received a SIGINT!"
+		sys.exit(0)
+
 	def plant_model(self, l, t, q):
-  		MQ1, MQ2 = q
+		MQ1, MQ2 = q
 		L1, L2, L3 = l
 
 		# System of 3 differential equations of the water tanks
-                f = [(MQ1 - mu13*sn*np.sign(L1-L3)*math.sqrt(2*g*abs(L1-L3)))/s,
-                (MQ2 + mu32*sn*np.sign(L3-L2)*math.sqrt(2*g*abs(L3-L2)) - mu20*sn*math.sqrt(2*g*L2))/s,
-                (mu13*sn*np.sign(L1-L3)*math.sqrt(2*g*abs(L1-L3)) - mu32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*abs(L3-L2))))/s
-                ]
+		f = [(MQ1 - mu13*sn*np.sign(L1-L3)*math.sqrt(2*g*abs(L1-L3)))/s,
+		(MQ2 + mu32*sn*np.sign(L3-L2)*math.sqrt(2*g*abs(L3-L2)) - mu20*sn*math.sqrt(2*g*L2))/s,
+		(mu13*sn*np.sign(L1-L3)*math.sqrt(2*g*abs(L1-L3)) - mu32*sn*np.sign(L3-L2)*math.sqrt(abs(2*g*abs(L3-L2))))/s
+		]
 
-	  	return f
+		return f
 
 	def pre_loop(self):
+		signal.signal(signal.SIGINT, self.sigint_handler)
+		signal.signal(signal.SIGTERM, self.sigint_handler)
 		logging.basicConfig(filename="plant.log", level=logging.DEBUG)
 		logging.debug('plant enters pre_loop')
 		self.Y1= 0.4
@@ -73,11 +80,11 @@ class RawWaterTank(PLC):
 			if (wsol[-1][0]) > 1.0:
 				wsol[-1][0] = 1.0
 
-                        if (wsol[-1][1]) > 1.0:
-                                wsol[-1][1] = 1.0
+			if (wsol[-1][1]) > 1.0:
+				wsol[-1][1] = 1.0
 
-                        if (wsol[-1][2]) > 1.0:
-                                wsol[-1][2] = 1.0
+			if (wsol[-1][2]) > 1.0:
+				wsol[-1][2] = 1.0
 
 			self.l=[wsol[-1][0], wsol[-1][1], wsol[-1][2]]
 
