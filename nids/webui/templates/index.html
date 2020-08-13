@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SDN IDS web UI</title>
+        <link rel="stylesheet" href="static/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO">
+        <script type="text/javascript" src="static/js/chart.js"></script>
+        <script type="text/javascript" src="static/js/webui.js"></script>
+        <style>
+            .text-flameorange { color: #c75b12!important }
+            .bg-flameorange { background-color: #c75b12!important }
+            .text-ecogreen {color: #008542!important }
+            .bg-ecogreen { background-color: #008542!important }
+            .scrollable {
+                max-height: 400px;
+                overflow-y: scroll;
+            }
+        </style>
+    </head>
+    <body class="bg-ecogreen" onload="refreshAll(); setAutoRefresh(10000);" style="padding-top: 67px;">
+        <div class="container-fluid">
+            <nav class="navbar fixed-top bg-white">
+                <a class="navbar-brand mr-auto" href="#">
+                    <img src="static/img/header_ecs_orange_lo.png" height="40" hspace="5" alt="">
+                </a>
+                <div class="nav-itm mr-auto"><h4 class="text-flameorange">SDN IDS web ui</h4></div>
+                <button id="btn-timer" class="btn btn-sm btn-outline-success"></button>
+                <div class="nav-item ml-2" id="localtime"></div>
+            </nav>
+            <div class="card mt-1 mb-3" id="devcard">
+                <div class="card-header bg-flameorange text-white">
+                    <h4 class="card-title">OpenFlow devices</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-striped table-sm">
+                        <thead class="thead-light">
+                            <tr><th>Device ID</th><th>Available</th><th>Last update</th><th>Manufacturer</th><th>Hardware</th><th>Protocol</th><th>Configured role</th><th>Mirroring port</th></tr>
+                        </thead>
+                        <tbody id="devices"></tbody>
+                    </table>
+                    <a class="card-link" onclick="refreshDevices();" href="#devcard">Refresh</a>
+                </div>
+            </div>
+            <div class="card mb-3" id="hstcard">
+                <div class="card-header bg-flameorange text-white">
+                    <h4 class="card-title">End-point hosts</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-striped table-sm">
+                        <thead class="thead-light">
+                            <tr><th>MAC address</th><th>IP addresses</th><th>Configured name</th><th>Locations</th><th>Configured role</th></tr>
+                        </thead>
+                        <tbody id="hosts"></tbody>
+                    </table>
+                    <a class="card-link" onclick="refreshHosts();" href="#hstcard">Refresh</a>
+                </div>
+            </div>
+            <div class="card mb-3" id="ppscard">
+                <div class="card-header bg-flameorange text-white">
+                    <h4 class="card-title">Sniffed packets per second</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6" id="chpps"></div>
+                        <div class="col-md-6">
+                            <p class="lead text-ecogreen">Top 10 (Last 10 seconds)</p>
+                            <table class="table table-striped table-sm">
+                                <thead class="thead-light">
+                                    <tr><th>#</th><th>Source</th><th>Destination</th><th>Protocol</th><th>Packets</th></tr>
+                                </thead>
+                                <tbody id="topsniffed"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="refreshPPSChart();" href="#ppscard">Refresh</a>
+                </div>
+            </div>
+            <div class="card mb-3" id="grouping">
+                <div class="card-header bg-flameorange text-white">
+                    <h4 class="card-title">Device group management</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-2">
+                        <div class="col col-md-3 input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Device</div>
+                            </div>
+                            <select class="form-control" id="group-device" onchange="refreshGroups();"></select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="lead text-ecogreen mt-2 mb-1">Create a new group</div>
+                            <form>
+                                <div class="form-row mb-2">
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Group ID</div>
+                                        </div>
+                                        <input type="text" class="form-control" id="newgroupid" placeholder="12345" pattern="[0-9]+" oninput="pcheck(this);">
+                                    </div>
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">appCookie</div>
+                                        </div>
+                                        <input type="text" class="form-control" id="newgroupappck" placeholder="0x1234abcd" pattern="0x[0-9a-fA-F]{8}" oninput="pcheck(this);">
+                                    </div>
+                                </div>
+                                <div class="form-row text-ecogreen pl-3">Bucket actions</div>
+                                <div class="form-row mb-1 pl-3">
+                                    <div class="col col-md-4 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text">Type</div></div>
+                                        <select class="input-group-append form-control" id="actiontype" onchange="updateActionSubtype();">
+                                            <option value="OUTPUT" selected>OUTPUT</option>
+                                            <option value="TABLE">TABLE</option>
+                                            <option value="METER">METER</option>
+                                            <option value="L2MODIFICATION">L2MODIFICATION</option>
+                                            <option value="L3MODIFICATION">L3MODIFICATION</option>
+                                            <option value="L4MODIFICATION">L4MODIFICATION</option>
+                                        </select>
+                                    </div>
+                                    <div class="col col-md-4 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text">Subtype</div></div>
+                                        <select class="input-group-append form-control" id="actionsubtype" onchange="updateActionLabel();">
+                                            <option value="NA" selected>N/A</option>
+                                        </select>
+                                    </div>
+                                    <div class="col col-md-4 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text" id="actionvallbl">Port</div></div>
+                                        <input type="text" class="form-control input-group-append" id="actionvalue" placeholder="1-65535" pattern="^(?:6(?:5(?:5(?:3[0-5]|[0-2][0-9])|[0-4][0-9]{2})|[0-4][0-9]{3})|[1-5][0-9]{4}|[1-9][0-9]{0,3})$" oninput="pcheck(this);">
+                                    </div>
+                                </div>
+                                <div class="form-row pl-3">
+                                    <div class="col col-md-12">
+                                        <table class="table table-striped table-sm">
+                                            <thead class="thead-light">
+                                                <tr><th>Type</th><th>Subtype</th><th>Value</th></tr>
+                                            </thead>
+                                            <tbody id="bucketactions"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-row mb-2 pl-3">
+                                    <div class="col col-md-3"></div>
+                                    <div class="col col-md-6 btn-group">
+                                        <button type="button" class="btn btn-sm btn-success w-100" onclick="addAction();">Add action</button>
+                                        <button type="button" class="btn btn-sm btn-danger w-100" onclick="removeAction();">Remove action</button>
+                                    </div>
+                                </div>
+                                <div class="form-row text-ecogreen pl-3">Group buckets</div>
+                                <div class="form-row mb-2 pl-3">
+                                    <div class="col col-md-12">
+                                        <textarea class="form-control w-100" id="groupbuckets" rows="5" readonly></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row mb-2 pl-3">
+                                    <div class="col col-md-3"></div>
+                                    <div class="col col-md-6 btn-group">
+                                        <button type="button" class="btn btn-sm btn-success w-50" onclick="addBucket();">Add bucket</button>
+                                        <button type="button" class="btn btn-sm btn-danger w-50" onclick="removeBucket();">Remove bucket</button>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col col-md-3">
+                                        <button type="button" class="btn btn-success w-100" onclick="createGroup();">Create group</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <div class="lead text-ecogreen">Current groups</div>
+                            <div class="table-responsive-md scrollable">
+                                <table class="table table-striped table-sm">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th rowspan="2" style="vertical-align:middle; text-align: center;">Group ID</th>
+                                            <th rowspan="2" style="vertical-align:middle; text-align: center;">appCookie</th>
+                                            <th colspan="2" style="vertical-align:middle; text-align: center;">Buckets</th>
+                                            <th rowspan="2" style="vertical-align:middle; text-align: center;">Manage</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="vertical-align:middle; text-align: center;">ID</th>
+                                            <th style="vertical-align:middle; text-align: center;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="device-groups"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="refreshGroups();" href="#grouping">Refresh</a>
+                </div>
+            </div>
+            <div class="card mb-3" id="flows">
+                <div class="card-header bg-flameorange text-white">
+                    <h4 class="card-title">Flow table management</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-2">
+                        <div class="col col-md-3 input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Device</div>
+                            </div>
+                            <select class="form-control" id="flows-device" onchange="refreshFlows();"></select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col col-md-4">
+                            <div class="lead text-ecogreen mb-2">Create a new flow</div>
+                            <form class="pl-3">
+                                <div class="form-row mb-1">
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text">appId</div></div>
+                                        <select class="input-group-append form-control" id="flowappid"></select>
+                                    </div>
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text">Priority</div></div>
+                                        <input class="form-control" type="text" id="flowpriority" pattern="^(?:6(?:5(?:5(?:3[0-5]|[0-2][0-9])|[0-4][0-9]{2})|[0-4][0-9]{3})|[1-5][0-9]{4}|[1-9][0-9]{1,3}|[0-9])$" placeholder="0-65535" oninput="pcheck(this);">
+                                    </div>
+                                </div>
+                                <div class="form-row mb-2">
+                                        <div class="col col-md-6 input-group">
+                                            <div class="input-group-prepend"><div class="input-group-text">timeout</div></div>
+                                            <input class="form-control" type="text" id="flowtimeout" pattern="^(?:6(?:5(?:5(?:3[0-5]|[0-2][0-9])|[0-4][0-9]{2})|[0-4][0-9]{3})|[1-5][0-9]{4}|[1-9][0-9]{1,3}|[0-9])$" placeholder="0-65535" oninput="pcheck(this);">
+                                        </div>
+                                        <div class="col col-md-6 input-group">
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox" class="form-check-input" value="" id="flowisperm" checked>
+                                                <label class="form-check-label" for="flowisperm">is permanent</label>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-row text-ecogreen">Treatment</div>
+                                <div class="form-row mb-1">
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text">Type</div></div>
+                                        <select class="input-group-append form-control" id="instrtype" onchange="updateInstructionSubtype();">
+                                            <option value="OUTPUT" selected>OUTPUT</option>
+                                            <option value="GROUP">GROUP</option>
+                                            <option value="TABLE">TABLE</option>
+                                            <option value="METER">METER</option>
+                                            <option value="L2MODIFICATION">L2MODIFICATION</option>
+                                            <option value="L3MODIFICATION">L3MODIFICATION</option>
+                                            <option value="L4MODIFICATION">L4MODIFICATION</option>
+                                            <option value="NOACTION">NOACTION</option>
+                                        </select>
+                                    </div>
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text">Subtype</div></div>
+                                        <select class="input-group-append form-control" id="instrsubtype" onchange="updateInstructionLabel();">
+                                            <option value="NA" selected>N/A</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row mb-1">
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text" id="instrvallbl">Port</div></div>
+                                        <input type="text" class="form-control input-group-append" id="instrvalue" placeholder="1-65535" pattern="^(?:6(?:5(?:5(?:3[0-5]|[0-2][0-9])|[0-4][0-9]{2})|[0-4][0-9]{3})|[1-5][0-9]{4}|[1-9][0-9]{0,3})$" oninput="pcheck(this);">
+                                    </div>
+                                    <div class="col col-md-6 input-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" value="" id="flowcleared" checked>
+                                            <label class="form-check-label" for="flowcleared">clear deferred</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row mb-1">
+                                    <div class="col col-md-12">
+                                        <table class="table table-striped table-sm">
+                                            <thead class="thead-light">
+                                                <tr><th>Type</th><th>Subtype</th><th>Value</th></tr>
+                                            </thead>
+                                            <tbody id="flowinstructions"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-row mb-2">
+                                    <div class="col col-md-3"></div>
+                                    <div class="col col-md-6 btn-group">
+                                        <button type="button" class="btn btn-sm btn-success w-50" onclick="addInstruction();">Add instruction</button>
+                                        <button type="button" class="btn btn-sm btn-danger w-50" onclick="removeInstruction();">Remove instruction</button>
+                                    </div>
+                                </div>
+                                <div class="form-row text-ecogreen">Selector</div>
+                                <div class="form-row mb-1">
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text">Type</div></div>
+                                        <select class="input-group-append form-control" id="flowcrittype" onchange="updateCriteriaLabel();">
+                                            <option value="ETH_DST">ETH_DST</option>
+                                            <option value="ETH_SRC">ETH_SRC</option>
+                                            <option value="ETH_TYPE" selected>ETH_TYPE</option>
+                                            <option value="IN_PORT">IN_PORT</option>
+                                            <option value="IN_PHY_PORT">IN_PHY_PORT</option>
+                                            <option value="ICMPV4_CODE">ICMPV4_CODE</option>
+                                            <option value="ICMPV4_TYPE">ICMPV4_TYPE</option>
+                                            <option value="ICMPV6_CODE">ICMPV6_CODE</option>
+                                            <option value="ICMPV6_TYPE">ICMPV6_TYPE</option>
+                                            <option value="INNER_VLAN_PCP">INNER_VLAN_PCP</option>
+                                            <option value="INNER_VLAN_VID">INNER_VLAN_VID</option>
+                                            <option value="IP_DSCP">IP_DSCP</option>
+                                            <option value="IP_ECN">IP_ECN</option>
+                                            <option value="IP_PROTO">IP_PROTO</option>
+                                            <option value="IPV4_DST">IPV4_DST</option>
+                                            <option value="IPV4_SRC">IPV4_SRC</option>
+                                            <option value="IPV6_EXTHDR">IPV6_EXTHDR</option>
+                                            <option value="IPV6_DST">IPV6_DST</option>
+                                            <option value="IPV6_FLABEL">IPV6_FLABEL</option>
+                                            <option value="IPV6_ND_SLL">IPV6_ND_SLL</option>
+                                            <option value="IPV6_ND_TARGET">IPV6_ND_TARGET</option>
+                                            <option value="IPV6_ND_TLL">IPV6_ND_TLL</option>
+                                            <option value="IPV6_SRC">IPV6_SRC</option>
+                                            <option value="METADATA">METADATA</option>
+                                            <option value="MPLS_LABEL">MPLS_LABEL</option>
+                                            <option value="SCTP_DST">SCTP_DST</option>
+                                            <option value="SCTP_SRC">SCTP_SRC</option>
+                                            <option value="TCP_DST">TCP_DST</option>
+                                            <option value="TCP_SRC">TCP_SRC</option>
+                                            <option value="TUNNEL_ID">TUNNEL_ID</option>
+                                            <option value="UDP_DST">UDP_DST</option>
+                                            <option value="UDP_SRC">UDP_SRC</option>
+                                            <option value="VLAN_PCP">VLAN_PCP</option>
+                                            <option value="VLAN_VID">VLAN_VID</option>
+                                        </select>
+                                    </div>
+                                    <div class="col col-md-6 input-group">
+                                        <div class="input-group-prepend"><div class="input-group-text" id="flowcritlbl">ethType</div></div>
+                                        <input class="form-control" type="text" id="flowcritval" pattern="^0x[0-9a-fA-F]{4}$" placeholder="0x12ab" oninput="pcheck(this);">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col col-md-12">
+                                        <table class="table table-striped table-sm">
+                                            <thead class="thead-light">
+                                                <tr><th>Type</th><th>Value</th></tr>
+                                            </thead>
+                                            <tbody id="flowselector"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-row mb-2">
+                                    <div class="col col-md-3"></div>
+                                    <div class="col col-md-6 btn-group">
+                                        <button type="button" class="btn btn-sm btn-success w-50" onclick="addCriteria();">Add criteria</button>
+                                        <button type="button" class="btn btn-sm btn-danger w-50" onclick="removeCriteria();">Remove criteria</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-row">
+                                <div class="col col-md-3">
+                                    <button type="button" class="btn btn-success w-100" onclick="createFlow();">Create flow</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-md-8">
+                            <div class="lead text-ecogreen">Current flows</div>
+                            <div class="table-responsive-md scrollable">
+                                <table class="table table-hover table-striped table-sm">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>State</th>
+                                            <th>Priority</th>
+                                            <th>Selector</th>
+                                            <th>Treatment</th>
+                                            <th>App name</th>
+                                            <th>Manage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="device-flows"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="refreshFlows();" href="#flows">Refresh</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
